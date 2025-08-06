@@ -448,6 +448,44 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
+            /* Streaming links */
+.streaming-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .streaming-link {
+    color: #ddd;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+  }
+  
+  .streaming-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  
+  .streaming-link.spotify:hover { color: #1DB954; }
+  .streaming-link.apple:hover { color: #FC3C44; }
+  .streaming-link.youtube:hover { color: #FF0000; }
+  
+  /* Error state */
+  .error {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  .error i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
             /* Format icons */
 .format-icon {
     position: absolute;
@@ -469,12 +507,17 @@
 }
 
 /* Differentiate singles visually */
+.release {
+    position: relative;
+    padding-top: 15px; /* Creates consistent space for icon */
+}
+
 .release.single {
-    border-left: 3px solid var(--accent);
+    border-left: 2px solid var(--accent); /* Thinner border */
 }
 
 .release.album {
-    border-left: 3px solid #666;
+    border-left: 2px solid #444; /* Darker, subtler gray */
 }
 
 .release:hover .format-icon {
@@ -482,6 +525,8 @@
 }
         }
     </style>
+<!-- Add these before </head> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -500,52 +545,11 @@
                 <p>RAINOUT collective is an independent music label dedicated to embracing music diversity from young artists. Founded in 2024.</p>
             </div>
             
-            <div class="releases">
-                <h2>LATEST RELEASES</h2>
-                <div class="release-grid">
-                    <!-- RAIN-009S -->
-                    <div class="release single">
-                        <div class="format-icon">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <img src="assets/album-art/v0calyst-believe.jpg" alt="believe the kids">
-                        <div class="info">
-                            <div class="title">believe the kids</div>
-                            <div class="artist">V0CALYST</div>
-                            <div class="catalog">RAIN-009S</div>
-                            <div class="date">Aug 1, 2025</div>
-                        </div>
-                    </div>
-                    
-                    <!-- RAIN-008S -->
-                    <div class="release single">
-                        <div class="format-icon">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <img src="assets/album-art/v0calyst-interesting.jpg" alt="interesting">
-                        <div class="info">
-                            <div class="title">interesting</div>
-                            <div class="artist">V0CALYST</div>
-                            <div class="catalog">RAIN-008S</div>
-                            <div class="date">Jul 25, 2025</div>
-                        </div>
-                    </div>
-                    
-                    <!-- RAIN-007S -->
-                    <div class="release single">
-                        <div class="format-icon">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <img src="assets/album-art/shinrei-soul.jpg" alt="Soul on fire">
-                        <div class="info">
-                            <div class="title">Soul on fire</div>
-                            <div class="artist">shinrei</div>
-                            <div class="catalog">RAIN-007S</div>
-                            <div class="date">Jun 1, 2025</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Replace the entire .releases div with this: -->
+<div class="releases">
+    <h2>LATEST RELEASES</h2>
+    <div class="release-grid"><!-- Filled by JavaScript --></div>
+  </div>
             
             <div class="artists">
                 <h2>FEATURED ARTISTS</h2>
@@ -622,5 +626,7 @@
             }, 3000);
         });
     </script>
+<!-- Add this before </body> -->
+<script src="js/fetchReleases.js"></script>
 </body>
 </html>
