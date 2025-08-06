@@ -3,35 +3,43 @@ document.addEventListener('DOMContentLoaded', async () => {
         const style = document.createElement('style');
         style.textContent = `
             .format-icon {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%); /* Center initially */
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition: all 0.3s ease;
-}
-            
-            .format-icon i {
-                color: var(--accent);
-                font-size: 12px;
-            }
-            
-            .release:hover .format-icon {
-  transform: translateX(-50%) scale(1.1); /* Keep translateX */
-  background: rgba(100,150,255,0.3);
-}
-            
-            .release {
+    position: absolute;
+    top: -12px; /* Half outside the card */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20; /* Higher than cover image */
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .format-icon i {
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  .release:hover .format-icon {
+    transform: translateX(-50%) scale(1.15);
+    background: rgba(100,150,255,0.5);
+    box-shadow: 0 0 15px rgba(100,150,255,0.3);
+  }
+
+  .release {
     position: relative;
-    padding: 25px 20px 20px; /* Increased top padding */
-    overflow: visible; /* Ensures icon isn't clipped */
+    padding-top: 25px; /* Space for icon */
+    overflow: visible;
+  }
+
+  .release img {
+    position: relative;
+    z-index: 10; /* Below icon but above card */
   }
         `;
         document.head.appendChild(style);
