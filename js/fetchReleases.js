@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   
       // Process and sort releases (newest first)
       const sortedReleases = data
-        .filter(release => release['Catalog#'])
-        .sort((a, b) => {
-        const dateA = new Date(a['Release Date'] + 'T00:00:00Z'); // Force UTC
-        const dateB = new Date(b['Release Date'] + 'T00:00:00Z'); // Force UTC
-        return dateB - dateA;
-    });
+  .filter(release => release['Catalog#'])
+  .sort((a, b) => {
+    // Simple YYYY-MM-DD string comparison (no Date objects)
+    return b['Release Date'].localeCompare(a['Release Date']);
+  });
+
+  
   
       // Render top 3 releases
       renderReleases(sortedReleases.slice(0, 3));
@@ -61,13 +62,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   
   function formatDate(dateString) {
-    // Split the date string and create a UTC date
+    // Split the ISO date (YYYY-MM-DD) and format directly
     const [year, month, day] = dateString.split('-');
-    const date = new Date(Date.UTC(year, month - 1, day));
-    
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-}
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
+  }
   
   function createStreamingLink(url, platform, icon) {
     return url ? `
@@ -76,3 +76,5 @@ document.addEventListener('DOMContentLoaded', async () => {
       </a>
     ` : '';
   }
+
+  console.log(sortedReleases.map(r => `${r['Catalog#']}: ${r['Release Date']} -> ${formatDate(r['Release Date'])}`));
