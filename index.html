@@ -21,7 +21,6 @@
         </header>
         
         <main>
-            <main style="position: relative; z-index: 10;">
             <img src="assets/umbrella.png" alt="RAINOUT umbrella logo" class="logo">
             
             <h1>RAINOUT collective.</h1>
@@ -119,7 +118,22 @@
         });
     </script>
 <!-- Add this before </body> -->
-<script src="js/script.js"></script> <!-- Contains createRain() -->
+<!-- At the bottom of your body, before </body> -->
+<script src="js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create rain effect (only on desktop)
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            createRain();
+        }
+        
+        // Your other effects...
+        const banner = document.querySelector('.banner');
+        setInterval(() => {
+            banner.style.boxShadow = `0 0 ${15 + Math.random() * 10}px rgba(100, 150, 255, ${0.1 + Math.random() * 0.1})`;
+        }, 3000);
+    });
+</script>
 <script src="js/fetchReleases.js"></script>
 </body>
 </html>

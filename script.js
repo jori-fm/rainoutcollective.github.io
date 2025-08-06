@@ -1,34 +1,36 @@
 function createRain() {
-    if (document.querySelector('.rain')) return;
+    // Remove existing rain if any
+    const existingRain = document.querySelector('.rain');
+    if (existingRain) existingRain.remove();
     
     const rainContainer = document.createElement('div');
     rainContainer.className = 'rain';
     
-    // Create more drops for better coverage
-    for (let i = 0; i < 150; i++) {
+    // Create more drops with better randomization
+    for (let i = 0; i < 200; i++) { // Increased number of drops
         const drop = document.createElement('div');
         drop.className = 'drop';
         
-        // Randomize properties
+        // Random properties
         const left = Math.random() * 100;
-        const height = Math.random() * 20 + 10;
-        const opacity = Math.random() * 0.5 + 0.3;
-        const animationDuration = Math.random() * 0.5 + 0.5;
-        const animationDelay = Math.random() * 5;
+        const height = Math.random() * 25 + 10; // Longer drops
+        const opacity = Math.random() * 0.6 + 0.2; // More visible
+        const duration = Math.random() * 0.8 + 0.3; // Vary speeds more
+        const delay = Math.random() * 10; // Wider delay range
         
         drop.style.left = `${left}%`;
         drop.style.height = `${height}px`;
         drop.style.opacity = opacity;
-        drop.style.animationDuration = `${animationDuration}s`;
-        drop.style.animationDelay = `${animationDelay}s`;
+        drop.style.animationDuration = `${duration}s`;
+        drop.style.animationDelay = `${delay}s`;
         
-        // Add slight horizontal movement for more natural rain
+        // Add slight horizontal movement
         drop.style.transform = `translateX(${Math.random() * 10 - 5}px)`;
         
         rainContainer.appendChild(drop);
     }
     
-    document.body.insertBefore(rainContainer, document.body.firstChild);
+    document.body.appendChild(rainContainer); // Append to body
 }
   
   // Existing hover effects (keep these)
