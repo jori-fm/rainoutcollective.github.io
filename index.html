@@ -54,13 +54,14 @@
             display: block;
             margin: 0 auto 30px;
             background-color: transparent;
-            border: 1px solid rgba(100, 150, 255, 0.1);
-            box-shadow: 0 0 15px rgba(100, 150, 255, 0.1);
+            /* Remove border and add glow */
+            border: none;
+            filter: drop-shadow(0 0 15px rgba(100, 150, 255, 0.3));
             transition: all 0.5s ease;
         }
         
         .banner:hover {
-            box-shadow: 0 0 25px rgba(100, 150, 255, 0.2);
+            filter: drop-shadow(0 0 25px rgba(100, 150, 255, 0.5));
         }
         
         /* Logo styling - adjusted size */
@@ -256,16 +257,14 @@
         
         .artist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
         
         .artist {
-            padding: 25px;
-            background: rgba(20, 20, 30, 0.3);
-            border: 1px solid rgba(100, 150, 255, 0.1);
-            border-radius: 2px;
+            text-align: center;
+            padding: 20px 10px;
             transition: all 0.3s ease;
         }
         
@@ -275,14 +274,12 @@
         }
         
         .artist img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 20px;
+            margin-bottom: 15px;
             border: 1px solid rgba(100, 150, 255, 0.2);
-            filter: grayscale(40%);
-            transition: all 0.4s ease;
         }
         
         .artist:hover img {
@@ -291,8 +288,9 @@
         }
         
         .artist h3 {
-            margin-bottom: 10px;
-            color: #fff;
+            font-size: 1.2rem;
+            margin: 0;
+            letter-spacing: 1px;
         }
         
         .artist p {
@@ -430,7 +428,7 @@
             }
             
             .artist-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .social-links {
@@ -442,6 +440,38 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
+            /* Format icons */
+.format-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0,0,0,0.7);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.format-icon i {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+/* Differentiate singles visually */
+.release.single {
+    border-left: 3px solid var(--accent);
+}
+
+.release.album {
+    border-left: 3px solid #666;
+}
+
+.release:hover .format-icon {
+    background: rgba(100,150,255,0.3);
+}
         }
     </style>
 </head>
@@ -465,28 +495,45 @@
             <div class="releases">
                 <h2>LATEST RELEASES</h2>
                 <div class="release-grid">
-                    <div class="release">
-                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Album cover">
+                    <!-- RAIN-009S -->
+                    <div class="release single">
+                        <div class="format-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <img src="assets/album-art/v0calyst-believe.jpg" alt="believe the kids">
                         <div class="info">
-                            <div class="title">Distant Echoes</div>
-                            <div class="artist">Void Reflection</div>
-                            <div class="catalog">RAIN-001</div>
+                            <div class="title">believe the kids</div>
+                            <div class="artist">V0CALYST</div>
+                            <div class="catalog">RAIN-009S</div>
+                            <div class="date">Aug 1, 2025</div>
                         </div>
                     </div>
-                    <div class="release">
-                        <img src="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Album cover">
+                    
+                    <!-- RAIN-008S -->
+                    <div class="release single">
+                        <div class="format-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <img src="assets/album-art/v0calyst-interesting.jpg" alt="interesting">
                         <div class="info">
-                            <div class="title">Static Memories</div>
-                            <div class="artist">Nostalgia Circuit</div>
-                            <div class="catalog">RAIN-002</div>
+                            <div class="title">interesting</div>
+                            <div class="artist">V0CALYST</div>
+                            <div class="catalog">RAIN-008S</div>
+                            <div class="date">Jul 25, 2025</div>
                         </div>
                     </div>
-                    <div class="release">
-                        <img src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Album cover">
+                    
+                    <!-- RAIN-007S -->
+                    <div class="release single">
+                        <div class="format-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <img src="assets/album-art/shinrei-soul.jpg" alt="Soul on fire">
                         <div class="info">
-                            <div class="title">Urban Fog</div>
-                            <div class="artist">Metropolitan Drift</div>
-                            <div class="catalog">RAIN-003</div>
+                            <div class="title">Soul on fire</div>
+                            <div class="artist">shinrei</div>
+                            <div class="catalog">RAIN-007S</div>
+                            <div class="date">Jun 1, 2025</div>
                         </div>
                     </div>
                 </div>
@@ -495,25 +542,40 @@
             <div class="artists">
                 <h2>FEATURED ARTISTS</h2>
                 <div class="artist-grid">
+                    <!-- Artist 1 -->
                     <div class="artist">
-                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Artist">
-                        <h3>ECHO FIELD</h3>
-                        <p>Ambient soundscapes & field recordings</p>
+                        <img src="assets/artists/smooch.jpg" alt="smooch.">
+                        <h3>smooch.</h3>
                     </div>
+                    
+                    <!-- Artist 2 -->
                     <div class="artist">
-                        <img src="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Artist">
-                        <h3>STATIC DRIFT</h3>
-                        <p>Lo-fi beats & nostalgic textures</p>
+                        <img src="assets/artists/v0calyst.jpg" alt="V0CALYST">
+                        <h3>V0CALYST</h3>
                     </div>
+                    
+                    <!-- Artist 3 -->
                     <div class="artist">
-                        <img src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Artist">
-                        <h3>URBAN GHOST</h3>
-                        <p>Dark ambient & industrial</p>
+                        <img src="assets/artists/shinrei.jpg" alt="shinrei">
+                        <h3>shinrei</h3>
                     </div>
+                    
+                    <!-- Artist 4 -->
                     <div class="artist">
-                        <img src="https://images.unsplash.com/photo-1619983081563-430f63602e69?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400&ixlib=rb-1.2.1&q=80" alt="Artist">
-                        <h3>NEON RAIN</h3>
-                        <p>Synthwave & vaporwave</p>
+                        <img src="assets/artists/sunni.jpg" alt="sunni">
+                        <h3>sunni</h3>
+                    </div>
+                    
+                    <!-- Artist 5 -->
+                    <div class="artist">
+                        <img src="assets/artists/sai.jpg" alt="sai">
+                        <h3>sai</h3>
+                    </div>
+                    
+                    <!-- Artist 6 -->
+                    <div class="artist">
+                        <img src="assets/artists/seraphii.jpg" alt="seraphii">
+                        <h3>seraphii</h3>
                     </div>
                 </div>
             </div>
@@ -527,7 +589,7 @@
                 <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                 <a href="#" title="Spotify"><i class="fab fa-spotify"></i></a>
             </div>
-            <p class="copyright">© 2023 RAINOUT collective. All rights reserved.</p>
+            <p class="copyright">© 2025 RAINOUT collective. All rights reserved.</p>
         </footer>
     </div>
     
