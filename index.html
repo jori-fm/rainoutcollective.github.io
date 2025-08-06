@@ -401,7 +401,36 @@
             0% { background-position: 0 0; }
             100% { background-position: 0 100%; }
         }
+        .streaming-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
         
+        .streaming-link {
+            font-size: 18px;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            display: inline-flex;
+        }
+        
+        /* Platform colors (forced) */
+        .streaming-link.spotify { color: #1DB954 !important; }
+        .streaming-link.apple { color: #FC3C44 !important; }
+        .streaming-link.youtube { color: #FF0000 !important; }
+        
+        /* Hover effect */
+        .streaming-link:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+            filter: brightness(1.2);
+        }
+        
+        /* Remove any inherited colors */
+        .release .streaming-links a {
+            color: inherit !important;
+        }
         /* Responsive adjustments */
         @media (max-width: 900px) {
             .banner {
@@ -422,7 +451,7 @@
             }
         }
         
-        @media (max-width: 600px) {
+            @media (max-width: 600px) {
             h1 {
                 font-size: 2.2rem;
             }
@@ -448,92 +477,8 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
-            /* Streaming links */
-.streaming-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 15px;
-    /* Remove these lines that create the underscore: */
-    /* padding-top: 10px; */
-    /* border-top: 1px solid rgba(255,255,255,0.1); */
-  }
-  
-  .streaming-link {
-    font-size: 18px;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-    display: inline-flex; /* Better alignment */
-}
-  
-  .streaming-link:hover {
-    opacity: 1;
-    transform: translateY(-2px) scale(1.1); /* Added scale effect */
-    filter: brightness(1.2); /* Brighter on hover */
-  }
-  
-  .streaming-link.spotify { color: #1DB954 !important; }
-  .streaming-link.apple { color: #FC3C44 !important; }
-  .streaming-link.youtube { color: #FF0000 !important; }
-  
-  .streaming-link:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-    filter: brightness(1.2);
-}
-.release .streaming-links a {
-    color: inherit !important;
-}
 
-  /* Error state */
-  .error {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 2rem;
-    color: #666;
-  }
-  
-  .error i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-            /* Format icons */
-.format-icon {
-    position: absolute;
-    top: 10px; /* Reduced from 15px */
-    right: 10px; /* Reduced from 15px */
-    background: rgba(0,0,0,0.7);
-    width: 25px; /* Reduced from 30px */
-    height: 25px; /* Reduced from 30px */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
 
-.format-icon i {
-    color: var(--accent);
-    font-size: 12px;
-}
-
-/* Differentiate singles visually */
-.release {
-    position: relative;
-    padding-top: 15px; /* Creates consistent space for icon */
-}
-
-.release.single {
-    border-left: 2px solid var(--accent); /* Thinner border */
-}
-
-.release.album {
-    border-left: 2px solid #444; /* Darker, subtler gray */
-}
-
-.release:hover .format-icon {
-    background: rgba(100,150,255,0.3);
-}
         }
     </style>
 <!-- Add these before </head> -->
