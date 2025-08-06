@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Process and sort releases (newest first)
       const sortedReleases = data
         .filter(release => release['Catalog#'])
-        .sort((a, b) => new Date(b['Release Date']) - new Date(a['Release Date']));
+        .sort((a, b) => {
+        const dateA = new Date(a['Release Date'] + 'T00:00:00Z'); // Force UTC
+        const dateB = new Date(b['Release Date'] + 'T00:00:00Z'); // Force UTC
+        return dateB - dateA;
+    });
   
       // Render top 3 releases
       renderReleases(sortedReleases.slice(0, 3));
