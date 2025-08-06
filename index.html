@@ -191,7 +191,7 @@
         .release {
             background: rgba(20, 20, 30, 0.5);
             border: 1px solid rgba(100, 150, 255, 0.1);
-            padding: 25px 20px;
+            padding: 15px 20px 20px; /* More padding at bottom */
             transition: all 0.3s ease;
             text-align: center;
             position: relative;
@@ -431,6 +431,30 @@
         .release .streaming-links a {
             color: inherit !important;
         }
+        .format-icon {
+            position: relative; /* Changed from absolute */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -15px auto 10px; /* Pulls icon up and centers */
+            background: rgba(0,0,0,0.7);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .format-icon i {
+            color: var(--accent);
+            font-size: 12px;
+        }
+        .release:hover .format-icon {
+            transform: scale(1.1);
+            background: rgba(100,150,255,0.3);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 900px) {
             .banner {
