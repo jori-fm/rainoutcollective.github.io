@@ -1,42 +1,186 @@
-.parent-container {
-    overflow: visible;
-    height: auto;
+/* style.css */
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;     /* Smaller text size */
-    max-width: 900px;    /* Prevents super wide layouts */
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    max-width: 900px;
     margin: 0 auto;
-    background-color: #000;   /* Dark background */
-    color: #fff;              /* White text */
-    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(40, 40, 55, 0.8) 0%, rgba(10, 10, 15, 0.9) 90%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="n"><feTurbulence baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23n)" opacity="0.1"/></svg>');
 }
 
+/* Header styling */
+header {
+    margin: 20px 0 40px;
+    text-align: center;
+    position: relative;
+}
 
+/* Banner styling */
 .banner {
-    width: 80%;          /* Shrinks the banner */
-    max-width: 800px;    /* Optional: sets a maximum size */
-    height: auto;        /* Keeps aspect ratio */
+    width: 80%;
+    max-width: 800px;
+    height: auto;
     display: block;
-    margin: 20px auto;   /* Centers the banner */
+    margin: 0 auto 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    filter: grayscale(20%) contrast(110%);
+    opacity: 0.9;
+    transition: all 0.5s ease;
 }
 
+.banner:hover {
+    filter: grayscale(10%) contrast(120%);
+    opacity: 1;
+}
+
+/* Logo styling */
 .logo {
     width: 60%;
     max-width: 400px;
     height: auto;
     display: block;
-    margin: 10px auto;
+    margin: 0 auto 30px;
+    filter: 
+        drop-shadow(0 0 5px rgba(100, 150, 255, 0.2))
+        grayscale(30%);
+    transition: all 0.5s ease;
 }
 
+.logo:hover {
+    filter: 
+        drop-shadow(0 0 10px rgba(100, 150, 255, 0.4))
+        grayscale(10%);
+    opacity: 0.95;
+}
 
+/* Typography */
 h1 {
-    font-size: 3em;
+    font-size: 3.5rem;
     margin: 0.5em 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(100, 150, 255, 0.5), transparent);
 }
 
 p {
-    font-size: 1.2em;
-    color: #ddd;
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Main content styling */
+main {
+    text-align: center;
+    padding: 20px 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Flickering effect for nostalgic feel */
+@keyframes flicker {
+    0% { opacity: 0.98; }
+    5% { opacity: 0.9; }
+    10% { opacity: 0.95; }
+    15% { opacity: 0.87; }
+    20% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+body {
+    animation: flicker 15s infinite;
+}
+
+/* CRT scanlines effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), 
+        rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1000;
+    pointer-events: none;
+    background-size: 100% 2px, 3px 100%;
+    opacity: 0.3;
+}
+
+/* VHS tracking effect */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(transparent 95%, rgba(0, 30, 255, 0.05) 95%),
+        linear-gradient(85deg, transparent 95%, rgba(255, 0, 0, 0.03) 95%);
+    z-index: 1001;
+    pointer-events: none;
+    opacity: 0.2;
+    animation: vhsScan 12s linear infinite;
+}
+
+@keyframes vhsScan {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner, .logo {
+        width: 90%;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
