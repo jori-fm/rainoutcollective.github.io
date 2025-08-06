@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', async () => {
+        // Add the CSS styles dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            .format-icon {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: -15px auto 10px;
+                background: rgba(0,0,0,0.7);
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                z-index: 2;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            }
+            
+            .format-icon i {
+                color: var(--accent);
+                font-size: 12px;
+            }
+            
+            .release:hover .format-icon {
+                transform: scale(1.1);
+                background: rgba(100,150,255,0.3);
+            }
+            
+            .release {
+                padding: 15px 20px 20px;
+                position: relative;
+            }
+        `;
+        document.head.appendChild(style);
     try {
       // Load CSV data
       const response = await fetch('releases.csv');
