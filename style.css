@@ -1,11 +1,17 @@
-body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Georgia', serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+.parent-container {
+    overflow: visible;
+    height: auto;
 }
+
+body {
+    font-size: 14px;     /* Smaller text size */
+    max-width: 900px;    /* Prevents super wide layouts */
+    margin: 0 auto;
+    background-color: #000;   /* Dark background */
+    color: #fff;              /* White text */
+    font-family: Arial, sans-serif;
+}
+
 
 .banner {
     width: 80%;          /* Shrinks the banner */
@@ -16,9 +22,13 @@ body {
 }
 
 .logo {
-    width: 150px;
-    margin: 20px auto;
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
 }
+
 
 h1 {
     font-size: 3em;
