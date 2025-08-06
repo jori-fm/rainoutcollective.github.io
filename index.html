@@ -53,15 +53,18 @@
             height: auto;
             display: block;
             margin: 0 auto 30px;
+            /* Remove all glow/border effects: */
+            border: none !important;
+            box-shadow: none !important;
+            filter: none !important;
+            /* Ensure clean transparency: */
             background-color: transparent;
-            /* Remove border and add glow */
-            border: none;
-            filter: drop-shadow(0 0 15px rgba(100, 150, 255, 0.3));
-            transition: all 0.5s ease;
+            /* Smooth scaling: */
+            transition: transform 0.3s ease;
         }
         
         .banner:hover {
-            filter: drop-shadow(0 0 25px rgba(100, 150, 255, 0.5));
+            transform: scale(1.01); /* Subtle hover effect */
         }
         
         /* Logo styling - adjusted size */
@@ -166,6 +169,11 @@
             background: rgba(20, 20, 30, 0.3);
             border: 1px solid rgba(100, 150, 255, 0.1);
             border-radius: 2px;
+        }
+
+        .about h2 {
+            margin-top: 0; /* Removes extra space above "ABOUT US" */
+            padding-top: 0;
         }
         
         /* Release section */
@@ -443,11 +451,11 @@
             /* Format icons */
 .format-icon {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 10px; /* Reduced from 15px */
+    right: 10px; /* Reduced from 15px */
     background: rgba(0,0,0,0.7);
-    width: 30px;
-    height: 30px;
+    width: 25px; /* Reduced from 30px */
+    height: 25px; /* Reduced from 30px */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -457,7 +465,7 @@
 
 .format-icon i {
     color: var(--accent);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* Differentiate singles visually */
