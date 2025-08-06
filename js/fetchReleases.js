@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const style = document.createElement('style');
         style.textContent = `
             .format-icon {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Center initially */
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             
             .release:hover .format-icon {
-    transform: translateX(-50%) scale(1.1);
-    background: rgba(100,150,255,0.3);
-  }
+  transform: translateX(-50%) scale(1.1); /* Keep translateX */
+  background: rgba(100,150,255,0.3);
+}
             
             .release {
     position: relative;
