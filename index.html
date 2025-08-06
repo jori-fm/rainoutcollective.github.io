@@ -454,14 +454,17 @@
     justify-content: center;
     gap: 12px;
     margin-top: 15px;
-    padding-top: 10px;
+    /* Remove these lines that create the underscore: */
+    /* padding-top: 10px; */
+    /* border-top: 1px solid rgba(255,255,255,0.1); */
   }
   
   .streaming-link {
     font-size: 18px;
     transition: all 0.3s ease;
     opacity: 0.7;
-  }
+    display: inline-flex; /* Better alignment */
+}
   
   .streaming-link:hover {
     opacity: 1;
@@ -469,10 +472,19 @@
     filter: brightness(1.2); /* Brighter on hover */
   }
   
-  .streaming-link.spotify:hover { color: #1DB954; }
-  .streaming-link.apple:hover { color: #FC3C44; }
-  .streaming-link.youtube:hover { color: #FF0000; }
+  .streaming-link.spotify { color: #1DB954 !important; }
+  .streaming-link.apple { color: #FC3C44 !important; }
+  .streaming-link.youtube { color: #FF0000 !important; }
   
+  .streaming-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+.release .streaming-links a {
+    color: inherit !important;
+}
+
   /* Error state */
   .error {
     grid-column: 1/-1;
