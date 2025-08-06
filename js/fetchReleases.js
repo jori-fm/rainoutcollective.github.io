@@ -23,14 +23,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             
             .release:hover .format-icon {
-                transform: scale(1.1);
-                background: rgba(100,150,255,0.3);
-            }
+    background: rgba(100,150,255,0.3);
+    transform: translateX(-50%) scale(1.1);
+  }
             
             .release {
-                padding: 15px 20px 20px;
-                position: relative;
-            }
+    position: relative;
+    padding: 25px 20px 20px; /* Increased top padding */
+    overflow: visible; /* Ensures icon isn't clipped */
+  }
         `;
         document.head.appendChild(style);
     try {
