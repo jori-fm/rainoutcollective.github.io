@@ -27,6 +27,88 @@
                 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="n"><feTurbulence baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23n)" opacity="0.1"/></svg>');
         }
         
+        .loading-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            color: var(--accent);
+        }
+        
+        .loading-state i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-state {
+            color: #ff6b6b;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .more-button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .more-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(100, 150, 255, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .more-button:hover {
+            background: rgba(100, 150, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .more-button, .back-button {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .more-button:hover, .back-button:hover {
+            background: rgba(100, 150, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 150, 255, 0.2);
+        }
+
+        .full-releases {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0 40px;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 1rem;
+            background: rgba(100, 150, 255, 0.1);
+        }
+        
+        .back-button:hover {
+            color: var(--text);
+            transform: translateX(-5px);
+        }
+        
+        /* For the full releases page */
+        .full-releases-page h1 {
+            margin-bottom: 10px;
+        }
+
         .format-icon {
             position: absolute;
             top: -15px;
@@ -512,49 +594,4 @@
             }
         }
         
-        .more-button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
         
-        .more-button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: rgba(100, 150, 255, 0.2);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            border-radius: 2px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .more-button:hover {
-            background: rgba(100, 150, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .full-releases {
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px auto;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin: 20px 0 40px;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .back-button:hover {
-            color: var(--text);
-            transform: translateX(-5px);
-        }
-        
-        /* For the full releases page */
-        .full-releases-page h1 {
-            margin-bottom: 10px;
-        }

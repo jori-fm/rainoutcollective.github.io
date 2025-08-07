@@ -1,28 +1,44 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    // Determine if we're on the releases page or homepage
-    const isReleasesPage = document.querySelector('.full-releases');
-    const limit = isReleasesPage ? Infinity : 3; // Show 3 on homepage, all on releases page
-    const grid = isReleasesPage ? document.querySelector('.full-releases') : document.querySelector('.release-grid');
+    // More reliable page detection
+    const isReleasesPage = document.querySelector('.full-releases') !== null;
+    const limit = isReleasesPage ? Infinity : 3;
+    const grid = isReleasesPage ? 
+        document.querySelector('.full-releases') : 
+        document.querySelector('.release-grid');
 
-    // Add loading state
-    grid.classList.add('loading');
+    // Better loading state
+    grid.innerHTML = `
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading releases...</p>
+        </div>
+    `;
 
     try {
         // Load CSV data
         const response = await fetch('releases.csv');
-        if (!response.ok) throw new Error('Failed to load releases');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const csvData = await response.text();
         
         // Parse CSV
-        const { data } = Papa.parse(csvData, {
+        const { data, errors } = Papa.parse(csvData, {
             header: true,
-            skipEmptyLines: true
+            skipEmptyLines: true,
+            dynamicTyping: true
         });
+
+        if (errors.length > 0) {
+            console.warn('CSV parsing warnings:', errors);
+        }
 
         // Process and sort releases (newest first)
         const sortedReleases = data
-            .filter(release => release['Catalog#'])
-            .sort((a, b) => b['Release Date'].localeCompare(a['Release Date']));
+            .filter(release => release['Catalog#'] && release['Cover JPG'])
+            .sort((a, b) => new Date(b['Release Date']) - new Date(a['Release Date']));
+
+        if (sortedReleases.length === 0) {
+            throw new Error('No valid releases found in CSV');
+        }
 
         // Render releases
         renderReleases(sortedReleases.slice(0, limit), grid);
@@ -30,13 +46,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error loading releases:', error);
         grid.innerHTML = `
-            <div class="error">
-                <i class="fas fa-cloud-rain"></i>
-                <p>Releases currently unavailable</p>
+            <div class="error-state">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Failed to load releases. ${error.message}</p>
             </div>
         `;
-    } finally {
-        grid.classList.remove('loading');
     }
 });
 
