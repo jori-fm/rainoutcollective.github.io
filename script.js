@@ -3,35 +3,45 @@ function createRain() {
     const existingRain = document.querySelector('.rain');
     if (existingRain) existingRain.remove();
     
+    // Don't create rain on mobile
+    if (/Mobi|Android/i.test(navigator.userAgent)) return;
+    
     const rainContainer = document.createElement('div');
     rainContainer.className = 'rain';
     
-    // Create more drops with better randomization
-    for (let i = 0; i < 200; i++) { // Increased number of drops
+    // Create more dynamic rain
+    const rainIntensity = 150; // Number of drops
+    for (let i = 0; i < rainIntensity; i++) {
         const drop = document.createElement('div');
         drop.className = 'drop';
         
         // Random properties
         const left = Math.random() * 100;
-        const height = Math.random() * 25 + 10; // Longer drops
-        const opacity = Math.random() * 0.6 + 0.2; // More visible
-        const duration = Math.random() * 0.8 + 0.3; // Vary speeds more
-        const delay = Math.random() * 10; // Wider delay range
+        const height = Math.random() * 20 + 10;
+        const opacity = Math.random() * 0.4 + 0.2;
+        const duration = Math.random() * 0.5 + 0.5;
+        const delay = Math.random() * 5;
+        const blur = Math.random() * 2;
         
-        drop.style.left = `${left}%`;
-        drop.style.height = `${height}px`;
-        drop.style.opacity = opacity;
-        drop.style.animationDuration = `${duration}s`;
-        drop.style.animationDelay = `${delay}s`;
-        
-        // Add slight horizontal movement
-        drop.style.transform = `translateX(${Math.random() * 10 - 5}px)`;
+        drop.style.cssText = `
+            left: ${left}%;
+            height: ${height}px;
+            opacity: ${opacity};
+            animation-duration: ${duration}s;
+            animation-delay: ${delay}s;
+            filter: blur(${blur}px);
+            transform: translateX(${Math.random() * 10 - 5}px);
+        `;
         
         rainContainer.appendChild(drop);
     }
     
-    document.body.appendChild(rainContainer); // Append to body
+    document.body.appendChild(rainContainer);
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    createRain(); // Always try to create rain
   
   // Existing hover effects (keep these)
   function setupReleaseHoverEffects() {
@@ -45,7 +55,7 @@ function createRain() {
     });
   }
   
-  document.addEventListener('DOMContentLoaded', () => {
+  // Remove the duplicate DOMContentLoaded listener
     // Create rain effect (only on desktop)
     if (!/Mobi|Android/i.test(navigator.userAgent)) {
         createRain();

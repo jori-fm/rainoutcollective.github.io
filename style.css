@@ -568,23 +568,21 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 1; /* Should be below content (z-index: 2) but above background */
             overflow: hidden;
-            display: block !important; /* Force display */
         }
-
         .drop {
             position: absolute;
             bottom: 100%;
             width: 1px;
             background: linear-gradient(to bottom, transparent, var(--accent));
             animation: fall linear infinite;
-            will-change: transform; /* Improve performance */
+            will-change: transform;
         }
-
+        
         @keyframes fall {
             to {
-                transform: translateY(100vh) translateX(5px); /* Add slight diagonal movement */
+                transform: translateY(100vh);
             }
         }
 
