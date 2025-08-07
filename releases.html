@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Releases | RAINOUT collective.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/banner.png" alt="RAINOUT collective banner" class="banner">
+        </header>
+        
+        <main>
+            <img src="assets/umbrella.png" alt="RAINOUT umbrella logo" class="logo">
+            
+            <h1>ALL RELEASES</h1>
+            <a href="index.html" class="back-button">← Back to Home</a>
+            
+            <div class="releases">
+                <div class="release-grid full-releases"><!-- Filled from CSV --></div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="social-links">
+                <a href="https://x.com/RAINOUT_co" title="Twitter" target="_blank"><span class="iconify" data-icon="mdi:twitter"></span></a>
+                <a href="https://www.instagram.com/rainout.co/" title="Instagram" target="_blank"><span class="iconify" data-icon="mdi:instagram"></span></a>
+                <a href="https://bsky.app/profile/rainout.bsky.social" title="Bluesky" target="_blank"><span class="iconify" data-icon="simple-icons:bluesky"></span></a>
+            </div>
+            <p class="copyright">© 2025 RAINOUT collective. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script src="js/fetchReleases.js"></script>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+</body>
+</html>

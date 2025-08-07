@@ -1,124 +1,98 @@
 document.addEventListener('DOMContentLoaded', async () => {
-        // Add the CSS styles dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            .format-icon {
-    position: absolute;
-    top: -12px; /* Half outside the card */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 20; /* Higher than cover image */
-    transition: all 0.3s ease;
-    border: 1px solid var(--accent);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
+    // Determine if we're on the releases page or homepage
+    const isReleasesPage = document.querySelector('.full-releases');
+    const limit = isReleasesPage ? Infinity : 3; // Show 3 on homepage, all on releases page
+    const grid = isReleasesPage ? document.querySelector('.full-releases') : document.querySelector('.release-grid');
 
-  .format-icon i {
-    color: var(--accent);
-    font-size: 12px;
-  }
+    // Add loading state
+    grid.classList.add('loading');
 
-  .release:hover .format-icon {
-    transform: translateX(-50%) scale(1.15);
-    background: rgba(100,150,255,0.5);
-    box-shadow: 0 0 15px rgba(100,150,255,0.3);
-  }
-
-  .release {
-    position: relative;
-    padding-top: 25px; /* Space for icon */
-    overflow: visible;
-  }
-
-  .release img {
-    position: relative;
-    z-index: 10; /* Below icon but above card */
-  }
-        `;
-        document.head.appendChild(style);
     try {
-      // Load CSV data
-      const response = await fetch('releases.csv');
-      if (!response.ok) throw new Error('Failed to load releases');
-      const csvData = await response.text();
-      
-      // Parse CSV
-      const { data } = Papa.parse(csvData, {
-        header: true,
-        skipEmptyLines: true
-      });
-  
-      // Process and sort releases (newest first)
-      const sortedReleases = data
-  .filter(release => release['Catalog#'])
-  .sort((a, b) => {
-    // Simple YYYY-MM-DD string comparison (no Date objects)
-    return b['Release Date'].localeCompare(a['Release Date']);
-  });
+        // Load CSV data
+        const response = await fetch('releases.csv');
+        if (!response.ok) throw new Error('Failed to load releases');
+        const csvData = await response.text();
+        
+        // Parse CSV
+        const { data } = Papa.parse(csvData, {
+            header: true,
+            skipEmptyLines: true
+        });
 
-  
-  
-      // Render top 3 releases
-      renderReleases(sortedReleases.slice(0, 3));
-      
+        // Process and sort releases (newest first)
+        const sortedReleases = data
+            .filter(release => release['Catalog#'])
+            .sort((a, b) => b['Release Date'].localeCompare(a['Release Date']));
+
+        // Render releases
+        renderReleases(sortedReleases.slice(0, limit), grid);
+
     } catch (error) {
-      console.error('Error loading releases:', error);
-      document.querySelector('.release-grid').innerHTML = `
-        <div class="error">
-          <i class="fas fa-cloud-rain"></i>
-          <p>Releases currently unavailable</p>
-        </div>
-      `;
+        console.error('Error loading releases:', error);
+        grid.innerHTML = `
+            <div class="error">
+                <i class="fas fa-cloud-rain"></i>
+                <p>Releases currently unavailable</p>
+            </div>
+        `;
+    } finally {
+        grid.classList.remove('loading');
     }
-  });
-  
-  function renderReleases(releases) {
-    const grid = document.querySelector('.release-grid');
+});
+
+function renderReleases(releases, grid) {
     grid.innerHTML = releases.map(release => `
-      <div class="release ${release['Catalog#'].includes('S') ? 'single' : 'album'}">
-        <div class="format-icon">
-          <i class="fas ${release['Catalog#'].includes('S') ? 'fa-music' : 'fa-compact-disc'}"></i>
+        <div class="release ${release['Catalog#'].includes('S') ? 'single' : 'album'}">
+            <div class="format-icon">
+                <i class="fas ${release['Catalog#'].includes('S') ? 'fa-music' : 'fa-compact-disc'}"></i>
+            </div>
+            <img src="${release['Cover JPG']}" 
+                 alt="${release.Title}" 
+                 loading="lazy"
+                 onerror="this.src='assets/album-art/placeholder.jpg'">
+            <div class="info">
+                <div class="title">${release.Title}</div>
+                <div class="artist">${release.Artist}</div>
+                <div class="catalog">${release['Catalog#']}</div>
+                <div class="date">${formatDate(release['Release Date'])}</div>
+            </div>
+            <div class="streaming-links">
+                ${createStreamingLink(release.Spotify, 'spotify', 'fa-spotify')}
+                ${createStreamingLink(release['Apple Music'], 'apple', 'fa-apple')}
+                ${createStreamingLink(release.Youtube, 'youtube', 'fa-youtube')}
+            </div>
         </div>
-        <img src="${release['Cover JPG']}" 
-             alt="${release.Title}" 
-             loading="lazy"
-             onerror="this.src='assets/album-art/placeholder.jpg'">
-        <div class="info">
-          <div class="title">${release.Title}</div>
-          <div class="artist">${release.Artist}</div>
-          <div class="catalog">${release['Catalog#']}</div>
-          <div class="date">${formatDate(release['Release Date'])}</div>
-        </div>
-        <div class="streaming-links">
-          ${createStreamingLink(release.Spotify, 'spotify', 'fa-spotify')}
-          ${createStreamingLink(release['Apple Music'], 'apple', 'fa-apple')}
-          ${createStreamingLink(release.Youtube, 'youtube', 'fa-youtube')}
-        </div>
-      </div>
     `).join('');
-  }
-  
-  function formatDate(dateString) {
-    // Split the ISO date (YYYY-MM-DD) and format directly
+
+    // Reattach hover effects after rendering
+    setupReleaseHoverEffects();
+}
+
+function formatDate(dateString) {
+    if (!dateString) return '';
     const [year, month, day] = dateString.split('-');
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
-  }
-  
-  function createStreamingLink(url, platform, icon) {
-    return url ? `
-      <a href="${url}" class="streaming-link ${platform}" target="_blank" rel="noopener">
-        <i class="fab ${icon}"></i>
-      </a>
-    ` : '';
-  }
+}
 
-  console.log(sortedReleases.map(r => `${r['Catalog#']}: ${r['Release Date']} -> ${formatDate(r['Release Date'])}`));
+function createStreamingLink(url, platform, icon) {
+    return url ? `
+        <a href="${url}" class="streaming-link ${platform}" target="_blank" rel="noopener">
+            <i class="fab ${icon}"></i>
+        </a>
+    ` : '';
+}
+
+function setupReleaseHoverEffects() {
+    document.querySelectorAll('.release').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-5px)';
+            item.style.animation = 'flicker 0.8s';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'none';
+            item.style.animation = 'none';
+        });
+    });
+}

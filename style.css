@@ -512,3 +512,49 @@
             }
         }
         
+        .more-button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .more-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(100, 150, 255, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .more-button:hover {
+            background: rgba(100, 150, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .full-releases {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0 40px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: var(--text);
+            transform: translateX(-5px);
+        }
+        
+        /* For the full releases page */
+        .full-releases-page h1 {
+            margin-bottom: 10px;
+        }
