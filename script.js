@@ -1,70 +1,56 @@
+// Rain Effect Function (keep at top)
 function createRain() {
     // Remove existing rain if any
     const existingRain = document.querySelector('.rain');
     if (existingRain) existingRain.remove();
     
-    // Don't create rain on mobile
+    // Don't create on mobile
     if (/Mobi|Android/i.test(navigator.userAgent)) return;
     
     const rainContainer = document.createElement('div');
     rainContainer.className = 'rain';
     
-    // Create more dynamic rain
-    const rainIntensity = 150; // Number of drops
-    for (let i = 0; i < rainIntensity; i++) {
+    // Create drops (optimized count for performance)
+    for (let i = 0; i < 120; i++) {
         const drop = document.createElement('div');
         drop.className = 'drop';
         
-        // Random properties
-        const left = Math.random() * 100;
-        const height = Math.random() * 20 + 10;
-        const opacity = Math.random() * 0.4 + 0.2;
-        const duration = Math.random() * 0.5 + 0.5;
-        const delay = Math.random() * 5;
-        const blur = Math.random() * 2;
-        
         drop.style.cssText = `
-            left: ${left}%;
-            height: ${height}px;
-            opacity: ${opacity};
-            animation-duration: ${duration}s;
-            animation-delay: ${delay}s;
-            filter: blur(${blur}px);
-            transform: translateX(${Math.random() * 10 - 5}px);
+            left: ${Math.random() * 100}%;
+            height: ${15 + Math.random() * 15}px;
+            opacity: ${0.2 + Math.random() * 0.3};
+            animation-duration: ${0.7 + Math.random() * 0.8}s;
+            animation-delay: ${Math.random() * 5}s;
+            filter: blur(${Math.random()}px);
         `;
         
         rainContainer.appendChild(drop);
     }
     
-    document.body.appendChild(rainContainer);
+    document.body.prepend(rainContainer); // Add at start of body
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    createRain(); // Always try to create rain
-  
-  // Existing hover effects (keep these)
-  function setupReleaseHoverEffects() {
+// Existing hover effects
+function setupReleaseHoverEffects() {
     document.querySelectorAll('.release').forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-5px)';
-      });
-      item.addEventListener('mouseleave', () => {
-        item.style.transform = 'none';
-      });
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-5px)';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'none';
+        });
     });
-  }
-  
-  // Remove the duplicate DOMContentLoaded listener
-    // Create rain effect (only on desktop)
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        createRain();
-    }
+}
+
+// DOM Content Loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Create rain first
+    createRain();
     
-    // Existing effects
+    // Then setup other effects
     setupReleaseHoverEffects();
     
-    // Add flickering effect to releases
+    // Flicker effect
     document.querySelectorAll('.release').forEach(release => {
         release.addEventListener('mouseenter', () => {
             release.style.animation = 'flicker 0.8s';
@@ -72,5 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
         release.addEventListener('mouseleave', () => {
             release.style.animation = 'none';
         });
+    });
+    
+    // Bonus: Recreate rain on resize to prevent gaps
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(createRain, 200);
     });
 });

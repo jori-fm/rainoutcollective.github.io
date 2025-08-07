@@ -591,5 +591,16 @@
                 display: none !important;
             }
         }
+
+        /* Rain Debug (temporary) */
+.rain {
+    background: rgba(255,0,0,0.1) !important; /* Remove after testing */
+    border: 1px dashed red !important; /* Remove after testing */
+}
+
+.drop {
+    background: #6699ff !important;
+    width: 1.5px !important;
+}
         
         
