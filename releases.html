@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="dev-banner">
-        Page is still under development. <span>#Believethekids</span>
+        Website is still under development. <span>#Believethekids</span>
       </div>
     <div class="container">
         <main>
@@ -37,5 +37,30 @@
     <script src="js/script.js"></script>
     <script src="js/fetchReleases.js"></script>
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const rainContainer = document.getElementById("rain");
+          const dropCount = 100; // You can change this for more/less rain
+      
+          for (let i = 0; i < dropCount; i++) {
+            const drop = document.createElement("div");
+            drop.classList.add("drop");
+      
+            // Random horizontal position
+            drop.style.left = `${Math.random() * 100}vw`;
+      
+            // Random height
+            drop.style.height = `${Math.random() * 20 + 10}px`;
+      
+            // Random animation duration
+            drop.style.animationDuration = `${Math.random() * 2 + 2}s`;
+      
+            // Random animation delay
+            drop.style.animationDelay = `${Math.random() * 5}s`;
+      
+            rainContainer.appendChild(drop);
+          }
+        });
+      </script>
 </body>
 </html>
