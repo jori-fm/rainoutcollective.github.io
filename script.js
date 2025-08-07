@@ -44,7 +44,7 @@ function setupReleaseHoverEffects() {
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Create rain first
+    // Create rain - the function already has mobile detection
     createRain();
     
     // Then setup other effects

@@ -142,12 +142,6 @@
 <script src="js/script.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Create rain effect (only on desktop)
-        if (!/Mobi|Android/i.test(navigator.userAgent)) {
-            createRain();
-        }
-        
-        // Your other effects...
         const banner = document.querySelector('.banner');
         setInterval(() => {
             banner.style.boxShadow = `0 0 ${15 + Math.random() * 10}px rgba(100, 150, 255, ${0.1 + Math.random() * 0.1})`;

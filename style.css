@@ -568,9 +568,10 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1; /* Should be below content (z-index: 2) but above background */
+            z-index: 1;
             overflow: hidden;
         }
+        
         .drop {
             position: absolute;
             bottom: 100%;
@@ -585,22 +586,3 @@
                 transform: translateY(100vh);
             }
         }
-
-        @media (max-width: 768px) {
-            .rain {
-                display: none !important;
-            }
-        }
-
-        /* Rain Debug (temporary) */
-.rain {
-    background: rgba(255,0,0,0.1) !important; /* Remove after testing */
-    border: 1px dashed red !important; /* Remove after testing */
-}
-
-.drop {
-    background: #6699ff !important;
-    width: 1.5px !important;
-}
-        
-        
