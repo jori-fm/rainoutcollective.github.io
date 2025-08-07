@@ -149,5 +149,34 @@
     });
 </script>
 <script src="js/fetchReleases.js"></script>
+
+<div class="rain" id="rain"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const rainContainer = document.getElementById("rain");
+    const dropCount = 100; // You can change this for more/less rain
+
+    for (let i = 0; i < dropCount; i++) {
+      const drop = document.createElement("div");
+      drop.classList.add("drop");
+
+      // Random horizontal position
+      drop.style.left = `${Math.random() * 100}vw`;
+
+      // Random height
+      drop.style.height = `${Math.random() * 20 + 10}px`;
+
+      // Random animation duration
+      drop.style.animationDuration = `${Math.random() * 2 + 2}s`;
+
+      // Random animation delay
+      drop.style.animationDelay = `${Math.random() * 5}s`;
+
+      rainContainer.appendChild(drop);
+    }
+  });
+</script>
+
 </body>
 </html>
