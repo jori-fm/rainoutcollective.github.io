@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
       download: true,
       header: true,
       complete: function (results) {
-        const releases = results.data;
+        const releases = results.data.;
         const container = document.querySelector('.release-grid');
         if (!container) return;
   
@@ -15,13 +15,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   
+  
+  
+  function getFormatIcon(catalog) {
+    if (!catalog) return "";
+    const isSingle = catalog.toUpperCase().includes("S");
+    return isSingle 
+      ? '<div class="format-icon"><i class="fas fa-record-vinyl"></i></div>'
+      : '<div class="format-icon"><i class="fas fa-record-vinyl"></i></div>';
+  }
+  
+  
   function createReleaseCard(release) {
     const card = document.createElement('div');
     card.className = 'release';
   
+    const formatIcon = getFormatIcon(release["Catalog#"]);
+  
     card.innerHTML = `
-      <div class="format-icon">${release["Format"] || ""}</div>
-      <img src="assets/album-art/${release["Cover JPG"]}" alt="${release["Title"]}">
+      ${formatIcon}
+      <img src="assets/album-art/${release["Catalog#"].toLowerCase() + '.jpg'}" alt="${release["Title"]}">
       <div class="info">
         <div class="title">${release["Title"]}</div>
         <div class="artist">${release["Artist"]}</div>
@@ -36,4 +49,5 @@ document.addEventListener('DOMContentLoaded', function () {
   
     return card;
   }
+  
   
