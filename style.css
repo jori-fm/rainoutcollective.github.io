@@ -655,7 +655,12 @@
           }
 
           .artist-releases {
+            display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
             margin-top: 60px;
+            justify-content: center;
           }
           
           .release-scroll {
