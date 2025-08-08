@@ -20,10 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         card.innerHTML = `
           <div class="format-icon"><i class="fas ${icon}"></i></div>
-          <img src="assets/album-art/${imageName}.jpg" alt="${release["Title"]}">
+          <img src="../assets/album-art/${imageName}.jpg" alt="${release["Title"]}">
           <div class="info">
             <div class="title">${release["Title"]}</div>
-            <div class="artist">${displayArtist}</div>
             <div class="catalog">${release["Catalog#"]}</div>
             <div class="streaming-links">
               ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}
