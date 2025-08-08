@@ -344,7 +344,7 @@
             will-change: transform;
             background: rgba(20, 20, 30, 0.5);
             border: 1px solid rgba(100, 150, 255, 0.1);
-            padding: 55px 20px 20px; /* was 40px */
+            padding: 60px 20px 20px;
             text-align: center;
             position: relative;
             overflow: visible;
@@ -659,6 +659,7 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 60px; /* Moved margin-top inside the class */
+            overflow: visible;
           }
           
           .release-scroll {
