@@ -30,7 +30,7 @@ function getFormatIcon(catalog) {
 
 function createReleaseCard(release) {
   const card = document.createElement('div');
-  card.className = 'release small';
+  card.className = 'release';
 
   const formatIcon = getFormatIcon(release["Catalog#"]);
   const imageCatalog = release["Catalog#"].replace(/S/gi, "").toLowerCase();
