@@ -350,7 +350,7 @@
             border-radius: 2px;
             -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .release::before {
@@ -388,6 +388,11 @@
         .release:hover img {
             filter: grayscale(0%) contrast(120%);
         }
+        .release:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(100, 150, 255, 0.15);
+          }
+          
         
         .release .info {
             padding: 10px 0;

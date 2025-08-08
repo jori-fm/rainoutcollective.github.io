@@ -1,9 +1,0 @@
-
-/* Hover pop-up effect */
-.release.hover-pop {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.release.hover-pop:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(100, 150, 255, 0.15);
-}
