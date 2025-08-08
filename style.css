@@ -415,9 +415,7 @@
             letter-spacing: 1px;
         }
 
-        .release-grid > .release {
-            transform: translateZ(0); /* Triggers GPU rendering for smoother animation */
-          }
+        .release-grid > .release { will-change: transform; }
           
 
         /* Artists section */
