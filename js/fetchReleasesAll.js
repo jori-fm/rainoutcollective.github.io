@@ -39,7 +39,7 @@ function asLocalDate(isoYmd) {
           <div class="info">
             <div class="title">${release['Title']}</div>
             <div class="artist">
-  <a href="artists/${release['Artist']}.html">
+  <a href="artists/${release['Artist']}">
     ${displayArtist}
   </a>
 </div>
