@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const scroller = document.getElementById('artist-releases');
   if (!scroller) return;
 
+  // put near the top
+function asLocalDate(isoYmd) {
+  const [y, m, d] = String(isoYmd).split('-').map(Number);
+  return new Date(y, m - 1, d); // local midnight
+}
+
+
   const artist = scroller.dataset.artist; // e.g., "smooch"
   if (!artist) return;
 
@@ -11,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // filter by artist, keep newest first
       const list = data
         .filter(r => String(r['Artist']).toLowerCase() === artist.toLowerCase())
-        .sort((a, b) => new Date(b['Release Date']) - new Date(a['Release Date']));
+        .sort((a, b) => asLocalDate(b['Release Date']) - asLocalDate(a['Release Date']));
 
       list.forEach(release => {
         const card = document.createElement('div');
@@ -29,7 +36,7 @@ const imgSrc = m
   : (release['Cover JPG'] ? (release['Cover JPG'].startsWith('/') ? release['Cover JPG'] : '/' + release['Cover JPG']) : '');
 
 
-        const d = new Date(release['Release Date']);
+  const d = asLocalDate(release['Release Date']);
         const niceDate = isNaN(d) ? release['Release Date']
                                   : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
 

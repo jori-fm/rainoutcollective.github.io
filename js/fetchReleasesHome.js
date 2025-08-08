@@ -2,13 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('release-grid');
   if (!container) return;
 
+  // put near the top
+function asLocalDate(isoYmd) {
+  const [y, m, d] = String(isoYmd).split('-').map(Number);
+  return new Date(y, m - 1, d); // local midnight
+}
+
+
   fetch('releases.json')
     .then(r => r.json())
     .then(data => {
       // sort newest → oldest by Release Date
-      const sorted = [...data].sort((a, b) =>
-        new Date(b['Release Date']) - new Date(a['Release Date'])
-      );
+      const sorted = [...data].sort((a, b) => asLocalDate(b['Release Date']) - asLocalDate(a['Release Date']));
 
       // show 4 most recent on the home page
       const latest = sorted.slice(0, 4);
@@ -26,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const imgSrc = release['Cover JPG'];
 
         // Pretty date, fallback to raw string if parsing fails
-        const d = new Date(release['Release Date']);
+        const d = asLocalDate(release['Release Date']);
         const niceDate = isNaN(d) ? release['Release Date']
                                   : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
 

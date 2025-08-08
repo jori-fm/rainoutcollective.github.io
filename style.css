@@ -700,6 +700,25 @@
       gap: 24px;
     }
   }
+
+  /* Home: keep latest releases from stretching too wide */
+.home .release-grid {
+    max-width: 1200px;   /* keeps rows reasonable */
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  
+  .home .release {
+    padding: 14px;
+  }
+  
+  .home .release img {
+    /* consistent square thumbs and less towering cards */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  
   
           
           

@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('release-grid');
   if (!grid) return;
 
+  // put near the top
+function asLocalDate(isoYmd) {
+  const [y, m, d] = String(isoYmd).split('-').map(Number);
+  return new Date(y, m - 1, d); // local midnight
+}
+
+
   // optional: show a temporary loading state
   grid.classList.add('loading');
 
@@ -11,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.classList.remove('loading');
 
       // newest → oldest
-      const sorted = [...data].sort((a, b) =>
-        new Date(b['Release Date']) - new Date(a['Release Date'])
-      );
+      const sorted = [...data].sort((a, b) => asLocalDate(b['Release Date']) - asLocalDate(a['Release Date']));
 
       sorted.forEach(release => {
         const card = document.createElement('div');
@@ -24,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const displayArtist = release['Artist'] === 'smooch' ? 'smooch.' : release['Artist'];
         const imgSrc = release['Cover JPG'];
 
-        const d = new Date(release['Release Date']);
+        const d = asLocalDate(release['Release Date']);
         const niceDate = isNaN(d) ? release['Release Date']
                                   : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
 
