@@ -388,7 +388,7 @@
             filter: grayscale(0%) contrast(120%);
         }
         .release:hover {
-            transform: translateY(-10px) scale(1.05);
+            transform: translateY(-8px) scale(1.04);
             box-shadow: 0 10px 20px rgba(100, 150, 255, 0.15);
           }
           
@@ -662,12 +662,12 @@
           
           .release-scroll {
             display: flex;
-            justify-content: center;
+            justify-content: center;       /* center the cards */
             align-items: flex-start;
             gap: 20px;
             overflow-x: auto;
-            overflow-y: visible; /* allow vertical content to overflow */
-            padding: 30px 10px 40px; /* more space vertically */
+            overflow-y: visible;           /* ← prevents top/bottom clipping */
+            padding: 60px 10px 48px;       /* ↑ add top space */
             scroll-snap-type: x mandatory;
             margin: 0 auto;
             max-width: 100%;
