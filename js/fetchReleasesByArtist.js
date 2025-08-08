@@ -38,7 +38,7 @@ fetch('../releases.csv')
         <img src="../assets/album-art/${imageName}.jpg" alt="${release.title}">
         <div class="info">
           <div class="title">${release.title}</div>
-          <div class="artist">${release.artist}</div>
+          <div class="artist">${release.artist === "smooch" ? "smooch." : release.artist}</div>
           <div class="catalog">${release.catalog}</div>
           <div class="streaming-links">
             ${release.spotify ? `<a href="${release.spotify}" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}

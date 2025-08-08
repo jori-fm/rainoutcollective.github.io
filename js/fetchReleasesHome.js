@@ -44,7 +44,7 @@ function createReleaseCard(release) {
     <img src="assets/album-art/${imageCatalog}.jpg" alt="${release["Title"]}">
     <div class="info">
       <div class="title">${release["Title"]}</div>
-      <div class="artist">${release["Artist"]}</div>
+      <div class="artist">${release["Artist"] === "smooch" ? "smooch." : release["Artist"]}</div>
       <div class="catalog">${release["Catalog#"]}</div>
       <div class="streaming-links">
         ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank" class="streaming-link spotify"><i class="fab fa-spotify"></i></a>` : ''}
