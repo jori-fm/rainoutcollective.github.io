@@ -653,6 +653,24 @@
             transform: scale(1.05);
             filter: grayscale(0%);
           }
+
+          .artist-releases {
+            margin-top: 60px;
+          }
+          
+          .release-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+          }
+          
+          .release-scroll .release {
+            flex: 0 0 250px;
+            scroll-snap-align: start;
+          }
+          
           
 
 
