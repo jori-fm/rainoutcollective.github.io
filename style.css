@@ -682,6 +682,25 @@
             scroll-snap-align: start;
           }
           
+          /* Force proper columns on bigger viewports */
+@media (min-width: 901px) {
+    .releases > .release-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      gap: 24px;
+      align-items: start;
+      justify-items: stretch;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .releases > .release-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
+      gap: 24px;
+    }
+  }
+  
           
           
 

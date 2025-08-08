@@ -20,7 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const isSingle = String(release['Catalog#']).toUpperCase().includes('S');
         const icon = isSingle ? 'fa-music' : 'fa-record-vinyl';
         const displayArtist = release['Artist'] === 'smooch' ? 'smooch.' : release['Artist'];
-        const imgSrc = release['Cover JPG'];
+        // Build cover path from the catalog#, e.g. "RAIN-008" or "RAIN-003S" -> "/assets/album-art/rain-008.jpg"
+const cat = String(release['Catalog#'] || '');
+const m = cat.match(/RAIN-(\d{3})/i);
+const imgSrc = m
+  ? `/assets/album-art/rain-${m[1]}.jpg`
+  // fallback to the JSON field if you ever need it (keeps working site-wide)
+  : (release['Cover JPG'] ? (release['Cover JPG'].startsWith('/') ? release['Cover JPG'] : '/' + release['Cover JPG']) : '');
+
 
         const d = new Date(release['Release Date']);
         const niceDate = isNaN(d) ? release['Release Date']
@@ -31,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${imgSrc}" alt="${release['Title']} cover">
           <div class="info">
             <div class="title">${release['Title']}</div>
-            <div class="artist">${displayArtist}</div>
             <div class="catalog">${release['Catalog#']} • ${niceDate}</div>
             <div class="streaming-links">
               ${release['Spotify'] ? `<a href="${release['Spotify']}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>` : ''}
