@@ -25,7 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function getFormatIcon(catalog) {
   if (!catalog) return "";
-  return '<div class="format-icon"><i class="fas fa-record-vinyl"></i></div>';
+
+  const isSingle = catalog.toUpperCase().includes("S");
+  const iconClass = isSingle ? "fa-music" : "fa-record-vinyl";
+
+  return `<div class="format-icon"><i class="fas ${iconClass}"></i></div>`;
 }
 
 function createReleaseCard(release) {
