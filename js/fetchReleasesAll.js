@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
       download: true,
       header: true,
       complete: function (results) {
-        const releases = results.data.;
+        const releases = results.data;
         const container = document.querySelector('.release-grid');
         if (!container) return;
   
