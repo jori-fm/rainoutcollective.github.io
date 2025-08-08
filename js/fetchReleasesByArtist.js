@@ -1,7 +1,9 @@
 const container = document.getElementById('artist-releases');
 if (!container) return;
 
-const targetArtist = container.dataset.artist.toLowerCase();
+const normalize = str => str.toLowerCase().replace(/\./g, '').trim();
+const targetArtist = normalize(container.dataset.artist);
+
 
 fetch('../releases.csv')
   .then(response => response.text())
@@ -19,7 +21,7 @@ fetch('../releases.csv')
         apple: columns[7]?.trim(),
         youtube: columns[8]?.trim(),
       }))
-      .filter(release => release.artist.toLowerCase() === targetArtist);
+      .filter(release => normalize(release.artist) === targetArtist);
 
     artistReleases.forEach(release => {
       const card = document.createElement('div');
