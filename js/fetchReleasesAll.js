@@ -1,37 +1,52 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('release-grid');
-  if (!container) return;
+  const grid = document.getElementById('release-grid');
+  if (!grid) return;
+
+  // optional: show a temporary loading state
+  grid.classList.add('loading');
 
   fetch('releases.json')
-    .then(response => response.json())
+    .then(r => r.json())
     .then(data => {
-      const latestReleases = data.reverse();
+      grid.classList.remove('loading');
 
-      latestReleases.forEach(release => {
+      // newest → oldest
+      const sorted = [...data].sort((a, b) =>
+        new Date(b['Release Date']) - new Date(a['Release Date'])
+      );
+
+      sorted.forEach(release => {
         const card = document.createElement('div');
         card.className = 'release';
 
-        const imageName = release["Catalog#"].toLowerCase().replace(/s/gi, '');
-        const icon = release["Catalog#"].toUpperCase().includes("S") ? "fa-music" : "fa-record-vinyl";
-        const displayArtist = release["Artist"] === "smooch" ? "smooch." : release["Artist"];
+        const isSingle = String(release['Catalog#']).toUpperCase().includes('S');
+        const icon = isSingle ? 'fa-music' : 'fa-record-vinyl';
+        const displayArtist = release['Artist'] === 'smooch' ? 'smooch.' : release['Artist'];
+        const imgSrc = release['Cover JPG'];
+
+        const d = new Date(release['Release Date']);
+        const niceDate = isNaN(d) ? release['Release Date']
+                                  : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
 
         card.innerHTML = `
           <div class="format-icon"><i class="fas ${icon}"></i></div>
-          <img src="assets/album-art/${imageName}.jpg" alt="${release["Title"]}">
+          <img src="${imgSrc}" alt="${release['Title']} cover">
           <div class="info">
-            <div class="title">${release["Title"]}</div>
+            <div class="title">${release['Title']}</div>
             <div class="artist">${displayArtist}</div>
-            <div class="catalog">${release["Catalog#"]}</div>
+            <div class="catalog">${release['Catalog#']} • ${niceDate}</div>
             <div class="streaming-links">
-              ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}
-              ${release["Apple Music"] ? `<a href="${release["Apple Music"]}" target="_blank"><i class="fab fa-apple"></i></a>` : ''}
-              ${release["Youtube"] ? `<a href="${release["Youtube"]}" target="_blank"><i class="fab fa-youtube"></i></a>` : ''}
+              ${release['Spotify'] ? `<a href="${release['Spotify']}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>` : ''}
+              ${release['Apple Music'] ? `<a href="${release['Apple Music']}" target="_blank" rel="noopener"><i class="fab fa-apple"></i></a>` : ''}
+              ${release['Youtube'] ? `<a href="${release['Youtube']}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>` : ''}
             </div>
           </div>
         `;
-
-        container.appendChild(card);
+        grid.appendChild(card);
       });
+    })
+    .catch(err => {
+      grid.classList.remove('loading');
+      console.error('Failed to load releases.json', err);
     });
 });

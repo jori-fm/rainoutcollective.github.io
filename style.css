@@ -335,10 +335,12 @@
         
         .release-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* was 280px */
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 300px)); /* tighter cards */
+            gap: 24px;
             margin-top: 40px;
-        }
+            justify-content: center;  /* ← centers the tracks */
+          }
+          
         
         .release {
             will-change: transform;
