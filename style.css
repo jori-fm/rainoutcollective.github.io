@@ -667,7 +667,8 @@
             align-items: flex-start;
             gap: 20px;
             overflow-x: auto;
-            padding: 10px 10px 20px;
+            overflow-y: visible; /* allow vertical content to overflow */
+            padding: 30px 10px 40px; /* more space vertically */
             scroll-snap-type: x mandatory;
             margin: 0 auto;
             max-width: 100%;
