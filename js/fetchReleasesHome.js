@@ -1,58 +1,33 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-  Papa.parse('releases.csv', {
-    download: true,
-    header: true,
-    complete: function (results) {
-      const releases = results.data
-        .filter(r => r["Catalog#"])
-        .sort((a, b) => {
-          const numA = parseInt(a["Catalog#"].replace(/\D/g, ''));
-          const numB = parseInt(b["Catalog#"].replace(/\D/g, ''));
-          return numB - numA; // latest first
-        })
-        .slice(0, 3);
+fetch('releases.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('release-grid');
+    const latestReleases = data.slice(-3).reverse(); // last 3 entries, newest first
 
-      const container = document.querySelector('.release-grid');
-      if (!container) return;
+    latestReleases.forEach(release => {
+      const card = document.createElement('div');
+      card.className = 'release';
 
-      releases.forEach(release => {
-        container.appendChild(createReleaseCard(release));
-      });
-    }
+      const imageName = release["Catalog#"].toLowerCase().replace(/s/gi, '');
+      const icon = release["Catalog#"].toUpperCase().includes("S") ? "fa-music" : "fa-record-vinyl";
+      const displayArtist = release["Artist"] === "smooch" ? "smooch." : release["Artist"];
+
+      card.innerHTML = `
+        <div class="format-icon"><i class="fas ${icon}"></i></div>
+        <img src="assets/album-art/${imageName}.jpg" alt="${release["Title"]}">
+        <div class="info">
+          <div class="title">${release["Title"]}</div>
+          <div class="artist">${displayArtist}</div>
+          <div class="catalog">${release["Catalog#"]}</div>
+          <div class="streaming-links">
+            ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}
+            ${release["Apple Music"] ? `<a href="${release["Apple Music"]}" target="_blank"><i class="fab fa-apple"></i></a>` : ''}
+            ${release["Youtube"] ? `<a href="${release["Youtube"]}" target="_blank"><i class="fab fa-youtube"></i></a>` : ''}
+          </div>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
   });
-});
-
-function getFormatIcon(catalog) {
-  if (!catalog) return "";
-
-  const isSingle = catalog.toUpperCase().includes("S");
-  const iconClass = isSingle ? "fa-music" : "fa-record-vinyl";
-
-  return `<div class="format-icon"><i class="fas ${iconClass}"></i></div>`;
-}
-
-function createReleaseCard(release) {
-  const card = document.createElement('div');
-  card.className = 'release';
-
-  const formatIcon = getFormatIcon(release["Catalog#"]);
-  const imageCatalog = release["Catalog#"].replace(/S/gi, "").toLowerCase();
-
-  card.innerHTML = `
-    ${formatIcon}
-    <img src="assets/album-art/${imageCatalog}.jpg" alt="${release["Title"]}">
-    <div class="info">
-      <div class="title">${release["Title"]}</div>
-      <div class="artist">${release["Artist"] === "smooch" ? "smooch." : release["Artist"]}</div>
-      <div class="catalog">${release["Catalog#"]}</div>
-      <div class="streaming-links">
-        ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank" class="streaming-link spotify"><i class="fab fa-spotify"></i></a>` : ''}
-        ${release["Apple Music"] ? `<a href="${release["Apple Music"]}" target="_blank" class="streaming-link apple"><i class="fab fa-apple"></i></a>` : ''}
-        ${release["Youtube"] ? `<a href="${release["Youtube"]}" target="_blank" class="streaming-link youtube"><i class="fab fa-youtube"></i></a>` : ''}
-      </div>
-    </div>
-  `;
-
-  return card;
-}
