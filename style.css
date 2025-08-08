@@ -419,7 +419,27 @@
             transform: translateZ(0); /* Triggers GPU rendering for smoother animation */
           }
           
-        
+          .release.small {
+            padding: 18px 14px 14px;
+          }
+          
+          .release.small img {
+            margin-bottom: 14px;
+          }
+          
+          .release.small .title {
+            font-size: 1.1rem;
+          }
+          
+          .release.small .artist {
+            font-size: 0.95rem;
+          }
+          
+          .release.small .catalog {
+            font-size: 0.8rem;
+          }
+          
+
         /* Artists section */
         .artists {
             margin: 80px 0 40px;
