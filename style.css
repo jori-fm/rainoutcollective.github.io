@@ -341,6 +341,7 @@
         }
         
         .release {
+            will-change: transform;
             background: rgba(20, 20, 30, 0.5);
             border: 1px solid rgba(100, 150, 255, 0.1);
             padding: 25px 20px 20px;
@@ -387,7 +388,7 @@
             filter: grayscale(0%) contrast(120%);
         }
         .release:hover {
-            transform: translateY(-5px) scale(1.03);
+            transform: translateY(-10px) scale(1.05);
             box-shadow: 0 10px 20px rgba(100, 150, 255, 0.15);
           }
           
