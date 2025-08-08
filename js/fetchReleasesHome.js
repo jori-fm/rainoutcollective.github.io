@@ -19,15 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
     card.className = 'release';
   
     card.innerHTML = `
-      <img src="assets/album-art/${release.cover}" alt="${release.title}">
+      <div class="format-icon">${release["format"] || ""}</div>
+      <img src="assets/album-art/${release["cover jpg"]}" alt="${release["title"]}">
       <div class="info">
-        <div class="title">${release.title}</div>
-        <div class="artist">${release.artist}</div>
-        <div class="catalog">${release.catalog}</div>
+        <div class="title">${release["title"]}</div>
+        <div class="artist">${release["artist"]}</div>
+        <div class="catalog">${release["catalog#"]}</div>
         <div class="streaming-links">
-          ${release.spotify ? `<a href="${release.spotify}" target="_blank" class="streaming-link spotify"><i class="fab fa-spotify"></i></a>` : ''}
-          ${release.apple ? `<a href="${release.apple}" target="_blank" class="streaming-link apple"><i class="fab fa-apple"></i></a>` : ''}
-          ${release.youtube ? `<a href="${release.youtube}" target="_blank" class="streaming-link youtube"><i class="fab fa-youtube"></i></a>` : ''}
+          ${release["spotify"] ? `<a href="${release["spotify"]}" target="_blank" class="streaming-link spotify"><i class="fab fa-spotify"></i></a>` : ''}
+          ${release["apple music"] ? `<a href="${release["apple music"]}" target="_blank" class="streaming-link apple"><i class="fab fa-apple"></i></a>` : ''}
+          ${release["youtube"] ? `<a href="${release["youtube"]}" target="_blank" class="streaming-link youtube"><i class="fab fa-youtube"></i></a>` : ''}
         </div>
       </div>
     `;
