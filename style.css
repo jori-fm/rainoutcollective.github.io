@@ -343,15 +343,13 @@
         .release {
             background: rgba(20, 20, 30, 0.5);
             border: 1px solid rgba(100, 150, 255, 0.1);
-            padding: 25px 20px 20px; /* Increased top padding */
+            padding: 25px 20px 20px;
             text-align: center;
             position: relative;
-            overflow: visible; /* Ensures icon isn't clipped */
+            overflow: visible;
             border-radius: 2px;
-            -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
         
         .release::before {
             content: "";
@@ -415,6 +413,11 @@
             color: #888;
             letter-spacing: 1px;
         }
+
+        .release-grid > .release {
+            transform: translateZ(0); /* Triggers GPU rendering for smoother animation */
+          }
+          
         
         /* Artists section */
         .artists {
