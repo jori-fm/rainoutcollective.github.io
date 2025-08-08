@@ -114,6 +114,7 @@
         }
 
         .full-releases {
+            display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 30px;
             margin: 40px auto;
@@ -701,23 +702,46 @@
     }
   }
 
-  /* Home: keep latest releases from stretching too wide */
-.home .release-grid {
-    max-width: 1200px;   /* keeps rows reasonable */
-    margin: 0 auto;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  /* === Homepage releases: 4 per row, smaller cards === */
+.home .releases .release-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr)); /* 4 columns */
     gap: 16px;
+    max-width: 1280px;    /* keeps the row from getting huge */
+    margin: 0 auto;       /* centers the whole grid */
+    align-items: start;   /* keeps tops aligned when heights differ */
   }
   
   .home .release {
-    padding: 14px;
+    padding: 16px 12px 12px;   /* tighter cards */
   }
   
   .home .release img {
-    /* consistent square thumbs and less towering cards */
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
+  
+  /* tablet: 3 per row */
+  @media (max-width: 1100px) {
+    .home .releases .release-grid {
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+  }
+  
+  /* mobile landscape: 2 per row */
+  @media (max-width: 800px) {
+    .home .releases .release-grid {
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+  }
+  
+  /* mobile: 1 per row */
+  @media (max-width: 520px) {
+    .home .releases .release-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
   
   
           
