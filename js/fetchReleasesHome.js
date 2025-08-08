@@ -1,33 +1,37 @@
 
-fetch('releases.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('release-grid');
-    const latestReleases = data.slice(-3).reverse(); // last 3 entries, newest first
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('release-grid');
+  if (!container) return;
 
-    latestReleases.forEach(release => {
-      const card = document.createElement('div');
-      card.className = 'release';
+  fetch('releases.json')
+    .then(response => response.json())
+    .then(data => {
+      const latestReleases = data.slice(-3).reverse();
 
-      const imageName = release["Catalog#"].toLowerCase().replace(/s/gi, '');
-      const icon = release["Catalog#"].toUpperCase().includes("S") ? "fa-music" : "fa-record-vinyl";
-      const displayArtist = release["Artist"] === "smooch" ? "smooch." : release["Artist"];
+      latestReleases.forEach(release => {
+        const card = document.createElement('div');
+        card.className = 'release';
 
-      card.innerHTML = `
-        <div class="format-icon"><i class="fas ${icon}"></i></div>
-        <img src="assets/album-art/${imageName}.jpg" alt="${release["Title"]}">
-        <div class="info">
-          <div class="title">${release["Title"]}</div>
-          <div class="artist">${displayArtist}</div>
-          <div class="catalog">${release["Catalog#"]}</div>
-          <div class="streaming-links">
-            ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}
-            ${release["Apple Music"] ? `<a href="${release["Apple Music"]}" target="_blank"><i class="fab fa-apple"></i></a>` : ''}
-            ${release["Youtube"] ? `<a href="${release["Youtube"]}" target="_blank"><i class="fab fa-youtube"></i></a>` : ''}
+        const imageName = release["Catalog#"].toLowerCase().replace(/s/gi, '');
+        const icon = release["Catalog#"].toUpperCase().includes("S") ? "fa-music" : "fa-record-vinyl";
+        const displayArtist = release["Artist"] === "smooch" ? "smooch." : release["Artist"];
+
+        card.innerHTML = `
+          <div class="format-icon"><i class="fas ${icon}"></i></div>
+          <img src="assets/album-art/${imageName}.jpg" alt="${release["Title"]}">
+          <div class="info">
+            <div class="title">${release["Title"]}</div>
+            <div class="artist">${displayArtist}</div>
+            <div class="catalog">${release["Catalog#"]}</div>
+            <div class="streaming-links">
+              ${release["Spotify"] ? `<a href="${release["Spotify"]}" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}
+              ${release["Apple Music"] ? `<a href="${release["Apple Music"]}" target="_blank"><i class="fab fa-apple"></i></a>` : ''}
+              ${release["Youtube"] ? `<a href="${release["Youtube"]}" target="_blank"><i class="fab fa-youtube"></i></a>` : ''}
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-      container.appendChild(card);
+        container.appendChild(card);
+      });
     });
-  });
+});
