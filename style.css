@@ -335,8 +335,8 @@
         
         .release-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* was 280px */
+            gap: 20px;
             margin-top: 40px;
         }
         
@@ -344,7 +344,7 @@
             will-change: transform;
             background: rgba(20, 20, 30, 0.5);
             border: 1px solid rgba(100, 150, 255, 0.1);
-            padding: 60px 20px 20px;
+            padding: 40px 15px 15px; /* was 60px 20px 20px */
             text-align: center;
             position: relative;
             overflow: visible;
