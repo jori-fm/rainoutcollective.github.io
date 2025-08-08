@@ -434,16 +434,20 @@
         }
         
         .artist {
-            flex: 0 0 150px; /* Don't grow, don't shrink, base width 150px */
-    text-align: center;
-    padding: 20px 10px;
-    transition: all 0.3s ease;
-        }
+            flex: 0 0 150px;
+            text-align: center;
+            padding: 20px 10px;
+            transition: all 0.3s ease;
+            text-decoration: none; /* remove underline */
+            color: inherit;         /* keep text color */
+            border-radius: 2px;
+          }
         
         .artist:hover {
             background: rgba(30, 30, 45, 0.5);
-            transform: translateY(-5px);
-        }
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(100, 150, 255, 0.1);
+          }
         
         .artist img {
             width: 100px;
