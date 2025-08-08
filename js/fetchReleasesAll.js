@@ -38,7 +38,12 @@ function asLocalDate(isoYmd) {
           <img src="${imgSrc}" alt="${release['Title']} cover">
           <div class="info">
             <div class="title">${release['Title']}</div>
-            <div class="artist">${displayArtist}</div>
+            <div class="artist">
+  <a href="artists/${release['Artist']}.html">
+    ${displayArtist}
+  </a>
+</div>
+
             <div class="catalog">${release['Catalog#']} • ${niceDate}</div>
             <div class="streaming-links">
               ${release['Spotify'] ? `<a href="${release['Spotify']}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>` : ''}
