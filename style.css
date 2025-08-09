@@ -912,6 +912,30 @@ body {
     body.nav-open .site-nav .nav-links { display: flex; }
   }
   
+  /* Featured Artists: 4 per row on home, center last row */
+.home .artists .artist-grid {
+    display: grid;                      /* override previous flex */
+    grid-template-columns: repeat(4, 150px);
+    gap: 24px;
+    justify-content: center;            /* centers the whole grid block */
+  }
+  
+  .home .artists .artist {
+    width: 150px;                       /* ignore old flex-basis */
+    flex: none;
+  }
+  
+  /* responsive fallbacks */
+  @media (max-width: 1100px) {
+    .home .artists .artist-grid { grid-template-columns: repeat(3, 150px); }
+  }
+  @media (max-width: 800px) {
+    .home .artists .artist-grid { grid-template-columns: repeat(2, 150px); }
+  }
+  @media (max-width: 520px) {
+    .home .artists .artist-grid { grid-template-columns: 150px; }
+  }
+  
 
   
   
