@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Player — RAINOUT collective.</title>
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="player-page">
+
+  <!-- your site nav can stay exactly as you already have it -->
+  <header class="site-nav">
+    <a class="brand" href="/"><img src="/assets/banner.png" alt="RAINOUT collective." /></a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="/" data-match="/">Home</a>
+      <a href="/releases" data-match="/releases">Releases</a>
+      <a href="/player" data-match="/player">Player</a>
+      <a href="/about" data-match="/about">About Us</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>RAINOUT Player</h2>
+    <div id="releaseList" class="ap-release-list"></div>
+  </main>
+
+  <!-- Bottom mini player -->
+  <div class="ap-nowbar" id="nowbar" hidden>
+    <div class="ap-nowbar-inner">
+      <img id="apCover" alt="" />
+      <div class="ap-meta">
+        <div id="apTitle" class="ap-title">—</div>
+        <div id="apSub" class="ap-sub">—</div>
+      </div>
+
+      <button id="apPlay" class="ap-btn" aria-label="Play/Pause">►</button>
+
+      <div class="ap-progress">
+        <span id="apCurrent">0:00</span>
+        <input id="apSeek" type="range" min="0" max="1000" value="0" />
+        <span id="apDuration">0:00</span>
+      </div>
+
+      <div class="ap-vol">
+        <span>🔊</span>
+        <input id="apVolume" type="range" min="0" max="1" step="0.01" value="0.9" />
+      </div>
+    </div>
+    <audio id="apAudio" preload="metadata"></audio>
+  </div>
+
+  <script src="/script.js" defer></script>
+  <script src="/js/audio-player.js" defer></script>
+</body>
+</html>

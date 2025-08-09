@@ -1,0 +1,139 @@
+[
+    {
+      "catalog": "RAIN-001",
+      "artist": "shinrei",
+      "title": "the angels within: reawakened",
+      "release_date": "2024-12-25",
+      "cover": "/assets/album-art/rain-001.jpg",
+      "tracks": [
+           { "title": "天使 (angel)", "file": "/assets/music/天使 (angel).mp3" },
+           { "title": "夜に (in the night)", "file": "/assets/music/夜に (in the night).mp3" },
+           { "title": "アメリア (amelia)", "file": "/assets/music/アメリア (amelia).mp3" },
+           { "title": "約束 (a promise)", "file": "/assets/music/約束 (a promise).mp3" },
+           { "title": "花が咲くとき (when a flower blooms)", "file": "/assets/music/花が咲くとき (when a flower blooms).mp3" },
+           { "title": "凍傷 (frostbite)", "file": "/assets/music/凍傷 (frostbite).mp3" },
+           { "title": "裏切り (betrayal)", "file": "/assets/music/裏切り (betrayal).mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-002",
+      "artist": "smooch",
+      "title": "random,",
+      "release_date": "2024-12-31",
+      "cover": "/assets/album-art/rain-002.jpg",
+      "tracks": [
+        { "title": "IBEEENFEELINBREADNEW",     "file": "/assets/music/IBEEENFEELINBREADNEW.mp3" },
+        { "title": "rap song",                 "file": "/assets/music/rap song.mp3" },
+        { "title": "realjazz",                 "file": "/assets/music/realjazz.mp3" },
+        { "title": "Chillio",                  "file": "/assets/music/Chillio.mp3" },
+        { "title": "Chillvibe",                "file": "/assets/music/Chillvibe.mp3" },
+        { "title": "Piano",                    "file": "/assets/music/Piano.mp3" },
+        { "title": "nice jump",                "file": "/assets/music/nice jump.mp3" }
+        
+        
+        
+      ]
+    },
+    {
+      "catalog": "RAIN-003S",
+      "artist": "shinrei",
+      "title": "Mmmeeeelttiiinnggggg",
+      "release_date": "2025-03-26",
+      "cover": "/assets/album-art/rain-003.jpg",
+      "tracks": [
+        { "title": "Mmmeeeelttiiinnggggg", "file": "/assets/music/Mmmeeeelttiinnggggg.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-004S",
+      "artist": "V0CALYST",
+      "title": "territory",
+      "release_date": "2025-03-28",
+      "cover": "/assets/album-art/rain-004.jpg",
+      "tracks": [
+        { "title": "territory", "file": "/assets/music/territory.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-005S",
+      "artist": "shinrei",
+      "title": "楽園 ?",
+      "release_date": "2025-04-26",
+      "cover": "/assets/album-art/rain-005.jpg",
+      "tracks": [
+        { "title": "楽園 ?", "file": "/assets/music/楽園 _.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-006S",
+      "artist": "V0CALYST",
+      "title": "CRYIN",
+      "release_date": "2025-05-20",
+      "cover": "/assets/album-art/rain-006.jpg",
+      "tracks": [
+        { "title": "CRYIN", "file": "/assets/music/CRYIN.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-007",
+      "artist": "smooch",
+      "title": "EX tracks",
+      "release_date": "2025-05-20",
+      "cover": "/assets/album-art/rain-007.jpg",
+      "tracks": [
+        { "title": "Nice Time",         "file": "/assets/music/Nice Time.mp3" },
+        { "title": "Bossa dream",       "file": "/assets/music/Bossa dream.mp3" },
+        { "title": "dnbfortheonetime",  "file": "/assets/music/dnbfortheonetime.mp3" }
+        
+      ]
+    },
+    {
+      "catalog": "RAIN-008",
+      "artist": "smooch",
+      "title": "A witness, A watcher",
+      "release_date": "2025-05-23",
+      "cover": "/assets/album-art/rain-008.jpg",
+      "tracks": [
+        { "title": "4.5 Final Mix", "file": "/assets/music/4.5 Final Mix.mp3" },
+        { "title": "Dance to This", "file": "/assets/music/Dance to This.mp3" },
+        { "title": "random2",       "file": "/assets/music/random2.mp3" },
+        { "title": "Do Something",  "file": "/assets/music/Do Something.mp3" },
+        { "title": "Blissful",      "file": "/assets/music/Blissful.mp3" },
+        
+        
+        
+        { "title": "Yes, or yes",   "file": "/assets/music/Yes, or yes.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-009S",
+      "artist": "shinrei",
+      "title": "Soul on fire",
+      "release_date": "2025-06-01",
+      "cover": "/assets/album-art/rain-009.jpg",
+      "tracks": [
+        { "title": "Soul on fire", "file": "/assets/music/Soul on fire.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-010S",
+      "artist": "V0CALYST",
+      "title": "interesting",
+      "release_date": "2025-07-25",
+      "cover": "/assets/album-art/rain-010.jpg",
+      "tracks": [
+        { "title": "interesting", "file": "/assets/music/interesting.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-011S",
+      "artist": "V0CALYST",
+      "title": "believe the kids",
+      "release_date": "2025-08-01",
+      "cover": "/assets/album-art/rain-011.jpg",
+      "tracks": [
+        { "title": "believe the kids", "file": "/assets/music/believe the kids.mp3" }
+      ]
+    }
+  ]
+  
