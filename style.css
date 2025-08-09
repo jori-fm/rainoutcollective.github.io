@@ -1154,6 +1154,8 @@ body.player-page.has-nowbar {
   padding-bottom: calc(var(--nowbar-h) + 12px);
 }
 
+.player-page { filter: none !important; }
+
   
   
   
