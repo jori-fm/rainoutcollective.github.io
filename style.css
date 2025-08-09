@@ -1032,13 +1032,16 @@ body {
   
   /* Bottom mini player */
   .ap-nowbar {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 9995;
-    background: rgba(10,12,18,0.9);
-    border-top: 1px solid rgba(100,150,255,0.25);
+    position: fixed;  /* this makes it float instead of staying in document flow */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;    /* make sure it stays above all other elements */
+    background: rgba(10, 12, 18, 0.9);
+    border-top: 1px solid rgba(100, 150, 255, 0.25);
     backdrop-filter: blur(6px);
   }
+  
   .ap-nowbar-inner {
     max-width: 1200px;
     margin: 0 auto;
