@@ -1,16 +1,29 @@
-<main class="shop">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — RAINOUT collective.</title>
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />   <!-- ← important -->
+</head>
+<body>
+  <!-- (optional) top nav goes here -->
+
+  <main class="shop container">
     <h1>RAINOUT collective. shop</h1>
-  
+
     <section class="shop-category">
       <h2>Stickers</h2>
-      <div class="product-grid" data-category="stickers"></div>
+      <div class="product-grid" data-category="stickers"></div> <!-- ← data-category -->
     </section>
-  
+
     <section class="shop-category">
       <h2>Physical Releases</h2>
-      <div class="product-grid" data-category="physical"></div>
+      <div class="product-grid" data-category="physical"></div> <!-- ← data-category -->
     </section>
   </main>
-  
-  <script src="js/fetchProducts.js" defer></script>
-  
+
+  <script src="/js/fetchProducts.js" defer></script> <!-- ← important -->
+</body>
+</html>
