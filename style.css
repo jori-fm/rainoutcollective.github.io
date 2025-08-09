@@ -1107,6 +1107,28 @@ body {
     .ap-progress       { grid-area: prog; }
     .ap-vol            { grid-area: vol;  }
   }
+
+  :root { --nowbar-h: 84px; }          /* total bar height */
+
+.ap-nowbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: var(--nowbar-h);           /* explicit height for padding calc */
+  z-index: 10020;                    /* above everything */
+  background: rgba(10,12,18,0.9);
+  border-top: 1px solid rgba(100,150,255,0.25);
+  backdrop-filter: blur(6px);
+
+  /* slide-in */
+  transform: translateY(100%);
+  transition: transform .25s ease;
+}
+.ap-nowbar.is-open { transform: translateY(0); }
+
+/* when the bar is open, push page content up so nothing is hidden */
+.player-page.has-nowbar {
+  padding-bottom: calc(var(--nowbar-h) + 12px);
+}
   
   
   

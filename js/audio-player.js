@@ -106,6 +106,8 @@ function asLocalDate(isoYmd) {
     const tr = rel.tracks[ti];
     // UI
     barEl.hidden = false;
+    barEl.classList.add('is-open');            // slide in
+document.body.classList.add('has-nowbar'); // add bottom padding
     coverEl.src  = rel.cover;
     titleEl.textContent = tr.title;
     subEl.textContent   = `${rel.artist} • ${rel.title} • ${rel.catalog}`;
