@@ -1129,6 +1129,31 @@ body {
 .player-page.has-nowbar {
   padding-bottom: calc(var(--nowbar-h) + 12px);
 }
+
+/* --- Force the audio bar to float on the viewport --- */
+:root { --nowbar-h: 84px; }
+
+body.player-page .ap-nowbar {
+  position: fixed !important;  /* beat any earlier rule */
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: var(--nowbar-h);
+  z-index: 10020 !important;   /* above everything */
+  background: rgba(10,12,18,0.9);
+  border-top: 1px solid rgba(100,150,255,0.25);
+  backdrop-filter: blur(6px);
+  transform: translateY(100%);
+  transition: transform .25s ease;
+}
+
+body.player-page .ap-nowbar.is-open { transform: translateY(0); }
+
+/* give the page room while the bar is visible so content isn't covered */
+body.player-page.has-nowbar {
+  padding-bottom: calc(var(--nowbar-h) + 12px);
+}
+
   
   
   
