@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — RAINOUT collective.</title>
+  <meta name="description" content="About RAINOUT collective — an independent label and creative group releasing experimental music and art." />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preload" as="image" href="/assets/banner.png" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="site-nav">
+    <a class="brand" href="/">
+      <img src="/assets/banner.png" alt="RAINOUT collective." />
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+    <nav class="nav-links">
+      <a href="/" data-match="/">Home</a>
+      <a href="/releases.html" data-match="/releases">Releases</a>
+      <a href="/shop.html" data-match="/shop">Shop</a>
+      <a href="/about.html" data-match="/about" class="active">About Us</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="about" id="who">
+      <h2>About Us</h2>
+      <p>
+        <strong>RAINOUT collective.</strong> is an independent label and creative group focused on releasing music and visuals with a DIY spirit. We value experimentation, collaboration, and giving artists space to build their sound.
+      </p>
+      <p>
+        This site hosts our latest releases, artist pages, and a small shop for stickers and physical editions. Stick around — more is coming.
+      </p>
+    </section>
+
+    <section class="about" id="what">
+      <h2>What We Do</h2>
+      <ul style="text-align:left; margin:0 auto; max-width:740px; line-height:1.9">
+        <li>Curate and release digital singles, EPs, and special physical runs.</li>
+        <li>Offer light-weight support on artwork, rollout, and distribution.</li>
+        <li>Connect artists for features, remixes, and cross-project ideas.</li>
+      </ul>
+    </section>
+
+    <section class="about" id="artists">
+      <h2>Artists</h2>
+      <div class="artist-grid" style="margin-top:20px">
+        <!-- Link to existing artist pages (exact filenames) -->
+        <a class="artist" href="/artists/arri.html"><img src="/assets/artists/arri.jpg" alt="arri"><h3>arri</h3></a>
+        <a class="artist" href="/artists/sai.html"><img src="/assets/artists/sai.jpg" alt="sai"><h3>sai</h3></a>
+        <a class="artist" href="/artists/seraphii.html"><img src="/assets/artists/seraphii.jpg" alt="seraphii"><h3>seraphii</h3></a>
+        <a class="artist" href="/artists/shinrei.html"><img src="/assets/artists/shinrei.jpg" alt="shinrei"><h3>shinrei</h3></a>
+        <a class="artist" href="/artists/smooch.html"><img src="/assets/artists/smooch.jpg" alt="smooch."><h3>smooch.</h3></a>
+        <a class="artist" href="/artists/suleymon.html"><img src="/assets/artists/suleymon.jpg" alt="suleymon"><h3>suleymon</h3></a>
+        <a class="artist" href="/artists/sunni.html"><img src="/assets/artists/sunni.jpg" alt="sunni"><h3>sunni</h3></a>
+        <a class="artist" href="/artists/V0CALYST.html"><img src="/assets/artists/v0calyst.jpg" alt="V0CALYST"><h3>V0CALYST</h3></a>
+      </div>
+      <div class="more-button-container"><a class="more-button" href="/releases.html">Browse all releases</a></div>
+    </section>
+
+    <section class="about" id="contact">
+      <h2>Contact</h2>
+      <p>General: <a href="mailto:contact@rainout.example">contact@rainout.example</a></p>
+      <p>Promos / Demos: <a href="mailto:demos@rainout.example">demos@rainout.example</a></p>
+      <p>Press kit: <a href="#" onclick="alert('Press kit coming soon'); return false;">coming soon</a></p>
+    </section>
+
+    <section class="about" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>How do I join or collaborate?</summary>
+        <p>We usually reach out directly when something fits, but we do read demo emails. If you have a concept that aligns, send a short note and one or two links — keep it simple.</p>
+      </details>
+      <details>
+        <summary>Do you sell physical releases?</summary>
+        <p>Yes — small runs show up in the <a href="/shop.html">shop</a>. Follow our pages for drop dates.</p>
+      </details>
+      <details>
+        <summary>Can I use your visuals?</summary>
+        <p>Please ask first; most artwork is licensed for the specific release.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="/" aria-label="Home"><i class="fas fa-home"></i></a>
+      <a href="/releases.html" aria-label="Releases"><i class="fas fa-record-vinyl"></i></a>
+      <a href="/shop.html" aria-label="Shop"><i class="fas fa-store"></i></a>
+    </div>
+    <div class="copyright">© <span id="y"></span> RAINOUT collective.</div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+  <script>
+    // simple year setter if script.js is not present
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

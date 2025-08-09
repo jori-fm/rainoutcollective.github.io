@@ -67,3 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeTimer = setTimeout(createRain, 200);
     });
 });
+
+// highlight active link
+document.querySelectorAll('.site-nav .nav-links a').forEach(a => {
+    const m = a.dataset.match; // "/" | "/releases" | "/shop" | "/about"
+    const p = location.pathname.toLowerCase();
+    if ((m === '/' && (p === '/' || p === '/index.html')) ||
+        (m !== '/' && p.startsWith(m))) {
+      a.classList.add('active');
+    }
+  });
+  
+  // mobile toggle
+  document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+  });
+  
