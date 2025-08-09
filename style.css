@@ -913,12 +913,14 @@ body {
   }
   
   /* Featured Artists: 4 per row on home, center last row */
-.home .artists .artist-grid {
-    display: grid;                      /* override previous flex */
+  .home .artists .artist-grid {
+    display: grid;
     grid-template-columns: repeat(4, 150px);
     gap: 24px;
-    justify-content: center;            /* centers the whole grid block */
+    justify-content: center; /* centers the whole grid block */
+    justify-items: center;   /* centers items inside each row */
   }
+  
   
   .home .artists .artist {
     width: 150px;                       /* ignore old flex-basis */
