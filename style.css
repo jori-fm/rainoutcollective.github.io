@@ -949,6 +949,23 @@ img, video { max-width: 100%; height: auto; }
   /* 3 leftover → already looks centered enough, no change */
 
   /* === Audio Player page === */
+  .ap-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ap-controls .ap-btn {
+    width: 38px;
+    height: 34px;
+    line-height: 1;
+    padding: 0;
+  }
+
+  @media (max-width: 900px) {
+    .ap-controls .ap-btn { width: 34px; height: 32px; }
+  }
+
+
 .ap-release-list {
     display: grid;
     gap: 24px;
@@ -1076,15 +1093,16 @@ img, video { max-width: 100%; height: auto; }
       grid-template-columns: 44px 1fr auto;
       grid-template-areas:
         "c meta play"
+        "ctrl ctrl ctrl"
         "prog prog prog"
         "vol  vol  vol";
       row-gap: 6px;
     }
-    .ap-nowbar img     { grid-area: c;  width: 44px; height: 44px; }
-    .ap-meta           { grid-area: meta; }
-    .ap-btn            { grid-area: play; }
-    .ap-progress       { grid-area: prog; }
-    .ap-vol            { grid-area: vol;  }
+    .ap-nowbar img  { grid-area: c; }
+    .ap-meta        { grid-area: meta; }
+    .ap-controls    { grid-area: ctrl; justify-content: center; }
+    .ap-progress    { grid-area: prog; }
+    .ap-vol         { grid-area: vol; }
   }
 
   :root { --nowbar-h: 84px; }          /* total bar height */
