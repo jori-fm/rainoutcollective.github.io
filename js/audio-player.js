@@ -123,9 +123,6 @@
   }
 
   function loadTrackByOrderIndex(ordIdx, autoplay = true) {
-    el.nowbar.hidden = false;
-el.nowbar.classList.add('is-open');
-document.body.classList.add('has-nowbar');
     current = ordIdx;
     const t = tracks[order[current]];
     if (!t) return;
