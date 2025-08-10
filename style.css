@@ -1175,7 +1175,9 @@ body.player-page.has-nowbar {
 .player-page { filter: none !important; }
 .player-page::before { display: none !important; }   /* hides the scanline/glare layer */
 
-  
+.ap-btn[aria-pressed="true"] { opacity: .9; outline: 1px solid rgba(255,255,255,.25); }
+.ap-btn[data-mode="2"]::after { content: "1"; font-size: .7em; margin-left: .15rem; } /* repeat-one badge */
+
   
   
           
