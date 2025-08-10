@@ -112,13 +112,20 @@
     el.audio.src = track.file;
     
     // Show player and start playback
-    el.nowbar.hidden = false;
+    if (el.nowbar) {
+      el.nowbar.hidden = false;
+      el.nowbar.classList.add('is-open'); // Add this to trigger the slide-up animation
+      document.body.classList.add('has-nowbar'); // Add this for proper spacing
+    }
+    
     el.audio.play().catch(e => console.log("Playback error:", e));
     updatePlayBtn();
   }
 
   // Update play/pause button
   function updatePlayBtn() {
+    if (!el.play) return;
+    
     if (!el.audio.paused) {
       el.play.textContent = "❚❚";
       el.play.setAttribute("aria-label", "Pause");
@@ -167,7 +174,13 @@
         return response.json();
       })
       .then(data => {
-        releases = data;
+        // Sort releases from newest to oldest
+        releases = data.sort((a, b) => {
+          const dateA = new Date(a.release_date);
+          const dateB = new Date(b.release_date);
+          return dateB - dateA; // Newest first
+        });
+        
         renderReleases();
       })
       .catch(error => {

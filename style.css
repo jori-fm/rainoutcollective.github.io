@@ -1294,6 +1294,110 @@ body.player-page.has-nowbar {
   font-size: 1.1rem;
 }
 
+/* Add these styles to your existing CSS */
+
+/* Ensure the player slides up */
+.ap-nowbar.is-open {
+  transform: translateY(0) !important;
+}
+
+/* Add padding to body when player is visible */
+body.player-page.has-nowbar {
+  padding-bottom: 100px !important;
+}
+
+/* Mini-player styling */
+.ap-nowbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background: rgba(10, 12, 18, 0.9);
+  border-top: 1px solid rgba(100, 150, 255, 0.25);
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.ap-nowbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ap-nowbar img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid rgba(100, 150, 255, 0.2);
+}
+
+.ap-meta {
+  flex-grow: 1;
+}
+
+.ap-title {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.ap-sub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.ap-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.ap-btn {
+  background: rgba(100, 150, 255, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ap-btn:hover {
+  background: rgba(100, 150, 255, 0.2);
+}
+
+.ap-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.ap-progress input[type="range"] {
+  flex-grow: 1;
+  accent-color: var(--accent);
+}
+
+.ap-vol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.ap-vol input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
   
   
           
