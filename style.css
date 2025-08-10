@@ -1145,9 +1145,9 @@ body.player-page.has-nowbar {
   right: 0 !important;
   bottom: 0 !important;
   height: var(--nowbar-h);
-  z-index: 2147483647;      /* literally top of the stack */
-  isolation: isolate;       /* stop mix-blend effects from ancestors */
-  background: rgba(10,12,18,0.95);
+  z-index: 2147483647;     /* absolutely on top */
+  isolation: isolate;      /* prevent any ancestor blending/filters */
+  background: rgba(10,12,18,0.95);  /* solid-ish backdrop so UI is visible */
   border-top: 1px solid rgba(100,150,255,0.25);
   backdrop-filter: blur(6px);
   transform: translateY(100%);
@@ -1157,20 +1157,23 @@ body.player-page.has-nowbar {
 .player-page .ap-nowbar.is-open { transform: translateY(0); }
 
 /* Make sure text is actually visible */
-.player-page .ap-nowbar,
+.player-page .ap-nowbar, 
 .player-page .ap-nowbar * {
   color: #e8efff !important;
+  mix-blend-mode: normal !important;
 }
 
 /* Give the page space while the bar is open so content isn't covered */
 .player-page.has-nowbar {
   padding-bottom: calc(var(--nowbar-h) + 12px) !important;
 }
-
 /* If your CRT overlay uses body::before, disable it only on the player page */
 .player-page::before { display: none !important; }   /* <-- if you still can't see text, keep this */
 
   
+/* Player page must not inherit global CRT filter/overlay */
+.player-page { filter: none !important; }
+.player-page::before { display: none !important; }   /* hides the scanline/glare layer */
 
   
   
