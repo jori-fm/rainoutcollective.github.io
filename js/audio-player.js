@@ -239,33 +239,68 @@
     });
   }
 
-  // ---------- boot ----------
-  fetch("/tracks.json")
-    .then(r => {
-      if (!r.ok) throw new Error("Failed to load /tracks.json");
-      return r.json();
-    })
-    .then(json => {
-      // Accept either { tracks: [...] } or just [...]
-      tracks = Array.isArray(json) ? json : (json.tracks || []);
-      if (!Array.isArray(tracks)) tracks = [];
+// ---------- boot ----------
+fetch("/tracks.json")
+  .then(r => {
+    if (!r.ok) throw new Error("Failed to load /tracks.json");
+    return r.json();
+  })
+  .then(json => {
+    // debug: see what we actually got
+    console.log("[player] tracks.json shape:", Array.isArray(json) ? "array" : typeof json, json && json[0]);
 
-      // normalize minimal fields we use
-      tracks = tracks.map(t => ({
-        title: t.title || t.name || "Untitled",
-        artist: t.artist || t.by || "",
-        catno: t.catno || t.catalog || t.catalog_number || "",
-        date:  t.date || t.release_date || "",
-        cover: t.cover || t.image || t.art || "",
-        src:   t.src || t.url || t.audio || "",
-        subtitle: t.subtitle || t.sub || ""
-      })).filter(t => t.src);
+    let flat = [];
 
-      initOrder();
-      renderList();
-    })
-    .catch(err => {
-      console.error("[player] tracks load error:", err);
-      if (el.list) el.list.innerHTML = "<p style='opacity:.7'>Could not load tracks.</p>";
-    });
-})();
+    // detect: array of releases with nested `tracks`
+    const nested =
+      Array.isArray(json) &&
+      json.length > 0 &&
+      json[0] != null &&
+      Array.isArray(json[0].tracks);
+
+    if (nested) {
+      // Flatten releases -> tracks; use `file` as src
+      for (const rel of json) {
+        const list = Array.isArray(rel.tracks) ? rel.tracks : [];
+        for (const tr of list) {
+          flat.push({
+            title: tr.title || rel.title || "Untitled",
+            artist: rel.artist || "",
+            catno:  rel.catalog || rel.catno || "",
+            date:   rel.release_date || rel.date || "",
+            cover:  rel.cover || "",
+            src:    tr.file || tr.src || tr.url || tr.audio || ""
+          });
+        }
+      }
+    } else {
+      // Already flat; also accept `file`
+      const arr = Array.isArray(json) ? json : (json && Array.isArray(json.tracks) ? json.tracks : []);
+      for (const t of arr) {
+        flat.push({
+          title: t.title || t.name || "Untitled",
+          artist: t.artist || "",
+          catno:  t.catno || t.catalog || "",
+          date:   t.date || t.release_date || "",
+          cover:  t.cover || "",
+          src:    t.src || t.url || t.audio || t.file || ""
+        });
+      }
+    }
+
+    tracks = flat.filter(t => t.src);
+
+    if (!tracks.length && el.list) {
+      el.list.innerHTML = "<p style='opacity:.7'>No tracks found in tracks.json.</p>";
+      console.warn("[player] No playable tracks (missing `file/src`?)");
+      return;
+    }
+
+    initOrder();
+    renderList();
+  })
+  .catch(err => {
+    console.error("[player] tracks load error:", err);
+    if (el.list) el.list.innerHTML = "<p style='opacity:.7'>Could not load tracks.</p>";
+  });
+

@@ -1196,6 +1196,104 @@ body.player-page.has-nowbar {
 .ap-btn[aria-pressed="true"] { opacity: .9; outline: 1px solid rgba(255,255,255,.25); }
 .ap-btn[data-mode="2"]::after { content: "1"; font-size: .7em; margin-left: .15rem; } /* repeat-one badge */
 
+/* Add to style.css */
+.ap-release-list {
+  margin-top: 30px;
+}
+
+.ap-card {
+  background: rgba(20, 20, 30, 0.4);
+  border: 1px solid rgba(100, 150, 255, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.ap-left {
+  float: left;
+  width: 140px;
+  margin-right: 20px;
+}
+
+.ap-cover {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border: 1px solid rgba(100, 150, 255, 0.2);
+}
+
+.ap-right {
+  overflow: hidden;
+}
+
+.ap-title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.ap-meta-line {
+  color: #aaa;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.ap-dot {
+  display: inline-block;
+  margin: 0 8px;
+  opacity: 0.6;
+}
+
+.ap-tracks {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.ap-track {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ap-track:last-child {
+  border-bottom: none;
+}
+
+.ap-track-num {
+  color: #aaa;
+  width: 30px;
+  font-size: 0.9rem;
+}
+
+.ap-track-title {
+  flex-grow: 1;
+  color: #e0e0e0;
+}
+
+.ap-play {
+  background: rgba(100, 150, 255, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 3px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.ap-play:hover {
+  background: rgba(100, 150, 255, 0.2);
+}
+
+.error-state {
+  color: #ff6b6b;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
   
   
           
