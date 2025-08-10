@@ -1399,6 +1399,31 @@ body.player-page.has-nowbar {
   accent-color: var(--accent);
 }
 
+/* --- Mini-player: prevent bottom clipping --- */
+:root { --nowbar-h: 84px; } /* keep your baseline */
+
+.player-page .ap-nowbar{
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  /* allow it to grow */
+  height: auto !important;
+  min-height: var(--nowbar-h);
+
+  /* space for iOS home indicator + some breathing room */
+  padding: 10px 14px max(12px, env(safe-area-inset-bottom));
+  z-index: 2147483647; /* stay above overlays */
+  transform: translateY(0); /* shown state */
+}
+
+/* push the page up so nothing is hidden behind the bar */
+.player-page.has-nowbar{
+  padding-bottom: calc(var(--nowbar-h) + env(safe-area-inset-bottom) + 12px) !important;
+}
+
+
 
   
   
