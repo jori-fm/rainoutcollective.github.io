@@ -8,32 +8,25 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body class="player-page">
-    <div class="crt-wrap">
-        <header class="site-nav">…</header>
-        <main class="container">…</main>
-      </div>
-
-      <!-- Bottom mini player stays outside the filtered wrapper -->
-  <div class="ap-nowbar" id="nowbar" hidden>…</div>
-
-  <!-- your site nav can stay exactly as you already have it -->
+  <!-- Site nav -->
   <header class="site-nav">
     <a class="brand" href="/"><img src="/assets/banner.png" alt="RAINOUT collective." /></a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <nav class="nav-links">
       <a href="/" data-match="/">Home</a>
       <a href="/releases" data-match="/releases">Releases</a>
-      <a href="/player" data-match="/player">Player</a>
+      <a href="/player" data-match="/player" class="active">Player</a>
       <a href="/about" data-match="/about">About Us</a>
     </nav>
   </header>
 
+  <!-- Page content -->
   <main class="container">
     <h2>RAINOUT Player</h2>
     <div id="releaseList" class="ap-release-list"></div>
   </main>
 
-  <!-- Bottom mini player -->
+  <!-- Bottom mini-player (only ONE with this id) -->
   <div class="ap-nowbar" id="nowbar" hidden>
     <div class="ap-nowbar-inner">
       <img id="apCover" alt="" />
@@ -41,15 +34,12 @@
         <div id="apTitle" class="ap-title">—</div>
         <div id="apSub" class="ap-sub">—</div>
       </div>
-
       <button id="apPlay" class="ap-btn" aria-label="Play/Pause">►</button>
-
       <div class="ap-progress">
         <span id="apCurrent">0:00</span>
         <input id="apSeek" type="range" min="0" max="1000" value="0" />
         <span id="apDuration">0:00</span>
       </div>
-
       <div class="ap-vol">
         <span>🔊</span>
         <input id="apVolume" type="range" min="0" max="1" step="0.01" value="0.9" />
@@ -58,7 +48,14 @@
     <audio id="apAudio" preload="metadata"></audio>
   </div>
 
-  <script src="/script.js" defer></script>
+  <!-- Load JS (fix these paths!) -->
+  <!-- remove this next line if /script.js doesn't exist -->
+  <!-- <script src="/script.js" defer></script> -->
+
+  <!-- If the file lives at the site root -->
+  <script src="/audio-player.js" defer></script>
+  <!-- Or, if it's actually inside /js/, use this instead:
   <script src="/js/audio-player.js" defer></script>
+  -->
 </body>
 </html>
