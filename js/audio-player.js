@@ -1,306 +1,259 @@
-/* RAINOUT Player — Prev/Next + Repeat + Shuffle
- * Works with /tracks.json
- * Expected track fields (with fallbacks):
- *   title, artist, catno, date, cover, src, subtitle
- */
-
+/* RAINOUT Player — Fixed to handle your tracks.json structure */
 (() => {
-  // ---------- helpers ----------
+  // Helper functions
   const $ = (id) => document.getElementById(id);
-  const fmt = (t=0) => {
+  const fmt = (t = 0) => {
     const s = Math.max(0, Math.floor(t));
-    const m = Math.floor(s / 60);
-    const r = s % 60;
-    return m + ":" + (r < 10 ? "0" + r : r);
+    return `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
   };
 
-  // ---------- elements ----------
+  // Elements
   const el = {
-    list:   $("releaseList"),
+    list: $("releaseList"),
     nowbar: $("nowbar"),
-    audio:  $("apAudio"),
-    title:  $("apTitle"),
-    sub:    $("apSub"),
-    cover:  $("apCover"),
-    play:   $("apPlay"),
-    prev:   $("apPrev"),
-    next:   $("apNext"),
+    audio: $("apAudio"),
+    title: $("apTitle"),
+    sub: $("apSub"),
+    cover: $("apCover"),
+    play: $("apPlay"),
+    prev: $("apPrev"),
+    next: $("apNext"),
     repeat: $("apRepeat"),
-    shuffle:$("apShuffle"),
-    seek:   $("apSeek"),
-    cur:    $("apCurrent"),
-    dur:    $("apDuration"),
-    vol:    $("apVolume"),
+    shuffle: $("apShuffle"),
+    seek: $("apSeek"),
+    cur: $("apCurrent"),
+    dur: $("apDuration"),
+    vol: $("apVolume"),
   };
 
-  // guard (don’t crash if markup missing)
-  for (const k in el) {
-    if (!el[k]) console.warn("[player] missing element:", k);
-  }
-
-  // ---------- state ----------
-  let tracks = [];        // as loaded from /tracks.json (array of objects)
-  let order = [];         // array of indices into `tracks` describing play order
-  let current = 0;        // index into `order`
-  let repeatMode = 0;     // 0=off, 1=all, 2=one
+  // State
+  let releases = [];      // Your album/release data
+  let currentRelease = -1; // Current release index
+  let currentTrack = 0;    // Current track index within release
+  let repeatMode = 0;      // 0=off, 1=all, 2=one
   let shuffleOn = false;
 
-  function initOrder() {
-    order = tracks.map((_, i) => i);
-    current = 0;
-  }
-
-  function shuffleArray(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
-
-  function rebuildOrderKeepingCurrent() {
-    const curIdx = order[current] ?? 0;
-    let rest = tracks.map((_, i) => i).filter(i => i !== curIdx);
-    if (shuffleOn) shuffleArray(rest);
-    order = [curIdx, ...rest];
-    current = 0;
-  }
-
-  // ---------- rendering ----------
-  function renderList() {
+  // Render release list
+  function renderReleases() {
     if (!el.list) return;
     el.list.innerHTML = "";
 
-    tracks.forEach((t, i) => {
+    releases.forEach((release, idx) => {
       const card = document.createElement("div");
       card.className = "ap-card";
-
+      
+      // Cover image
+      const left = document.createElement("div");
+      left.className = "ap-left";
       const img = document.createElement("img");
-      img.className = "ap-card-cover";
-      img.src = t.cover || "";
-      img.alt = (t.title || "Track") + " cover";
-
-      const body = document.createElement("div");
-      body.className = "ap-card-body";
-
-      const h = document.createElement("div");
-      h.className = "ap-card-title";
-      h.textContent = t.title || "Untitled";
-
-      const sub = document.createElement("div");
-      sub.className = "ap-card-sub";
-      const bits = [];
-      if (t.artist) bits.push(t.artist);
-      if (t.catno) bits.push(t.catno);
-      if (t.date)  bits.push(t.date);
-      sub.textContent = t.subtitle || bits.join(" • ");
-
-      const btn = document.createElement("button");
-      btn.className = "ap-btn";
-      btn.textContent = "Play";
-      btn.addEventListener("click", () => startPlaybackAt(i));
-
-      body.appendChild(h);
-      body.appendChild(sub);
-      body.appendChild(btn);
-
-      card.appendChild(img);
-      card.appendChild(body);
+      img.className = "ap-cover";
+      img.src = release.cover;
+      img.alt = `${release.title} cover`;
+      left.appendChild(img);
+      
+      // Release info
+      const right = document.createElement("div");
+      right.className = "ap-right";
+      
+      const title = document.createElement("div");
+      title.className = "ap-title";
+      title.textContent = release.title;
+      
+      const meta = document.createElement("div");
+      meta.className = "ap-meta-line";
+      meta.innerHTML = `${release.artist} <span class="ap-dot">•</span> ${release.catalog} <span class="ap-dot">•</span> ${release.release_date}`;
+      
+      // Track list
+      const trackList = document.createElement("ul");
+      trackList.className = "ap-tracks";
+      
+      release.tracks.forEach((track, trackIdx) => {
+        const li = document.createElement("li");
+        li.className = "ap-track";
+        li.innerHTML = `<span class="ap-track-num">${trackIdx + 1}.</span>
+                        <span class="ap-track-title">${track.title}</span>
+                        <button class="ap-play" data-release="${idx}" data-track="${trackIdx}">▶</button>`;
+        trackList.appendChild(li);
+      });
+      
+      right.appendChild(title);
+      right.appendChild(meta);
+      right.appendChild(trackList);
+      
+      card.appendChild(left);
+      card.appendChild(right);
       el.list.appendChild(card);
+    });
+
+    // Add play button listeners
+    document.querySelectorAll(".ap-play").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const releaseIdx = parseInt(btn.dataset.release);
+        const trackIdx = parseInt(btn.dataset.track);
+        playTrack(releaseIdx, trackIdx);
+      });
     });
   }
 
-  // ---------- core playback ----------
-  function applyTrackUI(t) {
-    el.title.textContent = t.title || "Untitled";
-    const bits = [];
-    if (t.artist) bits.push(t.artist);
-    if (t.catno) bits.push(t.catno);
-    el.sub.textContent = t.subtitle || bits.join(" • ");
-    if (t.cover) el.cover.src = t.cover;
+  // Play a specific track
+  function playTrack(releaseIdx, trackIdx) {
+    if (!releases[releaseIdx] || !releases[releaseIdx].tracks[trackIdx]) return;
+    
+    currentRelease = releaseIdx;
+    currentTrack = trackIdx;
+    
+    const release = releases[releaseIdx];
+    const track = release.tracks[trackIdx];
+    
+    // Update UI
+    el.cover.src = release.cover;
+    el.title.textContent = track.title;
+    el.sub.textContent = `${release.artist} • ${release.title}`;
+    el.audio.src = track.file;
+    
+    // Show player and start playback
     el.nowbar.hidden = false;
-    document.title = `${t.title || "Track"} — RAINOUT Player`;
+    el.audio.play().catch(e => console.log("Playback error:", e));
+    updatePlayBtn();
   }
 
-  function loadTrackByOrderIndex(ordIdx, autoplay = true) {
-    current = ordIdx;
-    const t = tracks[order[current]];
-    if (!t) return;
-    // required: t.src
-    el.audio.src = t.src;
-    applyTrackUI(t);
-    if (autoplay) {
-      el.audio.play().catch(() => {/* ignore autoplay block */});
+  // Update play/pause button
+  function updatePlayBtn() {
+    if (!el.audio.paused) {
+      el.play.textContent = "❚❚";
+      el.play.setAttribute("aria-label", "Pause");
+    } else {
+      el.play.textContent = "►";
+      el.play.setAttribute("aria-label", "Play");
+    }
+  }
+
+  // Next track
+  function nextTrack() {
+    if (!releases[currentRelease]) return;
+    
+    const release = releases[currentRelease];
+    
+    if (currentTrack < release.tracks.length - 1) {
+      playTrack(currentRelease, currentTrack + 1);
+    } else if (repeatMode === 1) {
+      playTrack(currentRelease, 0);
+    } else {
+      // Stop at end if repeat is off
+      el.audio.pause();
       updatePlayBtn();
     }
   }
 
-  function nextTrack() {
-    if (repeatMode === 2) {
-      return loadTrackByOrderIndex(current);
-    }
-    if (current < order.length - 1) {
-      return loadTrackByOrderIndex(current + 1);
-    }
-    if (repeatMode === 1) {
-      return loadTrackByOrderIndex(0);
-    }
-    // off: stop at end
-    el.audio.pause();
-    updatePlayBtn();
-  }
-
+  // Previous track
   function prevTrack() {
     if (el.audio.currentTime > 3) {
-      // restart current
-      return loadTrackByOrderIndex(current);
+      // Restart current track if >3 seconds in
+      playTrack(currentRelease, currentTrack);
+    } else if (currentTrack > 0) {
+      playTrack(currentRelease, currentTrack - 1);
+    } else if (repeatMode === 1) {
+      const release = releases[currentRelease];
+      playTrack(currentRelease, release.tracks.length - 1);
     }
-    if (current > 0) {
-      return loadTrackByOrderIndex(current - 1);
-    }
-    if (repeatMode === 1) {
-      return loadTrackByOrderIndex(order.length - 1);
-    }
-    loadTrackByOrderIndex(current);
   }
 
-  function startPlaybackAt(trackIdx) {
-    const ordIdx = order.indexOf(trackIdx);
-    if (ordIdx === -1) {
-      initOrder();
-      rebuildOrderKeepingCurrent();
-      return loadTrackByOrderIndex(0);
+  // Initialize player
+  function init() {
+    // Load tracks.json
+    fetch("/tracks.json")
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to load tracks");
+        return response.json();
+      })
+      .then(data => {
+        releases = data;
+        renderReleases();
+      })
+      .catch(error => {
+        console.error("Error loading tracks:", error);
+        if (el.list) {
+          el.list.innerHTML = `<p class="error-state">Error loading music: ${error.message}</p>`;
+        }
+      });
+
+    // Event listeners
+    if (el.play) {
+      el.play.addEventListener("click", () => {
+        if (el.audio.paused) {
+          if (currentRelease === -1 && releases.length > 0) {
+            playTrack(0, 0); // Play first track if nothing is playing
+          } else {
+            el.audio.play().catch(e => console.log("Play error:", e));
+          }
+        } else {
+          el.audio.pause();
+        }
+      });
     }
-    loadTrackByOrderIndex(ordIdx);
-  }
 
-  function updatePlayBtn() {
-    const playing = !el.audio.paused;
-    el.play.textContent = playing ? "❚❚" : "►";
-    el.play.setAttribute("aria-label", playing ? "Pause" : "Play");
-  }
+    if (el.prev) el.prev.addEventListener("click", prevTrack);
+    if (el.next) el.next.addEventListener("click", nextTrack);
 
-  // ---------- wire controls ----------
-  el.play?.addEventListener("click", () => {
-    if (el.audio.paused) el.audio.play().catch(()=>{});
-    else el.audio.pause();
-  });
-
-  el.prev?.addEventListener("click", prevTrack);
-  el.next?.addEventListener("click", nextTrack);
-
-  el.repeat?.addEventListener("click", () => {
-    repeatMode = (repeatMode + 1) % 3; // 0 -> 1 -> 2 -> 0
-    const titles = ["Repeat: Off", "Repeat: All", "Repeat: One"];
-    el.repeat.title = titles[repeatMode];
-    el.repeat.dataset.mode = String(repeatMode);
-    el.repeat.setAttribute("aria-pressed", repeatMode !== 0);
-  });
-
-  el.shuffle?.addEventListener("click", () => {
-    shuffleOn = !shuffleOn;
-    el.shuffle.setAttribute("aria-pressed", shuffleOn);
-    rebuildOrderKeepingCurrent();
-  });
-
-  // audio events
-  el.audio?.addEventListener("play", updatePlayBtn);
-  el.audio?.addEventListener("pause", updatePlayBtn);
-
-  el.audio?.addEventListener("loadedmetadata", () => {
-    el.dur.textContent = fmt(el.audio.duration);
-    el.seek.max = Math.max(1, Math.floor(el.audio.duration * 1000));
-  });
-
-  el.audio?.addEventListener("timeupdate", () => {
-    el.cur.textContent = fmt(el.audio.currentTime);
-    if (!el.seek.dragging) {
-      const val = Math.floor(el.audio.currentTime * 1000);
-      el.seek.value = String(val);
+    if (el.repeat) {
+      el.repeat.addEventListener("click", () => {
+        repeatMode = (repeatMode + 1) % 3;
+        el.repeat.setAttribute("aria-pressed", repeatMode !== 0);
+        el.repeat.title = ["Repeat: Off", "Repeat: All", "Repeat: One"][repeatMode];
+      });
     }
-  });
 
-  el.audio?.addEventListener("ended", nextTrack);
+    if (el.shuffle) {
+      el.shuffle.addEventListener("click", () => {
+        shuffleOn = !shuffleOn;
+        el.shuffle.setAttribute("aria-pressed", shuffleOn);
+      });
+    }
 
-  // seek/volume
-  el.seek?.addEventListener("input", () => {
-    el.seek.dragging = true;
-  });
-  el.seek?.addEventListener("change", () => {
-    const v = Number(el.seek.value) / 1000;
-    el.audio.currentTime = v;
-    el.seek.dragging = false;
-  });
-
-  if (el.vol) {
-    el.audio.volume = Number(el.vol.value || 0.9);
-    el.vol.addEventListener("input", () => {
-      el.audio.volume = Number(el.vol.value);
-    });
-  }
-
-// ---------- boot ----------
-fetch("/tracks.json")
-  .then(r => {
-    if (!r.ok) throw new Error("Failed to load /tracks.json");
-    return r.json();
-  })
-  .then(json => {
-    // debug: see what we actually got
-    console.log("[player] tracks.json shape:", Array.isArray(json) ? "array" : typeof json, json && json[0]);
-
-    let flat = [];
-
-    // detect: array of releases with nested `tracks`
-    const nested =
-      Array.isArray(json) &&
-      json.length > 0 &&
-      json[0] != null &&
-      Array.isArray(json[0].tracks);
-
-    if (nested) {
-      // Flatten releases -> tracks; use `file` as src
-      for (const rel of json) {
-        const list = Array.isArray(rel.tracks) ? rel.tracks : [];
-        for (const tr of list) {
-          flat.push({
-            title: tr.title || rel.title || "Untitled",
-            artist: rel.artist || "",
-            catno:  rel.catalog || rel.catno || "",
-            date:   rel.release_date || rel.date || "",
-            cover:  rel.cover || "",
-            src:    tr.file || tr.src || tr.url || tr.audio || ""
-          });
+    el.audio.addEventListener("timeupdate", () => {
+      if (!el.seek || !el.cur) return;
+      if (!el.seek.dragging) {
+        el.cur.textContent = fmt(el.audio.currentTime);
+        if (el.audio.duration) {
+          el.seek.value = (el.audio.currentTime / el.audio.duration) * 1000 || 0;
         }
       }
-    } else {
-      // Already flat; also accept `file`
-      const arr = Array.isArray(json) ? json : (json && Array.isArray(json.tracks) ? json.tracks : []);
-      for (const t of arr) {
-        flat.push({
-          title: t.title || t.name || "Untitled",
-          artist: t.artist || "",
-          catno:  t.catno || t.catalog || "",
-          date:   t.date || t.release_date || "",
-          cover:  t.cover || "",
-          src:    t.src || t.url || t.audio || t.file || ""
-        });
-      }
+    });
+
+    el.audio.addEventListener("loadedmetadata", () => {
+      if (!el.dur || !el.seek) return;
+      el.dur.textContent = fmt(el.audio.duration);
+      el.seek.max = 1000;
+    });
+
+    el.audio.addEventListener("ended", nextTrack);
+
+    if (el.seek) {
+      el.seek.addEventListener("input", () => {
+        el.seek.dragging = true;
+        if (el.audio.duration) {
+          const seekTo = (el.seek.value / 1000) * el.audio.duration;
+          if (el.cur) el.cur.textContent = fmt(seekTo);
+        }
+      });
+
+      el.seek.addEventListener("change", () => {
+        if (el.audio.duration) {
+          const seekTo = (el.seek.value / 1000) * el.audio.duration;
+          el.audio.currentTime = seekTo;
+        }
+        el.seek.dragging = false;
+      });
     }
 
-    tracks = flat.filter(t => t.src);
-
-    if (!tracks.length && el.list) {
-      el.list.innerHTML = "<p style='opacity:.7'>No tracks found in tracks.json.</p>";
-      console.warn("[player] No playable tracks (missing `file/src`?)");
-      return;
+    if (el.vol) {
+      el.audio.volume = Number(el.vol.value || 0.9);
+      el.vol.addEventListener("input", () => {
+        el.audio.volume = Number(el.vol.value);
+      });
     }
+  }
 
-    initOrder();
-    renderList();
-  })
-  .catch(err => {
-    console.error("[player] tracks load error:", err);
-    if (el.list) el.list.innerHTML = "<p style='opacity:.7'>Could not load tracks.</p>";
-  });
-
+  // Start everything
+  init();
+})();
