@@ -1,5 +1,5 @@
 (() => {
-  const DATA_URL = '/releases.json';
+  const DATA_URL = '../releases.json';
   const GRID_ID  = 'release-grid';
 
   const escapeHtml = (s='') =>
@@ -7,13 +7,19 @@
 
   const toDate = (iso) => { const d = new Date(iso + 'T00:00:00'); d.setHours(0,0,0,0); return d; };
   const isFuture = (iso) => { const t = new Date(); t.setHours(0,0,0,0); return toDate(iso) > t; };
+  const isSingle = (catalog = '') => /S/i.test(String(catalog));
+const releaseIconHTML = (catalog = '') =>
+  isSingle(catalog)
+    ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
+    : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
+
 
   const createCard = (r) => {
     const el = document.createElement('div');
     el.className = 'release';
     el.innerHTML = `
       <div class="format-icon" title="${escapeHtml(r.Format || '')}">
-        ${escapeHtml((r.Format || 'D').charAt(0))}
+        ${releaseIconHTML(r['Catalog#'])}
       </div>
       <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
