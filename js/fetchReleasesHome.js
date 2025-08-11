@@ -1,61 +1,76 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('release-grid');
-  if (!container) return;
+(() => {
+  const DATA_URL = '/releases.json';     // absolute so it works from any page
+  const GRID_ID  = 'release-grid';       // index.html has this container
 
-  // put near the top
-function asLocalDate(isoYmd) {
-  const [y, m, d] = String(isoYmd).split('-').map(Number);
-  return new Date(y, m - 1, d); // local midnight
-}
+  const escapeHtml = (s='') =>
+    s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
+  const toDate = (iso) => {
+    // Treat dates as local “calendar dates” to avoid timezone off-by-ones
+    const d = new Date(iso + 'T00:00:00');
+    d.setHours(0,0,0,0);
+    return d;
+  };
+  const isFuture = (iso) => {
+    const today = new Date(); today.setHours(0,0,0,0);
+    return toDate(iso) > today;
+  };
 
-  fetch('releases.json')
-    .then(r => r.json())
-    .then(data => {
-      // sort newest → oldest by Release Date
-      const sorted = [...data].sort((a, b) => asLocalDate(b['Release Date']) - asLocalDate(a['Release Date']));
+  const createCard = (r) => {
+    const card = document.createElement('div');
+    card.className = 'release';
 
-      // show 4 most recent on the home page
-      const latest = sorted.slice(0, 4);
+    card.innerHTML = `
+      <div class="format-icon" title="${escapeHtml(r.Format || '')}">
+        ${escapeHtml((r.Format || 'D').charAt(0))}
+      </div>
+      <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
+      <div class="info">
+        <div class="title">${escapeHtml(r.Title)}</div>
+        <div class="artist">${escapeHtml(r.Artist)}</div>
+        <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
+      </div>
+    `;
 
-      latest.forEach(release => {
-        const card = document.createElement('div');
-        card.className = 'release';
+    const links = document.createElement('div');
+    links.className = 'streaming-links';
 
-        const isSingle = String(release['Catalog#']).toUpperCase().includes('S');
-        const icon = isSingle ? 'fa-music' : 'fa-record-vinyl';
+    if (isFuture(r['Release Date'])) {
+      links.innerHTML = `<span class="coming-soon">COMING SOON</span>`;
+    } else {
+      links.innerHTML = `
+        <a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+        <a class="streaming-link apple"   href="${r['Apple Music']}" target="_blank" rel="noopener" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+        <a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      `;
+    }
 
-        const displayArtist = release['Artist'] === 'smooch' ? 'smooch.' : release['Artist'];
+    card.appendChild(links);
+    return card;
+  };
 
-        // Use given image path
-        const imgSrc = release['Cover JPG'];
+  const render = async () => {
+    const grid = document.getElementById(GRID_ID);
+    if (!grid) return;
+    grid.classList.add('loading');
 
-        // Pretty date, fallback to raw string if parsing fails
-        const d = asLocalDate(release['Release Date']);
-        const niceDate = isNaN(d) ? release['Release Date']
-                                  : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      const all = await res.json();
 
-        card.innerHTML = `
-          <div class="format-icon"><i class="fas ${icon}"></i></div>
-          <img src="${imgSrc}" alt="${release['Title']} cover">
-          <div class="info">
-            <div class="title">${release['Title']}</div>
-            <div class="artist">
-  <a href="artists/${release['Artist']}">
-    ${displayArtist}
-  </a>
-</div>
+      // sort newest → oldest
+      all.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
 
-            <div class="catalog">${release['Catalog#']} • ${niceDate}</div>
-            <div class="streaming-links">
-              ${release['Spotify'] ? `<a href="${release['Spotify']}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>` : ''}
-              ${release['Apple Music'] ? `<a href="${release['Apple Music']}" target="_blank" rel="noopener"><i class="fab fa-apple"></i></a>` : ''}
-              ${release['Youtube'] ? `<a href="${release['Youtube']}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>` : ''}
-            </div>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    })
-    .catch(err => console.error('Failed to load releases.json', err));
-});
+      // show latest 8 on the home page
+      const latest = all.slice(0, 8);
+      grid.classList.remove('loading');
+      latest.forEach(r => grid.appendChild(createCard(r)));
+    } catch (e) {
+      grid.classList.remove('loading');
+      grid.innerHTML = `<div class="error-state">Couldn’t load releases.</div>`;
+      console.error(e);
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', render);
+})();

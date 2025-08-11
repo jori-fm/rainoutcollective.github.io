@@ -1,62 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('release-grid');
-  if (!grid) return;
+(() => {
+  const DATA_URL = '/releases.json';
+  const GRID_ID  = 'release-grid';
 
-  // put near the top
-function asLocalDate(isoYmd) {
-  const [y, m, d] = String(isoYmd).split('-').map(Number);
-  return new Date(y, m - 1, d); // local midnight
-}
+  const escapeHtml = (s='') =>
+    s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
+  const toDate = (iso) => { const d = new Date(iso + 'T00:00:00'); d.setHours(0,0,0,0); return d; };
+  const isFuture = (iso) => { const t = new Date(); t.setHours(0,0,0,0); return toDate(iso) > t; };
 
-  // optional: show a temporary loading state
-  grid.classList.add('loading');
+  const createCard = (r) => {
+    const el = document.createElement('div');
+    el.className = 'release';
+    el.innerHTML = `
+      <div class="format-icon" title="${escapeHtml(r.Format || '')}">
+        ${escapeHtml((r.Format || 'D').charAt(0))}
+      </div>
+      <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
+      <div class="info">
+        <div class="title">${escapeHtml(r.Title)}</div>
+        <div class="artist">${escapeHtml(r.Artist)}</div>
+        <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
+      </div>
+    `;
 
-  fetch('releases.json')
-    .then(r => r.json())
-    .then(data => {
+    const links = document.createElement('div');
+    links.className = 'streaming-links';
+    if (isFuture(r['Release Date'])) {
+      links.innerHTML = `<span class="coming-soon">COMING SOON</span>`;
+    } else {
+      links.innerHTML = `
+        <a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+        <a class="streaming-link apple"   href="${r['Apple Music']}" target="_blank" rel="noopener" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+        <a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      `;
+    }
+    el.appendChild(links);
+    return el;
+  };
+
+  const render = async () => {
+    const grid = document.getElementById(GRID_ID);
+    if (!grid) return;
+    grid.classList.add('loading');
+
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      const data = await res.json();
+      data.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
       grid.classList.remove('loading');
-
-      // newest → oldest
-      const sorted = [...data].sort((a, b) => asLocalDate(b['Release Date']) - asLocalDate(a['Release Date']));
-
-      sorted.forEach(release => {
-        const card = document.createElement('div');
-        card.className = 'release';
-
-        const isSingle = String(release['Catalog#']).toUpperCase().includes('S');
-        const icon = isSingle ? 'fa-music' : 'fa-record-vinyl';
-        const displayArtist = release['Artist'] === 'smooch' ? 'smooch.' : release['Artist'];
-        const imgSrc = release['Cover JPG'];
-
-        const d = asLocalDate(release['Release Date']);
-        const niceDate = isNaN(d) ? release['Release Date']
-                                  : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
-
-        card.innerHTML = `
-          <div class="format-icon"><i class="fas ${icon}"></i></div>
-          <img src="${imgSrc}" alt="${release['Title']} cover">
-          <div class="info">
-            <div class="title">${release['Title']}</div>
-            <div class="artist">
-  <a href="artists/${release['Artist']}">
-    ${displayArtist}
-  </a>
-</div>
-
-            <div class="catalog">${release['Catalog#']} • ${niceDate}</div>
-            <div class="streaming-links">
-              ${release['Spotify'] ? `<a href="${release['Spotify']}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>` : ''}
-              ${release['Apple Music'] ? `<a href="${release['Apple Music']}" target="_blank" rel="noopener"><i class="fab fa-apple"></i></a>` : ''}
-              ${release['Youtube'] ? `<a href="${release['Youtube']}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>` : ''}
-            </div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    })
-    .catch(err => {
+      data.forEach(r => grid.appendChild(createCard(r)));
+    } catch (e) {
       grid.classList.remove('loading');
-      console.error('Failed to load releases.json', err);
-    });
-});
+      grid.innerHTML = `<div class="error-state">Couldn’t load releases.</div>`;
+      console.error(e);
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', render);
+})();

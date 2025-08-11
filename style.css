@@ -1423,6 +1423,18 @@ body.player-page.has-nowbar {
   padding-bottom: calc(var(--nowbar-h) + env(safe-area-inset-bottom) + 12px) !important;
 }
 
+/* Coming Soon badge */
+.coming-soon {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  letter-spacing: .08em;
+  font-size: .9rem;
+  opacity: .9;
+  border-radius: 2px;
+}
+
 
 
   
