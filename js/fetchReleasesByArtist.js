@@ -2,6 +2,12 @@
   const DATA_URL = '../releases.json';
   const WRAP_ID  = 'artist-releases';
   
+// make asset paths absolute (works from /, /releases, /artists/*)
+const resolveAsset = (p = '') => {
+  if (!p) return '';
+  if (/^https?:\/\//i.test(p)) return p;
+  return '/' + String(p).replace(/^\/+/, '');
+};
 
   const escapeHtml = (s='') =>
     s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -41,7 +47,7 @@ const artistHTML = (name = '') => {
     card.className = 'release';
     card.innerHTML = `
     ${releaseIconHTML(r['Catalog#'])}
-      <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
+      <img src="${resolveAsset(r['Cover JPG'])}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
         <div class="artist">${artistHTML(r.Artist)}</div>

@@ -665,12 +665,13 @@
           
           .release-scroll {
             display: flex;
-            justify-content: center;       /* center the cards */
+            justify-content: flex-start;           /* start at the left edge */
             align-items: flex-start;
             gap: 20px;
             overflow-x: auto;
             overflow-y: visible;           /* ← prevents top/bottom clipping */
-            padding: 60px 10px 48px;       /* ↑ add top space */
+            padding: 60px 16px 48px;               /* a bit more left space */
+            scroll-padding-left: 16px;             /* snap leaves room for first card */
             scroll-snap-type: x mandatory;
             margin: 0 auto;
             max-width: 100%;
@@ -681,6 +682,7 @@
           .release-scroll .release { 
             /* was: flex: 0 0 250px; */
             flex: 0 0 clamp(180px, 48vw, 240px);
+            scroll-snap-align: start;
           }
           @media (max-width: 600px) {
             .release-scroll {
