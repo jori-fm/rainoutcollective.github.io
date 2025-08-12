@@ -1437,6 +1437,24 @@ body.player-page.has-nowbar {
   border-radius: 2px;
 }
 
+/* Center-snap carousel for artist pages */
+#artist-releases,
+.release-scroll{
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;   /* keep start to avoid the left cut-off */
+  /* make first/last items able to center */
+  scroll-padding-left: 50%;
+  scroll-padding-right: 50%;
+}
+
+#artist-releases .release,
+.release-scroll .release{
+  scroll-snap-align: center;     /* the focused card sits centered */
+}
 
   
   

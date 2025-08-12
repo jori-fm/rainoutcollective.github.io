@@ -134,6 +134,38 @@
       "tracks": [
         { "title": "believe the kids", "file": "/assets/music/believe the kids.mp3" }
       ]
+    },
+    {
+      "catalog": "RAIN-015S",
+      "artist": "shinrei",
+      "title": "悲 し み",
+      "release_date": "2025-07-13",
+      "cover": "/assets/album-art/rain-015.jpg",
+      "tracks": [
+        { "title": "悲 し み", "file": "/assets/music/悲 し み.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-016S",
+      "artist": "shinrei",
+      "title": "デッドワールド",
+      "release_date": "2025-06-26",
+      "cover": "/assets/album-art/rain-016.jpg",
+      "tracks": [
+        { "title": "デッドワールド", "file": "/assets/music/デッドワールド.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-017",
+      "artist": "shinrei",
+      "title": "Afterlife, Corrupted Files",
+      "release_date": "2025-06-19",
+      "cover": "/assets/album-art/rain-017.jpg",
+      "tracks": [
+        { "title": "Afterlife I", "file": "/assets/music/Afterlife I.mp3" },
+        { "title": "Angel's Theme", "file": "/assets/music/Angel's Theme.mp3" },
+        { "title": "Raya", "file": "/assets/music/Raya.mp3" }
+      ]
     }
   ]
   

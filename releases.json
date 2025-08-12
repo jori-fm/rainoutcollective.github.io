@@ -30,7 +30,7 @@
     "Cover JPG":"assets\/album-art\/rain-003.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/1ds2EQIju72dIscee8JPK0",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/mmmeeeelttiiinnggggg-single\/1828936698",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=SCZOLeZNDN0&list=OLAK5uy_neoMwuqL0JObo3nG8KOQDT4UzvFWC8gWg"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=SCZOLeZNDN0"
   },
   {
     "Catalog#":"RAIN-004S",
@@ -41,7 +41,7 @@
     "Cover JPG":"assets\/album-art\/rain-004.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/2HGW5MHTTJEj3syM2enUeg",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/territory-single\/1828346387",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=joLewQvuYS4&list=OLAK5uy_m9irsOfXTsagdy31sV-Ts8-4pBNO88-xQ"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=joLewQvuYS4"
   },
   {
     "Catalog#":"RAIN-005S",
@@ -52,7 +52,7 @@
     "Cover JPG":"assets\/album-art\/rain-005.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/3dv1uRZ7WuQQEuYXUO742D",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/%E6%A5%BD%E5%9C%92-single\/1829076099",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=L0X9pseqW0c&list=OLAK5uy_l37PPj1sv6sXzzMpblM_nKJrKXkkseyXU"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=L0X9pseqW0c"
   },
   {
     "Catalog#":"RAIN-006S",
@@ -63,7 +63,7 @@
     "Cover JPG":"assets\/album-art\/rain-006.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7msl9kDqXGsNi8DOfVW2qJ",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/cryin-single\/1827808967",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=fTgxxBqbagc&list=OLAK5uy_n-n7yAxgboGDG98mQ_D-MQ816ESipa6x4"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=fTgxxBqbagc"
   },
   {
     "Catalog#":"RAIN-007",
@@ -96,7 +96,7 @@
     "Cover JPG":"assets\/album-art\/rain-009.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/0Es2E7R5m38C5BQp40OHQj",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/soul-on-fire-single\/1828852207",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=m1iG7-kYh6E&list=OLAK5uy_mx_qU2NrW1ptPeA2Ah0PfAGBm8ycSO_Pc"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=m1iG7-kYh6E"
   },
   {
     "Catalog#":"RAIN-010S",
@@ -107,7 +107,7 @@
     "Cover JPG":"assets\/album-art\/rain-010.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7uLmT3JP9VnpPyir9TGbxN",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/interesting-single\/1828359910",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=B30YZOn8Uwg&list=OLAK5uy_ncL_yu7w_9MnBBJ6VBxFJO4HJ59rZnoLw&pp=0gcJCWUEOCosWNin"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=B30YZOn8Uwg"
   },
   {
     "Catalog#":"RAIN-011S",
@@ -118,7 +118,7 @@
     "Cover JPG":"assets\/album-art\/rain-011.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/13eMY6ys7wpOFVpdlfGa2l",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/believe-the-kids-single\/1829234378",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=3lXxh1-EcNE&list=OLAK5uy_krjN1m5C5EMnlboKj-viw6HXMIcGPAMpU&pp=0gcJCWUEOCosWNin"
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=3lXxh1-EcNE"
   },
   {
     "Catalog#":"RAIN-012",
@@ -152,5 +152,38 @@
     "Spotify":"https:\/\/open.spotify.com\/album\/13eMY6ys7wpOFVpdlfGa2l",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/believe-the-kids-single\/1829234378",
     "Youtube":"https:\/\/www.youtube.com\/watch?v=3lXxh1-EcNE&list=OLAK5uy_krjN1m5C5EMnlboKj-viw6HXMIcGPAMpU&pp=0gcJCWUEOCosWNin"
+  },
+  {
+    "Catalog#":"RAIN-015S",
+    "Artist":"shinrei",
+    "Title":"悲 し み",
+    "Format":"Digital",
+    "Release Date":"2025-07-13",
+    "Cover JPG":"assets\/album-art\/rain-015.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/3AlsR0lg6J9K1OpDYiRRMH",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/%E6%82%B2-%E3%81%97-%E3%81%BF-single\/1831916254",
+    "Youtube":"https:\/\/youtu.be\/x4GvMOw2IuA"
+  },
+  {
+    "Catalog#":"RAIN-016S",
+    "Artist":"shinrei",
+    "Title":"デッドワールド",
+    "Format":"Digital",
+    "Release Date":"2025-06-26",
+    "Cover JPG":"assets\/album-art\/rain-016.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/6SXBD0CwXzBSYyl26DUbOp",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/デッドワールド-single\/1831925942",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=ucwptr0enM4"
+  },
+  {
+    "Catalog#":"RAIN-017",
+    "Artist":"shinrei",
+    "Title":"Afterlife, Corrupted Files",
+    "Format":"Digital",
+    "Release Date":"2025-06-19",
+    "Cover JPG":"assets\/album-art\/rain-017.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/4CrzUqCwhZD0S8QyWAiyEl",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/afterlife-corrupted-files-ep\/1832027342",
+    "Youtube":"https:\/\/www.youtube.com\/playlist?list=OLAK5uy_mRw7wQwUYrO3eTP2qJCwUHGQ8--aaGRiA"
   }
 ]
