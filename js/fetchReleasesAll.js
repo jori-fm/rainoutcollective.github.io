@@ -1,5 +1,5 @@
 (() => {
-  const DATA_URL = '../releases.json';
+  const DATA_URL = 'releases.json';   // or '/releases.json'
   const GRID_ID  = 'release-grid';
 
   const escapeHtml = (s='') =>
@@ -18,9 +18,7 @@ const releaseIconHTML = (catalog = '') =>
     const el = document.createElement('div');
     el.className = 'release';
     el.innerHTML = `
-      <div class="format-icon" title="${escapeHtml(r.Format || '')}">
-        ${releaseIconHTML(r['Catalog#'])}
-      </div>
+    ${releaseIconHTML(r['Catalog#'])}
       <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>

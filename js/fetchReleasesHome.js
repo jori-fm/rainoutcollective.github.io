@@ -1,5 +1,5 @@
 (() => {
-  const DATA_URL = '../releases.json';     // absolute so it works from any page
+  const DATA_URL = 'releases.json';   // or '/releases.json'
   const GRID_ID  = 'release-grid';       // index.html has this container
 
   const escapeHtml = (s='') =>
@@ -28,10 +28,8 @@ const releaseIconHTML = (catalog = '') =>
     card.className = 'release';
 
     card.innerHTML = `
-      <div class="format-icon" title="${escapeHtml(r.Format || '')}">
-        ${releaseIconHTML(r['Catalog#'])}
-      </div>
-      <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
+    ${releaseIconHTML(r['Catalog#'])}
+    <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
         <div class="artist">${escapeHtml(r.Artist)}</div>

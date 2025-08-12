@@ -17,9 +17,7 @@ const releaseIconHTML = (catalog = '') =>
     const card = document.createElement('div');
     card.className = 'release';
     card.innerHTML = `
-      <div class="format-icon" title="${escapeHtml(r.Format || '')}">
-        ${releaseIconHTML(r['Catalog#'])}
-      </div>
+    ${releaseIconHTML(r['Catalog#'])}
       <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
