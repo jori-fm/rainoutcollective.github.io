@@ -1435,6 +1435,32 @@ body.player-page.has-nowbar {
   border-radius: 2px;
 }
 
+/* --- Release type icon overrides --- */
+.release .format-icon{
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: auto;
+  height: auto;
+  background: transparent;   /* remove the bubble */
+  border: 0;
+  border-radius: 0;
+  transform: none;           /* cancel the center/scale transform */
+  pointer-events: none;      /* avoid blocking clicks on the card */
+  font-size: 20px;
+  line-height: 1;
+  z-index: 2;
+}
+/* cancel the hover effect from older rules */
+.release:hover .format-icon{
+  background: transparent;
+  transform: none;
+}
+/* tiny readability boost */
+.release .format-icon i{
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
 
 
   

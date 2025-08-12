@@ -69,7 +69,7 @@ const releaseIconHTML = (catalog = '') =>
       all.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
 
       // show latest 8 on the home page
-      const latest = all.slice(0, 8);
+      const latest = all.slice(0, 4);
       grid.classList.remove('loading');
       latest.forEach(r => grid.appendChild(createCard(r)));
     } catch (e) {
