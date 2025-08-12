@@ -30,11 +30,11 @@ const releaseIconHTML = (catalog = '') =>
     : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
 // Map JSON artist → exact file name in /artists (match your tree's casing)
 const ARTIST_PAGES = {
-  sai: 'sai.html',
-  shinrei: 'shinrei.html',
-  smooch: 'smooch.html',
-  sunni: 'sunni.html',
-  v0calyst: 'V0CALYST.html',
+  sai: 'sai',
+  shinrei: 'shinrei',
+  smooch: 'smooch',
+  sunni: 'sunni',
+  v0calyst: 'V0CALYST',
 };
 
 // Display name (adds the period for smooch.)
