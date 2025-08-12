@@ -26,6 +26,7 @@ const ARTIST_PAGES = {
   smooch: 'smooch',
   sunni: 'sunni',
   v0calyst: 'V0CALYST',
+  seraphim: 'seraphim',
 };
 
 // Display name (adds the period for smooch.)
