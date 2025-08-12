@@ -1,6 +1,7 @@
 (() => {
   const DATA_URL = 'releases.json';   // or '/releases.json'
   const GRID_ID  = 'release-grid';
+  
 
   const escapeHtml = (s='') =>
     s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -12,6 +13,28 @@ const releaseIconHTML = (catalog = '') =>
   isSingle(catalog)
     ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
     : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
+// Map JSON artist → exact file name in /artists (match your tree's casing)
+const ARTIST_PAGES = {
+  sai: 'sai.html',
+  shinrei: 'shinrei.html',
+  smooch: 'smooch.html',
+  sunni: 'sunni.html',
+  v0calyst: 'V0CALYST.html',
+};
+
+// Display name (adds the period for smooch.)
+const displayArtist = (name = '') => {
+  const n = String(name).trim();
+  return n.toLowerCase() === 'smooch' ? 'smooch.' : n;
+};
+
+// Build link HTML if we have a page for this artist
+const artistHTML = (name = '') => {
+  const key = String(name).trim().toLowerCase();
+  const file = ARTIST_PAGES[key];
+  const label = escapeHtml(displayArtist(name));
+  return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
+};
 
 
   const createCard = (r) => {
@@ -22,7 +45,7 @@ const releaseIconHTML = (catalog = '') =>
       <img src="${r['Cover JPG']}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
-        <div class="artist">${escapeHtml(r.Artist)}</div>
+        <div class="artist">${artistHTML(r.Artist)}</div>
         <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
       </div>
     `;

@@ -1461,7 +1461,16 @@ body.player-page.has-nowbar {
   text-shadow: 0 1px 2px rgba(0,0,0,.35);
 }
 
-
+/* Artist link styling inside cards */
+.release .artist .artist-link{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--text-secondary);
+}
+.release .artist .artist-link:hover{
+  border-bottom-color: var(--accent);
+  color: var(--text);
+}
 
   
   
