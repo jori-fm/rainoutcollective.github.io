@@ -50,7 +50,6 @@ const artistHTML = (name = '') => {
       <img src="${resolveAsset(r['Cover JPG'])}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
-        <div class="artist">${artistHTML(r.Artist)}</div>
         <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
       </div>
     `;
