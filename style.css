@@ -1457,40 +1457,60 @@ body.player-page.has-nowbar {
 }
 
 /* --- Promo modal --- */
-.promo-modal{ position:fixed; inset:0; display:none; place-items:center; z-index:9999; }
-.promo-modal.is-open{ display:grid; }
-.promo-backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.6); backdrop-filter:blur(2px); }
+/* --- Promo modal --- */
+.promo-modal{
+  position: fixed; inset: 0; display: grid; place-items: center; z-index: 9999;
+  visibility: hidden; opacity: 0; transition: opacity .22s ease, visibility .22s ease;
+}
+.promo-modal.is-open{ visibility: visible; opacity: 1; }
+
+.promo-backdrop{ position: absolute; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+
 .promo-content{
-  position:relative; width:min(920px, 94vw); background:rgba(10,12,18,.95);
-  border:1px solid rgba(120,140,255,.25); border-radius:14px; box-shadow:0 10px 40px rgba(0,0,0,.5);
+  position: relative; width: min(960px, 94vw); max-height: 90vh; overflow: hidden;
+  background: rgba(10,12,18,.97);
+  border: 1px solid rgba(120,140,255,.25); border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.55);
+  transform: translateY(8px) scale(.985);
+  transition: transform .22s ease;
 }
-.promo-body{ padding:12px; }
-#promo-video{
-  background:#0a0c12;          /* matches your site theme */
-  aspect-ratio:16 / 9;         /* prevents layout shift before it paints */
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:10px;
+.promo-modal.is-open .promo-content{ transform: translateY(0) scale(1); }
+
+.promo-header{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border-bottom: 1px solid rgba(120,140,255,.18);
 }
+.promo-title{
+  margin: 0; font-size: 1rem; letter-spacing: .04em; color: #cbd5ff;
+}
+.promo-title strong{ color: #97a7ff; font-weight: 600; }
+.promo-title em{ font-style: normal; opacity: .85; }
 
 .promo-close{
-  position:absolute; top:6px; right:8px; background:transparent; color:#cbd5ff;
-  border:1px solid rgba(120,140,255,.35); border-radius:999px; width:32px; height:32px;
-  font-size:16px; line-height:30px; cursor:pointer;
+  display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: transparent; color: #e4e8ff; border: 1px solid rgba(120,140,255,.4);
+  font-size: 20px; line-height: 1; cursor: pointer;
 }
-.promo-close:hover{ background:rgba(120,140,255,.1); }
+.promo-close:hover{ background: rgba(120,140,255,.12); }
 
-body.no-scroll{ overflow:hidden; }
+.promo-body{ padding: 12px; }
+#promo-video{
+  width: 100%; height: auto; display: block; border-radius: 10px;
+  background: #0a0c12; aspect-ratio: 16/9;   /* good fallback with no poster */
+}
 
-.promo-body{ position:relative; }
+/* Optional skeleton loader if you add .promo-skel in HTML */
+.promo-body{ position: relative; }
 .promo-skel{
-  position:absolute; inset:12px; border-radius:10px;
-  background:linear-gradient(90deg,#0a0c12 0%,#111525 50%,#0a0c12 100%);
-  background-size:200% 100%;
-  animation:promoShimmer 1.2s linear infinite;
+  position: absolute; inset: 12px; border-radius: 10px;
+  background: linear-gradient(90deg,#0a0c12 0%,#111525 50%,#0a0c12 100%);
+  background-size: 200% 100%; animation: promoShimmer 1.2s linear infinite;
 }
-@keyframes promoShimmer{ to{ background-position: -200% 0; } }
+@keyframes promoShimmer{ to { background-position: -200% 0; } }
+
+body.no-scroll{ overflow: hidden; }
+
 
 
   

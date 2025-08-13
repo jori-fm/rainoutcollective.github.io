@@ -155,28 +155,28 @@
   });
 </script>
 <!-- Krewlty trailer promo modal -->
+<!-- Krewlty trailer promo modal -->
 <div id="promo-modal" class="promo-modal" aria-hidden="true" role="dialog" aria-label="Krewlty trailer">
   <div class="promo-backdrop" data-close="true"></div>
 
   <div class="promo-content" role="document">
-    <button class="promo-close" aria-label="Close" data-close="true">✕</button>
+    <div class="promo-header">
+      <h3 class="promo-title">
+        <strong>krewlty</strong> — <span>#krewlmusic</span> <em>Coming Winter 2025</em>
+      </h3>
+      <button class="promo-close" aria-label="Close" data-close="true">×</button>
+    </div>
 
     <div class="promo-body">
-      <div class="promo-skel" aria-hidden="true"></div>
-
-      <video id="promo-video"
-             playsinline
-             muted
-             controls
-             preload="metadata">
+      <!-- Optional skeleton: <div class="promo-skel" aria-hidden="true"></div> -->
+      <video id="promo-video" playsinline muted controls preload="auto">
         <source src="/assets/video/krewlty-trailer.mp4" type="video/mp4">
-        <!-- If you also have webm, add another source: -->
-        <!-- <source src="/assets/video/krewlty-trailer.webm" type="video/webm"> -->
         Your browser does not support the video tag.
       </video>
     </div>
   </div>
 </div>
+
 <script src="/js/homePromo.js"></script>
 </body>
 </html>
