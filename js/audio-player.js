@@ -6,6 +6,10 @@
     const s = Math.max(0, Math.floor(t));
     return `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
   };
+  const displayArtist = (name = '') => {
+    const n = String(name).trim();
+    return /^smooch\.?$/i.test(n) ? 'smooch.' : n;
+  };
 
   // Elements
   const el = {
@@ -61,7 +65,7 @@
       
       const meta = document.createElement("div");
       meta.className = "ap-meta-line";
-      meta.innerHTML = `${release.artist} <span class="ap-dot">•</span> ${release.catalog} <span class="ap-dot">•</span> ${release.release_date}`;
+      meta.innerHTML = `${displayArtist(release.artist)} <span class="ap-dot">•</span> ${release.catalog} <span class="ap-dot">•</span> ${release.release_date}`;
       
       // Track list
       const trackList = document.createElement("ul");
@@ -108,7 +112,7 @@
     // Update UI
     el.cover.src = release.cover;
     el.title.textContent = track.title;
-    el.sub.textContent = `${release.artist} • ${release.title}`;
+    el.sub.textContent = `${displayArtist(release.artist)} • ${release.title}`;
     el.audio.src = track.file;
     
     // Show player and start playback
