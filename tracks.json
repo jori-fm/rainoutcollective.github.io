@@ -166,6 +166,48 @@
         { "title": "Angel's Theme", "file": "/assets/music/Angel's Theme.mp3" },
         { "title": "Raya", "file": "/assets/music/Raya.mp3" }
       ]
+    },
+    {
+      "catalog": "RAIN-018S",
+      "artist": "shinrei",
+      "title": "God had a plan for me",
+      "release_date": "2025-08-15",
+      "cover": "/assets/album-art/rain-018.jpg",
+      "tracks": [
+        { "title": "God had a plan for me", "file": "/assets/music/God had a plan for me.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-012",
+      "artist": "seraphim",
+      "title": "directional/spectrum",
+      "release_date": "2025-08-15",
+      "cover": "/assets/album-art/rain-012.jpg",
+      "tracks": [
+        { "title": "directional", "file": "/assets/music/directional.mp3" },
+        { "title": "spectrum", "file": "/assets/music/spectrum.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-014S",
+      "artist": "sai",
+      "title": "mikancore",
+      "release_date": "2025-08-15",
+      "cover": "/assets/album-art/rain-014.jpg",
+      "tracks": [
+        { "title": "mikancore", "file": "/assets/music/mikancore.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-013S",
+      "artist": "V0CALYST",
+      "title": "ggysm",
+      "release_date": "2025-08-15",
+      "cover": "/assets/album-art/rain-013.jpg",
+      "tracks": [
+        { "title": "ggysm", "file": "/assets/music/ggysm.mp3" }
+      ]
     }
+
   ]
   
