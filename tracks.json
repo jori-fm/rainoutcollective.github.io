@@ -207,7 +207,78 @@
       "tracks": [
         { "title": "ggysm", "file": "/assets/music/ggysm.mp3" }
       ]
+    },
+    {
+      "catalog": "RAIN-020S",
+      "artist": "smooch",
+      "title": "seawrld",
+      "release_date": "2024-01-17",
+      "cover": "/assets/album-art/rain-020.jpg",
+      "tracks": [
+        { "title": "seawrld", "file": "/assets/music/seawrld.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-021S",
+      "artist": "smooch",
+      "title": "genesis.",
+      "release_date": "2024-02-07",
+      "cover": "/assets/album-art/rain-021.jpg",
+      "tracks": [
+        { "title": "genesis.", "file": "/assets/music/genesis..mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-022S",
+      "artist": "smooch",
+      "title": "New Thing",
+      "release_date": "2024-03-01",
+      "cover": "/assets/album-art/rain-022.jpg",
+      "tracks": [
+        { "title": "New Thing", "file": "/assets/music/New Thing.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-023S",
+      "artist": "smooch",
+      "title": "Morning Lotus",
+      "release_date": "2024-04-01",
+      "cover": "/assets/album-art/rain-023.jpg",
+      "tracks": [
+        { "title": "Morning Lotus", "file": "/assets/music/Morning Lotus.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-024S",
+      "artist": "smooch",
+      "title": "Late Night Cyber Circuit",
+      "release_date": "2024-05-24",
+      "cover": "/assets/album-art/rain-024.jpg",
+      "tracks": [
+        { "title": "Late Night Cyber Circuit", "file": "/assets/music/Late Night Cyber Circuit.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-025S",
+      "artist": "smooch",
+      "title": "A day down the park",
+      "release_date": "2025-01-10",
+      "cover": "/assets/album-art/rain-025.jpg",
+      "tracks": [
+        { "title": "A day down the park", "file": "/assets/music/A day down the park.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-026S",
+      "artist": "smooch",
+      "title": "guitar_4",
+      "release_date": "2025-01-11",
+      "cover": "/assets/album-art/rain-026.jpg",
+      "tracks": [
+        { "title": "guitar_4", "file": "/assets/music/guitar_4.mp3" }
+      ]
     }
+
 
   ]
   

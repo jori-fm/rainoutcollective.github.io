@@ -196,5 +196,94 @@
     "Spotify":"https:\/\/open.spotify.com\/album\/51e1U2Jz3sGkzQ7w8lky3s",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/god-had-a-plan-for-me-feat-nolife-klg-klerge-single\/1833205159",
     "Youtube":"https:\/\/www.youtube.com\/watch?v=LOzj2GSWR00"
+  },
+  {
+    "Catalog#":"RAIN-019S",
+    "Artist":"krewlty",
+    "Title":"its over",
+    "Format":"Digital",
+    "Release Date":"2025-08-29",
+    "Cover JPG":"assets\/album-art\/rain-019.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/51e1U2Jz3sGkzQ7w8lky3s",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/god-had-a-plan-for-me-feat-nolife-klg-klerge-single\/1833205159",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=LOzj2GSWR00"
+  },
+  {
+    "Catalog#":"RAIN-020S",
+    "Artist":"smooch",
+    "Title":"seawrld",
+    "Format":"Digital",
+    "Release Date":"2024-01-17",
+    "Cover JPG":"assets\/album-art\/rain-020.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/2xJEbc28IxTyeEoWElvJRF",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/seawrld-single\/1794934247",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=NYGJGJK4Ymk"
+  },
+  {
+    "Catalog#":"RAIN-021S",
+    "Artist":"smooch",
+    "Title":"genesis.",
+    "Format":"Digital",
+    "Release Date":"2024-02-07",
+    "Cover JPG":"assets\/album-art\/rain-021.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/657TUSMquB2butfAwul5yl",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/genesis-single\/1794924244",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=ImWDxJAUrJY"
+  },
+  {
+    "Catalog#":"RAIN-022S",
+    "Artist":"smooch",
+    "Title":"New Thing",
+    "Format":"Digital",
+    "Release Date":"2024-03-01",
+    "Cover JPG":"assets\/album-art\/rain-022.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/5VAnO5UNMaLrcKyGCEh3gy",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/new-thing-single\/1795012858",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=uIhswEK_owo"
+  },
+  {
+    "Catalog#":"RAIN-023S",
+    "Artist":"smooch",
+    "Title":"Morning Lotus",
+    "Format":"Digital",
+    "Release Date":"2024-04-01",
+    "Cover JPG":"assets\/album-art\/rain-023.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/7yIMMeciemdPKi2AfHrVAO",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/morning-lotus-single\/1794934212",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=LMbpeidoMyU"
+  },
+  {
+    "Catalog#":"RAIN-024S",
+    "Artist":"smooch",
+    "Title":"Late Night Cyber Circuit",
+    "Format":"Digital",
+    "Release Date":"2024-05-24",
+    "Cover JPG":"assets\/album-art\/rain-024.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/6LjZU0Tr9qauEZeFiaw6fr",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/late-night-cyber-circuit-single\/1794902893",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=k9DbK3Fq9mc"
+  },
+  {
+    "Catalog#":"RAIN-025S",
+    "Artist":"smooch",
+    "Title":"A day down the park",
+    "Format":"Digital",
+    "Release Date":"2025-01-10",
+    "Cover JPG":"assets\/album-art\/rain-025.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/7CV29mjbKlQuugf5X5lig6",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/a-day-down-the-park-single\/1789233096",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=EQiQ0INGnM4"
+  },
+  {
+    "Catalog#":"RAIN-026S",
+    "Artist":"smooch",
+    "Title":"guitar_4",
+    "Format":"Digital",
+    "Release Date":"2025-01-11",
+    "Cover JPG":"assets\/album-art\/rain-026.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/7sXI458zuZ0UJCoB1WfrZ1",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/guitar-4-single\/1789227932",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=0jJqAJKcPqE"
   }
+
 ]

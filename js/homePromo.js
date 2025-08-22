@@ -1,6 +1,6 @@
 (() => {
     const STORAGE_KEY = 'promo:krewlty-trailer:v2';
-    const SHOW_EVERY_MS = 60 * 60 * 1000; // 1 hour
+    const SHOW_EVERY_MS = 7 * 24 * 60 * 60 * 1000; // 1 week
     const forceShow = new URLSearchParams(location.search).has('promo');
   
     const $ = (s, r = document) => r.querySelector(s);
