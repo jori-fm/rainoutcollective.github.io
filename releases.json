@@ -284,6 +284,50 @@
     "Spotify":"https:\/\/open.spotify.com\/album\/7sXI458zuZ0UJCoB1WfrZ1",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/guitar-4-single\/1789227932",
     "Youtube":"https:\/\/www.youtube.com\/watch?v=0jJqAJKcPqE"
+  },
+  {
+    "Catalog#":"RAIN-027S",
+    "Artist":"süleymon",
+    "Title":"BAP",
+    "Format":"Digital",
+    "Release Date":"2025-06-14",
+    "Cover JPG":"assets\/album-art\/rain-027.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/5u5eCRE4kUzXz7QmJ4CnIC",
+    "Apple Music":"https://music.apple.com/us/artist/s%C3%BCleymon/1828359912",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=hlW1kFtG2fg"
+  },
+  {
+    "Catalog#":"RAIN-028S",
+    "Artist":"süleymon",
+    "Title":"toronto",
+    "Format":"Digital",
+    "Release Date":"2025-07-12",
+    "Cover JPG":"assets\/album-art\/rain-028.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/0FpaalxqUFva06bxuDReF7",
+    "Apple Music":"https://music.apple.com/us/artist/s%C3%BCleymon/1828359912",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=zbsjsHNL1_0"
+  },
+  {
+    "Catalog#":"RAIN-029S",
+    "Artist":"süleymon",
+    "Title":"wok",
+    "Format":"Digital",
+    "Release Date":"2025-07-19",
+    "Cover JPG":"assets\/album-art\/rain-029.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/2r7YiWFiNWEUtTRN7wVayx",
+    "Apple Music":"https://music.apple.com/us/artist/s%C3%BCleymon/1828359912",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=K8Sby-AsRTk"
+  },
+  {
+    "Catalog#":"RAIN-030S",
+    "Artist":"süleymon",
+    "Title":"staprob",
+    "Format":"Digital",
+    "Release Date":"2025-07-21",
+    "Cover JPG":"assets\/album-art\/rain-030.jpg",
+    "Spotify":"https:\/\/open.spotify.com\/album\/0ivGbXExInsfbEG6iXZkhU",
+    "Apple Music":"https://music.apple.com/us/artist/s%C3%BCleymon/1828359912",
+    "Youtube":"https:\/\/www.youtube.com\/watch?v=K8Sby-AsRTk"
   }
 
 ]
