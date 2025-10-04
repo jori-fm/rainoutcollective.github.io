@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Embeds-->
     <meta property="og:title" content="RAINOUT collective.">
     <meta property="og:description" content="An independent music collective. Believe the kids.">
     <meta property="og:image" content="https://rainoutcollective.com/assets/umbrella.png">
     <meta property="og:url" content="https://rainoutcollective.com">
     <meta property="og:type" content="website">
     
-    <meta name="twitter:card" content="summary"> <!-- Small card -->
-    <meta name="twitter:title" content="RAINOUT collective.">
+    <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="RAINOUT collective.">
     <meta name="twitter:description" content="An independent music collective. Believe the kids.">
     <meta name="twitter:image" content="https://rainoutcollective.com/assets/umbrella.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicons -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/font/simple-icons.min.css">
@@ -23,7 +20,6 @@
     
     <title>RAINOUT collective.</title>
     <link rel="stylesheet" href="style.css">
-<!-- Add these before </head> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 </head>
@@ -57,8 +53,7 @@
                 <p>RAINOUT collective is an independent music label dedicated to embracing music diversity from young artists. Founded in 2024.</p>
             </div>
             
-            <!-- Replace the entire .releases div with this: -->
-<div class="releases">
+            <div class="releases">
     <h2>NEW RELEASES</h2>
     <div id="release-grid" class="release-grid"></div>
     <div class="more-button-container">
@@ -69,7 +64,6 @@
   <section class="about" id="artists">
     <h2>Artists</h2>
     <div class="artist-grid" style="margin-top:20px">
-      <!-- Link to existing artist pages (exact filenames) -->
       <a class="artist" href="/artists/arri"><img src="/assets/artists/arri.jpg" alt="arri"><h3>arri</h3></a>
       <a class="artist" href="/artists/sai"><img src="/assets/artists/sai.jpg" alt="sai"><h3>sai</h3></a>
       <a class="artist" href="/artists/seraphim"><img src="/assets/artists/seraphim.jpg" alt="seraphim"><h3>seraphim</h3></a>
@@ -110,18 +104,16 @@
             // Add scanline effect to banner
             const banner = document.querySelector('.banner');
             setInterval(() => {
-                banner.style.boxShadow = `0 0 ${15 + Math.random() * 10}px rgba(100, 150, 255, ${0.1 + Math.random() * 0.1})`;
+                banner.style.boxShadow = `0 0 ${15 + Math.random() * 10}px rgba(255, 80, 80, ${0.1 + Math.random() * 0.1})`;
             }, 3000);
         });
     </script>
-<!-- Add this before </body> -->
-<!-- At the bottom of your body, before </body> -->
 <script src="js/script.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const banner = document.querySelector('.banner');
         setInterval(() => {
-            banner.style.boxShadow = `0 0 ${15 + Math.random() * 10}px rgba(100, 150, 255, ${0.1 + Math.random() * 0.1})`;
+            banner.style.boxShadow = `0 0 ${15 + Math.random() * 10}px rgba(255, 80, 80, ${0.1 + Math.random() * 0.1})`;
         }, 3000);
     });
 </script>
@@ -154,29 +146,7 @@
     }
   });
 </script>
-<!-- Krewlty trailer promo modal -->
-<!-- Krewlty trailer promo modal -->
-<div id="promo-modal" class="promo-modal" aria-hidden="true" role="dialog" aria-label="Krewlty trailer">
-  <div class="promo-backdrop" data-close="true"></div>
 
-  <div class="promo-content" role="document">
-    <div class="promo-header">
-      <h3 class="promo-title">
-        <strong>krewlty</strong> — <span>#krewlmusic</span> <em>Coming Winter 2025</em>
-      </h3>
-      <button class="promo-close" aria-label="Close" data-close="true">×</button>
-    </div>
 
-    <div class="promo-body">
-      <!-- Optional skeleton: <div class="promo-skel" aria-hidden="true"></div> -->
-      <video id="promo-video" playsinline muted controls preload="auto">
-        <source src="/assets/video/krewlty-trailer.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
-
-<script src="/js/homePromo.js"></script>
 </body>
 </html>
