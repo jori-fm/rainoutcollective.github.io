@@ -549,40 +549,121 @@ footer {
   color: inherit !important;
 }
 
+/* === Top Navigation === */
+.site-nav {
+  max-width: 1180px;
+  margin: 8px auto 0;  
+  border-radius: 8px; 
+  position: sticky;
+  padding-inline: 20px;
+  top: 0;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 16px;
+  background: rgba(10, 12, 18, 0.6);
+  border-bottom: 1px solid rgba(255, 0, 0,0.15); /* Brighter red */
+  backdrop-filter: blur(6px);
+  justify-content: center;  
+}
 
+.site-nav .brand img {
+  height: 34px;
+  display: block;
+}
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .banner {
-      width: 95%;
-  }
-  
-  h1 {
-      font-size: 2.8rem;
-  }
-  
-  h2 {
-      font-size: 1.8rem;
-  }
-  
-  .release-grid {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: 0;
+}
+
+.site-nav .nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: .5px;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  transition: .2s ease;
+}
+
+.site-nav .nav-links a:hover {
+  color: var(--accent);
+  border-color: rgba(255, 0, 0,0.25); /* Brighter red */
+  background: rgba(255, 0, 0,0.08); /* Brighter red */
+}
+
+.site-nav .nav-links a.active {
+  color: var(--accent);
+  border-color: rgba(255, 0, 0,0.35); /* Brighter red */
+  background: rgba(255, 0, 0,0.12); /* Brighter red */
+}
+
+.nav-toggle { 
+  display: none;
+  margin-left: auto;
+  font: inherit;
+  font-size: 20px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid rgba(255, 0, 0,0.25); /* Brighter red */
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+/* === Responsive adjustments & Mobile Nav === */
+@media (max-width: 1240px) {
+  .site-nav {
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
   }
 }
 
-  @media (max-width: 600px) {
+@media (max-width: 900px) {
+  .banner { width: 95%; }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 1.8rem; }
+  .release-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
 
-  main > * {
-margin-bottom: 40px;
-}    
-  h1 {
-      font-size: 2.2rem;
+  /* START: Mobile Navigation Styles */
+  .site-nav {
+      flex-wrap: wrap;
+      justify-content: space-between;
   }
-  
-  .tagline {
-      font-size: 1.1rem;
+  .nav-toggle {
+      display: block; /* Show hamburger button */
   }
+  .site-nav .nav-links {
+      display: none; /* Hide nav links by default */
+      flex-basis: 100%;
+      flex-direction: column;
+      align-items: center;
+      order: 3;
+      padding-top: 15px;
+      gap: 0;
+  }
+  body.nav-open .site-nav .nav-links {
+      display: flex; /* Show nav links when toggled */
+  }
+  .site-nav .nav-links a {
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+  }
+  .site-nav .nav-links a:last-child {
+      border-bottom: none;
+  }
+  /* END: Mobile Navigation Styles */
+}
+
+@media (max-width: 600px) {
+  main > * { margin-bottom: 40px; }    
+  h1 { font-size: 2.2rem; }
+  .tagline { font-size: 1.1rem; }
   
   .release-grid {
       grid-template-columns: 1fr;
@@ -590,21 +671,40 @@ margin-bottom: 40px;
   
   .artist-grid {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-justify-content: center; /* Center the entire grid */
+      justify-content: center;
+  }
+  .social-links { gap: 15px; }
+  .social-links a { width: 45px; height: 45px; font-size: 1.2rem; }
+  
+  /* START: Mobile Card & Carousel Adjustments */
+  .release {
+      padding: 25px 15px 15px; /* Reduced top padding */
+  }
+  .release img {
+      margin-bottom: 15px; /* Tighter spacing */
+  }
+  .release .title {
+      font-size: 1.1rem; /* Smaller font */
+  }
+  .release .artist {
+      font-size: 1rem; /* Smaller font */
   }
   
-  .social-links {
+  #artist-releases,
+  .release-scroll {
+      flex: 0 0 250px; /* Use a fixed width for consistent snapping */
       gap: 15px;
+      /* Adjust snapping point to perfectly center the 250px card */
+      scroll-padding-left: calc(50% - 125px);
+      scroll-padding-right: calc(50% - 125px);
   }
-  
-  .social-links a {
-      width: 45px;
-      height: 45px;
-      font-size: 1.2rem;
+  #artist-releases .release,
+  .release-scroll .release {
+      flex-basis: 250px; /* Explicitly set base width */
   }
-
-
+  /* END: Mobile Card & Carousel Adjustments */
 }
+
 
 /* Rain Effect Styles */
 .rain {
@@ -665,32 +765,30 @@ justify-content: center; /* Center the entire grid */
 
 .release-scroll {
   display: flex;
-  justify-content: flex-start;           /* start at the left edge */
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
   overflow-x: auto;
-  overflow-y: visible;           /* ← prevents top/bottom clipping */
-  padding: 60px 16px 48px;               /* a bit more left space */
-  scroll-padding-left: 16px;             /* snap leaves room for first card */
+  overflow-y: visible;
+  padding: 60px 16px 48px;
+  scroll-padding-left: 16px;
   scroll-snap-type: x mandatory;
   margin: 0 auto;
   max-width: 100%;
 }
 
-
-
 .release-scroll .release { 
-  /* was: flex: 0 0 250px; */
   flex: 0 0 clamp(180px, 48vw, 240px);
   scroll-snap-align: start;
 }
+
 @media (max-width: 600px) {
   .release-scroll {
     max-width: 100vw;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin: 0;               /* avoid accidental wider-than-screen containers */
-    padding: 40px 12px 32px; /* small safe padding */
+    margin: 0;
+    padding: 40px 12px 32px;
   }
 }
 
@@ -724,13 +822,13 @@ img, video { max-width: 100%; height: auto; }
   display: grid;
   grid-template-columns: repeat(4, minmax(220px, 1fr)); /* 4 columns */
   gap: 16px;
-  max-width: 1280px;    /* keeps the row from getting huge */
-  margin: 0 auto;       /* centers the whole grid */
-  align-items: start;   /* keeps tops aligned when heights differ */
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: start;
 }
 
 .home .release {
-  padding: 16px 12px 12px;   /* tighter cards */
+  padding: 16px 12px 12px;
 }
 
 .home .release img {
@@ -835,90 +933,17 @@ p, .catalog, .artist {
   text-decoration: underline;
 }
 
-
-/* Top nav */
-.site-nav {
-  max-width: 1180px;
-  margin: 8px auto 0;  
-  border-radius: 8px; 
-  position: sticky;
-  padding-inline: 20px;
-  top: 0;
-  z-index: 9990;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 10px 16px;
-  background: rgba(10, 12, 18, 0.6);
-  border-bottom: 1px solid rgba(255, 0, 0,0.15); /* Brighter red */
-  backdrop-filter: blur(6px);
-  justify-content: center;  
-}
-
-.site-nav .brand img {
-  height: 34px;  /* tweak if needed */
-  display: block;
-}
-
-.site-nav .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-left: 0;
-}
-
-.site-nav .nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  letter-spacing: .5px;
-  padding: 6px 8px;
-  border: 1px solid transparent;
-  transition: .2s ease;
-}
-
-.site-nav .nav-links a:hover {
-  color: var(--accent);
-  border-color: rgba(255, 0, 0,0.25); /* Brighter red */
-  background: rgba(255, 0, 0,0.08); /* Brighter red */
-}
-
-.site-nav .nav-links a.active {
-  color: var(--accent);
-  border-color: rgba(255, 0, 0,0.35); /* Brighter red */
-  background: rgba(255, 0, 0,0.12); /* Brighter red */
-}
-
-/* Mobile */
-.nav-toggle { 
-  display: none;
-  margin-left: auto;
-  font: inherit;
-  font-size: 20px;
-  color: var(--text);
-  background: transparent;
-  border: 1px solid rgba(255, 0, 0,0.25); /* Brighter red */
-  padding: 4px 8px;
-  border-radius: 2px;
-}
-@media (max-width: 1240px) {
-  .site-nav {
-    max-width: none;
-    margin: 0;            /* stick to the edges on mobile */
-    border-radius: 0;
-  }
-}
 /* Featured Artists: 4 per row on home, center last row */
 .home .artists .artist-grid {
   display: grid;
   grid-template-columns: repeat(4, 150px);
   gap: 24px;
-  justify-content: center; /* centers the whole grid block */
-  justify-items: center;   /* centers items inside each row */
+  justify-content: center;
+  justify-items: center;
 }
 
-
 .home .artists .artist {
-  width: 150px;                       /* ignore old flex-basis */
+  width: 150px;
   flex: none;
 }
 
@@ -933,22 +958,17 @@ p, .catalog, .artist {
   .home .artists .artist-grid { grid-template-columns: 150px; }
 }
 
-/* --- Center last row in 4-column featured artist grid on home page --- */
-
-/* 1 item leftover → center it in column 2 */
+/* Center last row in 4-column featured artist grid on home page */
 .home .artists .artist-grid > .artist:nth-last-child(1):nth-child(4n + 1) {
   grid-column: 2;
 }
 
-/* 2 items leftover → place them in columns 2 and 3 */
 .home .artists .artist-grid > .artist:nth-last-child(2):nth-child(4n + 1) {
   grid-column: 2;
 }
 .home .artists .artist-grid > .artist:nth-last-child(2):nth-child(4n + 2) {
   grid-column: 3;
 }
-
-/* 3 leftover → already looks centered enough, no change */
 
 /* === Audio Player page === */
 .ap-controls {
@@ -966,7 +986,6 @@ p, .catalog, .artist {
 @media (max-width: 900px) {
   .ap-controls .ap-btn { width: 34px; height: 32px; }
 }
-
 
 .ap-release-list {
   display: grid;
@@ -1030,11 +1049,11 @@ p, .catalog, .artist {
 
 /* Bottom mini player */
 .ap-nowbar {
-  position: fixed;  /* this makes it float instead of staying in document flow */
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9999;    /* make sure it stays above all other elements */
+  z-index: 9999;
   background: rgba(10, 12, 18, 0.9);
   border-top: 1px solid rgba(255, 0, 0, 0.25); /* Brighter red */
   backdrop-filter: blur(6px);
@@ -1086,7 +1105,7 @@ p, .catalog, .artist {
 }
 .ap-vol input[type="range"] { width: 120px; accent-color: var(--accent); }
 
-/* Responsive */
+/* Responsive Player */
 @media (max-width: 900px) {
   .ap-card { grid-template-columns: 110px 1fr; }
 }
@@ -1107,38 +1126,32 @@ p, .catalog, .artist {
   .ap-vol         { grid-area: vol; }
 }
 
-:root { --nowbar-h: 84px; }          /* total bar height */
+:root { --nowbar-h: 84px; }
 
 .ap-nowbar {
 position: fixed;
 left: 0; right: 0; bottom: 0;
-height: var(--nowbar-h);           /* explicit height for padding calc */
-z-index: 10020;                    /* above everything */
+height: var(--nowbar-h);
+z-index: 10020;
 background: rgba(10,12,18,0.9);
 border-top: 1px solid rgba(255, 0, 0,0.25); /* Brighter red */
 backdrop-filter: blur(6px);
-
-/* slide-in */
 transform: translateY(100%);
 transition: transform .25s ease;
 }
 .ap-nowbar.is-open { transform: translateY(0); }
 
-/* when the bar is open, push page content up so nothing is hidden */
 .player-page.has-nowbar {
 padding-bottom: calc(var(--nowbar-h) + 12px);
 }
 
-/* --- Force the audio bar to float on the viewport --- */
-:root { --nowbar-h: 84px; }
-
 body.player-page .ap-nowbar {
-position: fixed !important;  /* beat any earlier rule */
+position: fixed !important;
 left: 0 !important;
 right: 0 !important;
 bottom: 0 !important;
 height: var(--nowbar-h);
-z-index: 10020 !important;   /* above everything */
+z-index: 10020 !important;
 background: rgba(10,12,18,0.9);
 border-top: 1px solid rgba(255, 0, 0,0.25); /* Brighter red */
 backdrop-filter: blur(6px);
@@ -1148,16 +1161,11 @@ transition: transform .25s ease;
 
 body.player-page .ap-nowbar.is-open { transform: translateY(0); }
 
-/* give the page room while the bar is visible so content isn't covered */
 body.player-page.has-nowbar {
 padding-bottom: calc(var(--nowbar-h) + 12px);
 }
 
 .player-page { filter: none !important; }
-
-
-/* Make the mini-player sit above ALL overlays and not blend with them */
-:root { --nowbar-h: 84px; }
 
 .player-page .ap-nowbar {
 position: fixed !important;
@@ -1165,9 +1173,9 @@ left: 0 !important;
 right: 0 !important;
 bottom: 0 !important;
 height: var(--nowbar-h);
-z-index: 2147483647;     /* absolutely on top */
-isolation: isolate;      /* prevent any ancestor blending/filters */
-background: rgba(10,12,18,0.95);  /* solid-ish backdrop so UI is visible */
+z-index: 2147483647;
+isolation: isolate;
+background: rgba(10,12,18,0.95);
 border-top: 1px solid rgba(255, 0, 0,0.25); /* Brighter red */
 backdrop-filter: blur(6px);
 transform: translateY(100%);
@@ -1176,29 +1184,23 @@ transition: transform .25s ease;
 
 .player-page .ap-nowbar.is-open { transform: translateY(0); }
 
-/* Make sure text is actually visible */
 .player-page .ap-nowbar, 
 .player-page .ap-nowbar * {
 color: #e8efff !important;
 mix-blend-mode: normal !important;
 }
 
-/* Give the page space while the bar is open so content isn't covered */
 .player-page.has-nowbar {
 padding-bottom: calc(var(--nowbar-h) + 12px) !important;
 }
-/* If your CRT overlay uses body::before, disable it only on the player page */
-.player-page::before { display: none !important; }   /* <-- if you still can't see text, keep this */
+.player-page::before { display: none !important; }
 
-
-/* Player page must not inherit global CRT filter/overlay */
 .player-page { filter: none !important; }
-.player-page::before { display: none !important; }   /* hides the scanline/glare layer */
+.player-page::before { display: none !important; }
 
 .ap-btn[aria-pressed="true"] { opacity: .9; outline: 1px solid rgba(255,255,255,.25); }
-.ap-btn[data-mode="2"]::after { content: "1"; font-size: .7em; margin-left: .15rem; } /* repeat-one badge */
+.ap-btn[data-mode="2"]::after { content: "1"; font-size: .7em; margin-left: .15rem; }
 
-/* Add to style.css */
 .ap-release-list {
 margin-top: 30px;
 }
@@ -1296,19 +1298,14 @@ text-align: center;
 font-size: 1.1rem;
 }
 
-/* Add these styles to your existing CSS */
-
-/* Ensure the player slides up */
 .ap-nowbar.is-open {
 transform: translateY(0) !important;
 }
 
-/* Add padding to body when player is visible */
 body.player-page.has-nowbar {
 padding-bottom: 100px !important;
 }
 
-/* Mini-player styling */
 .ap-nowbar {
 position: fixed;
 left: 0;
@@ -1401,31 +1398,22 @@ width: 100%;
 accent-color: var(--accent);
 }
 
-/* --- Mini-player: prevent bottom clipping --- */
-:root { --nowbar-h: 84px; } /* keep your baseline */
-
 .player-page .ap-nowbar{
 position: fixed !important;
 left: 0 !important;
 right: 0 !important;
 bottom: 0 !important;
-
-/* allow it to grow */
 height: auto !important;
 min-height: var(--nowbar-h);
-
-/* space for iOS home indicator + some breathing room */
 padding: 10px 14px max(12px, env(safe-area-inset-bottom));
-z-index: 2147483647; /* stay above overlays */
-transform: translateY(0); /* shown state */
+z-index: 2147483647;
+transform: translateY(0);
 }
 
-/* push the page up so nothing is hidden behind the bar */
 .player-page.has-nowbar{
 padding-bottom: calc(var(--nowbar-h) + env(safe-area-inset-bottom) + 12px) !important;
 }
 
-/* Coming Soon badge */
 .coming-soon {
 display: inline-block;
 padding: 6px 10px;
@@ -1437,7 +1425,6 @@ opacity: .9;
 border-radius: 2px;
 }
 
-/* Center-snap carousel for artist pages */
 #artist-releases,
 .release-scroll{
 display: flex;
@@ -1445,18 +1432,16 @@ gap: 20px;
 overflow-x: auto;
 overflow-y: visible;
 scroll-snap-type: x mandatory;
-justify-content: flex-start;   /* keep start to avoid the left cut-off */
-/* make first/last items able to center */
+justify-content: flex-start;
 scroll-padding-left: 50%;
 scroll-padding-right: 50%;
 }
 
 #artist-releases .release,
 .release-scroll .release{
-scroll-snap-align: center;     /* the focused card sits centered */
+scroll-snap-align: center;
 }
 
-/* --- Promo modal --- */
 /* --- Promo modal --- */
 .promo-modal{
 position: fixed; inset: 0; display: grid; place-items: center; z-index: 9999;
@@ -1498,11 +1483,9 @@ font-size: 20px; line-height: 1; cursor: pointer;
 .promo-body{ padding: 12px; }
 #promo-video{
 width: 100%; height: auto; display: block; border-radius: 10px;
-background: #0a0c12; aspect-ratio: 16/9;   /* good fallback with no poster */
+background: #0a0c12; aspect-ratio: 16/9;
 }
 
-/* Optional skeleton loader if you add .promo-skel in HTML */
-.promo-body{ position: relative; }
 .promo-skel{
 position: absolute; inset: 12px; border-radius: 10px;
 background: linear-gradient(90deg,#0a0c12 0%,#111525 50%,#0a0c12 100%);
