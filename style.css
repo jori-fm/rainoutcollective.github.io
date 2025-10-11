@@ -1506,13 +1506,14 @@ body.no-scroll{ overflow: hidden; }
   text-align: center;
   /* Variables for easy customization */
   --img-width: 250px;
+  --img-gap: 10px; /* Total gap from padding (5px left + 5px right) */
   --num-images: 4; /* Set this to the number of UNIQUE images you have */
   --anim-duration: 30s;
-  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+  overflow: hidden; 
 }
 
 .promo-gallery h2 {
-  margin-top: 0; /* Ensures "COMING SOON" is not cut off */
+  margin-top: 0; 
   padding-top: 0;
 }
 
@@ -1528,51 +1529,49 @@ body.no-scroll{ overflow: hidden; }
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  /* This creates the nice fade effect on the left and right edges */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .promo-slider {
   display: flex;
-  width: calc(var(--img-width) * var(--num-images) * 2); /* Auto-calculates total width */
+  /* Correctly calculates total width including the gaps for a seamless loop */
+  width: calc((var(--img-width) + var(--img-gap)) * var(--num-images) * 2); 
   animation: slide var(--anim-duration) linear infinite;
 }
 
 .promo-slider img {
   width: var(--img-width);
-  height: var(--img-width); /* Make height equal to width for square images */
-  aspect-ratio: 1 / 1; /* Explicitly set aspect ratio to square */
+  height: var(--img-width);
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   flex-shrink: 0;
-  padding: 0 5px; /* Adds a small gap between images */
+  padding: 0 5px; /* Keeps the visual gap between images */
 }
 
-.promo-slider-wrap:hover .promo-slider {
-  animation-play-state: paused; /* Pause animation on hover */
-}
+/* The hover-to-pause rule has been removed, so the animation will not stop. */
 
 @keyframes slide {
   from {
     transform: translateX(0);
   }
   to {
-    /* Moves the slider by the width of the first set of images */
-    transform: translateX(calc(var(--img-width) * var(--num-images) * -1));
+    /* Correctly calculates the scroll distance, including gaps, for a seamless loop */
+    transform: translateX(calc((var(--img-width) + var(--img-gap)) * var(--num-images) * -1));
   }
 }
 
 /* Responsive adjustments for the gallery */
 @media (max-width: 600px) {
   .promo-gallery {
-    padding: 20px 0px; /* Edge-to-edge on mobile */
-    --img-width: 150px; /* Make images smaller for mobile */
-    --anim-duration: 25s; /* Slightly faster animation */
+    padding: 20px 0px;
+    --img-width: 150px;
+    --anim-duration: 25s;
   }
   .promo-slider-wrap {
-    border-radius: 0; /* Full width */
+    border-radius: 0;
   }
   .promo-slider img {
-    height: var(--img-width); /* Ensure square on mobile */
+    height: var(--img-width);
   }
 }
