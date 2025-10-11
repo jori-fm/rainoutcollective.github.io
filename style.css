@@ -1494,3 +1494,76 @@ background-size: 200% 100%; animation: promoShimmer 1.2s linear infinite;
 @keyframes promoShimmer{ to { background-position: -200% 0; } }
 
 body.no-scroll{ overflow: hidden; }
+
+/* --- V0CALYST Promo Gallery --- */
+.promo-gallery {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(20, 20, 30, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  border-radius: 2px;
+  text-align: center;
+  /* Variables for easy customization */
+  --img-width: 250px;
+  --num-images: 4; /* Set this to the number of UNIQUE images you have */
+  --anim-duration: 30s;
+}
+
+.promo-gallery h3 {
+  color: var(--text);
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.promo-slider-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  /* This creates the nice fade effect on the left and right edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.promo-slider {
+  display: flex;
+  width: calc(var(--img-width) * var(--num-images) * 2); /* Auto-calculates total width */
+  animation: slide var(--anim-duration) linear infinite;
+}
+
+.promo-slider img {
+  width: var(--img-width);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  flex-shrink: 0;
+  padding: 0 5px; /* Adds a small gap between images */
+}
+
+.promo-slider-wrap:hover .promo-slider {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Moves the slider by the width of the first set of images */
+    transform: translateX(calc(var(--img-width) * var(--num-images) * -1));
+  }
+}
+
+/* Responsive adjustments for the gallery */
+@media (max-width: 600px) {
+  .promo-gallery {
+    padding: 20px 0px; /* Edge-to-edge on mobile */
+    --img-width: 200px; /* Make images smaller */
+    --anim-duration: 25s; /* Slightly faster animation */
+  }
+  .promo-slider-wrap {
+    border-radius: 0; /* Full width */
+  }
+}
