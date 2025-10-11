@@ -1508,6 +1508,12 @@ body.no-scroll{ overflow: hidden; }
   --img-width: 250px;
   --num-images: 4; /* Set this to the number of UNIQUE images you have */
   --anim-duration: 30s;
+  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+}
+
+.promo-gallery h2 {
+  margin-top: 0; /* Ensures "COMING SOON" is not cut off */
+  padding-top: 0;
 }
 
 .promo-gallery h3 {
@@ -1535,8 +1541,8 @@ body.no-scroll{ overflow: hidden; }
 
 .promo-slider img {
   width: var(--img-width);
-  height: auto;
-  aspect-ratio: 16 / 9;
+  height: var(--img-width); /* Make height equal to width for square images */
+  aspect-ratio: 1 / 1; /* Explicitly set aspect ratio to square */
   object-fit: cover;
   flex-shrink: 0;
   padding: 0 5px; /* Adds a small gap between images */
@@ -1560,10 +1566,13 @@ body.no-scroll{ overflow: hidden; }
 @media (max-width: 600px) {
   .promo-gallery {
     padding: 20px 0px; /* Edge-to-edge on mobile */
-    --img-width: 200px; /* Make images smaller */
+    --img-width: 150px; /* Make images smaller for mobile */
     --anim-duration: 25s; /* Slightly faster animation */
   }
   .promo-slider-wrap {
     border-radius: 0; /* Full width */
+  }
+  .promo-slider img {
+    height: var(--img-width); /* Ensure square on mobile */
   }
 }
