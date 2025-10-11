@@ -1507,7 +1507,7 @@ body.no-scroll{ overflow: hidden; }
   /* Variables for easy customization */
   --img-width: 250px;
   --img-gap: 10px; /* Total gap from padding (5px left + 5px right) */
-  --num-images: 4; /* Set this to the number of UNIQUE images you have */
+  --num-images: 5; /* Set this to the number of UNIQUE images you have */
   --anim-duration: 30s;
   overflow: hidden; 
 }
