@@ -277,6 +277,26 @@
       "tracks": [
         { "title": "guitar_4", "file": "/assets/music/guitar_4.mp3" }
       ]
+    },
+    {
+      "catalog": "RAIN-033S",
+      "artist": "V0CALYST",
+      "title": "oh yea",
+      "release_date": "2025-10-17",
+      "cover": "/assets/album-art/rain-033.jpg",
+      "tracks": [
+        { "title": "oh yea", "file": "/assets/music/oh yea.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-034S",
+      "artist": "shinrei",
+      "title": "malignity, for love",
+      "release_date": "2025-10-17",
+      "cover": "/assets/album-art/rain-034.jpg",
+      "tracks": [
+        { "title": "malignity, for love", "file": "/assets/music/malignity, for love.mp3" }
+      ]
     }
 
 
