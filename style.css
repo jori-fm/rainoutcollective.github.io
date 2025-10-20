@@ -1575,3 +1575,39 @@ body.no-scroll{ overflow: hidden; }
     height: var(--img-width);
   }
 }
+
+/* --- Release Page Filter Bar --- */
+.filter-bar {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-btn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 0, 0, 0.25); /* Fainter red border */
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+  color: var(--text);
+  border-color: rgba(255, 0, 0, 0.5);
+}
+
+/* This style applies to the currently selected filter */
+.filter-btn.active {
+  background: rgba(255, 0, 0, 0.2);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
