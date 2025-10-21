@@ -297,6 +297,16 @@
       "tracks": [
         { "title": "malignity, for love", "file": "/assets/music/malignity, for love.mp3" }
       ]
+    },
+    {
+      "catalog": "RAIN-035S",
+      "artist": "süleymon",
+      "title": "21 yercs",
+      "release_date": "2025-10-12",
+      "cover": "/assets/album-art/rain-035.jpg",
+      "tracks": [
+        { "title": "21 yercs", "file": "/assets/music/21 yercs.mp3" }
+      ]
     }
 
 
