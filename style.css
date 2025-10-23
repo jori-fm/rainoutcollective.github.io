@@ -1686,24 +1686,18 @@ body.no-scroll{ overflow: hidden; }
 
 /* --- Discord Widget Section Link --- */
 .discord-join-link {
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
+  display: block; /* This makes it take its own line */
+  text-align: center; /* Ensures it's centered */
+  color: var(--accent); /* Uses your main red theme color */
   text-decoration: none;
-  color: var(--text-secondary);
-  border: 1px solid rgba(255, 0, 0, 0.25); /* Faint red border */
-  padding: 8px 16px;
-  border-radius: 2px;
+  font-size: 1.1rem;
   margin-bottom: 25px; /* Adds space between the link and the widget */
-  font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
 .discord-join-link:hover {
-  background: rgba(255, 0, 0, 0.1); /* Red glow on hover */
-  color: var(--accent); /* Bright red text on hover */
-  border-color: var(--accent); /* Bright red border on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+  text-decoration: underline; /* Adds a simple underline on hover */
+  filter: brightness(1.2); /* Adds a subtle glow */
 }
 
 /* Adjust the heading margin to make room for the new link */
