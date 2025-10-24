@@ -65,16 +65,6 @@
       ]
     },
     {
-      "catalog": "RAIN-006S",
-      "artist": "V0CALYST",
-      "title": "CRYIN",
-      "release_date": "2025-05-20",
-      "cover": "/assets/album-art/rain-006.jpg",
-      "tracks": [
-        { "title": "CRYIN", "file": "/assets/music/CRYIN.mp3" }
-      ]
-    },
-    {
       "catalog": "RAIN-007",
       "artist": "smooch",
       "title": "EX tracks",
