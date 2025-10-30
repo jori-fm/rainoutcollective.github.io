@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Moms Typewriter';
+  src: url('/assets/fonts/MomsTypewriter.ttf') format('truetype');
+}
+
 :root {
   --primary: #0a0a0a;
   --secondary: #121212;
@@ -18,7 +23,7 @@ body {
   flex-direction: column;
   background-color: var(--primary);
   color: var(--text);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Moms Typewriter', 'Courier New', Courier, monospace;
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
