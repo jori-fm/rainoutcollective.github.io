@@ -320,6 +320,11 @@ p {
     color: var(--accent);
 }
 
+/* FONT CHANGE: Set tagline on artist pages to Courier */
+.artist-page .tagline {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 main > * {
     margin-bottom: 60px;
 }
@@ -1718,7 +1723,7 @@ body.no-scroll{ overflow: hidden; }
   }
 }
 
-/* --- ZOMᗺIƎᗺOY Promo Box (Slideshow + Video) --- */
+/* --- ZOMBIEBOY Promo Box (Slideshow + Video) --- */
 
 .promo-gallery .image-credit {
   font-family: 'Courier New', Courier, monospace;
@@ -1735,7 +1740,7 @@ body.no-scroll{ overflow: hidden; }
   margin-top: 0;
 }
 
-/* --- ZOMᗺIƎᗺOY & Krewlty Promo Box Tweaks --- */
+/* --- ZOMBIEBOY & Krewlty Promo Box Tweaks --- */
 /* Reset the main h2 style for all video boxes */
 .promo-video-box h2 {
   font-size: 2.2rem; /* Back to the default h2 size */
@@ -1755,4 +1760,14 @@ body.no-scroll{ overflow: hidden; }
   margin-bottom: 1.5em;
   font-size: 1.2rem;
   letter-spacing: 2px;
+}
+
+/* --- Player Page Font Overrides --- */
+.player-page .ap-meta-line,
+.player-page .ap-track-num,
+.player-page .ap-track-title,
+.player-page .ap-sub,
+.player-page .ap-progress,
+.player-page .ap-vol {
+    font-family: 'Courier New', Courier, monospace;
 }
