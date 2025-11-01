@@ -14,10 +14,19 @@
 :root {
     --primary: #0a0a0a;
     --secondary: #121212;
-    --accent: #FFA500; /* New Orange Accent Color */
     --text: #e0e0e0;
     --text-secondary: #aaa;
+    
+    /* New Dark Orange Theme */
+    --accent: #FF6600;
+    --accent-rgb: 255, 102, 0; /* For use in rgba() */
+    --accent-light-text: #ffcc99; /* For promo titles */
+    --accent-strong-text: #ff9933; /* For promo titles */
+    
+    /* New Fall Background Gradient */
+    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(60, 24, 0, 0.8) 0%, rgba(20, 8, 0, 0.9) 90%);
 }
+
 
 body {
     display: flex;
@@ -30,12 +39,12 @@ body {
     min-height: 100vh;
     /* New orange/brown gradient for fall vibe */
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(60, 40, 10, 0.8) 0%, rgba(20, 10, 0, 0.9) 90%),
+        var(--bg-gradient),
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="n"><feTurbulence baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23n)" opacity="0.1"/></svg>');
 }
 
 .dev-banner {
-    background: rgba(255, 165, 0, 0.15); /* Orange */
+    background: rgba(var(--accent-rgb), 0.15); /* Orange */
     border-bottom: 1px solid var(--accent);
     color: var(--accent);
     text-align: center;
@@ -94,7 +103,7 @@ body {
 .more-button {
     display: inline-block;
     padding: 12px 25px;
-    background: rgba(255, 165, 0, 0.2); /* Orange */
+    background: rgba(var(--accent-rgb), 0.2); /* Orange */
     color: var(--accent);
     border: 1px solid var(--accent);
     border-radius: 2px;
@@ -104,7 +113,7 @@ body {
 }
 
 .more-button:hover {
-    background: rgba(255, 165, 0, 0.3); /* Orange */
+    background: rgba(var(--accent-rgb), 0.3); /* Orange */
     transform: translateY(-2px);
 }
 
@@ -115,9 +124,9 @@ body {
 }
 
 .more-button:hover, .back-button:hover {
-    background: rgba(255, 165, 0, 0.3); /* Orange */
+    background: rgba(var(--accent-rgb), 0.3); /* Orange */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.2); /* Orange */
+    box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 .full-releases {
@@ -136,7 +145,7 @@ body {
     border-radius: 2px;
     text-decoration: none;
     font-size: 1rem;
-    background: rgba(255, 165, 0, 0.1); /* Orange */
+    background: rgba(var(--accent-rgb), 0.1); /* Orange */
 }
 
 .back-button:hover {
@@ -230,7 +239,7 @@ header {
     display: block;
     margin: 0 auto 20px;
     filter: 
-        drop-shadow(0 0 8px rgba(255, 165, 0, 0.3)) /* Orange */
+        drop-shadow(0 0 8px rgba(var(--accent-rgb), 0.3)) /* Orange */
         grayscale(30%);
     transition: all 0.5s ease;
     opacity: 0.9;
@@ -238,7 +247,7 @@ header {
 
 .logo:hover {
     filter: 
-        drop-shadow(0 0 15px rgba(255, 165, 0, 0.5)) /* Orange */
+        drop-shadow(0 0 15px rgba(var(--accent-rgb), 0.5)) /* Orange */
         grayscale(10%);
     transform: scale(1.05);
 }
@@ -251,7 +260,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 300;
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.3); /* Orange */
+    text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.3); /* Orange */
     position: relative;
 }
 
@@ -263,7 +272,7 @@ h1::after {
     transform: translateX(-50%);
     width: 200px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.5), transparent); /* Orange */
+    background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.5), transparent); /* Orange */
 }
 
 h2 {
@@ -285,7 +294,7 @@ h2::after {
     transform: translateX(-50%);
     width: 150px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.5), transparent); /* Orange */
+    background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.5), transparent); /* Orange */
 }
 
 h3 {
@@ -329,7 +338,7 @@ main {
     margin: 50px auto;
     padding: 30px;
     background: rgba(20, 20, 30, 0.3);
-    border: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
     border-radius: 2px;
 }
 
@@ -355,7 +364,7 @@ main {
 .release {
     will-change: transform;
     background: rgba(20, 20, 30, 0.5);
-    border: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
     padding: 40px 15px 15px; /* was 60px 20px 20px */
     text-align: center;
     position: relative;
@@ -378,7 +387,7 @@ main {
 }
 
 .release:hover .format-icon {
-    background: rgba(255, 165, 0, 0.3); /* Orange */
+    background: rgba(var(--accent-rgb), 0.3); /* Orange */
     transform: translateX(-50%) scale(1.1);
 }
 
@@ -401,7 +410,7 @@ main {
 }
 .release:hover {
     transform: translateY(-8px) scale(1.04);
-    box-shadow: 0 10px 20px rgba(255, 165, 0, 0.15); /* Orange */
+    box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.15); /* Orange */
   }
   
 
@@ -461,7 +470,7 @@ main {
 .artist:hover {
     background: rgba(30, 30, 45, 0.5);
     transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(255, 165, 0, 0.1); /* Orange */
+    box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.1); /* Orange */
   }
 
 .artist img {
@@ -470,7 +479,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
     -webkit-filter: grayscale(30%);
     filter: grayscale(30%);
 }
@@ -514,7 +523,7 @@ footer {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 165, 0, 0.1); /* Orange */
+    background: rgba(var(--accent-rgb), 0.1); /* Orange */
     color: var(--accent);
     font-size: 1.4rem;
     transition: all 0.3s ease;
@@ -522,7 +531,7 @@ footer {
 }
 
 .social-links a:hover {
-    background: rgba(255, 165, 0, 0.3); /* Orange */
+    background: rgba(var(--accent-rgb), 0.3); /* Orange */
     transform: translateY(-5px);
 }
 
@@ -577,7 +586,7 @@ footer {
     gap: 18px;
     padding: 10px 16px;
     background: rgba(10, 12, 18, 0.6);
-    border-bottom: 1px solid rgba(255, 165, 0, 0.15); /* Orange */
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); /* Orange */
     backdrop-filter: blur(6px);
     justify-content: center;  
   }
@@ -605,14 +614,14 @@ footer {
   
   .site-nav .nav-links a:hover {
     color: var(--accent);
-    border-color: rgba(255, 165, 0, 0.25); /* Orange */
-    background: rgba(255, 165, 0, 0.08); /* Orange */
+    border-color: rgba(var(--accent-rgb), 0.25); /* Orange */
+    background: rgba(var(--accent-rgb), 0.08); /* Orange */
   }
   
   .site-nav .nav-links a.active {
     color: var(--accent);
-    border-color: rgba(255, 165, 0, 0.35); /* Orange */
-    background: rgba(255, 165, 0, 0.12); /* Orange */
+    border-color: rgba(var(--accent-rgb), 0.35); /* Orange */
+    background: rgba(var(--accent-rgb), 0.12); /* Orange */
   }
   
   .nav-toggle { 
@@ -622,7 +631,7 @@ footer {
     font-size: 20px;
     color: var(--text);
     background: transparent;
-    border: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
     padding: 4px 8px;
     border-radius: 2px;
   }
@@ -666,7 +675,7 @@ footer {
         width: 100%;
         text-align: center;
         padding: 12px 0;
-        border-bottom: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
     }
     .site-nav .nav-links a:last-child {
         border-bottom: none;
@@ -759,7 +768,7 @@ footer {
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
     filter: grayscale(25%);
     transition: transform 0.3s ease, filter 0.3s ease;
   }
@@ -1011,7 +1020,7 @@ img, video { max-width: 100%; height: auto; }
     grid-template-columns: 140px 1fr;
     gap: 18px;
     background: rgba(20,20,30,0.45);
-    border: 1px solid rgba(255, 165, 0, 0.12); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.12); /* Orange */
     border-radius: 2px;
     padding: 14px;
 }
@@ -1020,7 +1029,7 @@ img, video { max-width: 100%; height: auto; }
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
 }
   
 .ap-title {
@@ -1055,11 +1064,11 @@ img, video { max-width: 100%; height: auto; }
     padding: 6px 10px;
     border: 1px solid var(--accent);
     color: var(--accent);
-    background: rgba(255, 165, 0, 0.12); /* Orange */
+    background: rgba(var(--accent-rgb), 0.12); /* Orange */
     border-radius: 2px;
     cursor: pointer;
 }
-.ap-play:hover { background: rgba(255, 165, 0, 0.22); } /* Orange */
+.ap-play:hover { background: rgba(var(--accent-rgb), 0.22); } /* Orange */
   
 /* Bottom mini player */
 .ap-nowbar {
@@ -1069,7 +1078,7 @@ img, video { max-width: 100%; height: auto; }
     bottom: 0;
     z-index: 9999;
     background: rgba(10, 12, 18, 0.9);
-    border-top: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+    border-top: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
     backdrop-filter: blur(6px);
 }
   
@@ -1085,7 +1094,7 @@ img, video { max-width: 100%; height: auto; }
   
 .ap-nowbar img {
     width: 54px; height: 54px; object-fit: cover;
-    border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
 }
   
 .ap-meta .ap-title { font-size: 1rem; color: #fff; line-height: 1.2; }
@@ -1094,12 +1103,12 @@ img, video { max-width: 100%; height: auto; }
 .ap-btn {
     width: 44px; height: 36px;
     display: inline-flex; align-items: center; justify-content: center;
-    border: 1px solid rgba(255, 165, 0, 0.35); /* Orange */
-    background: rgba(255, 165, 0, 0.12); /* Orange */
+    border: 1px solid rgba(var(--accent-rgb), 0.35); /* Orange */
+    background: rgba(var(--accent-rgb), 0.12); /* Orange */
     color: var(--text);
     border-radius: 2px; cursor: pointer;
 }
-.ap-btn:hover { background: rgba(255, 165, 0, 0.22); } /* Orange */
+.ap-btn:hover { background: rgba(var(--accent-rgb), 0.22); } /* Orange */
   
 .ap-progress {
     display: grid;
@@ -1148,7 +1157,7 @@ img, video { max-width: 100%; height: auto; }
   height: var(--nowbar-h);
   z-index: 10020;
   background: rgba(10,12,18,0.9);
-  border-top: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+  border-top: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
   backdrop-filter: blur(6px);
   transform: translateY(100%);
   transition: transform .25s ease;
@@ -1167,7 +1176,7 @@ body.player-page .ap-nowbar {
   height: var(--nowbar-h);
   z-index: 10020 !important;
   background: rgba(10,12,18,0.9);
-  border-top: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+  border-top: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
   backdrop-filter: blur(6px);
   transform: translateY(100%);
   transition: transform .25s ease;
@@ -1190,7 +1199,7 @@ body.player-page.has-nowbar {
   z-index: 2147483647;
   isolation: isolate;
   background: rgba(10,12,18,0.95);
-  border-top: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+  border-top: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
   backdrop-filter: blur(6px);
   transform: translateY(100%);
   transition: transform .25s ease;
@@ -1221,7 +1230,7 @@ body.player-page.has-nowbar {
 
 .ap-card {
   background: rgba(20, 20, 30, 0.4);
-  border: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
   border-radius: 4px;
   padding: 20px;
   margin-bottom: 25px;
@@ -1237,7 +1246,7 @@ body.player-page.has-nowbar {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 .ap-right {
@@ -1291,7 +1300,7 @@ body.player-page.has-nowbar {
 }
 
 .ap-play {
-  background: rgba(255, 165, 0, 0.1); /* Orange */
+  background: rgba(var(--accent-rgb), 0.1); /* Orange */
   border: 1px solid var(--accent);
   color: var(--accent);
   border-radius: 3px;
@@ -1302,7 +1311,7 @@ body.player-page.has-nowbar {
 }
 
 .ap-play:hover {
-  background: rgba(255, 165, 0, 0.2); /* Orange */
+  background: rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 .error-state {
@@ -1327,7 +1336,7 @@ body.player-page.has-nowbar {
   bottom: 0;
   z-index: 10000;
   background: rgba(10, 12, 18, 0.9);
-  border-top: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+  border-top: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
   backdrop-filter: blur(6px);
   padding: 10px;
   transform: translateY(100%);
@@ -1346,7 +1355,7 @@ body.player-page.has-nowbar {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 .ap-meta {
@@ -1370,7 +1379,7 @@ body.player-page.has-nowbar {
 }
 
 .ap-btn {
-  background: rgba(255, 165, 0, 0.1); /* Orange */
+  background: rgba(var(--accent-rgb), 0.1); /* Orange */
   border: 1px solid var(--accent);
   color: var(--accent);
   width: 36px;
@@ -1384,7 +1393,7 @@ body.player-page.has-nowbar {
 }
 
 .ap-btn:hover {
-  background: rgba(255, 165, 0, 0.2); /* Orange */
+  background: rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 .ap-progress {
@@ -1468,7 +1477,7 @@ body.player-page.has-nowbar {
 .promo-content{
   position: relative; width: min(960px, 94vw); max-height: 90vh; overflow: hidden;
   background: rgba(10,12,18,.97);
-  border: 1px solid rgba(255, 165, 0, .25); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), .25); /* Orange */
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0,0,0,.55);
   transform: translateY(8px) scale(.985);
@@ -1478,21 +1487,21 @@ body.player-page.has-nowbar {
 
 .promo-header{
   display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 14px; border-bottom: 1px solid rgba(255, 165, 0, .18); /* Orange */
+  padding: 12px 14px; border-bottom: 1px solid rgba(var(--accent-rgb), .18); /* Orange */
 }
 .promo-title{
-  margin: 0; font-size: 1rem; letter-spacing: .04em; color: #ffcb8e; /* Orange */
+  margin: 0; font-size: 1rem; letter-spacing: .04em; color: var(--accent-light-text); /* Orange */
 }
-.promo-title strong{ color: #ffb44b; font-weight: 600; /* Orange */ }
+.promo-title strong{ color: var(--accent-strong-text); font-weight: 600; /* Orange */ }
 .promo-title em{ font-style: normal; opacity: .85; }
 
 .promo-close{
   display: grid; place-items: center;
   width: 34px; height: 34px; border-radius: 50%;
-  background: transparent; color: #e4e8ff; border: 1px solid rgba(255, 165, 0, .4); /* Orange */
+  background: transparent; color: #e4e8ff; border: 1px solid rgba(var(--accent-rgb), .4); /* Orange */
   font-size: 20px; line-height: 1; cursor: pointer;
 }
-.promo-close:hover{ background: rgba(255, 165, 0, .12); } /* Orange */
+.promo-close:hover{ background: rgba(var(--accent-rgb), .12); } /* Orange */
 
 .promo-body{ padding: 12px; }
 #promo-video{
@@ -1524,7 +1533,7 @@ body.no-scroll{ overflow: hidden; }
   padding: 10px 20px;
   background: transparent;
   color: var(--text-secondary);
-  border: 1px solid rgba(255, 165, 0, 0.25); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.25); /* Orange */
   border-radius: 2px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -1532,17 +1541,17 @@ body.no-scroll{ overflow: hidden; }
 }
 
 .filter-btn:hover {
-  background: rgba(255, 165, 0, 0.1); /* Orange */
+  background: rgba(var(--accent-rgb), 0.1); /* Orange */
   color: var(--text);
-  border-color: rgba(255, 165, 0, 0.5); /* Orange */
+  border-color: rgba(var(--accent-rgb), 0.5); /* Orange */
 }
 
 /* This style applies to the currently selected filter */
 .filter-btn.active {
-  background: rgba(255, 165, 0, 0.2); /* Orange */
+  background: rgba(var(--accent-rgb), 0.2); /* Orange */
   color: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.2); /* Orange */
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 /* --- Krewlty Premiere Promo Box --- */
@@ -1551,7 +1560,7 @@ body.no-scroll{ overflow: hidden; }
   margin: 50px auto;
   padding: 30px;
   background: rgba(20, 20, 30, 0.3);
-  border: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
   border-radius: 2px;
   text-align: center;
   overflow: hidden;
@@ -1564,7 +1573,7 @@ body.no-scroll{ overflow: hidden; }
   height: 0;
   overflow: hidden;
   border-radius: 4px; /* Optional: adds rounded corners to the video */
-  border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
 }
 
 .video-embed-wrap iframe {
@@ -1581,7 +1590,7 @@ body.no-scroll{ overflow: hidden; }
   margin: 50px auto;
   padding: 30px;
   background: rgba(20, 20, 30, 0.3);
-  border: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
   border-radius: 2px;
   text-align: center;
   overflow: hidden;
@@ -1594,7 +1603,7 @@ body.no-scroll{ overflow: hidden; }
 
 .discord-widget-wrap {
   display: inline-block; /* Allows the widget to be centered */
-  border: 1px solid rgba(255, 165, 0, 0.2); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.2); /* Orange */
   border-radius: 4px;
   overflow: hidden; /* Clips the iframe to the rounded corners */
   line-height: 0; /* Fixes extra space below iframe */
@@ -1636,7 +1645,7 @@ body.no-scroll{ overflow: hidden; }
   margin: 50px auto;
   padding: 30px;
   background: rgba(20, 20, 30, 0.3);
-  border: 1px solid rgba(255, 165, 0, 0.1); /* Orange */
+  border: 1px solid rgba(var(--accent-rgb), 0.1); /* Orange */
   border-radius: 2px;
   text-align: center;
   /* Variables for easy customization */
@@ -1724,4 +1733,26 @@ body.no-scroll{ overflow: hidden; }
 /* We let the .image-credit handle spacing, so no top margin is needed here */
 .promo-gallery .video-embed-wrap {
   margin-top: 0;
+}
+
+/* --- ZOMBIEBOY & Krewlty Promo Box Tweaks --- */
+/* Reset the main h2 style for all video boxes */
+.promo-video-box h2 {
+  font-size: 2.2rem; /* Back to the default h2 size */
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+/* Style for the krewlty promo's longer title */
+.krewlty-promo h2 {
+  font-size: 1.5rem; /* Make only the krewlty title smaller */
+}
+
+/* Style for the new h3 subtitle (V0CALYST - ZOM...) */
+.promo-video-box h3 {
+  color: var(--text);
+  margin-top: -1.5em; /* Pull it up under the title */
+  margin-bottom: 1.5em;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 }
