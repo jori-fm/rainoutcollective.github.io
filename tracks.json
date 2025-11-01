@@ -195,7 +195,7 @@
       "release_date": "2025-08-15",
       "cover": "/assets/album-art/rain-013.jpg",
       "tracks": [
-        { "title": "ggysm", "file": "/assets/music/ggysm.mp3" }
+        { "title": "ggysm (ft. süleymon)", "file": "/assets/music/ggysm.mp3" }
       ]
     },
     {
@@ -297,7 +297,48 @@
       "tracks": [
         { "title": "21 yercs", "file": "/assets/music/21 yercs.mp3" }
       ]
+    },
+    {
+      "catalog": "RAIN-031",
+      "artist": "krewlty",
+      "title": "#krewlmusik",
+      "release_date": "2025-10-24",
+      "cover": "/assets/album-art/rain-031.jpg",
+      "tracks": [
+        { "title": "intro", "file": "/assets/music/intro.mp3" },
+        { "title": "sob emoji (ft. V0CALYST)", "file": "/assets/music/sob emoji.mp3" },
+        { "title": "dj turn me upp", "file": "/assets/music/dj turn me upp.mp3" },
+        { "title": "take ur place", "file": "/assets/music/take ur place.mp3" },
+        { "title": "year14", "file": "/assets/music/year14.mp3" },
+        { "title": "#krewlmusik", "file": "/assets/music/#krewlmusik.mp3" },
+        { "title": "ghastly (ft. süleymon)", "file": "/assets/music/ghastly.mp3" },
+        { "title": "i never liked you", "file": "/assets/music/i never liked you.mp3" },
+        { "title": "it feels like this (ft. sai)", "file": "/assets/music/it feels like this.mp3" },
+        { "title": "chokehold", "file": "/assets/music/chokehold.mp3" },
+        { "title": "its over", "file": "/assets/music/its over.mp3" },
+        { "title": "lack thereof *bonus*", "file": "/assets/music/lack thereof _bonus_.mp3" }
+      ]
+    },
+    {
+      "catalog": "RAIN-032",
+      "artist": "V0CALYST",
+      "title": "ZOMᗺIƎᗺOY",
+      "release_date": "2025-10-31",
+      "cover": "/assets/album-art/rain-032.jpg",
+      "tracks": [
+        { "title": "Hearteater", "file": "/assets/music/Hearteater.mp3" },
+        { "title": "blessed (ft. süleymon)", "file": "/assets/music/blessed.mp3" },
+        { "title": "believe the kids", "file": "/assets/music/believe the kids.mp3" },
+        { "title": "Bossed up", "file": "/assets/music/Bossed up.mp3" },
+        { "title": "ggysm (ft. süleymon)", "file": "/assets/music/ggysm.mp3" },
+        { "title": "Undead rising", "file": "/assets/music/Undead rising.mp3" },
+        { "title": "SOULSNATCHER", "file": "/assets/music/SOULSNATCHER.mp3" },
+        { "title": "Blood on my teeth", "file": "/assets/music/Blood on my teeth.mp3" }
+
+
+      ]
     }
+
 
 
   ]
