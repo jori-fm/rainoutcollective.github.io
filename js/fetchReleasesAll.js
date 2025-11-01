@@ -1,58 +1,56 @@
 (() => {
-  const DATA_URL = 'releases.json';
+  const DATA_URL = 'releases.json';   // or '/releases.json'
   const GRID_ID  = 'release-grid';
-  const grid = document.getElementById(GRID_ID);
   
-  let allData = []; // To store all fetched releases
-  let currentFilter = 'all'; // 'all', 'album', or 'single'
-
-  // --- Helper Functions (Copied from your original file) ---
-  
-  const resolveAsset = (p = '') => {
-    if (!p) return '';
-    if (/^https?:\/\//i.test(p)) return p;
-    return '/' + String(p).replace(/^\/+/, '');
-  };
+  // make asset paths absolute (works from /, /releases, /artists/*)
+const resolveAsset = (p = '') => {
+  if (!p) return '';
+  if (/^https?:\/\//i.test(p)) return p;
+  return '/' + String(p).replace(/^\/+/, '');
+};
 
   const escapeHtml = (s='') =>
     s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
   const toDate = (iso) => { const d = new Date(iso + 'T00:00:00'); d.setHours(0,0,0,0); return d; };
   const isFuture = (iso) => { const t = new Date(); t.setHours(0,0,0,0); return toDate(iso) > t; };
-  
-  // This function is now our main filter logic
   const isSingle = (catalog = '') => /S/i.test(String(catalog));
-  
-  const releaseIconHTML = (catalog = '') =>
-    isSingle(catalog)
-      ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
-      : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
-  
-  // (Your existing ARTIST_PAGES, displayArtist, and artistHTML functions)
-  const ARTIST_PAGES = {
-    sai: 'sai',
-    shinrei: 'shinrei',
-    smooch: 'smooch',
-    sunni: 'sunni',
-    v0calyst: 'V0CALYST',
-    seraphim: 'seraphim',
-    krewlty: 'krewlty',
-  };
-  
-  const displayArtist = (name = '') => {
-    const n = String(name).trim();
-    return n.toLowerCase() === 'smooch' ? 'smooch.' : n;
-  };
+const releaseIconHTML = (catalog = '') =>
+  isSingle(catalog)
+    ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
+    : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
 
-  const artistHTML = (name = '') => {
-    const key = String(name).trim().toLowerCase();
-    const file = ARTIST_PAGES[key];
-    const label = escapeHtml(displayArtist(name));
-    return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
-  };
-  
-  // --- Card Creation (Same as before) ---
-  
+// Map JSON artist → exact file name in /artists (match your tree's casing)
+const ARTIST_PAGES = {
+  sai: 'sai',
+  shinrei: 'shinrei',
+  smooch: 'smooch',
+  sunni: 'sunni',
+  v0calyst: 'V0CALYST',
+  seraphim: 'seraphim',
+  krewlty: 'krewlty',
+  suleymon: 'suleymon', // <-- ADDED THIS LINE
+};
+
+// Display name (adds period for smooch. and umlaut for süleymon)
+const displayArtist = (name = '') => {
+  const n = String(name).trim();
+  const nLower = n.toLowerCase();
+
+  return nLower === 'smooch' ? 'smooch.' :
+         nLower === 'suleymon' ? 'süleymon' :
+         n; // Return original name
+};
+
+// Build link HTML if we have a page for this artist
+const artistHTML = (name = '') => {
+  const key = String(name).trim().toLowerCase();
+  const file = ARTIST_PAGES[key];
+  const label = escapeHtml(displayArtist(name)); // Uses the new display name
+  return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
+};
+
+
   const createCard = (r) => {
     const el = document.createElement('div');
     el.className = 'release';
@@ -81,8 +79,6 @@
     return el;
   };
 
-  // --- NEW: Function to render the grid based on the current filter ---
-  
   const renderReleases = () => {
     if (!grid) return;
     grid.innerHTML = ''; // Clear the grid
@@ -136,6 +132,10 @@
 
   // --- MODIFIED: Main function to fetch data ONCE ---
   
+  let allData = []; // To store all fetched releases
+  let currentFilter = 'all'; // 'all', 'album', or 'single'
+  const grid = document.getElementById(GRID_ID);
+
   const fetchAndRender = async () => {
     if (!grid) return;
     grid.classList.add('loading');

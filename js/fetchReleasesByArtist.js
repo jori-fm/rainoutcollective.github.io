@@ -28,19 +28,24 @@ const ARTIST_PAGES = {
   v0calyst: 'V0CALYST',
   seraphim: 'seraphim',
   krewlty: 'krewlty',
+  suleymon: 'suleymon', // <-- ADDED THIS LINE
 };
 
-// Display name (adds the period for smooch.)
+// Display name (adds period for smooch. and umlaut for süleymon)
 const displayArtist = (name = '') => {
   const n = String(name).trim();
-  return n.toLowerCase() === 'smooch' ? 'smooch.' : n;
+  const nLower = n.toLowerCase();
+
+  return nLower === 'smooch' ? 'smooch.' :
+         nLower === 'suleymon' ? 'süleymon' :
+         n; // Return original name
 };
 
 // Build link HTML if we have a page for this artist
 const artistHTML = (name = '') => {
   const key = String(name).trim().toLowerCase();
   const file = ARTIST_PAGES[key];
-  const label = escapeHtml(displayArtist(name));
+  const label = escapeHtml(displayArtist(name)); // Uses the new display name
   return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
 };
 
@@ -87,6 +92,19 @@ const artistHTML = (name = '') => {
 
       // newest → oldest
       mine.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
+
+      // --- Update Release Count ---
+      const countTextElement = document.getElementById('release-count-text');
+      if (countTextElement) {
+        const count = mine.length;
+        if (count === 0) {
+          countTextElement.textContent = "No releases under RAINOUT yet";
+        } else {
+          const releaseText = count === 1 ? 'release' : 'releases'; // Handle plural
+          countTextElement.textContent = `${count} ${releaseText} under RAINOUT`;
+        }
+      }
+      // --- End Update ---
 
       if (mine.length === 0) {
         wrap.innerHTML = `<div class="error-state">No releases yet.</div>`;
