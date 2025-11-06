@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Moms Typewriter';
+  font-family: 'cinta';
   /* Make sure this path matches exactly where you put the font file! */
-  src: url('/assets/fonts/MomsTypewriter.ttf') format('truetype');
+  src: url('/assets/fonts/cinta.ttf') format('truetype');
 }
 
 /* Base styles */
@@ -33,7 +33,7 @@ body {
     flex-direction: column;
     background-color: var(--primary);
     color: var(--text);
-    font-family: 'Moms Typewriter', 'Courier New', Courier, monospace;
+    font-family: 'cinta', 'Courier New', Courier, monospace;
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -427,7 +427,7 @@ main {
     font-size: 1.3rem;
     color: #fff;
     margin-bottom: 8px;
-    /* Title font remains 'Moms Typewriter' (from body) */
+    /* Title font remains 'cinta' (from body) */
 }
 
 /* FONT CHANGE: Set artist text to Courier */
