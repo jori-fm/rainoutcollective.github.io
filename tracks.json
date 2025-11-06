@@ -299,6 +299,16 @@
       ]
     },
     {
+      "catalog": "RAIN-036S",
+      "artist": "süleymon",
+      "title": "wah",
+      "release_date": "2025-10-27",
+      "cover": "/assets/album-art/rain-036.jpg",
+      "tracks": [
+        { "title": "wah (ft. V0CALYST)", "file": "/assets/music/wah.mp3" }
+      ]
+    },
+    {
       "catalog": "RAIN-031",
       "artist": "krewlty",
       "title": "#krewlmusik",
