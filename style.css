@@ -259,7 +259,7 @@ h1 {
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 300;
-    color: #ffffff;
+    color: var(--accent); /* Changed from #ffffff */
     text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.3); /* Orange */
     position: relative;
 }
@@ -1770,4 +1770,9 @@ body.no-scroll{ overflow: hidden; }
 .player-page .ap-progress,
 .player-page .ap-vol {
     font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- About Page 'What We Do' Font Override --- */
+#what ul li {
+  font-family: 'Courier New', Courier, monospace;
 }
