@@ -37,12 +37,17 @@ const ARTIST_PAGES = {
   v0calyst: 'V0CALYST',
   seraphim: 'seraphim',
   krewlty: 'krewlty',
+  suleymon: 'suleymon' // <-- ADDED THIS LINE
 };
 
-// Display name (adds the period for smooch.)
+// Display name (adds period for smooch. and umlaut for süleymon)
 const displayArtist = (name = '') => {
   const n = String(name).trim();
-  return n.toLowerCase() === 'smooch' ? 'smooch.' : n;
+  const nLower = n.toLowerCase();
+
+  return nLower === 'smooch' ? 'smooch.' :
+         nLower === 'suleymon' ? 'süleymon' :
+         n; // Return original name
 };
 
 // Build link HTML if we have a page for this artist

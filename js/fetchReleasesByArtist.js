@@ -28,7 +28,7 @@ const ARTIST_PAGES = {
   v0calyst: 'V0CALYST',
   seraphim: 'seraphim',
   krewlty: 'krewlty',
-  suleymon: 'suleymon', // <-- ADDED THIS LINE
+  suleymon: 'suleymon' // <-- ADDED THIS LINE
 };
 
 // Display name (adds period for smooch. and umlaut for süleymon)
