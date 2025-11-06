@@ -1,56 +1,60 @@
 (() => {
-  const DATA_URL = 'releases.json';   // or '/releases.json'
-  const GRID_ID  = 'release-grid';
+  const DATA_URL = 'releases.json';
+  const CONTAINER_SELECTOR = '.releases'; // We target the main container now
+  const container = document.querySelector(CONTAINER_SELECTOR);
   
-  // make asset paths absolute (works from /, /releases, /artists/*)
-const resolveAsset = (p = '') => {
-  if (!p) return '';
-  if (/^https?:\/\//i.test(p)) return p;
-  return '/' + String(p).replace(/^\/+/, '');
-};
+  let allData = []; // To store all fetched releases
+  let currentFilter = 'all'; // 'all', 'album', or 'single'
+
+  // --- Helper Functions (Same as before) ---
+  
+  const resolveAsset = (p = '') => {
+    if (!p) return '';
+    if (/^https?:\/\//i.test(p)) return p;
+    return '/' + String(p).replace(/^\/+/, '');
+  };
 
   const escapeHtml = (s='') =>
     s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
   const toDate = (iso) => { const d = new Date(iso + 'T00:00:00'); d.setHours(0,0,0,0); return d; };
   const isFuture = (iso) => { const t = new Date(); t.setHours(0,0,0,0); return toDate(iso) > t; };
+  
   const isSingle = (catalog = '') => /S/i.test(String(catalog));
-const releaseIconHTML = (catalog = '') =>
-  isSingle(catalog)
-    ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
-    : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
+  
+  const releaseIconHTML = (catalog = '') =>
+    isSingle(catalog)
+      ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
+      : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
+  
+  const ARTIST_PAGES = {
+    sai: 'sai',
+    shinrei: 'shinrei',
+    smooch: 'smooch',
+    sunni: 'sunni',
+    v0calyst: 'V0CALYST',
+    seraphim: 'seraphim',
+    krewlty: 'krewlty',
+    suleymon: 'suleymon',
+  };
+  
+  const displayArtist = (name = '') => {
+    const n = String(name).trim();
+    const nLower = n.toLowerCase();
+    return nLower === 'smooch' ? 'smooch.' :
+           nLower === 'suleymon' ? 'süleymon' :
+           n;
+  };
 
-// Map JSON artist → exact file name in /artists (match your tree's casing)
-const ARTIST_PAGES = {
-  sai: 'sai',
-  shinrei: 'shinrei',
-  smooch: 'smooch',
-  sunni: 'sunni',
-  v0calyst: 'V0CALYST',
-  seraphim: 'seraphim',
-  krewlty: 'krewlty',
-  suleymon: 'suleymon' // <-- ADDED THIS LINE
-};
-
-// Display name (adds period for smooch. and umlaut for süleymon)
-const displayArtist = (name = '') => {
-  const n = String(name).trim();
-  const nLower = n.toLowerCase();
-
-  return nLower === 'smooch' ? 'smooch.' :
-         nLower === 'suleymon' ? 'süleymon' :
-         n; // Return original name
-};
-
-// Build link HTML if we have a page for this artist
-const artistHTML = (name = '') => {
-  const key = String(name).trim().toLowerCase();
-  const file = ARTIST_PAGES[key];
-  const label = escapeHtml(displayArtist(name)); // Uses the new display name
-  return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
-};
-
-
+  const artistHTML = (name = '') => {
+    const key = String(name).trim().toLowerCase();
+    const file = ARTIST_PAGES[key];
+    const label = escapeHtml(displayArtist(name));
+    return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
+  };
+  
+  // --- Card Creation (Same as before) ---
+  
   const createCard = (r) => {
     const el = document.createElement('div');
     el.className = 'release';
@@ -79,81 +83,101 @@ const artistHTML = (name = '') => {
     return el;
   };
 
+  // --- NEW: Function to render the grid, now grouped by year ---
+  
   const renderReleases = () => {
-    if (!grid) return;
-    grid.innerHTML = ''; // Clear the grid
-    grid.classList.add('loading');
+    if (!container) return;
+    container.innerHTML = ''; // Clear the main container
+    container.classList.add('loading');
 
-    // Filter the stored data
+    // 1. Filter the stored data
     const filteredData = allData.filter(release => {
       const catalog = release['Catalog#'] || '';
-      
-      if (currentFilter === 'all') {
-        return true; // Show all
-      }
-      if (currentFilter === 'single') {
-        return isSingle(catalog); // Show only singles
-      }
-      if (currentFilter === 'album') {
-        return !isSingle(catalog); // Show only non-singles
-      }
+      if (currentFilter === 'all') return true;
+      if (currentFilter === 'single') return isSingle(catalog);
+      if (currentFilter === 'album') return !isSingle(catalog);
       return true;
     });
     
-    grid.classList.remove('loading');
+    container.classList.remove('loading');
 
     if (filteredData.length === 0) {
-      grid.innerHTML = `<div class="error-state">No releases found for this filter.</div>`;
+      container.innerHTML = `<div class="error-state">No releases found for this filter.</div>`;
       return;
     }
 
-    // Populate the grid with filtered items
-    filteredData.forEach(r => grid.appendChild(createCard(r)));
+    // 2. Group the filtered data by year
+    const releasesByYear = filteredData.reduce((acc, release) => {
+      // Get year from "YYYY-MM-DD"
+      const year = release['Release Date'].split('-')[0];
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      acc[year].push(release);
+      return acc;
+    }, {}); // Creates an object like { "2025": [...], "2024": [...] }
+
+    // 3. Get the years and sort them descending (e.g., 2025, 2024)
+    const sortedYears = Object.keys(releasesByYear).sort((a, b) => b - a);
+
+    // 4. Loop through each year and build the HTML
+    for (const year of sortedYears) {
+      // Create the <h2> header for the year
+      const yearHeader = document.createElement('h2');
+      yearHeader.textContent = year;
+      // The H2 will automatically pick up your existing styles from style.css
+      
+      // Create the grid for this year's releases
+      const yearGrid = document.createElement('div');
+      yearGrid.className = 'release-grid';
+      
+      // Get the releases for this year
+      const releases = releasesByYear[year];
+      
+      // Create and append each release card to this year's grid
+      releases.forEach(r => {
+        yearGrid.appendChild(createCard(r));
+      });
+      
+      // Append the new <h2> and <div.release-grid> to the main container
+      container.appendChild(yearHeader);
+      container.appendChild(yearGrid);
+    }
   };
 
-  // --- NEW: Function to set up the filter button listeners ---
+  // --- Function to set up the filter button listeners (Same as before) ---
   
   const setupFilters = () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        // Set the new filter
         currentFilter = button.dataset.filter;
-        
-        // Update active class on buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        
-        // Re-render the grid with the new filter
         renderReleases();
       });
     });
   };
 
-  // --- MODIFIED: Main function to fetch data ONCE ---
+  // --- Main function to fetch data ONCE (Modified to use 'container') ---
   
-  let allData = []; // To store all fetched releases
-  let currentFilter = 'all'; // 'all', 'album', or 'single'
-  const grid = document.getElementById(GRID_ID);
-
   const fetchAndRender = async () => {
-    if (!grid) return;
-    grid.classList.add('loading');
+    if (!container) return; // Check for the new container
+    container.classList.add('loading');
 
     try {
       const res = await fetch(DATA_URL, { cache: 'no-store' });
       const data = await res.json();
       
-      // Sort the data once and store it
       data.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
       allData = data; 
       
-      renderReleases(); // Do the initial render (shows 'all')
-      setupFilters();   // Set up the click listeners for the buttons
+      renderReleases(); // Initial render
+      setupFilters();   // Set up filters
       
     } catch (e) {
-      grid.classList.remove('loading');
-      grid.innerHTML = `<div class="error-state">Couldn’t load releases.</div>`;
+      container.classList.remove('loading');
+      container.innerHTML = `<div class="error-state">Couldn’t load releases.</div>`;
       console.error(e);
     }
   };
