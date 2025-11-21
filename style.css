@@ -1777,43 +1777,51 @@ body.no-scroll{ overflow: hidden; }
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* --- Rainbow Promo Box (for sai) --- */
+/* --- Rainbow Promo Box (for sai) - UPDATED --- */
 
-/* 1. Set up the box to handle the rainbow border */
+/* 1. Set up the box content and darker, translucent background */
 .rainbow-promo {
   position: relative;
-  background: #0a0a0a; /* Needs a solid background to cover the content behind it */
-  border: none !important; /* Remove the standard orange border */
+  /* Dark, semi-transparent background like other boxes */
+  background: rgba(20, 20, 30, 0.7);
+  border: none !important; /* Remove standard border */
   border-radius: 4px;
-  z-index: 1; /* Ensure it sits above the rainbow layer */
+  z-index: 1;
+  /* Adds a blur to the background image behind the box for better text readability */
+  backdrop-filter: blur(5px); 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Add depth */
 }
 
-/* 2. Create the animated rainbow layer behind the box */
+/* 2. Create the thin, glowing rainbow border behind the box */
 .rainbow-promo::before {
   content: "";
   position: absolute;
-  /* This negative value determines the thickness of the rainbow border */
-  top: -3px; left: -3px; right: -3px; bottom: -3px;
+  /* Thinner border: only -1px offset instead of -3px */
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  /* The rainbow gradient */
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   background-size: 400%;
-  z-index: -1; /* Put it behind the main box */
-  border-radius: 6px; /* Slightly larger radius than the box */
+  z-index: -1; /* Behind the main box */
+  border-radius: 5px; /* Slightly larger radius */
   animation: rainbowFlow 20s linear infinite;
+  /* The key to the "light/glowing" look: blur it and lower opacity */
+  filter: blur(3px);
+  opacity: 0.8;
 }
 
-/* 3. Style the single cover image */
+/* 3. Style the single cover image (Same as before) */
 .promo-cover-art {
   display: block;
   width: 100%;
-  max-width: 350px; /* Keep it a nice size, not too huge */
+  max-width: 350px;
   height: auto;
   aspect-ratio: 1/1;
-  margin: 0 auto 25px; /* Center it and add space below */
+  margin: 0 auto 25px;
   border-radius: 4px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-/* 4. The animation for the rainbow colors */
+/* 4. The animation for the rainbow colors (Same as before) */
 @keyframes rainbowFlow {
   0% { background-position: 0 0; }
   50% { background-position: 300% 0; }
