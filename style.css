@@ -1823,11 +1823,34 @@ body.no-scroll{ overflow: hidden; }
   pointer-events: none;
 }
 
-/* 4. Neon Stars - BOTTOM RIGHT */
+/* 4. Video Embed - Blend Border & Bottom Right Stars */
+
+/* First, style the wrapper to handle the border and stars */
 .rainbow-promo .video-embed-wrap {
-  overflow: visible !important; 
+  border: none !important; /* Remove the old thin orange border */
+  background: #000; /* Solid background behind video */
+  border-radius: 4px;
+  overflow: visible !important; /* Keep visible for stars */
+  z-index: 2; /* Ensure video sits above main box background */
 }
 
+/* THE NEW BLEND BORDER */
+.rainbow-promo .video-embed-wrap::before {
+  content: "";
+  position: absolute;
+  /* Thickness of the border (2px) */
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  /* Same rainbow gradient as main box */
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 400%;
+  z-index: -1; /* Sits behind the video iframe */
+  border-radius: 6px;
+  /* Reverse animation so it flows against the main box for a cool effect */
+  animation: rainbowFlow 15s linear infinite reverse; 
+  opacity: 0.9;
+}
+
+/* The Stars (on ::after so they don't conflict with the border) */
 .rainbow-promo .video-embed-wrap::after {
   content: "   ★\A ★";
   white-space: pre;
@@ -1838,9 +1861,7 @@ body.no-scroll{ overflow: hidden; }
   font-size: 4.5rem;
   line-height: 0.6;
   z-index: 10;
-  /* Static rotation so they stay scattered */
   transform: rotate(15deg);
-  /* Same animation, slightly offset */
   animation: neon-flash 4s infinite alternate-reverse;
   pointer-events: none;
 }
