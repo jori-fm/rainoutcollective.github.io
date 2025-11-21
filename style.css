@@ -1832,13 +1832,13 @@ body.no-scroll{ overflow: hidden; }
 
 .rainbow-promo h2 {
   color: #000000 !important; /* Force black text */
-  text-shadow: none !important; /* Remove the orange/white glow */
+  text-shadow: none !important; /* Remove the glow */
   
   /* Create the black divider */
-  border-bottom: 3px solid #000000; 
-  display: inline-block; /* Makes the line match the text width */
-  padding-bottom: 10px; /* Space between text and line */
-  margin-bottom: 20px; /* Space between line and sub-header */
+  border-bottom: 2px solid #000000; /* Slightly thinner line */
+  display: inline-block; 
+  padding-bottom: 5px; /* Space between "COMING..." and line */
+  margin-bottom: 15px; /* Space below the line */
 }
 
 .rainbow-promo h3 {
@@ -1846,4 +1846,8 @@ body.no-scroll{ overflow: hidden; }
   text-shadow: none !important;
   font-weight: bold;
   opacity: 0.9;
+  
+  /* FIX: This resets the spacing so it doesn't overlap the line */
+  margin-top: 0 !important; 
+  margin-bottom: 25px;
 }
