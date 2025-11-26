@@ -1,6 +1,6 @@
-/* RAINOUT Player — Fixed to handle your tracks.json structure */
+/* RAINOUT Player — Final: Global Playlist + Metadata + UI Fixes */
 (() => {
-  // Helper functions
+  // --- Helpers ---
   const $ = (id) => document.getElementById(id);
   const fmt = (t = 0) => {
     const s = Math.max(0, Math.floor(t));
@@ -11,7 +11,7 @@
     return /^smooch\.?$/i.test(n) ? 'smooch.' : n;
   };
 
-  // Elements
+  // --- Elements ---
   const el = {
     list: $("releaseList"),
     nowbar: $("nowbar"),
@@ -30,247 +30,254 @@
     vol: $("apVolume"),
   };
 
-  // State
-  let releases = [];      // Your album/release data
-  let currentRelease = -1; // Current release index
-  let currentTrack = 0;    // Current track index within release
+  // --- State ---
+  let playlist = [];       // One flat list of ALL tracks
+  let currentIndex = 0;    // Where we are in that flat list
   let repeatMode = 0;      // 0=off, 1=all, 2=one
   let shuffleOn = false;
 
-  // Render release list
-  function renderReleases() {
-    if (!el.list) return;
-    el.list.innerHTML = "";
+  // --- METADATA (Browser Tab & Lock Screen) ---
+  function updateMetadata(track) {
+    // 1. Browser Tab
+    if (document) {
+        document.title = `${track.artist} - ${track.title} || RAINOUT PLAYER`;
+    }
 
-    releases.forEach((release, idx) => {
-      const card = document.createElement("div");
-      card.className = "ap-card";
-      
-      // Cover image
-      const left = document.createElement("div");
-      left.className = "ap-left";
-      const img = document.createElement("img");
-      img.className = "ap-cover";
-      img.src = release.cover;
-      img.alt = `${release.title} cover`;
-      left.appendChild(img);
-      
-      // Release info
-      const right = document.createElement("div");
-      right.className = "ap-right";
-      
-      const title = document.createElement("div");
-      title.className = "ap-title";
-      title.textContent = release.title;
-      
-      const meta = document.createElement("div");
-      meta.className = "ap-meta-line";
-      meta.innerHTML = `${displayArtist(release.artist)} <span class="ap-dot">•</span> ${release.catalog} <span class="ap-dot">•</span> ${release.release_date}`;
-      
-      // Track list
-      const trackList = document.createElement("ul");
-      trackList.className = "ap-tracks";
-      
-      release.tracks.forEach((track, trackIdx) => {
-        const li = document.createElement("li");
-        li.className = "ap-track";
-        li.innerHTML = `<span class="ap-track-num">${trackIdx + 1}.</span>
-                        <span class="ap-track-title">${track.title}</span>
-                        <button class="ap-play" data-release="${idx}" data-track="${trackIdx}">▶</button>`;
-        trackList.appendChild(li);
-      });
-      
-      right.appendChild(title);
-      right.appendChild(meta);
-      right.appendChild(trackList);
-      
-      card.appendChild(left);
-      card.appendChild(right);
-      el.list.appendChild(card);
-    });
+    // 2. Lock Screen / Media Session
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: track.title,
+            artist: track.artist,
+            album: track.album,
+            artwork: [
+                { src: track.cover, sizes: '96x96',   type: 'image/jpeg' },
+                { src: track.cover, sizes: '128x128', type: 'image/jpeg' },
+                { src: track.cover, sizes: '512x512', type: 'image/jpeg' },
+            ]
+        });
 
-    // Add play button listeners
-    document.querySelectorAll(".ap-play").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const releaseIdx = parseInt(btn.dataset.release);
-        const trackIdx = parseInt(btn.dataset.track);
-        playTrack(releaseIdx, trackIdx);
-      });
-    });
+        navigator.mediaSession.setActionHandler('play', () => { 
+            if(el.audio.paused) el.audio.play(); 
+        });
+        navigator.mediaSession.setActionHandler('pause', () => { 
+            if(!el.audio.paused) el.audio.pause(); 
+        });
+        navigator.mediaSession.setActionHandler('previoustrack', prevTrack);
+        navigator.mediaSession.setActionHandler('nexttrack', nextTrack);
+    }
   }
 
-  // Play a specific track
-  function playTrack(releaseIdx, trackIdx) {
-    if (!releases[releaseIdx] || !releases[releaseIdx].tracks[trackIdx]) return;
-    
-    currentRelease = releaseIdx;
-    currentTrack = trackIdx;
-    
-    const release = releases[releaseIdx];
-    const track = release.tracks[trackIdx];
-    
+  // --- CORE PLAYER LOGIC ---
+
+  function loadTrack(index) {
+    // Bounds check
+    if (index < 0) index = playlist.length - 1;
+    if (index >= playlist.length) index = 0;
+
+    currentIndex = index;
+    const track = playlist[currentIndex];
+
     // Update UI
-    el.cover.src = release.cover;
-    el.title.textContent = track.title;
-    el.sub.textContent = `${displayArtist(release.artist)} • ${release.title}`;
     el.audio.src = track.file;
+    el.cover.src = track.cover;
+    el.title.textContent = track.title;
+    el.sub.textContent = `${track.artist} • ${track.album}`;
+
+    // Update Metadata
+    updateMetadata(track);
+
+    // Play
+    el.audio.play().catch(e => console.error("Playback error:", e));
     
-    // Show player and start playback
+    // Show Player Bar
     if (el.nowbar) {
-      el.nowbar.hidden = false;
-      el.nowbar.classList.add('is-open'); // Add this to trigger the slide-up animation
-      document.body.classList.add('has-nowbar'); // Add this for proper spacing
+        el.nowbar.hidden = false;
+        el.nowbar.classList.add('is-open');
+        document.body.classList.add('has-nowbar');
     }
-    
-    el.audio.play().catch(e => console.log("Playback error:", e));
     updatePlayBtn();
   }
 
-  // Update play/pause button
   function updatePlayBtn() {
     if (!el.play) return;
-    
     if (!el.audio.paused) {
-      el.play.textContent = "❚❚";
-      el.play.setAttribute("aria-label", "Pause");
+        el.play.textContent = "❚❚";
+        el.play.setAttribute("aria-label", "Pause");
     } else {
-      el.play.textContent = "►";
-      el.play.setAttribute("aria-label", "Play");
+        el.play.textContent = "►";
+        el.play.setAttribute("aria-label", "Play");
     }
   }
 
-  // Next track
   function nextTrack() {
-    if (!releases[currentRelease]) return;
-    
-    const release = releases[currentRelease];
-    
-    if (currentTrack < release.tracks.length - 1) {
-      playTrack(currentRelease, currentTrack + 1);
-    } else if (repeatMode === 1) {
-      playTrack(currentRelease, 0);
+    if (repeatMode === 2) { // Repeat One
+        el.audio.currentTime = 0;
+        el.audio.play();
+    } else if (shuffleOn) {
+        const rand = Math.floor(Math.random() * playlist.length);
+        loadTrack(rand);
     } else {
-      // Stop at end if repeat is off
-      el.audio.pause();
-      updatePlayBtn();
+        // Loop back to start if at end, or stop if repeat off? 
+        // Standard behavior is usually loop or stop. Let's loop for "continuous play" feel.
+        loadTrack(currentIndex + 1);
     }
   }
 
-  // Previous track
   function prevTrack() {
     if (el.audio.currentTime > 3) {
-      // Restart current track if >3 seconds in
-      playTrack(currentRelease, currentTrack);
-    } else if (currentTrack > 0) {
-      playTrack(currentRelease, currentTrack - 1);
-    } else if (repeatMode === 1) {
-      const release = releases[currentRelease];
-      playTrack(currentRelease, release.tracks.length - 1);
+        el.audio.currentTime = 0;
+    } else {
+        loadTrack(currentIndex - 1);
     }
   }
 
-  // Initialize player
+  // --- INIT & RENDER ---
+
   function init() {
-    // Load tracks.json
     fetch("/tracks.json")
-      .then(response => {
-        if (!response.ok) throw new Error("Failed to load tracks");
-        return response.json();
-      })
+      .then(res => res.json())
       .then(data => {
-        // Sort releases from newest to oldest
-        releases = data.sort((a, b) => {
-          const dateA = new Date(a.release_date);
-          const dateB = new Date(b.release_date);
-          return dateB - dateA; // Newest first
+        // 1. Sort Releases (Newest First)
+        const sortedReleases = data.sort((a, b) => {
+            return new Date(b.release_date) - new Date(a.release_date);
+        });
+
+        // 2. Build Global Playlist & DOM
+        if (el.list) el.list.innerHTML = "";
+        
+        let globalTrackCounter = 0; // Keeps track of the index in the master playlist
+
+        sortedReleases.forEach((release) => {
+            // -- Build UI Card --
+            const card = document.createElement("div");
+            card.className = "ap-card";
+
+            // HTML Structure
+            let tracksHtml = "";
+            release.tracks.forEach((track, i) => {
+                // Add to Master Playlist
+                playlist.push({
+                    title: track.title,
+                    file: track.file,
+                    cover: release.cover,
+                    artist: displayArtist(release.artist),
+                    album: release.title,
+                    catalog: release.catalog
+                });
+
+                // Capture the current index for the click handler
+                const trackIndex = globalTrackCounter; 
+                
+                tracksHtml += `
+                    <li class="ap-track">
+                        <span class="ap-track-num">${i + 1}.</span>
+                        <span class="ap-track-title">${track.title}</span>
+                        <button class="ap-play" onclick="window.rainoutPlay(${trackIndex})">▶</button>
+                    </li>
+                `;
+                
+                globalTrackCounter++;
+            });
+
+            const leftDiv = document.createElement("div");
+            leftDiv.className = "ap-left";
+            leftDiv.innerHTML = `<img src="${release.cover}" class="ap-cover" alt="${release.title}">`;
+
+            const rightDiv = document.createElement("div");
+            rightDiv.className = "ap-right";
+            rightDiv.innerHTML = `
+                <div class="ap-title">${release.title}</div>
+                <div class="ap-meta-line">
+                    ${displayArtist(release.artist)} <span class="ap-dot">•</span> ${release.catalog} <span class="ap-dot">•</span> ${release.release_date}
+                </div>
+                <ul class="ap-tracks">
+                    ${tracksHtml}
+                </ul>
+            `;
+
+            card.appendChild(leftDiv);
+            card.appendChild(rightDiv);
+            el.list.appendChild(card);
+        });
+
+      })
+      .catch(err => console.error("Error loading tracks:", err));
+
+    // --- Event Listeners ---
+
+    // Global Play Function (Accessible from HTML onClick)
+    window.rainoutPlay = (index) => {
+        loadTrack(index);
+    };
+
+    // Play/Pause
+    if (el.play) {
+        el.play.addEventListener("click", () => {
+            el.audio.paused ? el.audio.play() : el.audio.pause();
+        });
+    }
+    
+    // Audio Events
+    if (el.audio) {
+        el.audio.addEventListener('play', updatePlayBtn);
+        el.audio.addEventListener('pause', updatePlayBtn);
+        el.audio.addEventListener('ended', nextTrack); // <--- THIS makes it play the next song!
+        
+        // Time & Seek
+        el.audio.addEventListener("timeupdate", () => {
+            if (el.seek && !el.seek.dragging) {
+                if(el.cur) el.cur.textContent = fmt(el.audio.currentTime);
+                if(el.audio.duration) {
+                    const pct = (el.audio.currentTime / el.audio.duration) * 1000;
+                    el.seek.value = pct || 0;
+                }
+            }
         });
         
-        renderReleases();
-      })
-      .catch(error => {
-        console.error("Error loading tracks:", error);
-        if (el.list) {
-          el.list.innerHTML = `<p class="error-state">Error loading music: ${error.message}</p>`;
-        }
-      });
-
-    // Event listeners
-    if (el.play) {
-      el.play.addEventListener("click", () => {
-        if (el.audio.paused) {
-          if (currentRelease === -1 && releases.length > 0) {
-            playTrack(0, 0); // Play first track if nothing is playing
-          } else {
-            el.audio.play().catch(e => console.log("Play error:", e));
-          }
-        } else {
-          el.audio.pause();
-        }
-      });
+        el.audio.addEventListener("loadedmetadata", () => {
+            if (el.dur) el.dur.textContent = fmt(el.audio.duration);
+        });
     }
+    
+    // Nav
+    if (el.next) el.next.addEventListener('click', nextTrack);
+    if (el.prev) el.prev.addEventListener('click', prevTrack);
 
-    if (el.prev) el.prev.addEventListener("click", prevTrack);
-    if (el.next) el.next.addEventListener("click", nextTrack);
-
+    // Repeat & Shuffle
     if (el.repeat) {
-      el.repeat.addEventListener("click", () => {
-        repeatMode = (repeatMode + 1) % 3;
-        el.repeat.setAttribute("aria-pressed", repeatMode !== 0);
-        el.repeat.title = ["Repeat: Off", "Repeat: All", "Repeat: One"][repeatMode];
-      });
+        el.repeat.addEventListener("click", () => {
+            repeatMode = (repeatMode + 1) % 3;
+            el.repeat.setAttribute("aria-pressed", repeatMode !== 0);
+            // 0=Off, 1=All (Loop), 2=One
+            el.repeat.setAttribute("data-mode", repeatMode); 
+        });
     }
 
     if (el.shuffle) {
-      el.shuffle.addEventListener("click", () => {
-        shuffleOn = !shuffleOn;
-        el.shuffle.setAttribute("aria-pressed", shuffleOn);
-      });
+        el.shuffle.addEventListener("click", () => {
+            shuffleOn = !shuffleOn;
+            el.shuffle.setAttribute("aria-pressed", shuffleOn);
+        });
     }
 
-    el.audio.addEventListener("timeupdate", () => {
-      if (!el.seek || !el.cur) return;
-      if (!el.seek.dragging) {
-        el.cur.textContent = fmt(el.audio.currentTime);
-        if (el.audio.duration) {
-          el.seek.value = (el.audio.currentTime / el.audio.duration) * 1000 || 0;
-        }
-      }
-    });
-
-    el.audio.addEventListener("loadedmetadata", () => {
-      if (!el.dur || !el.seek) return;
-      el.dur.textContent = fmt(el.audio.duration);
-      el.seek.max = 1000;
-    });
-
-    el.audio.addEventListener("ended", nextTrack);
-
     if (el.seek) {
-      el.seek.addEventListener("input", () => {
-        el.seek.dragging = true;
-        if (el.audio.duration) {
-          const seekTo = (el.seek.value / 1000) * el.audio.duration;
-          if (el.cur) el.cur.textContent = fmt(seekTo);
-        }
-      });
-
-      el.seek.addEventListener("change", () => {
-        if (el.audio.duration) {
-          const seekTo = (el.seek.value / 1000) * el.audio.duration;
-          el.audio.currentTime = seekTo;
-        }
-        el.seek.dragging = false;
-      });
+        el.seek.addEventListener("input", () => {
+            el.seek.dragging = true;
+            if(el.audio.duration) el.cur.textContent = fmt((el.seek.value / 1000) * el.audio.duration);
+        });
+        el.seek.addEventListener("change", () => {
+            if(el.audio.duration) el.audio.currentTime = (el.seek.value / 1000) * el.audio.duration;
+            el.seek.dragging = false;
+        });
     }
 
     if (el.vol) {
-      el.audio.volume = Number(el.vol.value || 0.9);
-      el.vol.addEventListener("input", () => {
-        el.audio.volume = Number(el.vol.value);
-      });
+        el.vol.addEventListener("input", () => {
+            el.audio.volume = el.vol.value;
+        });
     }
   }
 
-  // Start everything
+  // Start
   init();
 })();

@@ -13,11 +13,11 @@ function loadComponent(elementId, filePath) {
 
 // --- 1. Snow Effect Function ---
 function createRain() {
+    // PERFORMANCE FIX: Strictly stop on mobile/tablet
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
+
     const existingRain = document.querySelector('.rain');
     if (existingRain) existingRain.remove();
-    
-    // Don't create on mobile to save battery
-    if (/Mobi|Android/i.test(navigator.userAgent)) return;
     
     const rainContainer = document.createElement('div');
     rainContainer.className = 'rain';
@@ -27,7 +27,7 @@ function createRain() {
         const drop = document.createElement('div');
         drop.className = 'drop';
         
-        // 1. Make them circular (same width and height)
+        // Circular & Varied Size
         const size = Math.random() * 3 + 2; 
         
         drop.style.cssText = `
@@ -35,7 +35,7 @@ function createRain() {
             width: ${size}px;
             height: ${size}px;
             opacity: ${Math.random() * 0.6 + 0.2}; 
-            /* 2. Much slower fall speed (10s to 20s) */
+            /* Slower fall speed (10s to 20s) */
             animation-duration: ${Math.random() * 10 + 10}s, ${Math.random() * 4 + 3}s;
             animation-delay: -${Math.random() * 20}s; 
         `;
@@ -48,6 +48,9 @@ function createRain() {
 
 // --- 2. Hover Effects ---
 function setupReleaseHoverEffects() {
+    // Disable hover effects on mobile to prevent sticky hover states
+    if (/Mobi|Android/i.test(navigator.userAgent)) return;
+
     document.querySelectorAll('.release').forEach(item => {
         item.addEventListener('mouseenter', () => {
             item.style.transform = 'translateY(-5px)';
@@ -91,17 +94,15 @@ loadComponent('global-footer', pathPrefix + 'footer.html');
         }
     });
 
-    // --- FIX: MOBILE MENU TOGGLE ---
-    // We put this inside DOMContentLoaded to ensure the button exists
+    // --- MOBILE MENU TOGGLE ---
     const toggleBtn = document.querySelector('.nav-toggle');
     
     if (toggleBtn) {
         toggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent click from bubbling
+            e.stopPropagation();
             document.body.classList.toggle('nav-open');
         });
 
-        // Optional: Close menu if clicking anywhere else on the page
         document.addEventListener('click', (e) => {
             if (document.body.classList.contains('nav-open') && !e.target.closest('.site-nav')) {
                 document.body.classList.remove('nav-open');
@@ -109,7 +110,7 @@ loadComponent('global-footer', pathPrefix + 'footer.html');
         });
     }
     
-    // Recreate snow on resize (Debounced)
+    // Recreate snow on resize
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
