@@ -348,6 +348,17 @@
 
 
       ]
+    },
+    {
+      "catalog": "RAIN-038S",
+      "artist": "V0CALYST",
+      "title": "is it so00",
+      "release_date": "2025-11-21",
+      "cover": "/assets/album-art/rain-038.jpg",
+      "tracks": [
+        { "title": "is it so00", "file": "/assets/music/is it so00.mp3" }
+
+      ]
     }
 
 
