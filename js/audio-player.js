@@ -36,36 +36,48 @@
   let repeatMode = 0;      // 0=off, 1=all, 2=one
   let shuffleOn = false;
 
-  // --- METADATA (Browser Tab & Lock Screen) ---
-  function updateMetadata(track) {
-    // 1. Browser Tab
-    if (document) {
-        document.title = `${track.artist} - ${track.title} || RAINOUT PLAYER`;
-    }
-
-    // 2. Lock Screen / Media Session
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: track.title,
-            artist: track.artist,
-            album: track.album,
-            artwork: [
-                { src: track.cover, sizes: '96x96',   type: 'image/jpeg' },
-                { src: track.cover, sizes: '128x128', type: 'image/jpeg' },
-                { src: track.cover, sizes: '512x512', type: 'image/jpeg' },
-            ]
-        });
-
-        navigator.mediaSession.setActionHandler('play', () => { 
-            if(el.audio.paused) el.audio.play(); 
-        });
-        navigator.mediaSession.setActionHandler('pause', () => { 
-            if(!el.audio.paused) el.audio.pause(); 
-        });
-        navigator.mediaSession.setActionHandler('previoustrack', prevTrack);
-        navigator.mediaSession.setActionHandler('nexttrack', nextTrack);
-    }
+// --- METADATA (Browser Tab & Lock Screen) ---
+function updateMetadata(track) {
+  // 1. Browser Tab
+  if (document) {
+      document.title = `${track.artist} - ${track.title} || RAINOUT PLAYER`;
   }
+
+  // 2. Lock Screen / Media Session
+  if ('mediaSession' in navigator) {
+      // Helper: Convert relative path (e.g., /assets/img.jpg) to Absolute URL (https://site.com/assets/img.jpg)
+      const getAbsoluteUrl = (url) => {
+          // If it's already a full URL, return it. Otherwise, combine with current website address.
+          if (!url) return '';
+          return new URL(url, window.location.href).href;
+      };
+
+      navigator.mediaSession.metadata = new MediaMetadata({
+          title: track.title,
+          artist: track.artist,
+          album: track.album,
+          artwork: [
+              // Send the full URL so the phone can find the image
+              // Removed 'type' so it accepts both JPG and PNG automatically
+              { src: getAbsoluteUrl(track.cover), sizes: '96x96' },
+              { src: getAbsoluteUrl(track.cover), sizes: '128x128' },
+              { src: getAbsoluteUrl(track.cover), sizes: '192x192' },
+              { src: getAbsoluteUrl(track.cover), sizes: '256x256' },
+              { src: getAbsoluteUrl(track.cover), sizes: '384x384' },
+              { src: getAbsoluteUrl(track.cover), sizes: '512x512' },
+          ]
+      });
+
+      navigator.mediaSession.setActionHandler('play', () => { 
+          if(el.audio.paused) el.audio.play(); 
+      });
+      navigator.mediaSession.setActionHandler('pause', () => { 
+          if(!el.audio.paused) el.audio.pause(); 
+      });
+      navigator.mediaSession.setActionHandler('previoustrack', prevTrack);
+      navigator.mediaSession.setActionHandler('nexttrack', nextTrack);
+  }
+}
 
   // --- CORE PLAYER LOGIC ---
 
