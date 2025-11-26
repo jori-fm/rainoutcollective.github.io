@@ -491,12 +491,22 @@ footer {
 
 /* Top Nav */
 .site-nav {
-    max-width: 1180px; margin: 8px auto 0; border-radius: 8px;
-    position: sticky; padding-inline: 20px; top: 0; z-index: 9990;
-    display: flex; align-items: center; gap: 18px; padding: 10px 16px;
-    background: rgba(5, 10, 20, 0.8); /* Darker for winter */
+    max-width: 1180px; 
+    margin: 8px auto 0; 
+    border-radius: 8px;
+    position: sticky; 
+    padding-inline: 20px; 
+    top: 0; 
+    /* FIX: Increased to 10000 to sit above ALL background layers */
+    z-index: 10000; 
+    display: flex; 
+    align-items: center; 
+    gap: 18px; 
+    padding: 10px 16px;
+    background: rgba(5, 10, 20, 0.8);
     border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
-    backdrop-filter: blur(8px); justify-content: center;
+    backdrop-filter: blur(8px); 
+    justify-content: center;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
   
@@ -557,22 +567,144 @@ footer {
     main > * { margin-bottom: 40px; }    
     h1 { font-size: 2.2rem; }
     .tagline { font-size: 1.1rem; }
+    
+    /* Grid layout */
     .release-grid { grid-template-columns: 1fr; }
     .artist-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); justify-content: center; }
     .social-links { gap: 15px; }
     .social-links a { width: 45px; height: 45px; font-size: 1.2rem; }
     
-    .release { padding: 25px 15px 15px; }
+    /* --- FIX: GLOBAL MOBILE CONSTRAINTS --- */
+    /* This list now includes .about and applies to ALL boxes */
+    .promo-video-box, 
+    .rainbow-promo,
+    .release, 
+    .discord-widget-section,
+    .about,
+    .ap-card {
+        width: 100%;
+        max-width: 350px; /* Stops them from touching edges */
+        margin-left: auto; /* Centers the card */
+        margin-right: auto; /* Centers the card */
+        padding: 25px 15px 15px; /* Consistent padding */
+        box-sizing: border-box; /* Ensures padding doesn't break width */
+    }
+
+    /* Ensure images inside these boxes fit */
+    .release img, 
+    .promo-video-box img,
+    .about img { 
+        max-width: 100%; 
+        height: auto; 
+    }
+
     .release img { margin-bottom: 15px; }
     .release .title { font-size: 1.1rem; }
     .release .artist { font-size: 1rem; }
     
+    /* Adjust the scroll container for artists */
     #artist-releases, .release-scroll {
         flex: 0 0 250px; gap: 15px;
         scroll-padding-left: calc(50% - 125px);
         scroll-padding-right: calc(50% - 125px);
     }
     #artist-releases .release, .release-scroll .release { flex-basis: 250px; }
+    /* --- MOBILE PLAYER FIX (Header Layout) --- */
+    
+    /* 1. The Main Card Grid */
+    .ap-card {
+        display: grid;
+        /* Column 1: Image (100px) | Column 2: Info (Rest) */
+        grid-template-columns: 100px 1fr; 
+        /* Rows scale automatically */
+        grid-auto-rows: min-content;
+        gap: 15px;
+        text-align: left; /* Align text left for readability */
+        align-items: center; /* Vertically center info next to art */
+        padding: 15px;
+    }
+
+    /* 2. The Cover Art (Top Left) */
+    .ap-left {
+        grid-column: 1;
+        grid-row: 1 / 3; /* Span rows to sit next to Title & Meta */
+        width: 100%;
+        margin: 0;
+        float: none; 
+        order: unset; 
+        display: block;
+    }
+
+    .ap-cover {
+        width: 100px; /* Much smaller, fits nicely in header */
+        height: 100px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        border-radius: 4px;
+    }
+
+    /* 3. UNWRAP the Right Container */
+    /* This allows Title, Meta, and Tracks to be moved individually */
+    .ap-right {
+        display: contents; 
+    }
+
+    /* 4. Title & Info (Top Right) */
+    .ap-title, .ap-meta-line {
+        grid-column: 2; /* Sit to the right of the image */
+        margin: 0;
+    }
+    
+    .ap-title {
+        align-self: end; /* Push title down a bit */
+        font-size: 1.1rem;
+        line-height: 1.2;
+        margin-bottom: 4px;
+    }
+    
+    .ap-meta-line {
+        align-self: start;
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
+
+    /* 5. Tracklist (Full Width Below) */
+    .ap-tracks {
+        grid-column: 1 / -1; /* Span across full width */
+        width: 100%;
+        margin-top: 15px; /* Space from header */
+        border-top: 1px solid rgba(var(--accent-rgb), 0.2); /* Separator line */
+    }
+
+    /* 6. Track Row Layout */
+    .ap-track {
+        display: grid;
+        /* Number | Title (Flexible) | Button */
+        grid-template-columns: 25px 1fr 40px; 
+        gap: 10px;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    /* 7. Title Truncation Fix */
+    .ap-track-title {
+        text-align: left;
+        font-size: 0.9rem;
+        min-width: 0; /* CRITICAL: Allows text to shrink/dot-dot-dot */
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ap-play {
+        justify-self: end;
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .artist-pic-wrapper {
@@ -1001,4 +1133,73 @@ body.no-scroll { overflow: hidden; }
   color: #ffffff !important;       /* Turns white on hover */
   text-shadow: 0 0 10px var(--accent); /* Adds Ice Blue glow */
   cursor: pointer;
+}
+
+/* --- MOBILE MINI-PLAYER FIX --- */
+@media (max-width: 600px) {
+    
+    /* 1. Increase page padding so the taller player doesn't cover content */
+    body.player-page.has-nowbar {
+        padding-bottom: 160px !important; /* Gives plenty of room */
+    }
+
+    .ap-nowbar {
+        height: auto;
+        padding: 12px 15px 20px; /* Extra padding for safe area */
+    }
+
+    /* 2. Switch to Vertical Layout */
+    .ap-nowbar-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* 3. Hide Cover Art & Volume (Save space) */
+    .ap-nowbar img, 
+    .ap-vol { 
+        display: none !important; 
+    }
+
+    /* 4. Track Info (Top) */
+    .ap-meta {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2px;
+    }
+    
+    /* Ensure text doesn't break layout */
+    .ap-title { 
+        font-size: 1rem; 
+        margin: 0 0 2px 0; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    .ap-sub { 
+        font-size: 0.85rem; 
+        opacity: 0.8; 
+    }
+
+    /* 5. Progress Bar (Middle) */
+    .ap-progress {
+        width: 100%;
+        font-size: 0.8rem;
+        max-width: none; /* Let it fill the screen width */
+    }
+
+    /* 6. Controls (Bottom & Smaller) */
+    .ap-controls {
+        width: 100%;
+        justify-content: center;
+        gap: 20px; /* Space out the buttons nicely */
+    }
+    
+    .ap-btn {
+        width: 32px; /* Smaller button size */
+        height: 32px;
+        font-size: 0.9rem;
+        background: rgba(var(--accent-rgb), 0.15); /* Make them slightly more visible */
+    }
 }
