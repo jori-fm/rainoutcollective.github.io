@@ -27,16 +27,18 @@
       ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
       : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
   
-  const ARTIST_PAGES = {
-    sai: 'sai',
-    shinrei: 'shinrei',
-    smooch: 'smooch',
-    sunni: 'sunni',
-    v0calyst: 'V0CALYST',
-    seraphim: 'seraphim',
-    krewlty: 'krewlty',
-    suleymon: 'suleymon',
-  };
+// Map JSON artist → exact file name in /artists (match your tree's casing)
+const ARTIST_PAGES = {
+  sai: 'sai',
+  shinrei: 'shinrei',
+  smooch: 'smooch',
+  sunni: 'sunni',
+  v0calyst: 'V0CALYST',
+  seraphim: 'seraphim',
+  krewlty: 'krewlty',
+  suleymon: 'suleymon',   // Matches plain "suleymon"
+  'süleymon': 'suleymon', // Matches "süleymon" from JSON -> points to suleymon.html
+};
   
   const displayArtist = (name = '') => {
     const n = String(name).trim();

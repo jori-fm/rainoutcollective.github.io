@@ -37,8 +37,10 @@ const ARTIST_PAGES = {
   v0calyst: 'V0CALYST',
   seraphim: 'seraphim',
   krewlty: 'krewlty',
-  suleymon: 'suleymon' // <-- ADDED THIS LINE
+  suleymon: 'suleymon',   // Matches plain "suleymon"
+  'süleymon': 'suleymon', // Matches "süleymon" from JSON -> points to suleymon.html
 };
+
 
 // Display name (adds period for smooch. and umlaut for süleymon)
 const displayArtist = (name = '') => {

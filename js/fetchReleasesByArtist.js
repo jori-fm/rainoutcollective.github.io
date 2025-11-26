@@ -19,17 +19,6 @@ const releaseIconHTML = (catalog = '') =>
   isSingle(catalog)
     ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
     : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
-// Map JSON artist → exact file name in /artists (match your tree's casing)
-const ARTIST_PAGES = {
-  sai: 'sai',
-  shinrei: 'shinrei',
-  smooch: 'smooch',
-  sunni: 'sunni',
-  v0calyst: 'V0CALYST',
-  seraphim: 'seraphim',
-  krewlty: 'krewlty',
-  suleymon: 'suleymon' // <-- ADDED THIS LINE
-};
 
 // Display name (adds period for smooch. and umlaut for süleymon)
 const displayArtist = (name = '') => {
