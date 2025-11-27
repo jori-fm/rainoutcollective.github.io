@@ -40,7 +40,7 @@
 function updateMetadata(track) {
   // 1. Browser Tab
   if (document) {
-      document.title = `${track.artist} - ${track.title} || RAINOUT PLAYER`;
+      document.title = `${track.artist} - ${track.title} — RAINOUT`;
   }
 
   // 2. Lock Screen / Media Session
