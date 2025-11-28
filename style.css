@@ -1203,3 +1203,34 @@ body.no-scroll { overflow: hidden; }
         background: rgba(var(--accent-rgb), 0.15); /* Make them slightly more visible */
     }
 }
+
+/* --- "NEW" Badge Style --- */
+.new-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--primary); /* Dark text */
+    background-color: var(--accent); /* Ice Blue background */
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px; /* Space from the name */
+    vertical-align: middle;
+    text-transform: uppercase;
+    box-shadow: 0 0 8px var(--accent); /* Glowing effect */
+    animation: pulseBadge 2s infinite;
+}
+
+/* Subtle pulse animation to catch the eye */
+@keyframes pulseBadge {
+    0% { opacity: 0.8; box-shadow: 0 0 5px var(--accent); }
+    50% { opacity: 1; box-shadow: 0 0 12px var(--accent); }
+    100% { opacity: 0.8; box-shadow: 0 0 5px var(--accent); }
+}
+
+/* Specific adjustment for the Artist Grid on Home Page */
+.artist h3 .new-badge {
+    display: block; /* Force it to a new line on the grid */
+    width: fit-content;
+    margin: 5px auto 0; /* Center it */
+    font-size: 0.6rem;
+}
