@@ -359,6 +359,33 @@
         { "title": "is it so00", "file": "/assets/music/is it so00.mp3" }
 
       ]
+    },
+    {
+      "catalog": "RAIN-039",
+      "artist": "sai",
+      "title": "let's have some fun",
+      "release_date": "2025-11-28",
+      "cover": "/assets/album-art/rain-039.jpg",
+      "tracks": [
+        { "title": "partyinmymind", "file": "/assets/music/partyinmymind.mp3" },
+        { "title": "HOW MANY (ft. Dani Kiyoko)", "file": "/assets/music/HOW MANY.mp3" },
+        { "title": "WHOsaid (ft. V0CALYST)", "file": "/assets/music/WHOsaid.mp3" },
+        { "title": "is it so00", "file": "/assets/music/is it so00.mp3" },
+        { "title": "m33tme@therave (ft. V0CALYST)", "file": "/assets/music/m33tme@therave.mp3" },
+        { "title": "HANDS UP", "file": "/assets/music/HANDS UP.mp3" }
+
+      ]
+    },
+    {
+      "catalog": "RAIN-040S",
+      "artist": "V0CALYST",
+      "title": "faceless",
+      "release_date": "2025-11-28",
+      "cover": "/assets/album-art/rain-040.jpg",
+      "tracks": [
+        { "title": "faceless", "file": "/assets/music/faceless.mp3" }
+
+      ]
     }
 
 
