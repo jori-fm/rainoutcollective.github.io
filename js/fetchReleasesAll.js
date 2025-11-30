@@ -67,6 +67,8 @@ const ARTIST_PAGES = {
         <div class="title">${escapeHtml(r.Title)}</div>
         <div class="artist">${artistHTML(r.Artist)}</div>
         <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
+        
+        ${r.detailsPage ? `<a href="${r.detailsPage}" class="learn-more-link">Learn More →</a>` : ''}
       </div>
     `;
 

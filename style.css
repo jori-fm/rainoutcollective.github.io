@@ -1234,3 +1234,171 @@ body.no-scroll { overflow: hidden; }
     margin: 5px auto 0; /* Center it */
     font-size: 0.6rem;
 }
+
+/* --- Album Details Page & Button --- */
+
+/* The "Learn More" link on cards */
+.learn-more-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.learn-more-link:hover {
+    border-bottom-color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+/* Album Page Layout */
+.album-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.album-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.album-cover-large {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+}
+
+.album-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listen-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-family: 'Courier New', monospace;
+}
+
+.listen-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--accent);
+}
+
+.album-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+}
+
+.album-content h1::after { display: none; } /* Remove the underline from global h1 */
+
+.album-artist {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin: 10px 0;
+    text-align: left;
+}
+.album-artist::after { display: none; }
+
+.album-meta {
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.album-description {
+    margin-bottom: 40px;
+}
+
+.album-tracklist ol {
+    padding-left: 20px;
+    font-family: 'Courier New', monospace;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.album-tracklist li::marker {
+    color: var(--accent);
+}
+
+/* Mobile Layout for Album Page */
+@media (max-width: 800px) {
+    .album-layout {
+        grid-template-columns: 1fr;
+    }
+    .album-sidebar {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .album-content {
+        text-align: center;
+    }
+    .album-content h1, .album-artist {
+        text-align: center;
+    }
+    .album-tracklist {
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* --- Album Page Artist Link Styling --- */
+.album-artist a {
+    color: var(--accent); /* Keeps the Ice Blue color */
+    text-decoration: none; /* Removes the underline */
+    transition: all 0.3s ease;
+}
+
+.album-artist a:hover {
+    color: #ffffff; /* Turns white on hover */
+    text-shadow: 0 0 10px var(--accent); /* Adds the glow */
+    cursor: pointer;
+}
+
+/* --- Album Page Credits --- */
+.album-credits {
+    margin-bottom: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.credits-list {
+    list-style: none; /* No bullet points */
+    padding: 0;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.credits-list li {
+    margin-bottom: 8px;
+}
+
+.credits-list strong {
+    color: var(--accent); /* Highlights the role in Ice Blue */
+    font-weight: bold;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}

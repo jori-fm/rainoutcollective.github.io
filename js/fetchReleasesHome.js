@@ -1,83 +1,71 @@
+/* Fetches latest releases for the Home Page (index.html) */
 (() => {
-  const DATA_URL = 'releases.json';   // or '/releases.json'
-  const GRID_ID  = 'release-grid';       // index.html has this container
+  const DATA_URL = 'releases.json';
+  const GRID_ID  = 'release-grid';
   
-// make asset paths absolute (works from /, /releases, /artists/*)
-const resolveAsset = (p = '') => {
-  if (!p) return '';
-  if (/^https?:\/\//i.test(p)) return p;
-  return '/' + String(p).replace(/^\/+/, '');
-};
+  const resolveAsset = (p = '') => {
+    if (!p) return '';
+    if (/^https?:\/\//i.test(p)) return p;
+    return '/' + String(p).replace(/^\/+/, '');
+  };
 
   const escapeHtml = (s='') =>
     s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
-  const toDate = (iso) => {
-    // Treat dates as local “calendar dates” to avoid timezone off-by-ones
-    const d = new Date(iso + 'T00:00:00');
-    d.setHours(0,0,0,0);
-    return d;
-  };
-  const isFuture = (iso) => {
-    const today = new Date(); today.setHours(0,0,0,0);
-    return toDate(iso) > today;
-  };
-
+  const toDate = (iso) => { const d = new Date(iso + 'T00:00:00'); d.setHours(0,0,0,0); return d; };
+  const isFuture = (iso) => { const t = new Date(); t.setHours(0,0,0,0); return toDate(iso) > t; };
   const isSingle = (catalog = '') => /S/i.test(String(catalog));
-const releaseIconHTML = (catalog = '') =>
-  isSingle(catalog)
-    ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
-    : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
-// Map JSON artist → exact file name in /artists (match your tree's casing)
-const ARTIST_PAGES = {
-  sai: 'sai',
-  shinrei: 'shinrei',
-  smooch: 'smooch',
-  sunni: 'sunni',
-  v0calyst: 'V0CALYST',
-  seraphim: 'seraphim',
-  krewlty: 'krewlty',
-  suleymon: 'suleymon',   // Matches plain "suleymon"
-  'süleymon': 'suleymon', // Matches "süleymon" from JSON -> points to suleymon.html
-};
+  
+  const releaseIconHTML = (catalog = '') =>
+    isSingle(catalog)
+      ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
+      : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
+  
+  const ARTIST_PAGES = {
+    sai: 'sai',
+    shinrei: 'shinrei',
+    smooch: 'smooch',
+    sunni: 'sunni',
+    v0calyst: 'V0CALYST',
+    seraphim: 'seraphim',
+    krewlty: 'krewlty',
+    suleymon: 'suleymon',
+    'süleymon': 'suleymon',
+    timeflower: 'timeflower'
+  };
 
+  const displayArtist = (name = '') => {
+    const n = String(name).trim();
+    const nLower = n.toLowerCase();
+    return nLower === 'smooch' ? 'smooch.' :
+           nLower === 'suleymon' ? 'süleymon' :
+           n;
+  };
 
-// Display name (adds period for smooch. and umlaut for süleymon)
-const displayArtist = (name = '') => {
-  const n = String(name).trim();
-  const nLower = n.toLowerCase();
-
-  return nLower === 'smooch' ? 'smooch.' :
-         nLower === 'suleymon' ? 'süleymon' :
-         n; // Return original name
-};
-
-// Build link HTML if we have a page for this artist
-const artistHTML = (name = '') => {
-  const key = String(name).trim().toLowerCase();
-  const file = ARTIST_PAGES[key];
-  const label = escapeHtml(displayArtist(name));
-  return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
-};
-
+  const artistHTML = (name = '') => {
+    const key = String(name).trim().toLowerCase();
+    const file = ARTIST_PAGES[key];
+    const label = escapeHtml(displayArtist(name));
+    return file ? `<a class="artist-link" href="/artists/${file}">${label}</a>` : label;
+  };
 
   const createCard = (r) => {
-    const card = document.createElement('div');
-    card.className = 'release';
-
-    card.innerHTML = `
+    const el = document.createElement('div');
+    el.className = 'release';
+    el.innerHTML = `
     ${releaseIconHTML(r['Catalog#'])}
-    <img src="${resolveAsset(r['Cover JPG'])}" alt="${escapeHtml(r.Title)} cover" />
+      <img src="${resolveAsset(r['Cover JPG'])}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
         <div class="artist">${artistHTML(r.Artist)}</div>
         <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
+        
+        ${r.detailsPage ? `<a href="${r.detailsPage}" class="learn-more-link">Learn More →</a>` : ''}
       </div>
     `;
 
     const links = document.createElement('div');
     links.className = 'streaming-links';
-
     if (isFuture(r['Release Date'])) {
       links.innerHTML = `<span class="coming-soon">COMING SOON</span>`;
     } else {
@@ -87,27 +75,34 @@ const artistHTML = (name = '') => {
         <a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       `;
     }
-
-    card.appendChild(links);
-    return card;
+    el.appendChild(links);
+    return el;
   };
 
-  const render = async () => {
+  const fetchAndRender = async () => {
     const grid = document.getElementById(GRID_ID);
     if (!grid) return;
     grid.classList.add('loading');
 
     try {
       const res = await fetch(DATA_URL, { cache: 'no-store' });
-      const all = await res.json();
-
-      // sort newest → oldest
-      all.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
-
-      // show latest 8 on the home page
-      const latest = all.slice(0, 4);
+      const data = await res.json();
+      
+      // Sort newest -> oldest
+      data.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
+      
+      // Take top 4 for homepage
+      const latest = data.slice(0, 4);
+      
       grid.classList.remove('loading');
+      
+      if (latest.length === 0) {
+        grid.innerHTML = `<div class="error-state">No releases found.</div>`;
+        return;
+      }
+
       latest.forEach(r => grid.appendChild(createCard(r)));
+      
     } catch (e) {
       grid.classList.remove('loading');
       grid.innerHTML = `<div class="error-state">Couldn’t load releases.</div>`;
@@ -115,5 +110,5 @@ const artistHTML = (name = '') => {
     }
   };
 
-  document.addEventListener('DOMContentLoaded', render);
+  document.addEventListener('DOMContentLoaded', fetchAndRender);
 })();
