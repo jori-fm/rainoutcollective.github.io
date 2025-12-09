@@ -22,7 +22,7 @@
       : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
   
   const ARTIST_PAGES = {
-    sai: 'sai',
+    lunamaryllis: 'lunamaryllis',
     shinrei: 'shinrei',
     smooch: 'smooch',
     sunni: 'sunni',

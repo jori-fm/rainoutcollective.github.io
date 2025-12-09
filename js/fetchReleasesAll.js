@@ -29,7 +29,7 @@
   
 // Map JSON artist → exact file name in /artists (match your tree's casing)
 const ARTIST_PAGES = {
-  sai: 'sai',
+  lunamaryllis: 'lunamaryllis',
   shinrei: 'shinrei',
   smooch: 'smooch',
   sunni: 'sunni',
