@@ -25,6 +25,7 @@
     lunamaryllis: 'lunamaryllis',
     shinrei: 'shinrei',
     smooch: 'smooch',
+    'smooch.': 'smooch',
     sunni: 'sunni',
     v0calyst: 'V0CALYST',
     seraphim: 'seraphim',

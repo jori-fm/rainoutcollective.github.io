@@ -32,12 +32,14 @@ const ARTIST_PAGES = {
   lunamaryllis: 'lunamaryllis',
   shinrei: 'shinrei',
   smooch: 'smooch',
+  'smooch.': 'smooch',
   sunni: 'sunni',
   v0calyst: 'V0CALYST',
   seraphim: 'seraphim',
   krewlty: 'krewlty',
-  suleymon: 'suleymon',   // Matches plain "suleymon"
-  'süleymon': 'suleymon', // Matches "süleymon" from JSON -> points to suleymon.html
+  suleymon: 'suleymon',
+  'süleymon': 'suleymon',
+  timeflower: 'timeflower'
 };
   
   const displayArtist = (name = '') => {

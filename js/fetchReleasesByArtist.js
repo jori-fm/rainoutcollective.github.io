@@ -21,18 +21,19 @@
       ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
       : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
   
-  const ARTIST_PAGES = {
-    lunamaryllis: 'lunamaryllis',
-    shinrei: 'shinrei',
-    smooch: 'smooch',
-    sunni: 'sunni',
-    v0calyst: 'V0CALYST',
-    seraphim: 'seraphim',
-    krewlty: 'krewlty',
-    suleymon: 'suleymon',
-    'süleymon': 'suleymon',
-    timeflower: 'timeflower'
-  };
+      const ARTIST_PAGES = {
+        lunamaryllis: 'lunamaryllis',
+        shinrei: 'shinrei',
+        smooch: 'smooch',
+        'smooch.': 'smooch',
+        sunni: 'sunni',
+        v0calyst: 'V0CALYST',
+        seraphim: 'seraphim',
+        krewlty: 'krewlty',
+        suleymon: 'suleymon',
+        'süleymon': 'suleymon',
+        timeflower: 'timeflower'
+      };
 
   const displayArtist = (name = '') => {
     const n = String(name).trim();
