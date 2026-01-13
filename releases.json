@@ -3,51 +3,31 @@
     "Catalog#":"RAIN-001",
     "Artist":"shinrei",
     "Title":"the angels within: reawakened",
-    "Format":"Digital",
+    "Format":"Album/EP",
     "Release Date":"2024-12-25",
     "Cover JPG":"assets\/album-art\/rain-001.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/2penXWmPLazpxL8lhJV1At",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/the-angel-within-reawakened\/1829089347",
     "Youtube":"https:\/\/www.youtube.com\/playlist?list=OLAK5uy_mDzSb4s0ePQlN89yCC2ZcNqS7bZTAk4mw"
   },
+
   {
-    "Catalog#":"RAIN-002",
-    "Artist":"smooch",
-    "Title":"random,",
-    "Format":"Digital",
-    "Release Date":"2024-12-31",
-    "Cover JPG":"assets\/album-art\/rain-002.jpg",
-    "Spotify":"https:\/\/open.spotify.com\/album\/0ZmzcHNvkaBzGJfiCNiEK6",
-    "Apple Music":"https:\/\/music.apple.com\/us\/album\/random\/1821669017",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=povZ9zKDcyw&list=OLAK5uy_mZbQbiFXevEYrXO54PF-MS3eRl-zgbwxg"
-  },
-  {
-    "Catalog#":"RAIN-003S",
+
     "Artist":"shinrei",
     "Title":"Mmmeeeelttiiinnggggg",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-03-26",
     "Cover JPG":"assets\/album-art\/rain-003.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/1ds2EQIju72dIscee8JPK0",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/mmmeeeelttiiinnggggg-single\/1828936698",
     "Youtube":"https:\/\/www.youtube.com\/watch?v=SCZOLeZNDN0"
   },
+
   {
-    "Catalog#":"RAIN-004S",
-    "Artist":"V0CALYST",
-    "Title":"territory",
-    "Format":"Digital",
-    "Release Date":"2025-03-28",
-    "Cover JPG":"assets\/album-art\/rain-004.jpg",
-    "Spotify":"https:\/\/open.spotify.com\/album\/2HGW5MHTTJEj3syM2enUeg",
-    "Apple Music":"https:\/\/music.apple.com\/us\/album\/territory-single\/1828346387",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=joLewQvuYS4"
-  },
-  {
-    "Catalog#":"RAIN-005S",
+
     "Artist":"shinrei",
     "Title":"\u697d\u5712 ?",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-04-26",
     "Cover JPG":"assets\/album-art\/rain-005.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/3dv1uRZ7WuQQEuYXUO742D",
@@ -56,10 +36,10 @@
   },
 
   {
-    "Catalog#":"RAIN-007",
+
     "Artist":"smooch",
     "Title":"EX tracks",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-05-20",
     "Cover JPG":"assets\/album-art\/rain-007.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/2hQe7ro0tSJEuq0SfYgxs3",
@@ -67,10 +47,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=sgmAr3tuZV4&list=OLAK5uy_nhkKIbG18yZ67nPSf-p4sQCX5da0rT_m4"
   },
   {
-    "Catalog#":"RAIN-008",
+    "Catalog#":"RAIN-002",
     "Artist":"smooch",
     "Title":"A witness, A watcher",
-    "Format":"Digital",
+    "Format":"Album/EP",
     "Release Date":"2025-05-23",
     "Cover JPG":"assets\/album-art\/rain-008.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/5ZH8SpyVKzcW8jwyn3G8Au",
@@ -78,32 +58,22 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=Jipf3cxKb_8&list=OLAK5uy_lJOyA1XtRrmnVLMnJRzdgV0lvgJkVxAUc"
   },
   {
-    "Catalog#":"RAIN-009S",
+
     "Artist":"shinrei",
     "Title":"Soul on fire",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-06-01",
     "Cover JPG":"assets\/album-art\/rain-009.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/0Es2E7R5m38C5BQp40OHQj",
     "Apple Music":"https:\/\/music.apple.com\/us\/album\/soul-on-fire-single\/1828852207",
     "Youtube":"https:\/\/www.youtube.com\/watch?v=m1iG7-kYh6E"
   },
+
   {
-    "Catalog#":"RAIN-010S",
-    "Artist":"V0CALYST",
-    "Title":"interesting",
-    "Format":"Digital",
-    "Release Date":"2025-07-25",
-    "Cover JPG":"assets\/album-art\/rain-010.jpg",
-    "Spotify":"https:\/\/open.spotify.com\/album\/7uLmT3JP9VnpPyir9TGbxN",
-    "Apple Music":"https:\/\/music.apple.com\/us\/album\/interesting-single\/1828359910",
-    "Youtube":"https:\/\/www.youtube.com\/watch?v=B30YZOn8Uwg"
-  },
-  {
-    "Catalog#":"RAIN-011S",
+
     "Artist":"V0CALYST",
     "Title":"believe the kids",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-08-01",
     "Cover JPG":"assets\/album-art\/rain-011.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/13eMY6ys7wpOFVpdlfGa2l",
@@ -111,10 +81,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=3lXxh1-EcNE"
   },
   {
-    "Catalog#":"RAIN-012",
+
     "Artist":"seraphim",
     "Title":"directional/spectrum",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-08-15",
     "Cover JPG":"assets\/album-art\/rain-012.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/3Z1Lk8pLL8R6fqzcaG5ZT9",
@@ -122,10 +92,10 @@
     "Youtube":"https:\/\/www.youtube.com\/playlist?list=OLAK5uy_kK6_4MD2r05oo_o4cp3OE13tb_YM1T5QY"
   },
   {
-    "Catalog#":"RAIN-013S",
+
     "Artist":"V0CALYST",
     "Title":"ggysm",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-08-15",
     "Cover JPG":"assets\/album-art\/rain-013.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7fXQE8tX1xcXSwz19uOQ7p",
@@ -133,10 +103,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=mqxqQBO37_M"
   },
   {
-    "Catalog#":"RAIN-014S",
+
     "Artist":"lunamaryllis",
     "Title":"mikancore",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-08-15",
     "Cover JPG":"assets\/album-art\/rain-014.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/4eHZlMMckRzuibaJHT2Dqw",
@@ -144,10 +114,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=FLXoQiPIWsA"
   },
   {
-    "Catalog#":"RAIN-015S",
+
     "Artist":"shinrei",
     "Title":"悲 し み",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-07-13",
     "Cover JPG":"assets\/album-art\/rain-015.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/3AlsR0lg6J9K1OpDYiRRMH",
@@ -155,10 +125,10 @@
     "Youtube":"https:\/\/youtu.be\/x4GvMOw2IuA"
   },
   {
-    "Catalog#":"RAIN-016S",
+
     "Artist":"shinrei",
     "Title":"デッドワールド",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-06-26",
     "Cover JPG":"assets\/album-art\/rain-016.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/6SXBD0CwXzBSYyl26DUbOp",
@@ -166,10 +136,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=ucwptr0enM4"
   },
   {
-    "Catalog#":"RAIN-017",
+
     "Artist":"shinrei",
     "Title":"Afterlife, Corrupted Files",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-06-19",
     "Cover JPG":"assets\/album-art\/rain-017.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/4CrzUqCwhZD0S8QyWAiyEl",
@@ -177,10 +147,10 @@
     "Youtube":"https:\/\/www.youtube.com\/playlist?list=OLAK5uy_mRw7wQwUYrO3eTP2qJCwUHGQ8--aaGRiA"
   },
   {
-    "Catalog#":"RAIN-018S",
+
     "Artist":"shinrei",
     "Title":"God had a plan for me",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-08-15",
     "Cover JPG":"assets\/album-art\/rain-018.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/51e1U2Jz3sGkzQ7w8lky3s",
@@ -188,10 +158,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=LOzj2GSWR00"
   },
   {
-    "Catalog#":"RAIN-019S",
+
     "Artist":"krewlty",
     "Title":"its over",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-08-29",
     "Cover JPG":"assets\/album-art\/rain-019.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/3LYrEYn6XQJswKOBTzRweN",
@@ -199,10 +169,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=e_cIgosx0iU"
   },
   {
-    "Catalog#":"RAIN-020S",
+
     "Artist":"smooch",
     "Title":"seawrld",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2024-01-17",
     "Cover JPG":"assets\/album-art\/rain-020.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/2xJEbc28IxTyeEoWElvJRF",
@@ -210,10 +180,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=NYGJGJK4Ymk"
   },
   {
-    "Catalog#":"RAIN-021S",
+
     "Artist":"smooch",
     "Title":"genesis.",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2024-02-07",
     "Cover JPG":"assets\/album-art\/rain-021.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/657TUSMquB2butfAwul5yl",
@@ -221,10 +191,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=ImWDxJAUrJY"
   },
   {
-    "Catalog#":"RAIN-022S",
+
     "Artist":"smooch",
     "Title":"New Thing",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2024-03-01",
     "Cover JPG":"assets\/album-art\/rain-022.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/5VAnO5UNMaLrcKyGCEh3gy",
@@ -232,10 +202,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=uIhswEK_owo"
   },
   {
-    "Catalog#":"RAIN-023S",
+
     "Artist":"smooch",
     "Title":"Morning Lotus",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2024-04-01",
     "Cover JPG":"assets\/album-art\/rain-023.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7yIMMeciemdPKi2AfHrVAO",
@@ -243,10 +213,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=LMbpeidoMyU"
   },
   {
-    "Catalog#":"RAIN-024S",
+
     "Artist":"smooch",
     "Title":"Late Night Cyber Circuit",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2024-05-24",
     "Cover JPG":"assets\/album-art\/rain-024.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/6LjZU0Tr9qauEZeFiaw6fr",
@@ -254,10 +224,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=k9DbK3Fq9mc"
   },
   {
-    "Catalog#":"RAIN-025S",
+
     "Artist":"smooch",
     "Title":"A day down the park",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-01-10",
     "Cover JPG":"assets\/album-art\/rain-025.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7CV29mjbKlQuugf5X5lig6",
@@ -265,10 +235,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=EQiQ0INGnM4"
   },
   {
-    "Catalog#":"RAIN-026S",
+
     "Artist":"smooch",
     "Title":"guitar_4",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-01-11",
     "Cover JPG":"assets\/album-art\/rain-026.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7sXI458zuZ0UJCoB1WfrZ1",
@@ -276,10 +246,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=0jJqAJKcPqE"
   },
   {
-    "Catalog#":"RAIN-027S",
+
     "Artist":"süleymon",
     "Title":"BAP",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-06-14",
     "Cover JPG":"assets\/album-art\/rain-027.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/5u5eCRE4kUzXz7QmJ4CnIC",
@@ -287,10 +257,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=hlW1kFtG2fg"
   },
   {
-    "Catalog#":"RAIN-028S",
+
     "Artist":"süleymon",
     "Title":"toronto",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-07-12",
     "Cover JPG":"assets\/album-art\/rain-028.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/0FpaalxqUFva06bxuDReF7",
@@ -298,10 +268,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=zbsjsHNL1_0"
   },
   {
-    "Catalog#":"RAIN-029S",
+
     "Artist":"süleymon",
     "Title":"wok",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-07-19",
     "Cover JPG":"assets\/album-art\/rain-029.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/2r7YiWFiNWEUtTRN7wVayx",
@@ -309,10 +279,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=K8Sby-AsRTk"
   },
   {
-    "Catalog#":"RAIN-030S",
+
     "Artist":"süleymon",
     "Title":"staprob",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-07-21",
     "Cover JPG":"assets\/album-art\/rain-030.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/0ivGbXExInsfbEG6iXZkhU",
@@ -320,10 +290,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=K8Sby-AsRTk"
   },
   {
-    "Catalog#":"RAIN-031",
+    "Catalog#":"RAIN-003",
     "Artist":"krewlty",
     "Title":"#krewlmusik",
-    "Format":"Digital",
+    "Format":"Album/EP",
     "detailsPage": "/releases/krewlmusik",
     "Release Date":"2025-10-24",
     "Cover JPG":"assets\/album-art\/rain-031.jpg",
@@ -332,10 +302,10 @@
     "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_kk1F6Cwsb78ZGdB1ojCWRrVYokcEgS0_8"
   },
   {
-    "Catalog#":"RAIN-032",
+    "Catalog#":"RAIN-004",
     "Artist":"V0CALYST",
     "Title":"ZOMᗺIƎᗺOY",
-    "Format":"Digital",
+    "Format":"Album/EP",
     "detailsPage": "/releases/zombieboy",
     "Release Date":"2025-10-31",
     "Cover JPG":"assets\/album-art\/rain-032.jpg",
@@ -344,10 +314,10 @@
     "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_k4vtmt1w7CdOT12QOqkg030V1G0J7Lr6E"
   },
   {
-    "Catalog#":"RAIN-033S",
+
     "Artist":"V0CALYST",
     "Title":"oh yea",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-10-17",
     "Cover JPG":"assets\/album-art\/rain-033.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/4tjVsIzZCVmLn0KiKHdTQP?si=LcS1OjYWQam_RkhQSPqKHA",
@@ -355,10 +325,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=0GTyQOF1fpA"
   },
   {
-    "Catalog#":"RAIN-034S",
+
     "Artist":"shinrei",
     "Title":"malignity, for love",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-10-17",
     "Cover JPG":"assets\/album-art\/rain-034.jpg",
     "Spotify":"https://open.spotify.com/album/3qvmGKBx2o1ZuCEqTN1NIG?si=F1BYZ-5_TaS2Wq-l3to9Qg",
@@ -366,10 +336,10 @@
     "Youtube":"https:\/\/www.youtube.com\/watch?v=Zr6ttR1S5kA"
   },
   {
-    "Catalog#":"RAIN-035S",
+
     "Artist":"süleymon",
     "Title":"21 yercs",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-10-12",
     "Cover JPG":"assets\/album-art\/rain-035.jpg",
     "Spotify":"https://open.spotify.com/track/4pNxhkknJVcHdVRHc2Of2l",
@@ -377,10 +347,10 @@
     "Youtube":"hhttps://www.youtube.com/watch?v=QRab_ohyaTo&pp=ygURMjEgeWVyY3Mgc3VsZXltb24%3D"
   },
   {
-    "Catalog#":"RAIN-036S",
+
     "Artist":"süleymon",
     "Title":"wah",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-10-27",
     "Cover JPG":"assets\/album-art\/rain-036.jpg",
     "Spotify":"https://open.spotify.com/album/5U7D6WoWHj5J4DeR2D4yf9",
@@ -388,10 +358,10 @@
     "Youtube":"https://www.youtube.com/watch?v=bxpSnjmTlrw"
   },
   {
-    "Catalog#":"RAIN-037S",
+
     "Artist":"krewlty",
     "Title":"wondering abt u",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-11-07",
     "Cover JPG":"assets\/album-art\/rain-037.jpg",
     "Spotify":"https://open.spotify.com/album/003cGfbGvM2h6BRlXlkJej",
@@ -399,10 +369,10 @@
     "Youtube":"https://youtu.be/6aEuNmAGRrM?si=LnXMUz15Epg3MKZe"
   },
   {
-    "Catalog#":"RAIN-038S",
+
     "Artist":"lunamaryllis",
     "Title":"is it so00",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-11-21",
     "Cover JPG":"assets\/album-art\/rain-038.jpg",
     "Spotify":"https://open.spotify.com/track/1jlpMC3fXHoEsQCloor71v",
@@ -410,10 +380,10 @@
     "Youtube":"https://www.youtube.com/watch?v=Rq5nD59inH8"
   },
   {
-    "Catalog#":"RAIN-039",
+    "Catalog#":"RAIN-005",
     "Artist":"lunamaryllis",
     "Title":"let's have some fun",
-    "Format":"Digital",
+    "Format":"Album/EP",
     "detailsPage": "/releases/letshavesomefun",
     "Release Date":"2025-11-28",
     "Cover JPG":"assets\/album-art\/rain-039.jpg",
@@ -422,10 +392,10 @@
     "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_lY4CnrII9muwEWgrm82NiWwhJxTggNYZY"
   },
   {
-    "Catalog#":"RAIN-040S",
+
     "Artist":"V0CALYST",
     "Title":"faceless",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-11-28",
     "Cover JPG":"assets\/album-art\/rain-040.jpg",
     "Spotify":"https://open.spotify.com/album/2FQ2Hi8i0m4hQzEQ8lhfbY",
@@ -433,10 +403,10 @@
     "Youtube":"https://www.youtube.com/watch?v=HRhMr81fTzc"
   },
   {
-    "Catalog#":"RAIN-041S",
+
     "Artist":"smooch.",
     "Title":"To my ends",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-12-19",
     "Cover JPG":"assets\/album-art\/rain-041.jpg",
     "Spotify":"https://open.spotify.com/album/3r3ROSe8aZBFVvfC339ylX",
@@ -444,15 +414,48 @@
     "Youtube":"https://www.youtube.com/watch?v=DRua5RBtkkg"
   },
   {
-    "Catalog#":"RAIN-042S",
+
     "Artist":"shinrei",
     "Title":"Static",
-    "Format":"Digital",
+    "Format":"Single",
     "Release Date":"2025-12-24",
     "Cover JPG":"assets\/album-art\/rain-042.jpg",
     "Spotify":"https://open.spotify.com/track/6vsiZkTsCp60fbvgst97Nf?si=6c1141fa1adc43a0",
     "Apple Music":"https://music.apple.com/us/album/static-single/1863025596",
     "Youtube":"https://www.youtube.com/watch?v=GZ7ehKyv3nE"
+  },
+  {
+
+    "Artist": "sunni, V0CALYST",
+    "Title": "kick ass club penguin party",
+    "Format": "Single",
+    "Release Date": "2026-01-02",
+    "Cover JPG": "assets/album-art/kacpp.jpg",
+    "Spotify": "https://open.spotify.com/album/2muVnivgWMRhNnwS3CPCV9",
+    "Apple Music": "https://music.apple.com/us/song/kick-ass-club-penguin-party/1868105545",
+    "Youtube": "https://youtu.be/4S1MyX3FqWI"
+  },
+  {
+
+    "Artist": "V0CALYST",
+    "Title": "one of one",
+    "Format": "Single",
+    "Release Date": "2026-01-09",
+    "Cover JPG": "assets/album-art/1o1.jpg",
+    "Spotify": "https://open.spotify.com/album/0htymLfsoQmIS6rng9hNp7",
+    "Apple Music": "https://music.apple.com/us/album/one-of-one-feat-lunamaryllis-single/1868710482",
+    "Youtube": "https://www.youtube.com/watch?v=cB2L4jlJUu0"
+  },
+  {
+
+    "Artist": "krewlty",
+    "Title": "...ev3rything u ever wanted (yr mindset)",
+    "Format": "Single",
+    "Release Date": "2026-01-02",
+    "Cover JPG": "assets/album-art/ev3rything.jpg",
+    "Spotify": "https://open.spotify.com/album/3kfcfF3b7WKfoVdCt1cRlw",
+    "Apple Music": "https://music.apple.com/us/album/ev3rything-u-ever-wanted-yr-mindset-single/1865538337",
+    "Youtube": "https://www.youtube.com/watch?v=w2UW_NS7dKI"
   }
 
   

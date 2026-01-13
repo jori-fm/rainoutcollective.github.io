@@ -11,9 +11,8 @@ function loadComponent(elementId, filePath) {
         .catch(error => console.error('Error loading component:', error));
 }
 
-// --- 1. Snow Effect Function ---
+// --- 1. Rain Effect Function ---
 function createRain() {
-    // PERFORMANCE FIX: Strictly stop on mobile/tablet
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
 
     const existingRain = document.querySelector('.rain');
@@ -22,22 +21,22 @@ function createRain() {
     const rainContainer = document.createElement('div');
     rainContainer.className = 'rain';
     
-    // Create snowflakes
-    for (let i = 0; i < 150; i++) { 
+    // REDUCED: Only 60 drops (was 250)
+    for (let i = 0; i < 60; i++) { 
         const drop = document.createElement('div');
         drop.className = 'drop';
         
-        // Circular & Varied Size
-        const size = Math.random() * 3 + 2; 
+        const posX = Math.random() * 100;
         
         drop.style.cssText = `
-            left: ${Math.random() * 100}%;
-            width: ${size}px;
-            height: ${size}px;
-            opacity: ${Math.random() * 0.6 + 0.2}; 
-            /* Slower fall speed (10s to 20s) */
-            animation-duration: ${Math.random() * 10 + 10}s, ${Math.random() * 4 + 3}s;
-            animation-delay: -${Math.random() * 20}s; 
+            left: ${posX}%;
+            animation-delay: ${Math.random() * -2}s; 
+            
+            /* SLOWER: 0.8s to 1.3s (was 0.5s) */
+            animation-duration: ${Math.random() * 0.5 + 0.8}s;
+            
+            /* TRANSPARENCY: Random opacity between 0.2 and 0.5 */
+            opacity: ${Math.random() * 0.3 + 0.2};
         `;
         
         rainContainer.appendChild(drop);

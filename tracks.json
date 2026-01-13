@@ -15,27 +15,9 @@
            { "title": "裏切り (betrayal)", "file": "/assets/music/裏切り (betrayal).mp3" }
       ]
     },
+ 
     {
-      "catalog": "RAIN-002",
-      "artist": "smooch",
-      "title": "random,",
-      "release_date": "2024-12-31",
-      "cover": "/assets/album-art/rain-002.jpg",
-      "tracks": [
-        { "title": "IBEENFEELUINBREANDNEW",     "file": "/assets/music/IBEENFEELUINBREANDNEW.mp3" },
-        { "title": "rap song",                 "file": "/assets/music/rap song.mp3" },
-        { "title": "realjazz",                 "file": "/assets/music/realjazz.mp3" },
-        { "title": "Chillio",                  "file": "/assets/music/Chillio.mp3" },
-        { "title": "Chillvibe",                "file": "/assets/music/Chillvibe.mp3" },
-        { "title": "Piano",                    "file": "/assets/music/Piano.mp3" },
-        { "title": "nice jump",                "file": "/assets/music/nice jump.mp3" }
-        
-        
-        
-      ]
-    },
-    {
-      "catalog": "RAIN-003S",
+
       "artist": "shinrei",
       "title": "Mmmeeeelttiiinnggggg",
       "release_date": "2025-03-26",
@@ -44,18 +26,9 @@
         { "title": "Mmmeeeelttiiinnggggg", "file": "/assets/music/Mmmeeeelttiiinnggggg.mp3" }
       ]
     },
+
     {
-      "catalog": "RAIN-004S",
-      "artist": "V0CALYST",
-      "title": "territory",
-      "release_date": "2025-03-28",
-      "cover": "/assets/album-art/rain-004.jpg",
-      "tracks": [
-        { "title": "territory", "file": "/assets/music/territory.mp3" }
-      ]
-    },
-    {
-      "catalog": "RAIN-005S",
+
       "artist": "shinrei",
       "title": "楽園 ?",
       "release_date": "2025-04-26",
@@ -65,7 +38,7 @@
       ]
     },
     {
-      "catalog": "RAIN-007",
+
       "artist": "smooch",
       "title": "EX tracks",
       "release_date": "2025-05-20",
@@ -78,7 +51,7 @@
       ]
     },
     {
-      "catalog": "RAIN-008",
+      "catalog": "RAIN-002",
       "artist": "smooch",
       "title": "A witness, A watcher",
       "release_date": "2025-05-23",
@@ -96,7 +69,7 @@
       ]
     },
     {
-      "catalog": "RAIN-009S",
+
       "artist": "shinrei",
       "title": "Soul on fire",
       "release_date": "2025-06-01",
@@ -105,18 +78,9 @@
         { "title": "Soul on fire", "file": "/assets/music/Soul on fire.mp3" }
       ]
     },
+
     {
-      "catalog": "RAIN-010S",
-      "artist": "V0CALYST",
-      "title": "interesting",
-      "release_date": "2025-07-25",
-      "cover": "/assets/album-art/rain-010.jpg",
-      "tracks": [
-        { "title": "interesting", "file": "/assets/music/interesting.mp3" }
-      ]
-    },
-    {
-      "catalog": "RAIN-011S",
+
       "artist": "V0CALYST",
       "title": "believe the kids",
       "release_date": "2025-08-01",
@@ -126,7 +90,7 @@
       ]
     },
     {
-      "catalog": "RAIN-015S",
+
       "artist": "shinrei",
       "title": "悲 し み",
       "release_date": "2025-07-13",
@@ -136,7 +100,7 @@
       ]
     },
     {
-      "catalog": "RAIN-016S",
+
       "artist": "shinrei",
       "title": "デッドワールド",
       "release_date": "2025-06-26",
@@ -146,7 +110,7 @@
       ]
     },
     {
-      "catalog": "RAIN-017",
+
       "artist": "shinrei",
       "title": "Afterlife, Corrupted Files",
       "release_date": "2025-06-19",
@@ -158,7 +122,7 @@
       ]
     },
     {
-      "catalog": "RAIN-018S",
+
       "artist": "shinrei",
       "title": "God had a plan for me",
       "release_date": "2025-08-15",
@@ -168,7 +132,7 @@
       ]
     },
     {
-      "catalog": "RAIN-012",
+
       "artist": "seraphim",
       "title": "directional/spectrum",
       "release_date": "2025-08-15",
@@ -179,7 +143,7 @@
       ]
     },
     {
-      "catalog": "RAIN-014S",
+
       "artist": "lunamaryllis",
       "title": "mikancore",
       "release_date": "2025-08-15",
@@ -189,7 +153,7 @@
       ]
     },
     {
-      "catalog": "RAIN-013S",
+
       "artist": "V0CALYST",
       "title": "ggysm",
       "release_date": "2025-08-15",
@@ -199,7 +163,7 @@
       ]
     },
     {
-      "catalog": "RAIN-020S",
+
       "artist": "smooch",
       "title": "seawrld",
       "release_date": "2024-01-17",
@@ -209,7 +173,7 @@
       ]
     },
     {
-      "catalog": "RAIN-021S",
+
       "artist": "smooch",
       "title": "genesis.",
       "release_date": "2024-02-07",
@@ -219,7 +183,7 @@
       ]
     },
     {
-      "catalog": "RAIN-022S",
+
       "artist": "smooch",
       "title": "New Thing",
       "release_date": "2024-03-01",
@@ -229,7 +193,7 @@
       ]
     },
     {
-      "catalog": "RAIN-023S",
+
       "artist": "smooch",
       "title": "Morning Lotus",
       "release_date": "2024-04-01",
@@ -239,7 +203,7 @@
       ]
     },
     {
-      "catalog": "RAIN-024S",
+
       "artist": "smooch",
       "title": "Late Night Cyber Circuit",
       "release_date": "2024-05-24",
@@ -249,7 +213,7 @@
       ]
     },
     {
-      "catalog": "RAIN-025S",
+
       "artist": "smooch",
       "title": "A day down the park",
       "release_date": "2025-01-10",
@@ -259,7 +223,7 @@
       ]
     },
     {
-      "catalog": "RAIN-026S",
+
       "artist": "smooch",
       "title": "guitar_4",
       "release_date": "2025-01-11",
@@ -269,7 +233,7 @@
       ]
     },
     {
-      "catalog": "RAIN-033S",
+
       "artist": "V0CALYST",
       "title": "oh yea",
       "release_date": "2025-10-17",
@@ -279,7 +243,7 @@
       ]
     },
     {
-      "catalog": "RAIN-034S",
+
       "artist": "shinrei",
       "title": "malignity, for love",
       "release_date": "2025-10-17",
@@ -289,7 +253,7 @@
       ]
     },
     {
-      "catalog": "RAIN-035S",
+
       "artist": "süleymon",
       "title": "21 yercs",
       "release_date": "2025-10-12",
@@ -299,7 +263,7 @@
       ]
     },
     {
-      "catalog": "RAIN-036S",
+
       "artist": "süleymon",
       "title": "wah",
       "release_date": "2025-10-27",
@@ -309,7 +273,7 @@
       ]
     },
     {
-      "catalog": "RAIN-031",
+      "catalog": "RAIN-003",
       "artist": "krewlty",
       "title": "#krewlmusik",
       "release_date": "2025-10-24",
@@ -330,7 +294,7 @@
       ]
     },
     {
-      "catalog": "RAIN-032",
+      "catalog": "RAIN-004",
       "artist": "V0CALYST",
       "title": "ZOMᗺIƎᗺOY",
       "release_date": "2025-10-31",
@@ -350,7 +314,7 @@
       ]
     },
     {
-      "catalog": "RAIN-038S",
+
       "artist": "lunamaryllis",
       "title": "is it so00",
       "release_date": "2025-11-21",
@@ -361,7 +325,7 @@
       ]
     },
     {
-      "catalog": "RAIN-039",
+      "catalog": "RAIN-005",
       "artist": "lunamaryllis",
       "title": "let's have some fun",
       "release_date": "2025-11-28",
@@ -377,13 +341,68 @@
       ]
     },
     {
-      "catalog": "RAIN-040S",
+
       "artist": "V0CALYST",
       "title": "faceless",
       "release_date": "2025-11-28",
       "cover": "/assets/album-art/rain-040.jpg",
       "tracks": [
         { "title": "faceless", "file": "/assets/music/faceless.mp3" }
+
+      ]
+    },
+    {
+
+      "artist": "smooch.",
+      "title": "To my ends",
+      "release_date": "2025-12-19",
+      "cover": "/assets/album-art/rain-041.jpg",
+      "tracks": [
+        { "title": "To my ends", "file": "/assets/music/tomyends.mp3" }
+
+      ]
+    },
+    {
+
+      "artist": "shinrei",
+      "title": "Static",
+      "release_date": "2025-12-24",
+      "cover": "/assets/album-art/rain-042.jpg",
+      "tracks": [
+        { "title": "Static", "file": "/assets/music/static.mp3" }
+
+      ]
+    },
+    {
+
+      "artist": "sunni & V0CALYST",
+      "title": "kick ass club penguin party",
+      "release_date": "2026-01-02",
+      "cover": "/assets/album-art/kacpp.jpg",
+      "tracks": [
+        { "title": "kick ass club penguin party", "file": "/assets/music/kacpp.mp3" }
+
+      ]
+    },
+    {
+
+      "artist": "krewlty",
+      "title": "...ev3rything u ever wanted (yr mindset)",
+      "release_date": "2026-01-02",
+      "cover": "/assets/album-art/ev3rything.jpg",
+      "tracks": [
+        { "title": "...ev3rything u ever wanted (yr mindset)", "file": "/assets/music/ev3rything.mp3" }
+
+      ]
+    },
+    {
+
+      "artist": "V0CALYST",
+      "title": "one of one",
+      "release_date": "2026-01-09",
+      "cover": "/assets/album-art/1o1.jpg",
+      "tracks": [
+        { "title": "one of one (ft. lunamaryllis)", "file": "/assets/music/oneofone.mp3" }
 
       ]
     }

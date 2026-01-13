@@ -14,10 +14,11 @@
 
   const toDate = (iso) => { const d = new Date(iso + 'T00:00:00'); d.setHours(0,0,0,0); return d; };
   const isFuture = (iso) => { const t = new Date(); t.setHours(0,0,0,0); return toDate(iso) > t; };
-  const isSingle = (catalog = '') => /S/i.test(String(catalog));
-  
-  const releaseIconHTML = (catalog = '') =>
-    isSingle(catalog)
+  const isSingle = (r) => (r.Format || '').toLowerCase() === 'single';
+
+  // 2. Icon Logic: Now checks the format instead of looking for an "S"
+  const releaseIconHTML = (r) =>
+    isSingle(r)
       ? `<div class="format-icon" aria-label="Single"><i class="fa-solid fa-music"></i></div>`
       : `<div class="format-icon" aria-label="Album or EP"><i class="fa-solid fa-record-vinyl"></i></div>`;
   
@@ -32,16 +33,19 @@
         krewlty: 'krewlty',
         suleymon: 'suleymon',
         'süleymon': 'suleymon',
-        timeflower: 'timeflower'
+        'claire-eterna': 'claire-eterna',
+        "Claire Eterna": 'claire-eterna'
       };
-
-  const displayArtist = (name = '') => {
-    const n = String(name).trim();
-    const nLower = n.toLowerCase();
-    return nLower === 'smooch' ? 'smooch.' :
-           nLower === 'suleymon' ? 'süleymon' :
-           n;
-  };
+        
+        const displayArtist = (name = '') => {
+          const n = String(name).trim();
+          const nLower = n.toLowerCase();
+          return nLower === 'smooch' ? 'smooch.' :
+                 nLower === 'suleymon' ? 'süleymon' :
+                 nLower === 'claire-eterna' ? 'Claire Eterna' :
+                 n;
+        };
+      
 
   const artistHTML = (name = '') => {
     const key = String(name).trim().toLowerCase();
@@ -51,19 +55,29 @@
   };
 
   const createCard = (r) => {
-    const card = document.createElement('div');
-    card.className = 'release';
-    card.innerHTML = `
-    ${releaseIconHTML(r['Catalog#'])}
+    // 3. META TEXT LOGIC:
+    // If it has a Catalog # AND isn't a single, show "RAIN-XXX • Date"
+    // If it is a single (or has no Catalog #), just show "Date"
+    const metaText = (r['Catalog#'] && !isSingle(r)) 
+      ? `${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}` 
+      : escapeHtml(r['Release Date']);
+
+    const el = document.createElement('div');
+    el.className = 'release';
+    el.innerHTML = `
+    ${releaseIconHTML(r)}
       <img src="${resolveAsset(r['Cover JPG'])}" alt="${escapeHtml(r.Title)} cover" />
       <div class="info">
         <div class="title">${escapeHtml(r.Title)}</div>
-        <div class="catalog">${escapeHtml(r['Catalog#'])} • ${escapeHtml(r['Release Date'])}</div>
+        <div class="artist">${artistHTML(r.Artist)}</div>
+        
+        <div class="catalog">${metaText}</div>
         
         ${r.detailsPage ? `<a href="${r.detailsPage}" class="learn-more-link">Learn More →</a>` : ''}
       </div>
     `;
 
+    // Streaming Links Logic (Unchanged)
     const links = document.createElement('div');
     links.className = 'streaming-links';
     if (isFuture(r['Release Date'])) {
@@ -75,8 +89,8 @@
         <a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       `;
     }
-    card.appendChild(links);
-    return card;
+    el.appendChild(links);
+    return el;
   };
 
   const render = async () => {
@@ -90,8 +104,14 @@
       const res = await fetch(DATA_URL, { cache: 'no-store' });
       const all = await res.json();
 
-      // filter by artist (case-insensitive match)
-      const mine = all.filter(r => String(r.Artist || '').toLowerCase() === artistKey);
+      // UPDATED FILTER: Check if the artist field INCLUDES the current page's artist key
+      // This allows "sunni, V0CALYST" to show up on both pages.
+      const mine = all.filter(r => {
+          const artists = (r.Artist || '').toLowerCase();
+          // Split by comma to safely check individual names (avoids partial matches like 'rob' matching 'robert')
+          const artistList = artists.split(',').map(a => a.trim()); 
+          return artistList.includes(artistKey);
+      });
 
       // newest → oldest
       mine.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
