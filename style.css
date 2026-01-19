@@ -1451,3 +1451,76 @@ body.no-scroll { overflow: hidden; }
     margin-top: 10px;
     margin-bottom: 20px; /* Space between text and the video */
 }
+
+/* --- INTERVIEW PROMO BOX --- */
+.interview-promo-link {
+    text-decoration: none;
+    display: block;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.interview-promo-box {
+    background: rgba(20, 30, 50, 0.3); /* Matches your glass theme */
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    text-align: center;
+    position: relative;
+}
+
+/* Hover Effects */
+.interview-promo-link:hover .interview-promo-box {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.15);
+}
+
+.interview-promo-link:hover h2 {
+    text-shadow: 0 0 10px var(--accent);
+}
+
+/* Image */
+.interview-banner-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 250px; /* Keeps it from getting too tall */
+    object-fit: cover;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.1);
+}
+
+/* Content */
+.interview-content {
+    padding: 25px;
+}
+
+.interview-content h3 {
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.interview-content h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.interview-content p {
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .interview-content h2 { font-size: 1.4rem; }
+}

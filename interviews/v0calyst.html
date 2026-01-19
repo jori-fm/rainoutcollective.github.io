@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Interview: V0CALYST - RAINOUT</title>
+
+  <meta property="og:title" content="Interview: V0CALYST on ZOMBIEBOY & Vocal Versatility">
+  <meta property="og:description" content="We sat down with V0CALYST to discuss the RAINOUT era, the influence of xaviersobased, and the upcoming deluxe album.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rainoutcollective.com/interviews/v0calyst.html">
+  <meta property="og:image" content="https://rainoutcollective.com/assets/zombieboy banner.png">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interview: V0CALYST - RAINOUT">
+  <meta name="twitter:description" content="V0CALYST talks ZOMBIEBOY, vocal versatility, and the new RAINOUT era.">
+  <meta name="twitter:image" content="https://rainoutcollective.com/assets/zombieboy banner.png">
+  
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <style>
+    /* --- INTERVIEW SPECIFIC STYLES --- */
+    .hero-interview {
+        height: 50vh;
+        background: linear-gradient(to bottom, rgba(8, 12, 20, 0.3), var(--bg-color)), url('/assets/zombieboy banner.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-interview h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.8);
+        color: #fff;
+    }
+
+    .hero-interview p {
+        font-size: 1.2rem;
+        color: #e0e0e0;
+        max-width: 700px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+    }
+
+    /* --- Q&A BLOCKS --- */
+    .qa-block {
+        margin-bottom: 2.5rem;
+        opacity: 0; 
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .qa-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- NAMES (Logo Font) --- */
+    .interviewer {
+        color: var(--accent);
+        font-family: 'SA Cinta', sans-serif; 
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .interviewer::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    /* --- SPOKEN TEXT (Courier) --- */
+    .interviewee {
+        color: #e6e6e6;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        padding-left: 20px;
+        border-left: 2px solid rgba(125, 249, 255, 0.1);
+        margin-left: 10px;
+    }
+
+    .interviewee strong {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+
+    .interviewee em {
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+    
+    /* Inline Link Styling for Album References */
+    .interviewee a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+        transition: all 0.3s ease;
+    }
+    .interviewee a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px var(--accent);
+        border-bottom-style: solid;
+    }
+
+    /* --- PULL QUOTE --- */
+    .pull-quote {
+        font-family: 'SA Cinta', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-align: center;
+        color: #fff;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.3);
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+        padding: 3rem 1rem;
+        margin: 4rem 0;
+        font-style: italic;
+        background: rgba(10, 20, 35, 0.4);
+    }
+
+    /* --- IN-ARTICLE IMAGE --- */
+    .interview-img-container {
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .interview-img {
+        max-width: 100%;
+        width: 400px; 
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .interview-img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.2);
+    }
+
+    .img-caption {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-family: 'Courier New', monospace;
+    }
+    .img-caption a {
+        color: var(--text-secondary);
+        text-decoration: underline;
+    }
+    .img-caption a:hover {
+        color: var(--accent);
+    }
+
+    .back-btn-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+  </style>
+</head>
+<body class="player-page"> 
+
+  <header class="site-nav">
+    <a class="brand" href="/">
+      <img src="/assets/umbrella.png" alt="RAINOUT" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="/" data-match="/">Home</a>
+      <a href="/releases" data-match="/releases">Releases</a>
+      <a href="/player" data-match="/player">Player</a>
+      <a href="/about" data-match="/about">About Us</a>
+    </nav>
+  </header>
+
+  <header class="hero-interview">
+    <h1>V0CALYST</h1>
+    <p>On "ZOMBIEBOY," Vocal Versatility, and the RAINOUT Era</p>
+  </header>
+
+  <main class="content-container">
+        
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Let’s start off with the basics. What made you develop your passion for music?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">
+            Basically, my passion for music came from being able to feel a lot of emotions from the songs I love so much. My passion for rapping specifically came from <strong>xaviersobased</strong> and <strong>yhapojj</strong>, just seeing how they inspire other people and make positive, emotional, personal music.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Is there a specific xaviersobased song or yhapojj track that made it click for you at first? Like one that made you say, "Oh, I want to do this too"?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">I’d say <em>"linda,"</em> <em>"what r we posed to b,"</em> <em>"patchmade,"</em> <em>"JJETTLAGG,"</em> and <em>"Tummyache."</em></div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">You mentioned how they inspired others—is that the main goal for your output with RAINOUT? Do you want people to feel that same emotional release when they hear your music?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">
+            My main goal is to inspire people in all ways, specifically in music and in being yourself. I’d hope people feel the emotional intentions I have in my songs when they listen to them and can make music or art inspired by it.
+        </div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "My main goal is to inspire people in all ways... specifically in being yourself."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Speaking of emotional intentions, if you had to show one track to represent "V0CALYST," what would it be?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">
+            Probably either <em>"faceless"</em> for a more serious tone, but if I want to show a more outward and fun song, I’d say <em>"one of one."</em> As well as that, I’d say my general sound in a song would be <em>"Blood on my teeth"</em> or <em>"Undead rising."</em>
+        </div>
+    </div>
+
+    <div class="interview-img-container qa-block">
+        <img src="/assets/album-art/rain-032.jpg" alt="V0CALYST - ZOMBIEBOY Cover Art" class="interview-img">
+        <div class="img-caption">The cover art for <a href="/releases/zombieboy.html">ZOMBIEBOY</a> (RAIN-004)</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">What is it about those two songs specifically that makes you say, "Yeah, this is the V0CALYST sound"? Is it the beat selection or the vocal performance?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">
+            I would say a mix of beat selection and the way I perform vocally. A partial reason for my name <strong>[V0CALYST]</strong> is how I enjoy switching the way I do vocals in all directions. The beat selection really spoke out to me and defined how I made my sound as a whole.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">In my opinion, artists get stuck on one flow, but you're intentionally switching it up. Do you feel like that versatility is your biggest strength as an artist?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">I feel as if the way I can adapt to most beats, and switching my flows and the way I use my voice, is one of my biggest strengths as an artist and in general.</div>
+    </div>
+
+    <div class="interview-img-container qa-block">
+        <img src="/assets/v0calyst_promo_3.jpg" alt="ZOMBIEBOY Promo" class="interview-img">
+        <div class="img-caption">ZOMBIEBOY promo</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">That versatility definitely sets you apart. Shifting gears to your upcoming work: I know the <strong>[<a href="/releases/zombieboy.html">ZOMBIEBOY DELUXE</a>]</strong> is on the way. Is that your main focus for solo releases this year?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">
+            <em>[<a href="/releases/zombieboy.html">ZOMBIEBOY DELUXE</a>]</em> is definitely my main focus for a solo release this year. I will be expanding my sound in a rage type of way, but still keeping my versatile sound.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">I feel like that "rage" energy fits the name <a href="/releases/zombieboy.html">ZOMBIEBOY</a> perfectly. Do you feel like this deluxe version is the final form of that project?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">I think the deluxe version will be a more solid sound for the <em><a href="/releases/zombieboy.html">ZOMBIEBOY</a></em> aesthetic and the entire idea of the project.</div>
+    </div>
+    
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Since this is about solidifying your sound and aesthetic, are you keeping the deluxe mostly solo, or can we expect some RAINOUT features to pop up?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">There definitely will be some features from RAINOUT, but I look forward to a more solo run.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">I love the mindset. Since you’re focusing on this solo run and building the legacy, what is one thing you want listeners to take away from your music this year?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">V0CALYST</div>
+        <div class="interviewee">I’d like my listeners to see my music and think that they can do something that inspires someone.</div>
+    </div>
+
+    <div class="back-btn-container qa-block">
+        <a href="/artists/V0CALYST" class="back-button">← Back to V0CALYST</a>
+    </div>
+
+  </main>
+
+  <div id="global-footer"></div>
+  <script src="/script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.qa-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+  </script>
+</body>
+</html>
