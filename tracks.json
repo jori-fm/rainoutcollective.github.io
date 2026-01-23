@@ -375,17 +375,6 @@
     },
     {
 
-      "artist": "sunni & V0CALYST",
-      "title": "kick ass club penguin party",
-      "release_date": "2026-01-02",
-      "cover": "/assets/album-art/kacpp.jpg",
-      "tracks": [
-        { "title": "kick ass club penguin party", "file": "/assets/music/kacpp.mp3" }
-
-      ]
-    },
-    {
-
       "artist": "krewlty",
       "title": "...ev3rything u ever wanted (yr mindset)",
       "release_date": "2026-01-02",

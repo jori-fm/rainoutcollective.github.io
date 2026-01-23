@@ -120,7 +120,10 @@ body {
 }
 
 .loading-state i { font-size: 2rem; margin-bottom: 1rem; }
-.error-state { color: #ff6b6b; text-align: center; padding: 2rem; }
+.release-scroll .error-state {
+    margin: 0 auto;
+    width: 100%;
+}
 
 .more-button-container { text-align: center; margin-top: 30px; }
 
@@ -728,8 +731,12 @@ footer {
 }
 
 .artist-releases {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    margin-top: 60px; overflow: visible;
+    display: flex; 
+    flex-direction: column; /* Stack title and releases vertically */
+    align-items: center;    /* Center them horizontally */
+    justify-content: center;
+    margin-top: 60px; 
+    overflow: visible;
 }
   
 .release-scroll {
@@ -1523,4 +1530,51 @@ body.no-scroll { overflow: hidden; }
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     .interview-content h2 { font-size: 1.4rem; }
+}
+
+/* --- ARTIST PAGE STEAM-STYLE BACKGROUNDS --- */
+
+/* 1. Base setup for the body when background is enabled */
+body.artist-bg-enabled {
+    position: relative;
+    z-index: 0;
+    /* Ensure the background stays fixed while scrolling */
+    background-attachment: fixed; 
+}
+
+/* 2. The pseudo-element that holds the image */
+body.artist-bg-enabled::before {
+    content: "";
+    position: fixed; /* Stays put */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Sends it to the very back */
+    
+    /* The image is defined in the HTML inline style */
+    background-image: var(--artist-bg-image);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    /* THE STEAM EFFECT: heavy blur, darkened, slightly desaturated */
+    filter: blur(12px) brightness(0.35) saturate(0.8);
+    
+    /* Slight scale fixes weird blurry edges */
+    transform: scale(1.05); 
+    pointer-events: none;
+}
+
+/* 3. Make the main container glass-like so bg shows through */
+body.artist-bg-enabled .container {
+    /* Use your BG color but make it mostly transparent */
+    background-color: rgba(13, 17, 23, 0.75); 
+    /* Optional: Adds a frosted glass effect */
+    backdrop-filter: blur(10px); 
+    /* Optional: Subtle border to define the edge */
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    /* Ensure it sits above the background */
+    position: relative;
+    z-index: 1;
 }
