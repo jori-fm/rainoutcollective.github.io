@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Interview: sunni - RAINOUT</title>
+
+  <meta property="og:title" content="From 'YDL' to 'Yestuary': Inside Sunni’s Evolution">
+  <meta property="og:description" content="We sat down with RAINOUT co-founder sunni to discuss his scrapped debut, balancing school with music, and his massive pipeline of influences.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rainoutcollective.com/interviews/sunni.html">
+  <meta property="og:image" content="https://rainoutcollective.com/assets/artists/sunni.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interview: sunni - RAINOUT">
+  <meta name="twitter:description" content="We sat down with RAINOUT co-founder sunni to discuss his scrapped debut, balancing school with music, and his massive pipeline of influences.">
+  <meta name="twitter:image" content="https://rainoutcollective.com/assets/artists/sunni.jpg">
+  
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <style>
+    /* --- INTERVIEW SPECIFIC STYLES --- */
+    .hero-interview {
+        height: 50vh;
+        /* Using the sunni background for the header */
+        background: linear-gradient(to bottom, rgba(8, 12, 20, 0.3), var(--bg-color)), url('/assets/sunni-interviewbg.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-interview h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.8);
+        color: #fff;
+    }
+
+    .hero-interview p {
+        font-size: 1.2rem;
+        color: #e0e0e0;
+        max-width: 700px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+    }
+
+    /* --- Q&A BLOCKS --- */
+    .qa-block {
+        margin-bottom: 2.5rem;
+        opacity: 0; 
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .qa-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- NAMES (Logo Font) --- */
+    .interviewer {
+        color: var(--accent);
+        font-family: 'SA Cinta', sans-serif; 
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .interviewer::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    /* --- SPOKEN TEXT (Courier) --- */
+    .interviewee {
+        color: #e6e6e6;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        padding-left: 20px;
+        border-left: 2px solid rgba(125, 249, 255, 0.1);
+        margin-left: 10px;
+    }
+
+    .interviewee strong {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+
+    .interviewee em {
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+    
+    /* Inline Link Styling */
+    .interviewee a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+        transition: all 0.3s ease;
+    }
+    .interviewee a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px var(--accent);
+        border-bottom-style: solid;
+    }
+
+    /* --- PULL QUOTE --- */
+    .pull-quote {
+        font-family: 'SA Cinta', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-align: center;
+        color: #fff;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.3);
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+        padding: 3rem 1rem;
+        margin: 4rem 0;
+        font-style: italic;
+        background: rgba(10, 20, 35, 0.4);
+    }
+
+    /* --- IN-ARTICLE IMAGE --- */
+    .interview-img-container {
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .interview-img {
+        max-width: 100%;
+        width: 400px; 
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        transition: transform 0.3s ease;
+    }
+    .interview-img.large {
+        width: 100%; /* Overrides the 400px limit */
+        max-width: 800px; /* Ensures it fits the content container nicely */
+    }
+
+    .interview-img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.2);
+    }
+
+    .img-caption {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-family: 'Courier New', monospace;
+    }
+
+    .back-btn-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+  </style>
+</head>
+<body class="player-page"> 
+
+  <header class="site-nav">
+    <a class="brand" href="/">
+      <img src="/assets/umbrella.png" alt="RAINOUT" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="/" data-match="/">Home</a>
+      <a href="/releases" data-match="/releases">Releases</a>
+      <a href="/player" data-match="/player">Player</a>
+      <a href="/about" data-match="/about">About Us</a>
+    </nav>
+  </header>
+
+  <header class="hero-interview">
+    <h1>sunni</h1>
+    <p>From 'YDL' to 'Yestuary': Inside Sunni’s Evolution</p>
+  </header>
+
+  <main class="content-container">
+        
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Wsg sunni! How are you doing bro?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">ssuuuup! Im feeling pretty good actually! Test week is ceased and i got ass grades on most of them (they didnt really hurt my grades in general).</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Damn, is school stressful for u or nah?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            Sometimes... but its usually because i balance life and most of all school on top of music, friends, fam, girlfriend, etc etc. I feel like I'm balancing a stack of glass plates with my foot. But lowkey I got good balance so the plates haven't fallen (yet).
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">That's good that you're able to balance these things out. Let's dive into music. You, being a co-founder of RAINOUT, happen to be one of the members who hasn't built an official discography yet. Are you someone who prefers to work in the depths within? Or are you trying to find a grip in what you're really trying to create?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            Oooh these are good questions!! I believe that my creativity and thought process especially with music comes in a burst-like energy. I do not get burnt out really quick, however I do get tired of being public in what I am doing really fast, so yes to both actually. I love to give updates and tell my audience (or lack thereof LOL) what's happening, but I hate labels, so I never give out a specific date until it’s done. It’s a bad habit and i kind of want to set shit up in a more professional way, but for now its sporadic.
+            <br><br>
+            Speaking of that, I wanted to make like 3 different albums at some point, and I still do! But I am not <strong>Claire Eterna</strong>, so I can’t do that shit that fast… shit takes time you feel me.
+        </div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "I feel like I'm balancing a stack of glass plates with my foot... but lowkey I got good balance."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Since Feb 2025 you've been anticipating a debut for yourself, like that EP that you threw in the wastebin on soundcloud, <em>"NORMALIZE HITTING HOES YOU DONT LIKE,"</em> what drove you to create this EP, were you testing the waters?</div>
+    </div>
+    
+    <div class="interview-img-container qa-block">
+        <img src="/assets/sunni_interview_1.jpg" alt="sunni YDL Era" class="interview-img large">
+        <div class="img-caption">Screenshot of the YDL EP</div>
+    </div>
+    
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            Thank god you said this, let's get one thing out the way: <strong>I FUCKING HATE THAT EP!!!!!!!!!!!!!</strong>
+            <br><br>
+            It's ass, boring, no substance at all. I stole a beat from <strong>waera</strong> and <strong>[da11as10k]</strong> before RAINOUT even had a chance to blossom. I made it in some sort of music-manic episode for some reason because I got mad that <strong>smooch.</strong> wasn't dropping <em>A witness, A watcher</em>… but most of all! It was my first try. I can’t hate on it too much because it was a younger me trying out a style that I don't even know who it belonged to. But uh, this EP is like a kid I can't look in the eyes because I'm disappointed in them.
+        </div>
+    </div>
+
+    <div class="interview-img-container qa-block">
+        <img src="/assets/sunni_interview_2.jpg" alt="sunni YDL Era" class="interview-img large">
+        <div class="img-caption">Sunni in late 2023 discussing plans for his debut EP.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            What drove me to create <em>YDL (You Don't Like)</em> is mostly because I have tried making that same EP for years actually. Now that its out its ass and I hate it to my bones, which is why almost all of my BandLab releases are privated, but a year ago... I was extremely inspired to make music.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">
+            Wow, you've been trying to get into the scene for a while now! All that led up to practically your first time appearing, January 2025, on a song by <strong>V0CALYST</strong> titled <em>"good time"</em> How did you feel when you were recording on that track?
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            I had fun, Kevin is very fun to work with. Lowkey? It wasn't that hard to record, mostly because I didn't write my lyrics, and I also never studied on how to switch my flow at all. But the shit still bumps though, I listen to it in my free time and I know all the lyrics off of the top so I'm not as mad at myself for it as I am for making that bullshit EP.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Have you been peeping other producers in RAINOUT currently? Or do you want your debut to be exclusively a shinrei production?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            Yes of course, I have a lot of love for the prods in RAINOUT! <strong>[Claire Eterna], rec, [lunamaryllis], sadcrib, [shinrei], [smooch.], [i3yves]</strong> (even though she wont send beats for shit!!), <strong>solace, cindy, danny, jacob, cap, hymself, ryhan, trk, avalon, pez, andie, foyu, blank, [krewlty], [suleymon]</strong>... ALL OF THEM. I at least have wanted or got one beat from them. I'm scared of actually saying what my vision is when someone prods for me, so that's lowkey another heap I gotta get over.
+        </div>
+    </div>
+    
+    <div class="pull-quote qa-block">
+        "I want every single sound that has ever been made. I'll make samba if I have to."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">So now that you say that... You want to get a beat from all these producers. Are you looking forward to a more diverse project? Or are you going to select a couple?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            Yes to both, because I want a set sound, but I also... I just want everything bro. I want it all at this point. I fucking want it all. I want every single sound that has ever been made. I'll make fucking... I'll make samba if I have to. I don't give a fuck anymore. I just want something.
+            <br><br>
+            That project is probably not going to be on the back burner actually because I want that to be out. So you remember how I was talking to you about <em>"SOUNDCLOUD MUSIC"</em>, right? That was going to be the opening. But then it evolved to this new vision that I had while in a music-manic episode. I decided to make something called <em>"Yestuary"</em>. It looks sample-focused and the album cover is basically like a mood board on what I wanted. Shit, I'm really proud of that album cover.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Like I was asking, the name of the album you were planning with that cutout piece?</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/sunni_interview_3.jpg" alt="sunni YDL Era" class="interview-img large">
+        <div class="img-caption">Sunni showing off the cover for his next project.</div>
+    </div>
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            <strong>Yestuary</strong>. It's 'Yesterday' and 'February' (my birth month) mixed together. I have a weird habit of mixing together words.
+        </div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/sunni_interview_4.jpg" alt="sunni influences" class="interview-img">
+        <div class="img-caption">Unofficial cover of "Yestuary"</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Outside of your own discography, what main artists influence your style and your way to be creative?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sunni</div>
+        <div class="interviewee">
+            I got a fucking pipeline of this shit it's not even funny. Okay, so it was video game OSTs, it was <em>"Angel with a Shotgun"</em> (nightcore). It was <strong>Vocaloid</strong>, then it was <strong>Shawn Wasabi</strong>, then I went to <strong>Lil Uzi Vert</strong> from that. 
+            <br><br>
+            Then I went to <strong>$uicideboy$</strong>, then <strong>Earl Sweatshirt</strong> before I ever went to Tyler. I went from Earl to <strong>Odd Future</strong> to <strong>Tyler, the Creator</strong> and then I went to the hyperpop scene. The hyperpop scene is actually what really got me into this shit. It was <strong>Novagang</strong>. It was <strong>Glaive, Quinn, Saturn, VVSPipes</strong>...
+            <br><br>
+            Then it was <strong>Tana</strong> from 2021. Then <strong>SSGKobe</strong>. And it was <strong>slayr</strong>. Then it went to <strong>skaiwater, Che, Edward Skeletrix</strong>... and then it went to <strong>Lucy Bedroque</strong>, <strong>ayowitter</strong>, and <strong>zayok</strong>. And that <strong>smooch.</strong> too. Oh my God, [smooch.] has done a lot for me. I can't give enough thanks to [smooch.] for showing us the way.
+        </div>
+    </div>
+
+    
+
+    <div class="back-btn-container qa-block">
+        <a href="/artists/sunni" class="back-button">← Back to sunni</a>
+    </div>
+
+  </main>
+
+  <div id="global-footer"></div>
+  <script src="/script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.qa-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+  </script>
+</body>
+</html>
