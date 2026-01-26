@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Interview: lunamaryllis - RAINOUT</title>
+
+  <meta property="og:title" content="Interview: lunamaryllis on 'metaphysical ☆ decay', Vocals, her name">
+  <meta property="og:description" content="We sat down with lunamaryllis to discuss her shift from ambient DnB to vocal-heavy production, her upcoming projects, and the meaning behind her name.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rainoutcollective.com/interviews/lunamaryllis.html">
+  <meta property="og:image" content="https://rainoutcollective.com/assets/luna-interviewbg.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interview: lunamaryllis - RAINOUT">
+  <meta name="twitter:description" content="lunamaryllis talks 'metaphysical ☆ decay', vocals, and her name.">
+  <meta name="twitter:image" content="https://rainoutcollective.com/assets/luna-interviewbg.jpg">
+  
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <style>
+    /* --- INTERVIEW SPECIFIC STYLES --- */
+    .hero-interview {
+        height: 50vh;
+        /* Assumes you have a background for her, if not change to generic */
+        background: linear-gradient(to bottom, rgba(8, 12, 20, 0.3), var(--bg-color)), url('/assets/luna-interviewbg.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-interview h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.8);
+        color: #fff;
+    }
+
+    .hero-interview p {
+        font-size: 1.2rem;
+        color: #e0e0e0;
+        max-width: 700px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+    }
+
+    /* --- Q&A BLOCKS --- */
+    .qa-block {
+        margin-bottom: 2.5rem;
+        opacity: 0; 
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .qa-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- NAMES (Logo Font) --- */
+    .interviewer {
+        color: var(--accent);
+        font-family: 'SA Cinta', sans-serif; 
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .interviewer::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    /* --- SPOKEN TEXT (Courier) --- */
+    .interviewee {
+        color: #e6e6e6;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        padding-left: 20px;
+        border-left: 2px solid rgba(125, 249, 255, 0.1);
+        margin-left: 10px;
+    }
+
+    .interviewee strong {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+
+    .interviewee em {
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+    
+    .interviewee a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+        transition: all 0.3s ease;
+    }
+    .interviewee a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px var(--accent);
+        border-bottom-style: solid;
+    }
+
+    /* --- PULL QUOTE --- */
+    .pull-quote {
+        font-family: 'SA Cinta', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-align: center;
+        color: #fff;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.3);
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+        padding: 3rem 1rem;
+        margin: 4rem 0;
+        font-style: italic;
+        background: rgba(10, 20, 35, 0.4);
+    }
+
+    /* --- IN-ARTICLE IMAGE --- */
+    .interview-img-container {
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .interview-img {
+        max-width: 100%;
+        width: 400px; 
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        transition: transform 0.3s ease;
+    }
+    .interview-img.large {
+        width: 100%; 
+        max-width: 800px; 
+    }
+
+    .interview-img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.2);
+    }
+
+    .img-caption {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-family: 'Courier New', monospace;
+    }
+
+    .back-btn-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+  </style>
+</head>
+<body class="player-page"> 
+
+  <header class="site-nav">
+    <a class="brand" href="/">
+      <img src="/assets/umbrella.png" alt="RAINOUT" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="/" data-match="/">Home</a>
+      <a href="/releases" data-match="/releases">Releases</a>
+      <a href="/player" data-match="/player">Player</a>
+      <a href="/about" data-match="/about">About Us</a>
+    </nav>
+  </header>
+
+  <header class="hero-interview">
+    <h1>lunamaryllis</h1>
+    <p>On "metaphysical ☆ decay," The Shift to Vocals, and the Meaning of Her Name</p>
+  </header>
+
+  <main class="content-container">
+        
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">How have you been lately luna?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">Hmm... sonically I've been feeling pretty good. My mental is on a decline but I'll get through it.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">That's good that you're getting through it. Have you been coping by making music lately? Or are you just moving through the waves?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">I've been trying to make more music to cope, but most of the time I'm quite demotivated so I'll just sit and listen to music or watch something. But when I am motivated, I lock in on music.</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/lunamaryllis_interview3.jpg" alt="let's have some fun cover" class="interview-img">
+        <div class="img-caption">lunamaryllis OC art by miichnoire</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">What drove you to start your discography? Was it an influence on where you grew up or was it primarily inspiration?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Primarily inspiration. Honestly, my discography started because I was listening to ambient DnB—Sewerslvt clones—and I was watching a bunch of tutorials and it looked easy. But I figured out that's not what I wanted to do.
+            <br><br>
+            So when I started taking music seriously I really leaned into inspirations like <strong>lexycat</strong>. lexycat is really my main inspiration. But this new album is heavily inspired by <strong>ch2rms</strong>, <em>nerves</em> by ch2rms in particular. Funnily enough, lexycat has like 4 placements and a feature on that album.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Well, that shouldn't be surprising, considering you are a member of WoundedHeart (lexy's collective/group), and you two hit it off quickly! It's amazing how open-minded she can be, noting how much of an influence she is in the music space. Would you be willing to name the project you're speaking of?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Yea sure. <em>"metaphysical ☆ decay"</em>. Cause like... I'm lowkey falling apart. I'm nearly done with it, I just need to make one more song, but this song is gonna be pretty ambitious.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Is this project solo or will it have collabs?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">Mostly solo. Like almost all of it is solo. <strong>saivyn</strong> sent me a pad though and I used it in the intro song. Shoutout to saivyn.</div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "If I never used my vocals there's a big possibility I could've gotten bored of music and quit."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">A solo project does sound pretty special! How about your other album in the works, <em>"digital Angel"</em>, what do people need to know about it right now?</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/lunamaryllis_interview1.jpg" alt="let's have some fun cover" class="interview-img">
+        <div class="img-caption">Alternate art for "digital Angel"</div>
+    </div>
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            <em>digital Angel</em> is paused at the moment, but it will come out. Even if it takes years. It might need a 3rd version because I want this album to be great, and when I look at it for a long time I think I can do better. But that's for future me to think about. Maybe I'll drop some of V2 as a prologue.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Woah, how long have you been working on it?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Technically since April of last year. It was originally supposed to be kind of a DnB Angelicide-inspired type album, but it changed direction when I started using my voice. V2 has been in the works since July.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee"><em>digital Angel</em> definitely sounds like your magnum opus!! How extreme do you think beginning to use your vocals has changed the path to your catalog?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">VERY extreme. If I never used my vocals there's a big possibility I could've gotten bored of music and quit.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Woww, your production game was already insane but you leveled your music up even more by achieving the status as a self-prod artist. Were you nervous at all before you began using your vocals?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Yea, a little bit. Autotune saved my life though. I don't think I could ever do vox on a song without autotune. It's not because I don't wanna improve in singing, it's just that minor pitch imperfections hurt my soul and hearing those over and over again while recording would kill me. So thanks to Antares.
+        </div>
+    </div>
+
+    
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">Since joining RAINOUT in late July, you had a role in executively producing <em><a href="/releases/zombieboy">ZOMBIEBOY</a></em>. You bloomed on the collective even more when you dropped <em><a href="/releases/letshavesomefun">let's have some fun</a></em> and since then, you have been working on these albums. You and V0CALYST and shinrei have set a name for the collective intensely. Do you look forward to working with the collective some more these coming years?</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/album-art/rain-039.jpg" alt="let's have some fun cover" class="interview-img">
+        <div class="img-caption">The cover art for "let's have some fun" (RAIN-005)</div>
+    </div>
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Yes absolutely. There will definitely be more luna exec-prod albums and collab tapes with members, and of course solo albums (with features) under RAINOUT. And I can't wait to go on tour too ^_^
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">ME TOO I can't wait until we grow big enough to fund concerts, that's the dream. Let's move onto another topic, your project with SVPACYBERIA, <em>"a letter 2 my past"</em>. What was your reaction when Ayu (SVPACYBERIA's owner) greenlit giving this grail album a CD release?</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/lunamaryllis_interview2.jpg" alt="let's have some fun cover" class="interview-img">
+        <div class="img-caption">Official cover art for Luna's "a letter 2 my past"</div>
+    </div>
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            I was quite happy ^_^ and honestly I wouldn't have made the project if she didn't offer to put it under SVPA. I'm glad I made the project because it was something I needed to get out for myself, going back to my DnB roots. SVPA is moving on to other things that aren't DnB right now... so a luna instrumental (dariacore or hardcore) album under SVPA might not be too far away...
+        </div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "I feel like the name moonflower really resonated with me, so I basically put my own spin on it and Boom. lunamaryllis."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">There's also another thing I want to talk about, which I also think has influenced your journey: Your name change. You were moving swiftly through the scene under "sai" then decided to lock in on "lunamaryllis", what snapped inside of you to decide this?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Sai is a very common name. And I mean VERY common. So it didn't feel uniquely my own, and Sai doesn't have any real significant meaning. It's just a shortened version of my Geometry Dash username translated into Japanese. I'm actually surprised I stuck with it for so long.
+            <br><br>
+            <strong>lunamaryllis</strong> at least has some meaning. It's a combination of luna and amaryllis. I think the amaryllis is a pretty flower, and I feel like I've been associated with the moon for a large part of my life. When coming up with this name I thought about <em>moonflower</em>, lexycat's debut EP, and I feel like the name moonflower really resonated with me, so I basically put my own spin on it and Boom. lunamaryllis.
+            <br><br>
+            Also my grandpa calls all of his grandkids "_-light" and I happen to be moonlight.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">luna</div>
+        <div class="interviewee">
+            Oh yeah, I also lowkey wanted to disassociate with that game. Not like entirely because I still have friends who play it and I hop on from time to time, but a lot of the community is toxic and there's too much drama to keep up with a lot of the time.
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">Jori</div>
+        <div class="interviewee">You have such an interesting history and I'm glad you went in-depth for it. Thank you for talking with me today.</div>
+    </div>
+
+    <div class="back-btn-container qa-block">
+        <a href="/artists/lunamaryllis" class="back-button">← Back to lunamaryllis</a>
+    </div>
+
+  </main>
+
+  <div id="global-footer"></div>
+  <script src="/script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.qa-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+  </script>
+</body>
+</html>
