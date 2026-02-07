@@ -467,6 +467,28 @@
     "Spotify": "https://open.spotify.com/album/5dS1NByhRS7gAcyka80kAh?si=RI7uzd8sTmOpxmpLzJHpOg",
     "Apple Music": "https://music.apple.com/us/album/no-reason-feat-v0calyst-single/1868518050",
     "Youtube": "https://www.youtube.com/watch?v=-3Qcyye7m2I"
+  },
+  {
+
+    "Artist": "avalon",
+    "Title": "Boiler Room",
+    "Format": "Single",
+    "Release Date": "2026-02-06",
+    "Cover JPG": "assets/album-art/boiler.jpg",
+    "Spotify": "https://open.spotify.com/album/50ctd9qc5q3Soui073GV5M",
+    "Apple Music": "https://music.apple.com/us/album/boiler-room-single/1875022914",
+    "Youtube": "https://www.youtube.com/watch?v=kSY3zOf3QTU"
+  },
+  {
+
+    "Artist": "V0CALYST",
+    "Title": "Pack a Punch",
+    "Format": "Single",
+    "Release Date": "2026-02-06",
+    "Cover JPG": "assets/album-art/pap.jpg",
+    "Spotify": "https://open.spotify.com/album/1aPRoTu3Uzly9BXpRMEVjD",
+    "Apple Music": "https://music.apple.com/gb/album/pack-a-punch-single/1875021523",
+    "Youtube": "https://www.youtube.com/watch?v=khl6XyuaDO4"
   }
 
   

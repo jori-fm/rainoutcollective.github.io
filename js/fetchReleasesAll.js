@@ -40,7 +40,8 @@
     suleymon: 'suleymon',
     'süleymon': 'suleymon',
     'claire-eterna': 'claire-eterna',
-    "Claire Eterna": 'claire-eterna'
+    "Claire Eterna": 'claire-eterna',
+    avalon: 'avalon'
   };
   
   const displayArtist = (name = '') => {
