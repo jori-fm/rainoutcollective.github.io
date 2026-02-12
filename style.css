@@ -1578,3 +1578,151 @@ body.artist-bg-enabled .container {
     position: relative;
     z-index: 1;
 }
+/* --- PRE-SAVE BUTTON --- */
+.presave-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 6px 12px;
+    
+    /* Neutral Gray Styling */
+    background: rgba(200, 200, 200, 0.1); 
+    border: 1px solid #a0a0a0;          
+    color: #e0e0e0;
+    
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.presave-btn:hover {
+    background: #e0e0e0;
+    color: #000;
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- AVALON PROMO BOX (ICONS ON TOP) --- */
+.avalon-promo {
+    /* Background & Border */
+    background: linear-gradient(135deg, rgba(220, 220, 255, 0.1) 0%, rgba(20, 20, 30, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 25px rgba(200, 200, 255, 0.1);
+    border-radius: 12px;
+    
+    /* Layout Dimensions */
+    max-width: 1000px; 
+    width: 95%;
+    margin: 60px auto;
+    padding: 50px 30px; 
+    
+    /* Flexbox for Perfect Centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Keeps icons inside the rounded corners */
+    backdrop-filter: blur(5px);
+}
+
+.promo-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px; 
+    /* z-index removed so icons can float above */
+}
+
+/* Floating Animation for Icons */
+@keyframes floatIcon {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+    50% { transform: translateY(-15px) rotate(10deg); opacity: 0.8; }
+    100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+}
+
+.avalon-promo .promo-icon {
+    position: absolute;
+    font-size: 4rem; /* Made them slightly bigger for effect */
+    color: rgba(220, 220, 255, 0.3); /* Slightly more transparent so they don't block text too much */
+    animation: floatIcon 6s ease-in-out infinite;
+    
+    /* FIX: Places icons ON TOP of everything else */
+    z-index: 10; 
+    
+    /* FIX: Allows you to click the video "through" the icon */
+    pointer-events: none; 
+}
+
+/* Top Left Icon */
+.avalon-promo .promo-icon.top-left {
+    top: -10px;
+    left: -10px;
+    animation-delay: 0s;
+}
+
+/* Bottom Right Icon */
+.avalon-promo .promo-icon.bottom-right {
+    top: auto;      
+    bottom: -10px;   
+    right: -10px;    
+    animation-delay: 3s; 
+}
+
+/* Typography & Video */
+.avalon-promo h3 {
+    color: #a0a0c0;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+
+.avalon-promo h2 {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    margin: 0 auto 25px; 
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    line-height: 1.3;
+    padding: 0 10px;
+    max-width: 800px; 
+}
+
+.avalon-promo p {
+    font-family: 'Courier New', monospace;
+    color: #ccc;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+}
+
+.avalon-promo .video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Ensure video stays below icons visually if desired, 
+       but since icons are z-index 10, they will naturally be on top */
+}
+
+.avalon-promo .video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}

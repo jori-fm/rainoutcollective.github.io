@@ -96,7 +96,21 @@
     const links = document.createElement('div');
     links.className = 'streaming-links';
     if (isFuture(r['Release Date'])) {
-      links.innerHTML = `<span class="coming-soon">COMING SOON</span>`;
+      // 1. Default text
+      let htmlContent = `<span class="coming-soon">COMING SOON</span>`;
+      
+      // 2. Check for Pre-save link in the JSON
+      if (r.presave) {
+        htmlContent += `
+          <div style="width: 100%; display: flex; justify-content: center;">
+              <a class="presave-btn" href="${r.presave}" target="_blank">
+                  <i class="fas fa-link"></i> PRE-SAVE
+              </a>
+          </div>
+        `;
+    }
+      
+      links.innerHTML = htmlContent;
     } else {
       links.innerHTML = `
         <a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
