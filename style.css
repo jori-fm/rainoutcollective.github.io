@@ -1726,3 +1726,67 @@ body.artist-bg-enabled .container {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
 }
+
+/* --- VISUAL ARTIST GALLERY --- */
+.featured-art {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.featured-art h2 {
+    margin-bottom: 30px;
+}
+
+.art-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0 40px 0; /* Extra bottom padding for the scrollbar */
+    scroll-snap-type: x mandatory;
+    align-items: center; /* Keeps everything vertically centered */
+    
+    /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+}
+
+.art-scroll-container img {
+    height: 350px; /* Fixed height keeps the scroll row uniform */
+    width: auto;   /* Width adapts automatically to keep aspect ratio */
+    max-width: 90vw; /* Prevents super-wide panoramic images from breaking mobile */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    scroll-snap-align: center;
+    flex-shrink: 0; /* Prevents images from squeezing together */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #000; /* Fallback while loading */
+}
+
+.art-scroll-container img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.4);
+    border-color: rgba(var(--accent-rgb), 0.6);
+}
+
+/* Custom Scrollbar for the Art Gallery */
+.art-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+.art-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+.art-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent-rgb), 0.3);
+    border-radius: 4px;
+}
+.art-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--accent-rgb), 0.6);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .art-scroll-container img {
+        height: 250px; /* Smaller height on mobile screens */
+    }
+}
