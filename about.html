@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About - RAINOUT</title>
-  <meta name="description" content="About RAINOUT — an independent label and creative group releasing experimental music and art." />
-  <link rel="icon" href="/assets/favicon.ico" />
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="preload" as="image" href="/assets/banner.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/font/simple-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-<script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <meta property="og:title" content="maku - RAINOUT">
+<meta property="og:description" content="maku is a 17-year-old multidisciplinary artist based in Romania. He began his journey in 2017.">
+<meta property="og:image" content="https://rainoutcollective.com/assets/artists/maku.jpg">
+<meta property="og:url" content="https://rainoutcollective.com/artists/maku">
+<meta property="og:type" content="profile">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="maku - RAINOUT">
+<meta name="twitter:description" content="maku is a 17-year-old multidisciplinary artist based in Romania. He began his journey in 2017.">
+<meta name="twitter:image" content="https://rainoutcollective.com/assets/artists/maku.jpg">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta charset="UTF-8" />
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>maku - RAINOUT</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
-<body>
-  <!-- Top Navigation -->
+
+<body class="artist-bg-enabled" style="--artist-bg-image: url('/assets/artist-bgs/maku-bg.jpg');">
+
   <header class="site-nav">
     <a class="brand" href="/">
       <img src="/assets/umbrella.png" alt="RAINOUT" />
@@ -29,84 +38,73 @@
       <a href="/about" data-match="/about">About Us</a>
     </nav>
   </header>
-
-  <main class="container">
-    <section class="about" id="who">
-      <h2>About Us</h2>
-      <p>
-        <strong>RAINOUT</strong> is an independent collective, label, and a creative group focused on embracing underground music diversity and appreciation. We value experimentation, collaboration, and giving artists space to build their sound.
-      </p>
-      <p>
-        This site hosts our latest releases and artist profiles. Stick around — more is coming.
-      </p>
-    </section>
-
-    <section class="about" id="what">
-      <h2>What We Do</h2>
-      <ul style="text-align:left; margin:0 auto; max-width:740px; line-height:1.9">
-        <li>Curate and release digital singles, EPs, and LPs.</li>
-        <li>Offer light-weight support on artwork, rollout, and distribution.</li>
-        <li>Connect artists for features, remixes, and cross-project ideas.</li>
-      </ul>
-    </section>
-
-    <section class="about" id="artists">
-      <h2>Members</h2>
-      <div class="artist-grid" style="margin-top:20px">
-        <a class="artist" href="/artists/smooch"><img src="/assets/artists/smooch.jpg" alt="smooch."><h3>smooch.</h3></a>
-      <a class="artist" href="/artists/sunni"><img src="/assets/artists/sunni.jpg" alt="sunni"><h3>sunni</h3></a>
-      <a class="artist" href="/artists/V0CALYST"><img src="/assets/artists/v0calyst.jpg" alt="V0CALYST"><h3>V0CALYST</h3></a>
-      <a class="artist" href="/artists/lunamaryllis"><img src="/assets/artists/lunamaryllis.jpg" alt="lunamaryllis"><h3>lunamaryllis</h3></a>
-      <a class="artist" href="/artists/shinrei"><img src="/assets/artists/shinrei.jpg" alt="shinrei"><h3>shinrei</h3></a>
-      <a class="artist" href="/artists/seraphim"><img src="/assets/artists/seraphim.jpg" alt="seraphim"><h3>seraphim</h3></a>
-      <a class="artist" href="/artists/suleymon"><img src="/assets/artists/suleymon.jpg" alt="suleymon"><h3>süleymon</h3></a>
-      <a class="artist" href="/artists/arri"><img src="/assets/artists/arri.jpg" alt="arri"><h3>arri</h3></a>
-      <a class="artist" href="/artists/krewlty"><img src="/assets/artists/krewlty.jpg" alt="krewlty"><h3>krewlty</h3></a>
-      <a class="artist" href="/artists/claire-eterna"><img src="/assets/artists/timeflower.jpg" alt="claire-eterna"><h3>Claire Eterna</h3></a>
-      <a class="artist" href="/artists/cindy-yearns"><img src="/assets/artists/cindyy.jpg" alt="cindy-yearns"><h3>cindy yearns</h3></a>
-      <a class="artist" href="/artists/danny-tarantola"><img src="/assets/artists/danny.jpg" alt="danny-tarantola"><h3>Danny Tarantola</h3></a>
-      <a class="artist" href="/artists/solace"><img src="/assets/artists/solace.jpg" alt="solace"><h3>sollaceee!</h3></a>
-      <a class="artist" href="/artists/rec"><img src="/assets/artists/rec.jpg" alt="rec"><h3>rec</h3></a>
-      <a class="artist" href="/artists/miichnoire"><img src="/assets/artists/miichnoire.jpg" alt="miichnoire"><h3>miichnoire</h3></a>
-      <a class="artist" href="/artists/maku"><img src="/assets/artists/maku.jpg" alt="maku"><h3>maku</h3></a>
-      <a class="artist" href="/artists/avalon"><img src="/assets/artists/avalon.jpg" alt="avalon"><h3>avalon</h3></a>
-      <a class="artist" href="/artists/jacob-cooper"><img src="/assets/artists/jacob.jpg" alt="jacob-cooper"><h3>jacob cooper</h3></a>
-      </div>
-      <div class="more-button-container"><a class="more-button" href="/releases">Browse all releases</a></div>
-    </section>
-
-    <section class="about" id="contact">
-      <h2>Contact</h2>
-      <p>General: <a href="mailto:rainout.co@aol.com">rainout.co@aol.com</a></p>
-    </section>
-
-    <section class="about" id="faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Is this a label or a collective?</summary>
-        <p>Both. We operate as both a creative collective and an independent record label. We work together, share resources, and collaborate extensively on projects. As a label, we handle the business of our art.</p>
-      </details>
-      <details>
-        <summary>How do I join or collaborate?</summary>
-        <p>You can reach out to us in our Discord community server or you can contact us at rainout.co@aol.com</p>
-      </details>
-      <details>
-        <summary>Do you sell physical releases?</summary>
-        <p>Once popularity around the collective builds up more in 2026, we will plan to put out limited-time physical releases.</p>
-      </details>
-      <details>
-        <summary>Can I use your visuals?</summary>
-        <p>Please consult our Creative Director, Shinrei, or the owner, Jori, through our email or the Discord community server.</p>
-      </details>
-    </section>
-  </main>
-
   
-  <div id="global-footer"></div>
-  <script src="/script.js" defer></script>
-  <script>
-    // simple year setter if script.js is not present
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+
+  <div class="container">
+    <main>
+
+<div class="artist-pic-wrapper">
+  <img src="../assets/artists/maku.jpg" alt="maku" class="artist-profile-pic" />
+</div>
+
+<h1>maku</h1>
+<div class="social-links">
+
+    <a href="https://www.instagram.com/destroymaku" title="Instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.instagram.com/crestofenticement" title="Instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://x.com/destroymaku" title="Twitter" target="_blank">
+      <i class="fab fa-twitter"></i>
+    </a>
+</div>
+      <p class="tagline">Member since January 3, 2026</p>
+
+      <div class="about">
+        <h2>Biography</h2>
+        <p>maku is a 17-year-old multidisciplinary artist based in Romania. He began his journey in 2017.</p>
+
+        <p>His diverse creative practice spans visual art, editing, writing, creative direction, and journalism.</p>
+
+        <p>#murcielago</p>
+      </div>
+      
+      <section class="featured-art">
+        <h2>Featured Art</h2>
+        <div class="art-scroll-container">
+            <img src="/assets/featuredart/maku/001.jpg" alt="maku artwork 1" loading="lazy">
+            <img src="/assets/featuredart/maku/002.jpg" alt="maku artwork 2" loading="lazy">
+            <img src="/assets/featuredart/maku/003.jpg" alt="maku artwork 3" loading="lazy">
+            <img src="/assets/featuredart/maku/004.jpg" alt="maku artwork 4" loading="lazy">
+            <img src="/assets/featuredart/maku/005.jpg" alt="maku artwork 5" loading="lazy">
+            <img src="/assets/featuredart/maku/006.jpg" alt="maku artwork 6" loading="lazy">
+            <img src="/assets/featuredart/maku/007.jpg" alt="maku artwork 7" loading="lazy">
+            <img src="/assets/featuredart/maku/008.jpg" alt="maku artwork 8" loading="lazy">
+            <img src="/assets/featuredart/maku/009.jpg" alt="maku artwork 9" loading="lazy">
+            <img src="/assets/featuredart/maku/010.jpg" alt="maku artwork 10" loading="lazy">
+            <img src="/assets/featuredart/maku/011.jpg" alt="maku artwork 11" loading="lazy">
+            <img src="/assets/featuredart/maku/012.jpg" alt="maku artwork 12" loading="lazy">
+            <img src="/assets/featuredart/maku/013.jpg" alt="maku artwork 13" loading="lazy">
+            <img src="/assets/featuredart/maku/014.jpg" alt="maku artwork 14" loading="lazy">
+            <img src="/assets/featuredart/maku/015.jpg" alt="maku artwork 15" loading="lazy">
+            <img src="/assets/featuredart/maku/016.jpg" alt="maku artwork 16" loading="lazy">
+            <img src="/assets/featuredart/maku/017.jpg" alt="maku artwork 17" loading="lazy">
+            <img src="/assets/featuredart/maku/018.jpg" alt="maku artwork 18" loading="lazy">
+            <img src="/assets/featuredart/maku/019.jpg" alt="maku artwork 19" loading="lazy">
+            <img src="/assets/featuredart/maku/020.jpg" alt="maku artwork 20" loading="lazy">
+            <img src="/assets/featuredart/maku/021.jpg" alt="maku artwork 21" loading="lazy">
+            <img src="/assets/featuredart/maku/022.jpg" alt="maku artwork 22" loading="lazy">
+        </div>
+      </section>
+
+      <a href="/" class="back-button">← Back to Home</a>
+      <script src="../script.js"></script>
+      <div id="global-footer"></div>
+    </main>
+  </div>
+
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 </body>
 </html>
