@@ -37,7 +37,7 @@
 
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"EX tracks",
     "Format":"Single",
     "Release Date":"2025-05-20",
@@ -48,7 +48,7 @@
   },
   {
     "Catalog#":"RAIN-002",
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"A witness, A watcher",
     "Format":"Album/EP",
     "Release Date":"2025-05-23",
@@ -99,7 +99,7 @@
     "Release Date":"2025-08-15",
     "Cover JPG":"assets\/album-art\/rain-013.jpg",
     "Spotify":"https:\/\/open.spotify.com\/album\/7fXQE8tX1xcXSwz19uOQ7p",
-    "Apple Music":"https:\/\/music.apple.com\/us\/album\/ggysm-feat-süleymon-single\/1832377492",
+    "Apple Music":"https:\/\/music.apple.com\/us\/album\/ggysm-feat-hellayercs-single\/1832377492",
     "Youtube":"https:\/\/www.youtube.com\/watch?v=mqxqQBO37_M"
   },
   {
@@ -170,7 +170,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"seawrld",
     "Format":"Single",
     "Release Date":"2024-01-17",
@@ -181,7 +181,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"genesis.",
     "Format":"Single",
     "Release Date":"2024-02-07",
@@ -192,7 +192,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"New Thing",
     "Format":"Single",
     "Release Date":"2024-03-01",
@@ -203,7 +203,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"Morning Lotus",
     "Format":"Single",
     "Release Date":"2024-04-01",
@@ -214,7 +214,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"Late Night Cyber Circuit",
     "Format":"Single",
     "Release Date":"2024-05-24",
@@ -225,7 +225,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"A day down the park",
     "Format":"Single",
     "Release Date":"2025-01-10",
@@ -236,7 +236,7 @@
   },
   {
 
-    "Artist":"smooch",
+    "Artist":"angelfriend",
     "Title":"guitar_4",
     "Format":"Single",
     "Release Date":"2025-01-11",
@@ -247,7 +247,7 @@
   },
   {
 
-    "Artist":"süleymon",
+    "Artist":"hellayercs",
     "Title":"BAP",
     "Format":"Single",
     "Release Date":"2025-06-14",
@@ -258,7 +258,7 @@
   },
   {
 
-    "Artist":"süleymon",
+    "Artist":"hellayercs",
     "Title":"toronto",
     "Format":"Single",
     "Release Date":"2025-07-12",
@@ -269,7 +269,7 @@
   },
   {
 
-    "Artist":"süleymon",
+    "Artist":"hellayercs",
     "Title":"wok",
     "Format":"Single",
     "Release Date":"2025-07-19",
@@ -280,7 +280,7 @@
   },
   {
 
-    "Artist":"süleymon",
+    "Artist":"hellayercs",
     "Title":"staprob",
     "Format":"Single",
     "Release Date":"2025-07-21",
@@ -337,7 +337,7 @@
   },
   {
 
-    "Artist":"süleymon",
+    "Artist":"hellayercs",
     "Title":"21 yercs",
     "Format":"Single",
     "Release Date":"2025-10-12",
@@ -348,7 +348,7 @@
   },
   {
 
-    "Artist":"süleymon",
+    "Artist":"hellayercs",
     "Title":"wah",
     "Format":"Single",
     "Release Date":"2025-10-27",
@@ -404,7 +404,7 @@
   },
   {
 
-    "Artist":"smooch.",
+    "Artist":"angelfriend.",
     "Title":"To my ends",
     "Format":"Single",
     "Release Date":"2025-12-19",
@@ -509,6 +509,39 @@
     "Release Date":"2026-03-06",
     "Cover JPG":"assets\/album-art\/avalonLP.jpg",
     "presave": "https://too.fm/isayallpeoplediesearchingforaplacetobelong",
+    "Spotify":"",
+    "Apple Music":"",
+    "Youtube":""
+  },
+  {
+
+    "Artist": "sollaceee!",
+    "Title": "what i do",
+    "Format": "Single",
+    "Release Date": "2026-02-20",
+    "Cover JPG": "assets/album-art/whatido.jpg",
+    "Spotify": "https://open.spotify.com/album/3W3wNORuCewThifJazfuBu",
+    "Apple Music": "",
+    "Youtube": "https://www.youtube.com/watch?v=flfkuMUMDGM"
+  },
+  {
+
+    "Artist": "krewlty",
+    "Title": "...i guess?",
+    "Format": "Single",
+    "Release Date": "2026-02-20",
+    "Cover JPG": "assets/album-art/iguess.jpg",
+    "Spotify": "https://open.spotify.com/album/4h8TxfRBBIh3Cb0etXjdNB",
+    "Apple Music": "https://music.apple.com/us/album/i-guess-single/1878054339",
+    "Youtube": "https://www.youtube.com/watch?v=UbZ7pFDSK2g"
+  },
+  {
+    "Catalog#":"RAIN-007",
+    "Artist":"sollaceee!",
+    "Title":"appleLove",
+    "Format":"Album/EP",
+    "Release Date":"2026-03-20",
+    "Cover JPG":"assets\/album-art\/applelove.jpg",
     "Spotify":"",
     "Apple Music":"",
     "Youtube":""

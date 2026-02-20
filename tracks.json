@@ -39,7 +39,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "EX tracks",
       "release_date": "2025-05-20",
       "cover": "/assets/album-art/rain-007.jpg",
@@ -52,7 +52,7 @@
     },
     {
       "catalog": "RAIN-002",
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "A witness, A watcher",
       "release_date": "2025-05-23",
       "cover": "/assets/album-art/rain-008.jpg",
@@ -159,12 +159,12 @@
       "release_date": "2025-08-15",
       "cover": "/assets/album-art/rain-013.jpg",
       "tracks": [
-        { "title": "ggysm (ft. süleymon)", "file": "/assets/music/ggysm.mp3" }
+        { "title": "ggysm (ft. hellayercs)", "file": "/assets/music/ggysm.mp3" }
       ]
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "seawrld",
       "release_date": "2024-01-17",
       "cover": "/assets/album-art/rain-020.jpg",
@@ -174,7 +174,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "genesis.",
       "release_date": "2024-02-07",
       "cover": "/assets/album-art/rain-021.jpg",
@@ -184,7 +184,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "New Thing",
       "release_date": "2024-03-01",
       "cover": "/assets/album-art/rain-022.jpg",
@@ -194,7 +194,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "Morning Lotus",
       "release_date": "2024-04-01",
       "cover": "/assets/album-art/rain-023.jpg",
@@ -204,7 +204,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "Late Night Cyber Circuit",
       "release_date": "2024-05-24",
       "cover": "/assets/album-art/rain-024.jpg",
@@ -214,7 +214,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "A day down the park",
       "release_date": "2025-01-10",
       "cover": "/assets/album-art/rain-025.jpg",
@@ -224,7 +224,7 @@
     },
     {
 
-      "artist": "smooch",
+      "artist": "angelfriend",
       "title": "guitar_4",
       "release_date": "2025-01-11",
       "cover": "/assets/album-art/rain-026.jpg",
@@ -254,7 +254,7 @@
     },
     {
 
-      "artist": "süleymon",
+      "artist": "hellayercs",
       "title": "21 yercs",
       "release_date": "2025-10-12",
       "cover": "/assets/album-art/rain-035.jpg",
@@ -264,7 +264,7 @@
     },
     {
 
-      "artist": "süleymon",
+      "artist": "hellayercs",
       "title": "wah",
       "release_date": "2025-10-27",
       "cover": "/assets/album-art/rain-036.jpg",
@@ -285,7 +285,7 @@
         { "title": "take ur place", "file": "/assets/music/take ur place.mp3" },
         { "title": "year14", "file": "/assets/music/year14.mp3" },
         { "title": "#krewlmusik", "file": "/assets/music/krewlmusik.mp3" },
-        { "title": "ghastly (ft. süleymon)", "file": "/assets/music/ghastly.mp3" },
+        { "title": "ghastly (ft. hellayercs)", "file": "/assets/music/ghastly.mp3" },
         { "title": "i never liked you", "file": "/assets/music/i never liked you.mp3" },
         { "title": "it feels like this (ft. lunamaryllis)", "file": "/assets/music/it feels like this.mp3" },
         { "title": "chokehold", "file": "/assets/music/chokehold.mp3" },
@@ -301,11 +301,11 @@
       "cover": "/assets/album-art/rain-032.jpg",
       "tracks": [
         { "title": "Hearteater", "file": "/assets/music/Hearteater.mp3" },
-        { "title": "blessed (ft. süleymon)", "file": "/assets/music/blessed.mp3" },
+        { "title": "blessed (ft. hellayercs)", "file": "/assets/music/blessed.mp3" },
         { "title": "believe the kids", "file": "/assets/music/believe the kids.mp3" },
         { "title": "KNOTENOUF", "file": "/assets/music/KNOTENOUF.mp3" },
         { "title": "Bossed up", "file": "/assets/music/Bossed up.mp3" },
-        { "title": "ggysm (ft. süleymon)", "file": "/assets/music/ggysm.mp3" },
+        { "title": "ggysm (ft. hellayercs)", "file": "/assets/music/ggysm.mp3" },
         { "title": "Undead rising", "file": "/assets/music/Undead rising.mp3" },
         { "title": "SOULSNATCHER", "file": "/assets/music/SOULSNATCHER.mp3" },
         { "title": "Blood on my teeth", "file": "/assets/music/Blood on my teeth.mp3" }
@@ -353,7 +353,7 @@
     },
     {
 
-      "artist": "smooch.",
+      "artist": "angelfriend.",
       "title": "To my ends",
       "release_date": "2025-12-19",
       "cover": "/assets/album-art/rain-041.jpg",

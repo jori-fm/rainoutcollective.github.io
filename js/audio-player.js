@@ -8,7 +8,7 @@
     };
     const displayArtist = (name = '') => {
       const n = String(name).trim();
-      return /^smooch\.?$/i.test(n) ? 'smooch.' : n;
+      return /^angelfriend\.?$/i.test(n) ? 'angelfriend.' : n;
     };
   
     // --- Elements ---

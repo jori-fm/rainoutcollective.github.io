@@ -185,9 +185,9 @@ body {
 
 .format-icon {
     position: absolute;
-    top: -15px;
+    top: 0; /* Anchors to the exact top edge */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%); /* Pulls it up exactly half its height */
     width: 30px;
     height: 30px;
     background: rgba(10, 20, 35, 0.9);
@@ -387,7 +387,8 @@ main { text-align: center; padding: 20px 0 40px; position: relative; z-index: 10
 
 .release:hover .format-icon {
     background: rgba(var(--accent-rgb), 0.3);
-    transform: translateX(-50%) scale(1.1);
+    /* Make sure to keep the -50%, -50% here too so it doesn't jump! */
+    transform: translate(-50%, -50%) scale(1.1); 
 }
 
 .release:hover::before { transform: scaleX(1); }
@@ -480,10 +481,23 @@ footer {
 
 .copyright { font-size: 0.95rem; color: #666; letter-spacing: 1px; }
 
-.streaming-links { display: flex; justify-content: center; gap: 12px; margin-top: 15px; }
+/* --- STREAMING LINKS --- */
+.streaming-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+    margin-top: 15px; 
+}
 
 .streaming-link {
-    font-size: 18px; transition: all 0.3s ease; opacity: 0.7; display: inline-flex;
+    font-size: 18px; 
+    transition: all 0.3s ease; 
+    opacity: 0.7; 
+    display: inline-flex;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
 }
 
 .streaming-link.spotify { color: #1DB954 !important; }
@@ -491,10 +505,19 @@ footer {
 .streaming-link.youtube { color: #FF0000 !important; }
 
 .streaming-link:hover {
-    opacity: 1; transform: translateY(-2px); filter: brightness(1.2);
+    opacity: 1; 
+    transform: translateY(-2px); 
+    filter: brightness(1.2);
+    text-decoration: none !important;
+    border: none !important;
 }
 
-.release .streaming-links a { color: inherit !important; }
+.release .streaming-links a { 
+    color: inherit !important; 
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
 
 /* Top Nav */
 .site-nav {
@@ -1419,7 +1442,7 @@ body.no-scroll { overflow: hidden; }
     letter-spacing: 1px;
 }
 
-/* --- Dark Promo (smooch. return) --- */
+/* --- Dark Promo (angelfriend. return) --- */
 .promo-video-box.dark-promo {
     /* Pitch black background to match the moody photo */
     background: #000000;

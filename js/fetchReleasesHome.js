@@ -25,31 +25,32 @@
       const ARTIST_PAGES = {
         lunamaryllis: 'lunamaryllis',
         shinrei: 'shinrei',
-        smooch: 'smooch',
-        'smooch.': 'smooch',
-        sunni: 'sunni',
+        angelfriend: 'angelfriend',
+        'angelfriend.': 'angelfriend',
+        suuni: 'suuni',
         v0calyst: 'V0CALYST',
         seraphim: 'seraphim',
         krewlty: 'krewlty',
-        suleymon: 'suleymon',
-        'süleymon': 'suleymon',
+        hellayercs: 'hellayercs',
+        'hellayercs': 'hellayercs',
         'claire-eterna': 'claire-eterna',
         "Claire Eterna": 'claire-eterna',
-        avalon: 'avalon'
+        avalon: 'avalon',
+        'sollaceee!': 'solace'
       };
         
         const displayArtist = (name = '') => {
           const n = String(name).trim();
           const nLower = n.toLowerCase();
-          return nLower === 'smooch' ? 'smooch.' :
-                 nLower === 'suleymon' ? 'süleymon' :
+          return nLower === 'angelfriend' ? 'angelfriend.' :
+                 nLower === 'hellayercs' ? 'hellayercs' :
                  nLower === 'claire-eterna' ? 'Claire Eterna' :
                  n;
         };
       
 
         const artistHTML = (name = '') => {
-          // 1. Split the raw string by comma (e.g. "sunni, V0CALYST")
+          // 1. Split the raw string by comma (e.g. "suuni, V0CALYST")
           const names = String(name).split(',');
       
           // 2. Map over each name to create a link or plain text
@@ -109,11 +110,24 @@
       
       links.innerHTML = htmlContent;
     } else {
-      links.innerHTML = `
-        <a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-        <a class="streaming-link apple"   href="${r['Apple Music']}" target="_blank" rel="noopener" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
-        <a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      `;
+      let releasedLinksHTML = '';
+      
+      // Only add the Spotify button if a link exists
+      if (r.Spotify) {
+        releasedLinksHTML += `<a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>\n`;
+      }
+      
+      // Only add the Apple Music button if a link exists
+      if (r['Apple Music']) {
+        releasedLinksHTML += `<a class="streaming-link apple" href="${r['Apple Music']}" target="_blank" rel="noopener" aria-label="Apple Music"><i class="fab fa-apple"></i></a>\n`;
+      }
+      
+      // Only add the YouTube button if a link exists
+      if (r.Youtube) {
+        releasedLinksHTML += `<a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>\n`;
+      }
+      
+      links.innerHTML = releasedLinksHTML;
     }
     el.appendChild(links);
     return el;

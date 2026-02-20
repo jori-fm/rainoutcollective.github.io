@@ -25,24 +25,25 @@
       const ARTIST_PAGES = {
         lunamaryllis: 'lunamaryllis',
         shinrei: 'shinrei',
-        smooch: 'smooch',
-        'smooch.': 'smooch',
-        sunni: 'sunni',
+        angelfriend: 'angelfriend',
+        'angelfriend.': 'angelfriend',
+        suuni: 'suuni',
         v0calyst: 'V0CALYST',
         seraphim: 'seraphim',
         krewlty: 'krewlty',
-        suleymon: 'suleymon',
-        'süleymon': 'suleymon',
+        hellayercs: 'hellayercs',
+        'hellayercs': 'hellayercs',
         'claire-eterna': 'claire-eterna',
         "Claire Eterna": 'claire-eterna',
-        avalon: 'avalon'
+        avalon: 'avalon',
+        'sollaceee!': 'solace'
       };
         
         const displayArtist = (name = '') => {
           const n = String(name).trim();
           const nLower = n.toLowerCase();
-          return nLower === 'smooch' ? 'smooch.' :
-                 nLower === 'suleymon' ? 'süleymon' :
+          return nLower === 'angelfriend' ? 'angelfriend.' :
+                 nLower === 'hellayercs' ? 'hellayercs' :
                  nLower === 'claire-eterna' ? 'Claire Eterna' :
                  n;
         };
@@ -98,11 +99,24 @@
       
       links.innerHTML = htmlContent;
     } else {
-      links.innerHTML = `
-        <a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-        <a class="streaming-link apple"   href="${r['Apple Music']}" target="_blank" rel="noopener" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
-        <a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      `;
+      let releasedLinksHTML = '';
+      
+      // Only add the Spotify button if a link exists
+      if (r.Spotify) {
+        releasedLinksHTML += `<a class="streaming-link spotify" href="${r.Spotify}" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a>\n`;
+      }
+      
+      // Only add the Apple Music button if a link exists
+      if (r['Apple Music']) {
+        releasedLinksHTML += `<a class="streaming-link apple" href="${r['Apple Music']}" target="_blank" rel="noopener" aria-label="Apple Music"><i class="fab fa-apple"></i></a>\n`;
+      }
+      
+      // Only add the YouTube button if a link exists
+      if (r.Youtube) {
+        releasedLinksHTML += `<a class="streaming-link youtube" href="${r.Youtube}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>\n`;
+      }
+      
+      links.innerHTML = releasedLinksHTML;
     }
     el.appendChild(links);
     return el;
@@ -120,7 +134,7 @@
       const all = await res.json();
 
       // UPDATED FILTER: Check if the artist field INCLUDES the current page's artist key
-      // This allows "sunni, V0CALYST" to show up on both pages.
+      // This allows "suuni, V0CALYST" to show up on both pages.
       const mine = all.filter(r => {
           const artists = (r.Artist || '').toLowerCase();
           // Split by comma to safely check individual names (avoids partial matches like 'rob' matching 'robert')
