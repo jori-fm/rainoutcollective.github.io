@@ -557,6 +557,17 @@
     "Spotify":"",
     "Apple Music":"",
     "Youtube":""
+  },
+  {
+
+    "Artist": "avalon",
+    "Title": "burning incense",
+    "Format": "Single",
+    "Release Date": "2026-03-01",
+    "Cover JPG": "assets/album-art/burning.jpg",
+    "Spotify": "https://open.spotify.com/album/3Mzf6dlkTUUk6w6h4Ls7Bg",
+    "Apple Music": "https://music.apple.com/us/album/burning-incense-single/1881157236",
+    "Youtube": "https://www.youtube.com/watch?v=HRLMaF2fx9k"
   }
 
   
