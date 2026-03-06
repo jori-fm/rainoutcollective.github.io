@@ -507,11 +507,12 @@
     "Title":"i say all people die searching for a place to belong",
     "Format":"Album/EP",
     "Release Date":"2026-03-06",
+    "detailsPage": "/releases/isayallpeopledie",
     "Cover JPG":"assets\/album-art\/avalonLP.jpg",
     "presave": "https://too.fm/isayallpeoplediesearchingforaplacetobelong",
-    "Spotify":"",
-    "Apple Music":"",
-    "Youtube":""
+    "Spotify":"https://open.spotify.com/album/3TaFzwVXSsFdFPW4HvDUMJ",
+    "Apple Music":"https://music.apple.com/us/album/i-say-all-people-die-searching-for-a-place-to-belong/1875373687",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_m06iNijMdxjC4AWQQTgF4brICQ0vhWA3c"
   },
   {
 
@@ -568,6 +569,27 @@
     "Spotify": "https://open.spotify.com/album/3Mzf6dlkTUUk6w6h4Ls7Bg",
     "Apple Music": "https://music.apple.com/us/album/burning-incense-single/1881157236",
     "Youtube": "https://www.youtube.com/watch?v=HRLMaF2fx9k"
+  },
+  {
+    "Artist":"avalon",
+    "Title":"^_^",
+    "Format":"Album/EP",
+    "Release Date":"2026-01-22",
+    "Cover JPG":"assets\/album-art\/^_^.jpg",
+    "Spotify":"https://open.spotify.com/album/0TMtbs4YY5PzM6yCmrBFcY",
+    "Apple Music":"https://music.apple.com/us/album/ep/1870134113",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_mNYtCMSDC7_PSgEX7LVwC8RNVzJuW5A0o"
+  },
+  {
+
+    "Artist": "cindy yearns",
+    "Title": "summer camp",
+    "Format": "Single",
+    "Release Date": "2026-03-06",
+    "Cover JPG": "assets/album-art/summercamp.png",
+    "Spotify": "https://open.spotify.com/album/74b6xCVVAYxM8QcK8gFm9U",
+    "Apple Music": "https://music.apple.com/us/album/summer-camp-single/1882636757",
+    "Youtube": "https://www.youtube.com/playlist?list=OLAK5uy_lwzM421iz_8L83-GKxL3pZ8MEcaCcGbQo"
   }
 
   

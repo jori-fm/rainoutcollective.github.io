@@ -36,7 +36,9 @@
         'claire-eterna': 'claire-eterna',
         "Claire Eterna": 'claire-eterna',
         avalon: 'avalon',
-        'sollaceee!': 'solace'
+        'sollaceee!': 'solace',
+        'cindy-yearns': 'cindy-yearns',
+    "cindy yearns": 'cindy-yearns'
       };
         
         const displayArtist = (name = '') => {
