@@ -1,6 +1,7 @@
 // --- Function to Load External HTML (Footer/Header) ---
+// Note: Added "return" so we can chain .then() to it!
 function loadComponent(elementId, filePath) {
-    fetch(filePath)
+    return fetch(filePath)
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.text();
@@ -21,24 +22,16 @@ function createRain() {
     const rainContainer = document.createElement('div');
     rainContainer.className = 'rain';
     
-    // REDUCED: Only 60 drops (was 250)
     for (let i = 0; i < 60; i++) { 
         const drop = document.createElement('div');
         drop.className = 'drop';
-        
         const posX = Math.random() * 100;
-        
         drop.style.cssText = `
             left: ${posX}%;
             animation-delay: ${Math.random() * -2}s; 
-            
-            /* SLOWER: 0.8s to 1.3s (was 0.5s) */
             animation-duration: ${Math.random() * 0.5 + 0.8}s;
-            
-            /* TRANSPARENCY: Random opacity between 0.2 and 0.5 */
             opacity: ${Math.random() * 0.3 + 0.2};
         `;
-        
         rainContainer.appendChild(drop);
     }
     
@@ -47,7 +40,6 @@ function createRain() {
 
 // --- 2. Hover Effects ---
 function setupReleaseHoverEffects() {
-    // Disable hover effects on mobile to prevent sticky hover states
     if (/Mobi|Android/i.test(navigator.userAgent)) return;
 
     document.querySelectorAll('.release').forEach(item => {
@@ -63,12 +55,42 @@ function setupReleaseHoverEffects() {
 // --- 3. MAIN INITIALIZATION (Runs when page is ready) ---
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Load the Footer
-    // Check if we are inside the "artists" folder
-const pathPrefix = window.location.pathname.includes('/artists/') ? '../' : '';
+    // Added /releases/ to the check so it fixes paths for your album pages too!
+    const pathPrefix = (window.location.pathname.includes('/artists/') || window.location.pathname.includes('/releases/')) ? '../' : '';
 
-// Load footer using the correct prefix
-loadComponent('global-footer', pathPrefix + 'footer.html');
+    // Load the Footer
+    loadComponent('global-footer', pathPrefix + 'footer.html');
+
+    // Load the Navbar AND THEN run the nav logic
+    loadComponent('global-nav', pathPrefix + 'nav.html').then(() => {
+        
+        // Highlight active link (Updated to just check the href directly)
+        document.querySelectorAll('.site-nav .nav-links a').forEach(a => {
+            const linkPath = a.getAttribute('href'); 
+            const currentPath = location.pathname.toLowerCase();
+            
+            if ((linkPath === '/' && (currentPath === '/' || currentPath === '/index.html')) ||
+                (linkPath !== '/' && currentPath.startsWith(linkPath))) {
+              a.classList.add('active');
+            }
+        });
+
+        // --- MOBILE MENU TOGGLE ---
+        const toggleBtn = document.querySelector('.nav-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.body.classList.toggle('nav-open');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (document.body.classList.contains('nav-open') && !e.target.closest('.site-nav')) {
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        }
+    });
+
     // Start Effects
     createRain(); 
     setupReleaseHoverEffects();
@@ -83,33 +105,7 @@ loadComponent('global-footer', pathPrefix + 'footer.html');
         });
     });
     
-    // Highlight active link
-    document.querySelectorAll('.site-nav .nav-links a').forEach(a => {
-        const m = a.dataset.match; 
-        const p = location.pathname.toLowerCase();
-        if ((m === '/' && (p === '/' || p === '/index.html')) ||
-            (m !== '/' && p.startsWith(m))) {
-          a.classList.add('active');
-        }
-    });
-
-    // --- MOBILE MENU TOGGLE ---
-    const toggleBtn = document.querySelector('.nav-toggle');
-    
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            document.body.classList.toggle('nav-open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (document.body.classList.contains('nav-open') && !e.target.closest('.site-nav')) {
-                document.body.classList.remove('nav-open');
-            }
-        });
-    }
-    
-    // Recreate snow on resize
+    // Recreate rain on resize
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);

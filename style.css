@@ -520,6 +520,9 @@ footer {
 }
 
 /* Top Nav */
+#global-nav {
+    display: contents;
+}
 .site-nav {
     max-width: 1180px; 
     margin: 8px auto 0; 
@@ -1818,4 +1821,136 @@ body.artist-bg-enabled .container {
         /* Prevents a wide image from forcing the viewport wider */
         max-width: 85vw; 
     }
+}
+
+/* --- STORE / SHOP PAGE --- */
+
+/* Empty State / Coming Soon */
+.shop-empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    margin-top: 40px;
+}
+
+.empty-box {
+    background: rgba(10, 15, 30, 0.6);
+    border: 1px dashed rgba(var(--accent-rgb), 0.4);
+    padding: 50px 30px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(4px);
+}
+
+.empty-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+.empty-box p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+}
+
+.pulse-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 10px var(--accent);
+    animation: pulseOpacity 2s infinite;
+}
+
+/* Product Grid (deadAir Style) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px 30px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.product-card {
+    text-align: left; /* DeadAir style left alignment */
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05); /* Very subtle border */
+}
+
+.product-image-wrap img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.product-card:hover .product-image-wrap img {
+    filter: brightness(1.1);
+}
+
+/* Pill Badges (Sold Out, Pre-Order, etc.) */
+.product-badge {
+    position: absolute;
+    bottom: -15px; /* Hangs off the bottom edge slightly */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5f5f5; /* Off-white deadAir style badge */
+    color: #111;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px; /* Pill shape */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Typography matching deadAir vibe */
+.product-info {
+    padding: 0 5px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.product-artist {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+}
+
+.product-price {
+    font-size: 1rem;
+    color: var(--accent); /* Or make it white for a cleaner look */
+    font-weight: bold;
+    margin: 0;
 }
