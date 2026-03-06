@@ -56,7 +56,7 @@ function setupReleaseHoverEffects() {
 document.addEventListener('DOMContentLoaded', () => {
 
     // Added /releases/ to the check so it fixes paths for your album pages too!
-    const pathPrefix = (window.location.pathname.includes('/artists/') || window.location.pathname.includes('/releases/')) ? '../' : '';
+    const pathPrefix = (window.location.pathname.includes('/artists/') || window.location.pathname.includes('/releases/') || window.location.pathname.includes('/interviews/')) ? '../' : '';
 
     // Load the Footer
     loadComponent('global-footer', pathPrefix + 'footer.html');

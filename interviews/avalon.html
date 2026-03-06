@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Interview: avalon - RAINOUT</title>
+
+  <meta property="og:title" content="Interview: avalon on the % trilogy, Identity, and the Future">
+  <meta property="og:description" content="We sat down with avalon to discuss the lore behind %, her transition into her new alias, and what is next for the collective.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rainoutcollective.com/interviews/avalon">
+  <meta property="og:image" content="https://rainoutcollective.com/assets/avalon-interviewbg.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interview: avalon - RAINOUT">
+  <meta name="twitter:description" content="avalon talks %, her new alias, and the future.">
+  <meta name="twitter:image" content="https://rainoutcollective.com/assets/avalon-interviewbg.jpg">
+  
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+  <div id="global-nav"></div>
+  <style>
+    /* --- INTERVIEW SPECIFIC STYLES --- */
+    .hero-interview {
+        height: 50vh;
+        /* Swap this background image for whatever Avalon art you want to use! */
+        background: linear-gradient(to bottom, rgba(8, 12, 20, 0.3), var(--bg-color)), url('/assets/avalon-interviewbg.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-interview h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.8);
+        color: #fff;
+    }
+
+    .hero-interview p {
+        font-size: 1.2rem;
+        color: #e0e0e0;
+        max-width: 700px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+    }
+
+    /* --- Q&A BLOCKS --- */
+    .qa-block {
+        margin-bottom: 2.5rem;
+        opacity: 0; 
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .qa-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- NAMES (Logo Font) --- */
+    .interviewer {
+        color: var(--accent);
+        font-family: 'SA Cinta', sans-serif; 
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .interviewer::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    /* --- SPOKEN TEXT (Courier) --- */
+    .interviewee {
+        color: #e6e6e6;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        padding-left: 20px;
+        border-left: 2px solid rgba(125, 249, 255, 0.1); /* Update the RGBA to match your cyan/blue if needed */
+        margin-left: 10px;
+    }
+
+    .interviewee strong {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+
+    .interviewee em {
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+    
+    .interviewee a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+        transition: all 0.3s ease;
+    }
+    .interviewee a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px var(--accent);
+        border-bottom-style: solid;
+    }
+
+    /* --- PULL QUOTE --- */
+    .pull-quote {
+        font-family: 'SA Cinta', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-align: center;
+        color: #fff;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.3);
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+        padding: 3rem 1rem;
+        margin: 4rem 0;
+        font-style: italic;
+        background: rgba(10, 20, 35, 0.4);
+    }
+
+    /* --- IN-ARTICLE IMAGE --- */
+    .interview-img-container {
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .interview-img {
+        max-width: 100%;
+        width: 400px; 
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        transition: transform 0.3s ease;
+    }
+    .interview-img.large {
+        width: 100%; 
+        max-width: 800px; 
+    }
+
+    .interview-img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.2);
+    }
+
+    .img-caption {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-family: 'Courier New', monospace;
+    }
+
+    .back-btn-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+  </style>
+</head>
+<body class="player-page"> 
+
+  
+
+  <header class="hero-interview">
+    <h1>avalon</h1>
+    <p>On the % Trilogy, Her Identity, and the Future</p>
+  </header>
+
+  <main class="content-container">
+        
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Tell me what's on your mind.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">A lot of different, unexplainable feelings. There are so many different thoughts going through my head right now, but they all come back down to one thing, which is working on my craft.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">I can tell you're very focused on working on your craft, especially with the way you put together your grail project that was put out, <em>"i say all people die searching for a place to belong"</em>—aka the second installment of the <em>%</em> trilogy. What made you conjure up this project?</div>
+    </div>
+    
+    <div class="interview-img-container qa-block">
+        <img src="/assets/album-art/avalonLP.jpg" alt="avalon artwork" class="interview-img">
+        <div class="img-caption">Cover for "i say all people die searching for a place to belong" / Made by Loctify</div>
+    </div>
+    
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">I used to write a lot of short stories and personal lore to help me come up with ideas and concepts for the original <em>%</em> project, and in doing so, I came up with the album title which has been around for the better part of a year now. The title was the last words of a man who had taken the life of his wife unknowingly on a beach, and later on took his own. The last words of that man were, <em>“All people die searching for a place to belong.”</em> That story in particular means a lot to me, and I wish to push it into the light as time progresses.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">What is the spectrum that is the <em>%</em> trilogy? How well do you think the projects go together? Since you have confirmed yourself you're working on a third installment already, which is something a lot of people will look forward to.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">I feel that as of right now, the story behind <em>Phase 1</em> and <em>2</em> is very obscure as I’ve not made it public in full, but when <em>Phase 3</em> comes around it will all begin to come together and all the pieces will just click. And on that topic, <em>Phase 3</em> is something I aim to be my greatest work yet. In <strong>all</strong> fields. I am already spending a large portion of my time working on concepts and ideas. I think that once this project is released to the world, everybody—even I—will be shocked at the leap. If you listen to any of my projects and don’t feel anything in conclusion, then I have failed.</div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "If you listen to any of my projects and don’t feel anything in conclusion, then I have failed."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">That is a heavy standard to hold yourself to, but it completely shows in the work. Speaking of those obscure pieces in <em>Phase 1</em> and <em>2</em>... do you enjoy keeping the listeners in the dark and watching them theorize, or is it agonizing having to hold back those secrets until <em>Phase 3</em> is finally ready?</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/avalonIMG.jpg" alt="avalon artwork" class="interview-img">
+        <div class="img-caption">Avalon's main image from her Spotify Artist gallery (3.6.2026)</div>
+    </div>
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">A bit of both. I actually know somebody who had been trying to figure out what each song on <em>%</em> meant, and I find it quite amusing. However, all I want is for people to understand the true meaning behind these projects because at the end of the day, <em>%</em> was created for me. Once the glass is spilt it will all make sense, but for now I must keep quiet and continue crafting my greatest piece yet. They know there is a story, but are unable to flip the pages.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">It's great to know how much these projects mean to you; people will know that you are actually authentic when it comes to your work. What are your plans when the <em>%</em> trilogy is finished? Are you going to dive into a different world of sound? Will you work more with people from <strong>RAINOUT</strong>? How should you continue your journey?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">I am honestly not sure as to what I will do after that point. I only have 3 projects planned, all of which I aspire to release before my eighteenth birthday, which include the <em>Gilded Ache Deluxe</em>, <em>% Phase 3</em>, and my self-titled album. I will definitely be working with more members from <strong>RAINOUT</strong> though, as there is a lot I want to create with them. I have a second collaborative tape with <strong>Loctify</strong> which will be releasing very, very soon, and I am planning on releasing an EP with <strong>shinrei</strong> later this year. Of course, these are only the main ones that are already planned—I want to work with everyone. <strong>Loctify, V0CALYST, luna, shinrei, suuni, sollaceee!, danny, jacob</strong>... literally everyone. I love <strong>RAINOUT</strong> and everyone in it, and I am incredibly grateful to be a part of it.</div>
+    </div>
+    <div class="interview-img-container qa-block">
+        <img src="/assets/avalonIMG2.jpg" alt="avalon artwork" class="interview-img">
+        <div class="img-caption">Cover for "GILDED ACHE"</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">I am very much looking forward to how you'll blend with these artists! Your versatility is very unique and you make an amazing addition to this collective. And I also cannot wait for that <em>Gilded Ache</em> deluxe!! I want to dive into another topic, being your transition from your old alias. What moved you to become <strong>avalon</strong>?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">A mix of a few things. Firstly was of course my transition from male to female in which my deadname was literally in my old alias, but also the fact that the name and entire discography from that era was incredibly sloppy and soulless, and I was incredibly embarrassed for that to be who I was. Now, the name <strong>avalon</strong> came from a song I discovered in 2023 with the same title by an artist named <strong>Zeruel</strong>. The song got taken down and reuploaded as a worse version for some reason, but I thankfully still have the original demo downloaded. The song saved my life in a very difficult time, and even to this day I still listen to it. Honestly, it inspired a lot of my newer work too. I'm not who I once was. <strong>avalon</strong> and whoever that was prior are two completely different people.</div>
+    </div>
+
+    <div class="interview-img-container qa-block">
+        <img src="/assets/avalonIMG3.png" alt="avalon artwork" class="interview-img">
+        <div class="img-caption">Cover for avalon's birthday EP '^_^'</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">I really appreciate that you shared that. I think it takes a lot of strength to close the door on an old identity. How different does the actual creative process feel? Does making music now feel like breathing fresh air, or did you have to relearn how to express yourself?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">It's sort of a strange feeling. Yes, whenever I release a song or create a project or do anything as <strong>avalon</strong> it feels great, and I am grateful that I'm free to be able to express who I truly am, but there has always been this background feeling that misses a part of the old me. There is just something so captivating about my old production and creative mindset that I cannot seem to replicate. It feels like the things that made me who I was are slipping out of my grasp. But that's okay, I think it's life's way of telling me to not become stuck in the past, and to create more that revolves around who I am now, not someone who I used to be.</div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "I think it's life's way of telling me to not become stuck in the past, and to create more that revolves around who I am now, not someone who I used to be."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">That's a great way to look at it! Growth means having to let go of a few things, but it makes room for exactly who you are meant to be now. To wrap it up, for everyone who's waiting for that <em>Gilded Ache</em> deluxe and <em>% Phase 3</em>, what is one thing you want them to know before they hear what you've been working on?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">avalon</div>
+        <div class="interviewee">Keep your expectations high. I crave the pressure. I promise that it is worth the wait, and maybe if they are patient enough, I will reveal the truth behind <em>%</em> sooner than you think.</div>
+    </div>
+
+    <div class="back-btn-container qa-block">
+        <a href="/artists/avalon" class="back-button">← Back to avalon</a>
+    </div>
+
+  </main>
+
+  <div id="global-footer"></div>
+  <script src="/script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.qa-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+  </script>
+</body>
+</html>
