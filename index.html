@@ -39,27 +39,46 @@
                 <h2>ABOUT US</h2>
                 <p>RAINOUT is an independent music collective & label  dedicated to embracing underground music diversity from young artists. Founded in 2024.</p>
             </div>
-            <div class="avalon-promo">
-                <div class="promo-icon top-left"><i class="fa-solid fa-asterisk"></i></div>
-                
-                <div class="promo-icon bottom-right"><i class="fa-solid fa-spa"></i></div>
+            <style>
+                @keyframes float-apple {
+                    0% { transform: translateY(0px) rotate(-5deg); }
+                    50% { transform: translateY(-12px) rotate(5deg); }
+                    100% { transform: translateY(0px) rotate(-5deg); }
+                }
+                .anim-apple {
+                    animation: float-apple 6s ease-in-out infinite;
+                }
+                .anim-apple-delayed {
+                    animation: float-apple 6s ease-in-out infinite;
+                    animation-delay: -3s; /* Makes them float out of sync */
+                }
+            </style>
             
-                <div class="promo-content">
-                    <h3>OUT NOW</h3>
-                    <h2>"i say all people die searching for a place to belong"</h2>
-                    <p>Avalon's debut RAINOUT album: A deep dive into alternative ambience and rock.</p>
-                    
-                    <div class="video-container">
-                        <iframe 
-                            width="560" 
-                            height="315" 
-                            src="https://www.youtube.com/embed/G_K0VV9frsQ" 
-                            title="Avalon Album Premiere" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+            <div class="promo-container" style="position: relative; background-color: #1a0505; border: 1px solid #3d0c0c; border-radius: 12px; padding: 35px 30px 75px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(26, 5, 5, 0.6); overflow: hidden;">
+                
+                <i class="fa-solid fa-apple-whole anim-apple" style="position: absolute; top: 30px; left: 30px; color: #d92626; font-size: 45px; opacity: 0.25;"></i>
+                
+                <i class="fa-solid fa-apple-whole anim-apple-delayed" style="position: absolute; bottom: 30px; right: 30px; color: #d92626; font-size: 45px; opacity: 0.25;"></i>
+            
+                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #ff6666; margin-bottom: 15px; text-transform: uppercase;">
+                    Premieres 3.18.2026
+                </p>
+                
+                <h2 style="font-family: 'SA Cinta', sans-serif; font-style: normal; font-size: 36px; color: #ffffff; margin-top: 0; margin-bottom: 20px; letter-spacing: 2px;">
+                    "APPLELOVE"
+                </h2>
+                
+                <p style="font-family: monospace; font-size: 13px; color: #cccccc; margin-bottom: 35px;">
+                    The debut RAINOUT Mixtape by sollaceee!
+                </p>
+            
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                    <iframe 
+                        src="https://www.youtube.com/embed/HW_PKI8Wev8" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
             <a href="/interviews/avalon" class="interview-promo-link">
