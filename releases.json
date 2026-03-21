@@ -591,6 +591,26 @@
     "Spotify": "https://open.spotify.com/album/74b6xCVVAYxM8QcK8gFm9U",
     "Apple Music": "https://music.apple.com/us/album/summer-camp-single/1882636757",
     "Youtube": "https://www.youtube.com/playlist?list=OLAK5uy_lwzM421iz_8L83-GKxL3pZ8MEcaCcGbQo"
+  },
+  {
+    "Artist":"avalon",
+    "Title":"%",
+    "Format":"Album/EP",
+    "Release Date":"2025-09-05",
+    "Cover JPG":"assets\/album-art\/percent.png",
+    "Spotify":"https://open.spotify.com/album/0fbR4SbRkrgZcbl3chVedM",
+    "Apple Music":"https://music.apple.com/us/album/1885089389",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_lY4dLL2kO-fDKsDx0hA_8sBYD7lUvViws"
+  },
+  {
+    "Artist":"sollaceee!",
+    "Title":"KIDS CAN'T KILL!",
+    "Format":"Album/EP",
+    "Release Date":"2025-12-12",
+    "Cover JPG":"assets\/album-art\/kck.png",
+    "Spotify":"https://open.spotify.com/album/0ZcpRFOY9HWn2GdCg0z6xf",
+    "Apple Music":"https://music.apple.com/us/album/kids-cant-kill/1885224249",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_n6aOgKp7aphNLuNM88NRMxMebegfYOzg0"
   }
 
   
