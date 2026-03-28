@@ -410,6 +410,31 @@
         { "title": "turned on me", "file": "/assets/music/^_^/turned on me.mp3" }
 
       ]
+    },
+    {
+      "catalog": "RAIN-007",
+      "artist": "sollaceee!",
+      "title": "appleLove",
+      "release_date": "2026-03-20",
+      "cover": "/assets/album-art/appleLove.jpg",
+      "tracks": [
+        { "title": "fake saints", "file": "/assets/music/appleLove/fake saints.mp3" },
+        { "title": "brains", "file": "/assets/music/appleLove/brains.mp3" },
+        { "title": "oxtail", "file": "/assets/music/appleLove/oxtail.mp3" },
+        { "title": "what would a singer do (ft. lunamaryllis)", "file": "/assets/music/appleLove/what would a singer do.mp3" },
+        { "title": "one thing (ft. avalon)", "file": "/assets/music/appleLove/one thing.mp3" },
+        { "title": "me & us", "file": "/assets/music/appleLove/me & us.mp3" },
+        { "title": "what i do (ft. V0CALYST, cindy yearns)", "file": "/assets/music/appleLove/what i do.mp3" },
+        { "title": "hunyun (ft. jayys)", "file": "/assets/music/appleLove/hunyun.mp3" },
+        { "title": "dance [interlude]", "file": "/assets/music/appleLove/dance [interlude].mp3" },
+        { "title": "supersoakers what i tote", "file": "/assets/music/appleLove/supersoakers what i tote.mp3" },
+        { "title": "neck", "file": "/assets/music/appleLove/neck.mp3" },
+        { "title": "19", "file": "/assets/music/appleLove/19.mp3" },
+        { "title": "all my texts are green (ft. jayys)", "file": "/assets/music/appleLove/all my texts are green.mp3" },
+        { "title": "bad omens", "file": "/assets/music/appleLove/bad omens.mp3" },
+        { "title": "PEZZZ! - drafting texts", "file": "/assets/music/appleLove/drafting texts.mp3" }
+
+      ]
     }
 
 
