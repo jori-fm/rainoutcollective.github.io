@@ -36,7 +36,7 @@
         'claire-eterna': 'claire-eterna',
         "Claire Eterna": 'claire-eterna',
         avalon: 'avalon',
-        'sollaceee!': 'solace',
+        'sollaceee!': 'sollaceee',
         'cindy-yearns': 'cindy-yearns',
     "cindy yearns": 'cindy-yearns'
       };
