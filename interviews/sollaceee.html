@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Interview: sollaceee! - RAINOUT</title>
+
+  <meta property="og:title" content="Interview: sollaceee! on appleLove, the ruubie alias, and Meeting Earl">
+  <meta property="og:description" content="We sat down with sollaceee! to discuss the riotous energy of appleLove, dropping the KIDS CAN'T KILL! deluxe, and their future as a producer.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rainoutcollective.com/interviews/sollaceee">
+  <meta property="og:image" content="https://rainoutcollective.com/assets/sollaceee-interviewbg.png">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interview: sollaceee! - RAINOUT">
+  <meta name="twitter:description" content="sollaceee! talks appleLove, producing as 'ruubie', and his journey.">
+  <meta name="twitter:image" content="https://rainoutcollective.com/assets/sollaceee-interviewbg.png">
+  
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+  <div id="global-nav"></div>
+  <style>
+    /* --- INTERVIEW SPECIFIC STYLES --- */
+    .hero-interview {
+        height: 50vh;
+        /* Swap this background image for whatever sollaceee! art you want to use! */
+        background: linear-gradient(to bottom, rgba(8, 12, 20, 0.3), var(--bg-color)), url('/assets/sollaceee-interviewbg.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .hero-interview h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.8);
+        color: #fff;
+    }
+
+    .hero-interview p {
+        font-size: 1.2rem;
+        color: #e0e0e0;
+        max-width: 700px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+    }
+
+    /* --- Q&A BLOCKS --- */
+    .qa-block {
+        margin-bottom: 2.5rem;
+        opacity: 0; 
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .qa-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- NAMES (Logo Font) --- */
+    .interviewer {
+        color: var(--accent);
+        font-family: 'SA Cinta', sans-serif; 
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .interviewer::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    /* --- SPOKEN TEXT (Courier) --- */
+    .interviewee {
+        color: #e6e6e6;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        padding-left: 20px;
+        border-left: 2px solid rgba(125, 249, 255, 0.1); /* Update the RGBA to match your cyan/blue if needed */
+        margin-left: 10px;
+    }
+
+    .interviewee strong {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+
+    .interviewee em {
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+    
+    .interviewee a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+        transition: all 0.3s ease;
+    }
+    .interviewee a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px var(--accent);
+        border-bottom-style: solid;
+    }
+
+    /* --- PULL QUOTE --- */
+    .pull-quote {
+        font-family: 'SA Cinta', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-align: center;
+        color: #fff;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.3);
+        border-bottom: 1px solid rgba(var(--accent-rgb), 0.3);
+        padding: 3rem 1rem;
+        margin: 4rem 0;
+        font-style: italic;
+        background: rgba(10, 20, 35, 0.4);
+    }
+
+    /* --- IN-ARTICLE IMAGE --- */
+    .interview-img-container {
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .interview-img {
+        max-width: 100%;
+        width: 400px; 
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        transition: transform 0.3s ease;
+    }
+    .interview-img.large {
+        width: 100%; 
+        max-width: 800px; 
+    }
+
+    .interview-img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.2);
+    }
+
+    .img-caption {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-family: 'Courier New', monospace;
+    }
+
+    .back-btn-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+  </style>
+</head>
+<body class="player-page"> 
+
+  <header class="hero-interview">
+    <h1>sollaceee!</h1>
+    <p>On "appleLove", the ruubie alias, and his journey.</p>
+  </header>
+
+  <main class="content-container">
+        
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Almost a week after <em>appleLove</em> dropped, how are you feeling?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">Umm, I feel relief. It's a project that took more time to work on than <em>KIDS CAN'T KILL!</em>, so it feels more thorough. Which is why I give this tape more flowers than <em>[KIDS CAN'T KILL!]</em>. <em>[KIDS CAN'T KILL!]</em> was made in a day, but I felt like I could've sat on the ideas a bit longer so I could've made a more cohesive release.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee"><em>KIDS CAN'T KILL!</em> was made in a day? How'd you go about that?</div>
+    </div>
+    
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">My mom was out of the house for the day, so I had the chance to just be loud, horny, and aggressive.</div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "My mom was out of the house for the day, so I had the chance to just be loud, horny, and aggressive."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">That's genuinely crazy. <em>KIDS CAN'T KILL!</em> is basically your debut album under your <strong>sollaceee!</strong> moniker. You announced a deluxe but swiftly moved to work on <em>appleLove</em>. Will that deluxe see the light of day anytime this year?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">Maybe? One of the producers sent me some beats that I wanted to use, but he ended up wanting to charge me. Dick move, so I kinda just buried the deluxe. Actually, scratch maybe—it's just not coming out at all. I think now that we’re on <em>appleLove</em>, there are more important things to be done than to go back to <em>[KIDS CAN'T KILL!]</em>.</div>
+    </div>
+    
+    <div class="interview-img-container qa-block">
+        <img src="/assets/album-art/applelove.jpg" alt="appleLove Cover" class="interview-img">
+        <div class="img-caption">The cover for 'appleLove' / Made by deafaye</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Will <em>appleLove</em> be getting a deluxe or a continuation? It's a mixtape after all, but will you continue that aesthetic on a different project?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">A sister EP will be in the works later this year, but I've been burned out lyrically. Right now, I'm just trying to produce because that was my original home.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Ahhh yeah, I've noticed you've adopted a new producer alias for yourself, <strong>ruubie</strong>. It's unique knowing you cherish the idea of producing as well. Will you be balancing your craft between <strong>sollaceee!</strong> and <strong>ruubie</strong> from here on?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">That's the plan. <strong>ruubie</strong> is kind of for everyone. <strong>sollaceee!</strong> is really for me and whoever I choose to invite to that circle. I haven’t been producing as much in 2025, but I got FL Studio Producer Edition this year, so I'm going to use it as much as I can. There are still things to learn as a producer, but with time I’ll learn enough to executively produce my own music again. Maybe even other people too.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">That's very nice to know that you'll be diving more into the prod game this year. Is there any other project you'll be working on this year other than the <em>appleLove</em> sister EP, or will you be cooling off to focus on producing?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">Something secret is being worked on, but nobody will see that until probably next year or the following. Who knows how long, but all I know is that I’ll be working hard on this secret. May it be my best work yet.</div>
+    </div>
+
+    <div class="interview-img-container qa-block">
+        <img src="/assets/album-art/whatido.jpg" alt="sollaceee photo" class="interview-img">
+        <div class="img-caption">The cover for the appleLove lead single 'what i do' / made by funassyi</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Can't wait to see when that's revealed. Let's talk about the crazy chain of events yesterday. You got to meet Earl Sweatshirt and get an exclusive vinyl, how'd you feel during those moments?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">Earl and MIKE are special to me. Jayys and I took a bunch of inspiration from them for our earlier music before <em>disquiet</em> and <em>[KIDS CAN'T KILL!]</em>. Finally seeing Earl in person is really a lifelong dream for me. I'm going to try and see them on the tour they got going on this summer.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">When exactly did you start your music journey?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">I was at northernscene's house back in 2021. <em>Donda</em> dropped that morning, and after we listened to the album, I really didn't know what to do, so I asked him if he made music, and from there I just made my first beat. It was a Pi'erre/Playboi Carti type beat that's honestly outdated as fuck, but it sparked me to start making beats. At first, I was using Soundtrap because I got put onto it while taking a music class, which honestly is terrible. But I was making beats during class time, and I just felt so inspired. I didn’t even know a quarter of the artists I know now back in 2021.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Since you're focusing heavily on production this year and want to produce for other people, who is currently on your dream placement list? Who do you want to send a <strong>ruubie</strong> beat to right now?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">Honestly, just more <strong>RAINOUT</strong> members. Those are the people I can for sure trust with a beat from me. I'd also like to get some stuff done with, hopefully, <strong>bleood</strong>. He's deadass my inspiration. I saw him yesterday, and it was one of the greatest shows I've been to. <strong>lucy bedroque</strong> too.</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">With how far you've come so far, I can see you achieving these in the coming years. If someone discovers <strong>sollaceee!</strong> five years from now and the first thing they listen to is <em>appleLove</em>, what is the one specific feeling or message you hope they walk away with?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">I hope they walk away confused. <em>appleLove</em> has so many distinct sounds that someone would genuinely get confused on what the project is about. Honestly, I don't even know what the tape is about, but I titled it <em>appleLove</em> because I love apples.</div>
+    </div>
+
+    <div class="pull-quote qa-block">
+        "Honestly, I don't even know what the tape is about, but I titled it appleLove because I love apples."
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">jori</div>
+        <div class="interviewee">Alright, let's wrap things up with an off-topic question. If you had your own <strong>sollaceee!</strong> special meal in any fast food chain, what would it have? What chain would it be in?</div>
+    </div>
+
+    <div class="qa-block">
+        <div class="interviewer">sollaceee!</div>
+        <div class="interviewee">Huh. I would have a double cheeseburger with lettuce, grilled onions, bacon, and egg with fries and a strawberry milkshake from Stormburger. No pickles or tomato whatsoever. I'd rather rub my face in a shitty ass before I consume a pickle.</div>
+    </div>
+
+    <div class="back-btn-container qa-block">
+        <a href="/artists/sollaceee" class="back-button">← Back to sollaceee!</a>
+    </div>
+
+  </main>
+
+  <div id="global-footer"></div>
+  <script src="/script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.qa-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+  </script>
+</body>
+</html>
