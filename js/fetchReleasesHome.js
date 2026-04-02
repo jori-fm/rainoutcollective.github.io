@@ -28,6 +28,7 @@
         angelfriend: 'angelfriend',
         'angelfriend.': 'angelfriend',
         suuni: 'suuni',
+        jayys: 'jayys',
         v0calyst: 'V0CALYST',
         seraphim: 'seraphim',
         krewlty: 'krewlty',
