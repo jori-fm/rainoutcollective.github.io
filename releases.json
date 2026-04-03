@@ -619,10 +619,11 @@
     "Format":"Album/EP",
     "Release Date":"2026-04-03",
     "Cover JPG":"assets\/album-art\/7deadlysins.png",
+    "detailsPage": "/releases/7deadlysins",
     "presave": "https://too.fm/7ds",
-    "Spotify":"",
-    "Apple Music":"",
-    "Youtube":""
+    "Spotify":"https://open.spotify.com/album/6ePpqCW9kPWYgjtz6pU2Gz",
+    "Apple Music":"https://music.apple.com/us/album/7-deadly-sins/1890343994",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_lViOMXlKbsl1gzobqwnO5PVemmxiGtaA4"
   },
   {
     "Catalog#":"RAIN-010",
@@ -635,6 +636,26 @@
     "Spotify":"",
     "Apple Music":"",
     "Youtube":""
+  },
+  {
+    "Artist":"PEZZZ!",
+    "Title":"stick em up",
+    "Format":"Single",
+    "Release Date":"2026-04-03",
+    "Cover JPG":"assets\/album-art\/stickemup.png",
+    "Spotify":"https://open.spotify.com/album/09PjsxFXvKiAxANX9Q4bHf",
+    "Apple Music":"https://music.apple.com/us/album/stick-em-up-single/1890360066",
+    "Youtube":"https://www.youtube.com/watch?v=deb4nJgePY4"
+  },
+  {
+    "Artist":"Castle Belmont",
+    "Title":"Fleur de Lis",
+    "Format":"Single",
+    "Release Date":"2026-04-03",
+    "Cover JPG":"assets\/album-art\/fleurdelis.png",
+    "Spotify":"https://open.spotify.com/album/2qAX5zo5settoIglx42EQP",
+    "Apple Music":"",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_ma3y0xFPSuRPO3nn-q4M9a81yIEvfOz4c"
   }
 
   

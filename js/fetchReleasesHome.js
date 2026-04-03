@@ -27,6 +27,8 @@
         shinrei: 'shinrei',
         angelfriend: 'angelfriend',
         'angelfriend.': 'angelfriend',
+        pezzz: 'PEZZZ',
+        'pezzz!': 'PEZZZ',
         suuni: 'suuni',
         jayys: 'jayys',
         v0calyst: 'V0CALYST',
@@ -39,7 +41,8 @@
         avalon: 'avalon',
         'sollaceee!': 'sollaceee',
         'cindy-yearns': 'cindy-yearns',
-    "cindy yearns": 'cindy-yearns'
+        "cindy yearns": 'cindy-yearns',
+        "castle belmont": 'castle-belmont'
       };
         
         const displayArtist = (name = '') => {
