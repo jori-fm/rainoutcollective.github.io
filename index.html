@@ -37,48 +37,55 @@
             
             <div class="about">
                 <h2>ABOUT US</h2>
-                <p>RAINOUT is an independent music collective & label  dedicated to embracing underground music diversity from young artists. Founded in 2024.</p>
+                <p>RAINOUT is an independent music collective & label  dedicated to embracing underground music diversity from young artists. Founded in December 2024.</p>
             </div>
             <style>
-                @keyframes float-sin {
-                    0% { transform: translateY(0px) rotate(-10deg); }
-                    50% { transform: translateY(-15px) rotate(5deg); }
-                    100% { transform: translateY(0px) rotate(-10deg); }
+                @keyframes float-spike {
+                    0% { transform: translateY(0px) rotate(-10deg) scale(1); }
+                    50% { transform: translateY(-15px) rotate(15deg) scale(1.05); }
+                    100% { transform: translateY(0px) rotate(-10deg) scale(1); }
                 }
-                .anim-sin {
-                    animation: float-sin 7s ease-in-out infinite;
+                .anim-spike {
+                    animation: float-spike 6s ease-in-out infinite;
                 }
-                .anim-sin-delayed {
-                    animation: float-sin 7s ease-in-out infinite;
-                    animation-delay: -3.5s; /* Makes them float out of sync */
+                .anim-spike-delayed {
+                    animation: float-spike 6s ease-in-out infinite;
+                    animation-delay: -3s; /* Makes them float out of sync */
+                }
+                .promo-cover-hover {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                .promo-cover-hover:hover {
+                    transform: translateY(-5px) scale(1.02);
+                    box-shadow: 0 20px 40px rgba(171, 78, 167, 0.4) !important;
                 }
             </style>
             
-            <div class="promo-container" style="position: relative; background-color: #0d120e; border: 1px solid #1a3b22; border-radius: 12px; padding: 35px 30px 75px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(13, 18, 14, 0.6); overflow: hidden;">
+            <div class="promo-container" style="position: relative; background-color: #0f020e; border: 1px solid rgba(171, 78, 167, 0.3); border-radius: 12px; padding: 35px 30px 75px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(171, 78, 167, 0.15); overflow: hidden;">
                 
-                <div class="anim-sin" style="position: absolute; top: 30px; left: 30px; opacity: 0.35; display: flex; align-items: center; gap: 5px;">
-                    <i class="fa-solid fa-leaf" style="color: #124d29; font-size: 40px;"></i>
-                    <i class="fa-solid fa-circle" style="color: #2c0e40; font-size: 18px; margin-top: 15px;"></i>
+                <div class="anim-spike" style="position: absolute; top: 30px; left: 30px; opacity: 0.25;">
+                    <i class="fa-solid fa-certificate" style="color: #AB4EA7; font-size: 45px;"></i>
                 </div>
                 
-                <div class="anim-sin-delayed" style="position: absolute; bottom: 30px; right: 30px; opacity: 0.35; display: flex; align-items: center; gap: 5px;">
-                    <i class="fa-solid fa-circle" style="color: #2c0e40; font-size: 18px; margin-bottom: 15px;"></i>
-                    <i class="fa-solid fa-leaf" style="color: #124d29; font-size: 40px;"></i>
+                <div class="anim-spike-delayed" style="position: absolute; bottom: 30px; right: 30px; opacity: 0.25;">
+                    <i class="fa-solid fa-certificate" style="color: #AB4EA7; font-size: 45px;"></i>
                 </div>
             
-                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #800080; margin-bottom: 15px; text-transform: uppercase;">
-                    OUT NOW
+                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #AB4EA7; margin-bottom: 15px; text-transform: uppercase;">
+                    Out Now
                 </p>
                 
                 <h2 style="font-family: 'SA Cinta', sans-serif; font-style: normal; font-size: 36px; color: #ffffff; margin-top: 0; margin-bottom: 20px; letter-spacing: 2px;">
-                    "7 DEADLY SINS"
+                    "X LIFE"
                 </h2>
                 
                 <p style="font-family: monospace; font-size: 13px; color: #cccccc; margin-bottom: 35px;">
-                    The new EP by V0CALYST, "sloth" video OUT NOW!
+                    A debut RAINOUT album by jayys. Art by maku
                 </p>
             
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/KXuep47s-F8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.6); max-width: 600px; margin: 0 auto; display: block; border: 1px solid #1a3b22;"></iframe>
+                <a href="/releases/xlife" style="display: block; margin: 0 auto; max-width: 550px; text-decoration: none;">
+                    <img class="promo-cover-hover" src="/assets/album-art/xlife.jpg" alt="Listen to X Life" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.6); border: 1px solid rgba(171, 78, 167, 0.3);">
+                </a>
             </div>
             <a href="/interviews/sollaceee" class="interview-promo-link">
                 <div class="interview-promo-box">

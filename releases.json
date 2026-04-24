@@ -632,10 +632,11 @@
     "Format":"Album/EP",
     "Release Date":"2026-04-17",
     "Cover JPG":"assets\/album-art\/xlife.jpg",
+    "detailsPage": "/releases/xlife",
     "presave": "https://too.fm/xlife",
-    "Spotify":"",
-    "Apple Music":"",
-    "Youtube":""
+    "Spotify":"https://open.spotify.com/album/0AgwZ4115VvABluyAEY9XB",
+    "Apple Music":"https://music.apple.com/us/album/x-life/1890609170",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_keG4juvQqywqHYnqBL4HobYNmksV_lJVY"
   },
   {
     "Artist":"PEZZZ!",

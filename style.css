@@ -11,23 +11,24 @@
 }
 
 :root {
-    /* --- RAINOUT DARK THEME (Restored) --- */
+    /* --- RAINOUT SUMMER PURPLE THEME --- */
     
-    /* Backgrounds: Deep Midnight Blue */
-    --bg-color: #080c14; 
-    --bg-gradient: radial-gradient(circle at center, #152238 0%, #06090f 100%);
+    /* Backgrounds: Deep Moody Purple-Black */
+    --bg-color: #0f020e; 
+    --bg-gradient: radial-gradient(circle at center, #250a23 0%, #0a0109 100%);
     
     /* Text Colors */
     --text: #e6e6e6;             /* Bright White-Grey for main text */
-    --text-secondary: #8899ac;   /* Muted Blue-Grey for subtitles/meta */
+    --text-secondary: #c2a3c0;   /* Muted pink-grey for subtitles/meta */
     
     /* Brand Colors */
-    --accent: #ffffff;           /* "Electric Cyan" for glowing text/links */
-    --primary: #080c14;          /* Matches background for cards */
+    --accent: #AB4EA7;           /* Summer Purple */
+    --accent-rgb: 171, 78, 167;  /* Added so all rgba glows work perfectly */
+    --primary: #0f020e;          /* Matches background for cards */
     
     /* Borders & overlays */
-    --border: rgba(125, 249, 255, 0.2); /* Faint cyan border */
-    --card-bg: rgba(15, 25, 40, 0.8);   /* Semi-transparent dark blue for cards */
+    --border: rgba(171, 78, 167, 0.2); 
+    --card-bg: rgba(26, 5, 24, 0.8);   
 }
 
 body {

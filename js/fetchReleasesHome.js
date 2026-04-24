@@ -151,8 +151,11 @@
       // Sort newest -> oldest
       data.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
       
-      // Take top 4 for homepage
-      const latest = data.slice(0, 4);
+      // Filter out Singles so ONLY Albums/EPs are shown
+      const albumsOnly = data.filter(r => !isSingle(r));
+      
+      // Take top 4 Albums/EPs for homepage
+      const latest = albumsOnly.slice(0, 4);
       
       grid.classList.remove('loading');
       
