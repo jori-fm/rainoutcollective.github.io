@@ -40,53 +40,135 @@
                 <p>RAINOUT is an independent music collective & label  dedicated to embracing underground music diversity from young artists. Founded in December 2024.</p>
             </div>
             <style>
-                @keyframes float-spike {
-                    0% { transform: translateY(0px) rotate(-10deg) scale(1); }
-                    50% { transform: translateY(-15px) rotate(15deg) scale(1.05); }
-                    100% { transform: translateY(0px) rotate(-10deg) scale(1); }
+                /* Glitch Text Animations */
+                @keyframes glitch-skew {
+                    0% { transform: skew(0deg); }
+                    20% { transform: skew(-5deg); }
+                    40% { transform: skew(5deg); }
+                    60% { transform: skew(0deg); }
+                    80% { transform: skew(2deg); }
+                    100% { transform: skew(0deg); }
                 }
-                .anim-spike {
-                    animation: float-spike 6s ease-in-out infinite;
+                .glitch-text {
+                    position: relative;
+                    color: #ffffff;
+                    font-family: 'SA Cinta', sans-serif;
+                    font-size: 38px;
+                    letter-spacing: 3px;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                    text-shadow: 2px 2px #00E5FF, -2px -2px #FF00E6;
+                    animation: glitch-skew 3s infinite alternate-reverse;
                 }
-                .anim-spike-delayed {
-                    animation: float-spike 6s ease-in-out infinite;
-                    animation-delay: -3s; /* Makes them float out of sync */
+                .glitch-text::before, .glitch-text::after {
+                    content: attr(data-text);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.8;
                 }
+                .glitch-text::before {
+                    left: 2px;
+                    text-shadow: -2px 0 #00E5FF;
+                    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+                    animation: glitch-skew 2s infinite alternate-reverse;
+                }
+                .glitch-text::after {
+                    left: -2px;
+                    text-shadow: -2px 0 #FF00E6;
+                    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+                    animation: glitch-skew 4s infinite alternate-reverse;
+                }
+
+                /* Floating CD Animations */
+                @keyframes float-cd {
+                    0% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-10px) rotate(180deg); }
+                    100% { transform: translateY(0px) rotate(360deg); }
+                }
+                .anim-cd {
+                    animation: float-cd 8s linear infinite;
+                }
+                .anim-cd-delayed {
+                    animation: float-cd 8s linear infinite;
+                    animation-delay: -4s; /* Out of sync */
+                }
+
+                /* Container Hover & Glitch States */
                 .promo-cover-hover {
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
                 .promo-cover-hover:hover {
                     transform: translateY(-5px) scale(1.02);
-                    box-shadow: 0 20px 40px rgba(171, 78, 167, 0.4) !important;
+                    box-shadow: 0 20px 40px rgba(0, 229, 255, 0.4) !important;
+                }
+
+                /* JS-Triggered Glitch Classes for the Bar */
+                .promo-container {
+                    transition: transform 0.05s ease, box-shadow 0.05s ease;
+                }
+                .glitch-hard-1 {
+                    transform: translate(-4px, 3px) skewX(-2deg);
+                    box-shadow: -4px 0 15px #00E5FF, 4px 0 15px #FF00E6 !important;
+                }
+                .glitch-hard-2 {
+                    transform: translate(4px, -2px) skewX(3deg);
+                    box-shadow: 4px 0 15px #00E5FF, -4px 0 15px #FF00E6 !important;
+                    filter: hue-rotate(90deg) contrast(150%);
                 }
             </style>
             
-            <div class="promo-container" style="position: relative; background-color: #0f020e; border: 1px solid rgba(171, 78, 167, 0.3); border-radius: 12px; padding: 35px 30px 75px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(171, 78, 167, 0.15); overflow: hidden;">
+            <div id="pta-promo-bar" class="promo-container" style="position: relative; background-color: #040814; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 12px; padding: 35px 30px 75px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(0, 229, 255, 0.15); overflow: hidden;">
                 
-                <div class="anim-spike" style="position: absolute; top: 30px; left: 30px; opacity: 0.25;">
-                    <i class="fa-solid fa-certificate" style="color: #AB4EA7; font-size: 45px;"></i>
+                <div class="anim-cd" style="position: absolute; top: 30px; left: 30px; opacity: 0.3;">
+                    <i class="fa-solid fa-compact-disc" style="color: #00E5FF; font-size: 45px;"></i>
                 </div>
                 
-                <div class="anim-spike-delayed" style="position: absolute; bottom: 30px; right: 30px; opacity: 0.25;">
-                    <i class="fa-solid fa-certificate" style="color: #AB4EA7; font-size: 45px;"></i>
+                <div class="anim-cd-delayed" style="position: absolute; bottom: 30px; right: 30px; opacity: 0.3;">
+                    <i class="fa-solid fa-compact-disc" style="color: #FF00E6; font-size: 45px;"></i>
                 </div>
             
-                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #AB4EA7; margin-bottom: 15px; text-transform: uppercase;">
-                    Out Now
+                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #00E5FF; margin-bottom: 15px; text-transform: uppercase;">
+                    Upcoming Release
                 </p>
                 
-                <h2 style="font-family: 'SA Cinta', sans-serif; font-style: normal; font-size: 36px; color: #ffffff; margin-top: 0; margin-bottom: 20px; letter-spacing: 2px;">
-                    "X LIFE"
+                <h2 class="glitch-text" data-text="PUSHING THE AGENDA">
+                    PUSHING THE AGENDA
                 </h2>
                 
                 <p style="font-family: monospace; font-size: 13px; color: #cccccc; margin-bottom: 35px;">
-                    A debut RAINOUT album by jayys. Art by maku
+                    A prod tape by blueZoe. Coming May 22, 2026.
                 </p>
             
-                <a href="/releases/xlife" style="display: block; margin: 0 auto; max-width: 550px; text-decoration: none;">
-                    <img class="promo-cover-hover" src="/assets/album-art/xlife.jpg" alt="Listen to X Life" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.6); border: 1px solid rgba(171, 78, 167, 0.3);">
+                <a style="display: block; margin: 0 auto; max-width: 550px; text-decoration: none;">
+                    <img class="promo-cover-hover" src="/assets/album-art/pta.png" alt="Pushing The Agenda by blueZoe" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.6); border: 1px solid rgba(0, 229, 255, 0.3);">
                 </a>
             </div>
+
+            <script>
+                // Randomized Glitch Controller for the Promo Bar
+                document.addEventListener('DOMContentLoaded', () => {
+                    const promoBar = document.getElementById('pta-promo-bar');
+                    if(promoBar) {
+                        setInterval(() => {
+                            // Only trigger a glitch 30% of the time to keep it unpredictable
+                            if(Math.random() > 0.7) {
+                                // Randomly pick one of the two severe glitch styles
+                                const glitchType = Math.random() > 0.5 ? 'glitch-hard-1' : 'glitch-hard-2';
+                                promoBar.classList.add(glitchType);
+                                
+                                // Snap back to normal after 50 to 150 milliseconds (like a real corrupted signal)
+                                setTimeout(() => {
+                                    promoBar.classList.remove('glitch-hard-1', 'glitch-hard-2');
+                                }, 50 + Math.random() * 100);
+                            }
+                        }, 1500); // Check every 1.5 seconds
+                    }
+                });
+            </script>
             <a href="/interviews/sollaceee" class="interview-promo-link">
                 <div class="interview-promo-box">
                     <div class="interview-banner-wrapper">

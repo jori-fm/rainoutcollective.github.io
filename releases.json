@@ -655,8 +655,26 @@
     "Release Date":"2026-04-03",
     "Cover JPG":"assets\/album-art\/fleurdelis.png",
     "Spotify":"https://open.spotify.com/album/2qAX5zo5settoIglx42EQP",
-    "Apple Music":"",
+    "Apple Music":"https://music.apple.com/us/album/fleur-de-lis-single/1890522645",
     "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_ma3y0xFPSuRPO3nn-q4M9a81yIEvfOz4c"
+  },
+  {
+    "Artist":"blueZoe, jayys",
+    "Title":"PUSHINGTHEAGENDA",
+    "Format":"Single",
+    "Release Date":"2026-05-08",
+    "Cover JPG":"assets\/album-art\/pushingtheagenda.png",
+    "Spotify":"https://open.spotify.com/album/2stXrxli4DO9fpm1fJGwYk",
+    "Apple Music":"https://music.apple.com/us/album/pushingtheagenda-single/6766988919",
+    "Youtube":"https://www.youtube.com/watch?v=l74Csyt_bO4"
+  },
+  {
+    "Catalog#":"RAIN-010",
+    "Artist":"blueZoe",
+    "Title":"Pushing The Agenda",
+    "Format":"Album/EP",
+    "Release Date":"2026-05-22",
+    "Cover JPG":"assets\/album-art\/pta.png"
   }
 
   
