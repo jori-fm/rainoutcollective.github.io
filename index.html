@@ -40,135 +40,79 @@
                 <p>RAINOUT is an independent music collective & label  dedicated to embracing underground music diversity from young artists. Founded in December 2024.</p>
             </div>
             <style>
-                /* Glitch Text Animations */
-                @keyframes glitch-skew {
-                    0% { transform: skew(0deg); }
-                    20% { transform: skew(-5deg); }
-                    40% { transform: skew(5deg); }
-                    60% { transform: skew(0deg); }
-                    80% { transform: skew(2deg); }
-                    100% { transform: skew(0deg); }
+                /* Grayscale Effect & Grain Textures */
+                .ultrastar-grayscale {
+                    filter: grayscale(100%);
+                    transition: filter 0.5s ease, transform 0.3s ease;
                 }
-                .glitch-text {
-                    position: relative;
-                    color: #ffffff;
-                    font-family: 'SA Cinta', sans-serif;
-                    font-size: 38px;
-                    letter-spacing: 3px;
-                    margin-top: 0;
-                    margin-bottom: 20px;
-                    text-transform: uppercase;
-                    text-shadow: 2px 2px #00E5FF, -2px -2px #FF00E6;
-                    animation: glitch-skew 3s infinite alternate-reverse;
+                .ultrastar-grayscale:hover {
+                    filter: grayscale(20%); /* Slight color return on hover */
+                    transform: scale(1.01);
                 }
-                .glitch-text::before, .glitch-text::after {
-                    content: attr(data-text);
+
+                /* Noise/Grain Overlay */
+                .promo-container::before {
+                    content: "";
                     position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0.8;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    /* Noise texture from transparent PNG */
+                    background-image: url('../assets/textures/noise.png');
+                    background-repeat: repeat;
+                    opacity: 0.1; /* Control grain density */
+                    z-index: -1;
+                    /* Very subtle movement so grain isn't static */
+                    animation: grain-shift 8s linear infinite;
+                    pointer-events: none;
                 }
-                .glitch-text::before {
-                    left: 2px;
-                    text-shadow: -2px 0 #00E5FF;
-                    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-                    animation: glitch-skew 2s infinite alternate-reverse;
-                }
-                .glitch-text::after {
-                    left: -2px;
-                    text-shadow: -2px 0 #FF00E6;
-                    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-                    animation: glitch-skew 4s infinite alternate-reverse;
+                @keyframes grain-shift {
+                    0% { transform: translate(0,0); }
+                    100% { transform: translate(-50px, 50px); }
                 }
 
-                /* Floating CD Animations */
-                @keyframes float-cd {
+                /* Radio Spool Animations */
+                @keyframes float-spool {
                     0% { transform: translateY(0px) rotate(0deg); }
-                    50% { transform: translateY(-10px) rotate(180deg); }
-                    100% { transform: translateY(0px) rotate(360deg); }
+                    50% { transform: translateY(-8px) rotate(-90deg); }
+                    100% { transform: translateY(0px) rotate(-180deg); }
                 }
-                .anim-cd {
-                    animation: float-cd 8s linear infinite;
+                .anim-spool {
+                    animation: float-spool 10s linear infinite;
                 }
-                .anim-cd-delayed {
-                    animation: float-cd 8s linear infinite;
-                    animation-delay: -4s; /* Out of sync */
-                }
-
-                /* Container Hover & Glitch States */
-                .promo-cover-hover {
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-                .promo-cover-hover:hover {
-                    transform: translateY(-5px) scale(1.02);
-                    box-shadow: 0 20px 40px rgba(0, 229, 255, 0.4) !important;
-                }
-
-                /* JS-Triggered Glitch Classes for the Bar */
-                .promo-container {
-                    transition: transform 0.05s ease, box-shadow 0.05s ease;
-                }
-                .glitch-hard-1 {
-                    transform: translate(-4px, 3px) skewX(-2deg);
-                    box-shadow: -4px 0 15px #00E5FF, 4px 0 15px #FF00E6 !important;
-                }
-                .glitch-hard-2 {
-                    transform: translate(4px, -2px) skewX(3deg);
-                    box-shadow: 4px 0 15px #00E5FF, -4px 0 15px #FF00E6 !important;
-                    filter: hue-rotate(90deg) contrast(150%);
+                .anim-spool-delayed {
+                    animation: float-spool 10s linear infinite;
+                    animation-delay: -5s; /* Out of sync */
                 }
             </style>
             
-            <div id="pta-promo-bar" class="promo-container" style="position: relative; background-color: #040814; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 12px; padding: 35px 30px 75px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(0, 229, 255, 0.15); overflow: hidden;">
+            <div class="promo-container ultrastar-grayscale" style="position: relative; background-color: #0d0c11; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 45px 30px 85px 30px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); overflow: hidden;">
                 
-                <div class="anim-cd" style="position: absolute; top: 30px; left: 30px; opacity: 0.3;">
-                    <i class="fa-solid fa-compact-disc" style="color: #00E5FF; font-size: 45px;"></i>
+                <div class="anim-spool" style="position: absolute; top: 30px; left: 30px; opacity: 0.2;">
+                    <i class="fa-solid fa-tape" style="color: #6a6a6d; font-size: 55px;"></i>
                 </div>
                 
-                <div class="anim-cd-delayed" style="position: absolute; bottom: 30px; right: 30px; opacity: 0.3;">
-                    <i class="fa-solid fa-compact-disc" style="color: #FF00E6; font-size: 45px;"></i>
+                <div class="anim-spool-delayed" style="position: absolute; bottom: 30px; right: 30px; opacity: 0.2;">
+                    <i class="fa-solid fa-tape" style="color: #6a6a6d; font-size: 55px;"></i>
                 </div>
             
-                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #00E5FF; margin-bottom: 15px; text-transform: uppercase;">
-                    Upcoming Release
+                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #a1a1a5; margin-bottom: 20px; text-transform: uppercase;">
+                    COMING 5.22.2026
                 </p>
                 
-                <h2 class="glitch-text" data-text="PUSHING THE AGENDA">
-                    PUSHING THE AGENDA
+                <h2 style="font-family: 'SA Cinta', sans-serif; font-size: 40px; color: #ffffff; margin-top: 0; margin-bottom: 25px; letter-spacing: 3px;">
+                    "ULTRASTAR.FM"
                 </h2>
                 
-                <p style="font-family: monospace; font-size: 13px; color: #cccccc; margin-bottom: 35px;">
-                    A prod tape by blueZoe. Coming May 29, 2026.
+                <p style="font-family: monospace; font-size: 13px; color: #b1b1b5; margin-bottom: 40px; line-height: 1.8;">
+                    The pensive and atmospheric <br>New album by <a href="/artists/ramona-heart.html" style="color: #ffffff; text-decoration: underline;">Ramona Heart</a>
                 </p>
             
-                <a style="display: block; margin: 0 auto; max-width: 550px; text-decoration: none;">
-                    <img class="promo-cover-hover" src="/assets/album-art/pta.png" alt="Pushing The Agenda by blueZoe" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.6); border: 1px solid rgba(0, 229, 255, 0.3);">
+                <a style="display: block; margin: 0 auto; max-width: 580px; text-decoration: none;">
+                    <img src="../assets/album-art/ultrastarfmcoverfinal.jpeg" alt="Ramona Heart - ultrastarfmcoverfinal.jpeg cover art" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid rgba(255, 255, 255, 0.1);">
                 </a>
             </div>
-
-            <script>
-                // Randomized Glitch Controller for the Promo Bar
-                document.addEventListener('DOMContentLoaded', () => {
-                    const promoBar = document.getElementById('pta-promo-bar');
-                    if(promoBar) {
-                        setInterval(() => {
-                            // Only trigger a glitch 30% of the time to keep it unpredictable
-                            if(Math.random() > 0.7) {
-                                // Randomly pick one of the two severe glitch styles
-                                const glitchType = Math.random() > 0.5 ? 'glitch-hard-1' : 'glitch-hard-2';
-                                promoBar.classList.add(glitchType);
-                                
-                                // Snap back to normal after 50 to 150 milliseconds (like a real corrupted signal)
-                                setTimeout(() => {
-                                    promoBar.classList.remove('glitch-hard-1', 'glitch-hard-2');
-                                }, 50 + Math.random() * 100);
-                            }
-                        }, 1500); // Check every 1.5 seconds
-                    }
-                });
-            </script>
             <a href="/interviews/sollaceee" class="interview-promo-link">
                 <div class="interview-promo-box">
                     <div class="interview-banner-wrapper">
