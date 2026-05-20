@@ -209,10 +209,13 @@
 
     try {
       const res = await fetch(DATA_URL, { cache: 'no-store' });
-      const data = await res.json();
+      const rawData = await res.json();
+      
+      // NEW: Filter out any release that is a single AND drops in the future
+      const data = rawData.filter(r => !(isSingle(r) && isFuture(r['Release Date'])));
       
       data.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));
-      allData = data; 
+      allData = data;
       
       renderReleases(); 
       setupFilters();

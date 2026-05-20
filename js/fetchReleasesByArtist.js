@@ -145,11 +145,14 @@
       // UPDATED FILTER: Check if the artist field INCLUDES the current page's artist key
       // This allows "suuni, V0CALYST" to show up on both pages.
       const mine = all.filter(r => {
-          const artists = (r.Artist || '').toLowerCase();
-          // Split by comma to safely check individual names (avoids partial matches like 'rob' matching 'robert')
-          const artistList = artists.split(',').map(a => a.trim()); 
-          return artistList.includes(artistKey);
-      });
+        // NEW: Hide singles that drop in the future completely
+        if (isSingle(r) && isFuture(r['Release Date'])) return false;
+
+        const artists = (r.Artist || '').toLowerCase();
+        // Split by comma to safely check individual names
+        const artistList = artists.split(',').map(a => a.trim()); 
+        return artistList.includes(artistKey);
+    });
 
       // newest → oldest
       mine.sort((a, b) => toDate(b['Release Date']) - toDate(a['Release Date']));

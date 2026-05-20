@@ -682,6 +682,26 @@
     "Format":"Album/EP",
     "Release Date":"2026-05-22",
     "Cover JPG":"assets\/album-art\/ultrastarfmcoverfinal.jpeg"
+  },
+  {
+    "Artist":"avalon, lunamaryllis",
+    "Title":"stick a knife thru ur heart",
+    "Format":"Single",
+    "Release Date":"2026-04-03",
+    "Cover JPG":"assets\/album-art\/knife.png",
+    "Spotify":"https://open.spotify.com/album/7EQv9SzvmsJX3OQTi2mWV2",
+    "Apple Music":"https://music.apple.com/us/album/stick-a-knife-thru-ur-heart-single/1885141449",
+    "Youtube":"https://www.youtube.com/watch?v=75bFA8OadV8"
+  },
+  {
+    "Artist":"cindy yearns",
+    "Title":"lots of regrets",
+    "Format":"Single",
+    "Release Date":"2026-05-27",
+    "Cover JPG":"assets\/album-art\/cindy vover.png",
+    "Spotify":"",
+    "Apple Music":"",
+    "Youtube":""
   }
 
   
