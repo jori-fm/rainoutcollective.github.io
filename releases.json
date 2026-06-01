@@ -675,7 +675,11 @@
     "Format":"Album/EP",
     "Release Date":"2026-05-29",
     "presave": "https://too.fm/pta",
-    "Cover JPG":"assets\/album-art\/pta.png"
+    "Cover JPG":"assets\/album-art\/pta.png",
+    "detailsPage": "/releases/pta",
+    "Spotify": "https://open.spotify.com/playlist/1MGoUNugMmFkBLRwTXFodI",
+    "Apple Music": "https://music.apple.com/us/album/pushing-the-agenda/6772451140",
+    "Youtube": "https://www.youtube.com/playlist?list=PLBzYK0yK9o_TsOQf75U-a_pD4ZpC887u7"
   },
   {
     "Artist":"Ramona Heart",
@@ -683,6 +687,7 @@
     "Format":"Album/EP",
     "Release Date":"2026-05-22",
     "Cover JPG":"assets\/album-art\/ultrastarfmcoverfinal.jpeg",
+    "Spotify":"https://open.spotify.com/album/1QVhmkt45tbO9hqu4GuvTt",
     "Apple Music": "https://music.apple.com/us/album/ultrastar-fm/6770238393",
     "Youtube": "https://www.youtube.com/playlist?list=OLAK5uy_lH6g9z-yDvUTC7QmwSP3uuEi0W2U2OStw"
   },
