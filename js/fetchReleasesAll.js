@@ -32,7 +32,7 @@
     lunamaryllis: 'lunamaryllis',
     shinrei: 'shinrei',
     angelfriend: 'angelfriend',
-    'angelfriend.': 'angelfriend',
+    'angelfriend': 'angelfriend',
     pezzz: 'PEZZZ',
     'pezzz!': 'PEZZZ',
     suuni: 'suuni',
@@ -57,7 +57,7 @@
   const displayArtist = (name = '') => {
     const n = String(name).trim();
     const nLower = n.toLowerCase();
-    return nLower === 'angelfriend' ? 'angelfriend.' :
+    return nLower === 'angelfriend' ? 'angelfriend' :
            nLower === 'hellayercs' ? 'hellayercs' :
            nLower === 'claire-eterna' ? 'Claire Eterna' :
            n;
