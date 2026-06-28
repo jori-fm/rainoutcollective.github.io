@@ -49,8 +49,6 @@
     'cindy-yearns': 'cindy-yearns',
     "cindy yearns": 'cindy-yearns',
     "castle belmont": 'castle-belmont',
-    blueZoe: 'blueZoe',
-    "bluezoe": 'blueZoe',
     "ramona heart": "ramona-heart"
   };
   
