@@ -687,7 +687,27 @@
     "Format":"Single",
     "Release Date":"2026-06-13",
     "Cover JPG":"assets\/album-art\/homicide.jpg",
-    "Spotify":"",
+    "Spotify":"https://open.spotify.com/track/3qrUxQCtfuYGoCwvjw6Ux3",
+    "Apple Music":"https://music.apple.com/us/album/homicide-my-toy-print-feat-lunamaryllis-avalon-single/6778285094",
+    "Youtube":"https://www.youtube.com/watch?v=I8WIb_d8ZQs&"
+  },
+  {
+    "Artist":"sollaceee!, jayys",
+    "Title":"but we move",
+    "Format":"Single",
+    "Release Date":"2026-06-13",
+    "Cover JPG":"assets\/album-art\/butwemove.png",
+    "Spotify":"https://open.spotify.com/track/42U0vpxf4LYqM8nVfTONEf",
+    "Apple Music":"https://music.apple.com/us/album/but-we-move-single/6778258651",
+    "Youtube":"https://www.youtube.com/watch?v=wYj0jlpeV1c"
+  },
+  {
+    "Artist":"suuni",
+    "Title":"Sagittarius",
+    "Format":"Single",
+    "Release Date":"2026-07-01",
+    "Cover JPG":"assets\/album-art\/sag1.png",
+    "Spotify":"https://open.spotify.com/track/6JD34OYWNNNKhndXu6t6zP",
     "Apple Music":"",
     "Youtube":""
   }
