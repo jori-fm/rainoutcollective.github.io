@@ -38,7 +38,6 @@
         'hellayercs': 'hellayercs',
         'claire-eterna': 'claire-eterna',
         "Claire Eterna": 'claire-eterna',
-        avalon: 'avalon',
         'sollaceee!': 'sollaceee',
         'cindy-yearns': 'cindy-yearns',
         "cindy yearns": 'cindy-yearns',

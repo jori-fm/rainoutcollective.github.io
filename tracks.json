@@ -396,22 +396,6 @@
       ]
     },
     {
-
-      "artist": "avalon",
-      "title": "^_^",
-      "release_date": "2026-01-22",
-      "cover": "/assets/album-art/^_^.jpg",
-      "tracks": [
-        { "title": "SPEAK NO EVIL", "file": "/assets/music/^_^/SPEAK NO EVIL.mp3" },
-        { "title": "burn myself alive", "file": "/assets/music/^_^/burn myself alive.mp3" },
-        { "title": "BACK TO THE GAME (ft. Loctify)", "file": "/assets/music/^_^/BACK TO THE GAME.mp3" },
-        { "title": "encore", "file": "/assets/music/^_^/encore.mp3" },
-        { "title": "PUT EM TO REST", "file": "/assets/music/^_^/PUT EM TO REST.mp3" },
-        { "title": "turned on me", "file": "/assets/music/^_^/turned on me.mp3" }
-
-      ]
-    },
-    {
       "catalog": "RAIN-007",
       "artist": "sollaceee!",
       "title": "appleLove",
