@@ -39,6 +39,163 @@
                 <h2>ABOUT US</h2>
                 <p>RAINOUT is an independent music collective & label  dedicated to embracing underground music diversity from young artists. Founded in December 2024.</p>
             </div>
+
+            <style>
+                /* Extreme Glitch Text - Animated Rainbow Style */
+                @keyframes pezzz-glitch-anim-1 {
+                    0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
+                    20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+                    40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+                    60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+                    80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
+                    100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
+                }
+                @keyframes pezzz-glitch-anim-2 {
+                    0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
+                    20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 2px); }
+                    40% { clip-path: inset(70% 0 10% 0); transform: translate(2px, -2px); }
+                    60% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 1px); }
+                    80% { clip-path: inset(50% 0 30% 0); transform: translate(1px, -1px); }
+                    100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, 1px); }
+                }
+
+                /* Rainbow Color Cycles */
+                @keyframes rainbow-bg {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+
+                @keyframes rainbow-border {
+                    0% { border-color: rgba(255, 0, 0, 0.6); }
+                    16% { border-color: rgba(255, 127, 0, 0.6); }
+                    33% { border-color: rgba(255, 255, 0, 0.6); }
+                    50% { border-color: rgba(0, 255, 0, 0.6); }
+                    66% { border-color: rgba(0, 0, 255, 0.6); }
+                    83% { border-color: rgba(139, 0, 255, 0.6); }
+                    100% { border-color: rgba(255, 0, 0, 0.6); }
+                }
+
+                .pezzz-glitch {
+                    position: relative;
+                    color: #fff;
+                    font-size: 3.8rem;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+                    margin: 0 0 10px 0;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+                }
+                .pezzz-glitch::before, .pezzz-glitch::after {
+                    content: attr(data-text);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: transparent; 
+                }
+                .pezzz-glitch::before {
+                    left: 3px;
+                    text-shadow: -2px 0 #00ffff; /* Cyan tear */
+                    animation: pezzz-glitch-anim-1 2s infinite linear alternate-reverse;
+                }
+                .pezzz-glitch::after {
+                    left: -3px;
+                    text-shadow: -2px 0 #ff00ff; /* Magenta tear */
+                    animation: pezzz-glitch-anim-2 2.5s infinite linear alternate-reverse;
+                }
+                
+                /* Borderless Ghost Container - Now with Glass Rainbow */
+                .pezzz-promo-container {
+                    position: relative;
+                    /* Smooth translucent rainbow gradient */
+                    background: linear-gradient(124deg, rgba(255,0,0,0.1), rgba(255,127,0,0.1), rgba(255,255,0,0.1), rgba(0,255,0,0.1), rgba(0,0,255,0.1), rgba(75,0,130,0.1), rgba(148,0,211,0.1));
+                    background-size: 400% 400%;
+                    animation: rainbow-bg 12s ease infinite;
+                    border: none;
+                    border-radius: 8px;
+                    padding: 45px 30px 55px;
+                    margin: 50px auto;
+                    max-width: 800px;
+                    text-align: center;
+                    backdrop-filter: blur(10px);
+                    transition: transform 0.2s ease, background 0.3s ease;
+                }
+                
+                /* Fractured Glitch Borders - Now cycle through RGB! */
+                .pezzz-promo-container::before, .pezzz-promo-container::after {
+                    content: "";
+                    position: absolute;
+                    top: -1px; left: -1px; right: -1px; bottom: -1px;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 8px;
+                    pointer-events: none;
+                    z-index: 10;
+                }
+                .pezzz-promo-container::before {
+                    animation: pezzz-glitch-anim-1 2s infinite linear alternate-reverse, rainbow-border 4s linear infinite;
+                }
+                .pezzz-promo-container::after {
+                    animation: pezzz-glitch-anim-2 2.5s infinite linear alternate-reverse, rainbow-border 6s linear infinite reverse;
+                }
+
+                .pezzz-promo-container:hover {
+                    animation: container-jitter 0.15s infinite, rainbow-bg 5s ease infinite; /* Rainbow spins faster on hover */
+                    background-image: linear-gradient(124deg, rgba(255,0,0,0.2), rgba(255,127,0,0.2), rgba(255,255,0,0.2), rgba(0,255,0,0.2), rgba(0,0,255,0.2), rgba(75,0,130,0.2), rgba(148,0,211,0.2));
+                }
+                
+                @keyframes container-jitter {
+                    0% { transform: translate(0.5px, 0.5px) skewX(0deg); }
+                    20% { transform: translate(-1px, -0.5px) skewX(-0.5deg); }
+                    40% { transform: translate(-0.5px, 1px) skewX(0.5deg); }
+                    60% { transform: translate(1px, 0px) skewX(0deg); }
+                    80% { transform: translate(-0.5px, -1px) skewX(0.5deg); }
+                    100% { transform: translate(0.5px, 0.5px) skewX(-0.5deg); }
+                }
+
+                .pezzz-cover {
+                    width: 100%;
+                    max-width: 480px;
+                    height: auto;
+                    border-radius: 4px;
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+                    filter: contrast(110%); 
+                    transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
+                }
+                
+                .pezzz-promo-container:hover .pezzz-cover {
+                    filter: contrast(140%) saturate(120%); 
+                    transform: scale(1.03);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(255, 0, 255, 0.2); /* Subtle magenta glow */
+                }
+                
+                .glitch-subtitle {
+                    font-family: 'Courier New', monospace;
+                    color: #ddd;
+                    font-size: 1.1rem;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    margin-bottom: 40px;
+                }
+            </style>
+
+            <div class="pezzz-promo-container">
+                <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #fff; margin-bottom: 15px; text-transform: uppercase;">
+                    UPCOMING
+                </p>
+                
+                <h2 class="pezzz-glitch" data-text="MY ALBUM">
+                    'MY ALBUM'
+                </h2>
+                
+                <p class="glitch-subtitle">
+                    A project by PEZZZ! // Dropping August 14, 2026
+                </p>
+                
+                <a href=https://too.fm/myalbum style="display: block; margin: 0 auto; text-decoration: none;">
+                    <img class="pezzz-cover" src="/assets/album-art/my album.jpeg" alt="PEZZZ! - my album">
+                </a>
+            </div>
             
             
             <div class="releases">

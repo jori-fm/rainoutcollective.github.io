@@ -695,6 +695,28 @@
     "Release Date":"2026-07-01",
     "Cover JPG":"assets\/album-art\/sag1.png",
     "Spotify":"https://open.spotify.com/track/6JD34OYWNNNKhndXu6t6zP",
+    "Apple Music":"https://music.apple.com/us/album/sagittarius/6786185626?i=6786185631",
+    "Youtube":"https://www.youtube.com/watch?v=CDFrwvgSftA"
+  },
+  {
+    "Artist":"hellayercs",
+    "Title":"fast",
+    "Format":"Album/EP",
+    "Release Date":"2026-08-01",
+    "Cover JPG":"assets\/album-art\/fast.png",
+    "Spotify":"https://open.spotify.com/album/6I0o4nyjbf9rLQtfRx0knz",
+    "Apple Music":"https://music.apple.com/us/album/fast/6796476326",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_k_Z_9hZ4jUqiRdwqq6328jdrCZKGvdeiA"
+  },
+  {
+    "Catalog#":"RAIN-010",
+    "Artist":"PEZZZ!",
+    "Title":"my album",
+    "Format":"Album/EP",
+    "Release Date":"2026-08-14",
+    "Cover JPG":"assets\/album-art\/my album.jpeg",
+    "presave": "https://too.fm/myalbum",
+    "Spotify":"",
     "Apple Music":"",
     "Youtube":""
   }

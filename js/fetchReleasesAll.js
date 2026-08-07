@@ -4,7 +4,7 @@
   const container = document.querySelector(CONTAINER_SELECTOR);
   
   let allData = [];
-  let currentFilter = 'all'; 
+  let currentFilter = 'album';
 
   // --- Helper Functions ---
   const resolveAsset = (p = '') => {
