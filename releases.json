@@ -714,6 +714,7 @@
     "Title":"my album",
     "Format":"Album/EP",
     "Release Date":"2026-08-14",
+    "detailsPage": "/releases/myalbum",
     "Cover JPG":"assets\/album-art\/my album.jpeg",
     "presave": "https://too.fm/myalbum",
     "Spotify":"https://open.spotify.com/album/4q1gcFcuFReFKixApa5Vfw",
