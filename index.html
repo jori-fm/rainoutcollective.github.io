@@ -41,51 +41,47 @@
             </div>
 
             <style>
-                /* Extreme Glitch Text - Animated Rainbow Style */
-                @keyframes pezzz-glitch-anim-1 {
-                    0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
-                    20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
-                    40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
-                    60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
-                    80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
-                    100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
+                /* Extreme Glitch Text - Digital Chaos Style */
+                @keyframes jayys-glitch-anim-1 {
+                    0% { clip-path: inset(20% 0 80% 0); transform: translate(-3px, 2px); }
+                    20% { clip-path: inset(60% 0 10% 0); transform: translate(3px, -2px); }
+                    40% { clip-path: inset(40% 0 50% 0); transform: translate(-3px, 3px); }
+                    60% { clip-path: inset(80% 0 5% 0); transform: translate(3px, -3px); }
+                    80% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 2px); }
+                    100% { clip-path: inset(30% 0 50% 0); transform: translate(2px, -2px); }
                 }
-                @keyframes pezzz-glitch-anim-2 {
-                    0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
-                    20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 2px); }
-                    40% { clip-path: inset(70% 0 10% 0); transform: translate(2px, -2px); }
-                    60% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 1px); }
-                    80% { clip-path: inset(50% 0 30% 0); transform: translate(1px, -1px); }
-                    100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, 1px); }
+                @keyframes jayys-glitch-anim-2 {
+                    0% { clip-path: inset(10% 0 60% 0); transform: translate(3px, -2px); }
+                    20% { clip-path: inset(30% 0 20% 0); transform: translate(-3px, 3px); }
+                    40% { clip-path: inset(70% 0 10% 0); transform: translate(3px, -3px); }
+                    60% { clip-path: inset(20% 0 50% 0); transform: translate(-2px, 2px); }
+                    80% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -2px); }
+                    100% { clip-path: inset(5% 0 80% 0); transform: translate(-3px, 2px); }
                 }
 
-                /* Rainbow Color Cycles */
-                @keyframes rainbow-bg {
+                /* Deep Cyber Color Cycles */
+                @keyframes cyber-bg {
                     0% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }
                     100% { background-position: 0% 50%; }
                 }
 
-                @keyframes rainbow-border {
-                    0% { border-color: rgba(255, 0, 0, 0.6); }
-                    16% { border-color: rgba(255, 127, 0, 0.6); }
-                    33% { border-color: rgba(255, 255, 0, 0.6); }
-                    50% { border-color: rgba(0, 255, 0, 0.6); }
-                    66% { border-color: rgba(0, 0, 255, 0.6); }
-                    83% { border-color: rgba(139, 0, 255, 0.6); }
-                    100% { border-color: rgba(255, 0, 0, 0.6); }
+                @keyframes cyber-border {
+                    0% { border-color: rgba(0, 255, 255, 0.7); } /* Cyan */
+                    50% { border-color: rgba(255, 0, 255, 0.7); } /* Magenta */
+                    100% { border-color: rgba(0, 255, 255, 0.7); }
                 }
 
-                .pezzz-glitch {
+                .jayys-glitch {
                     position: relative;
                     color: #fff;
-                    font-size: 3.8rem;
-                    letter-spacing: 4px;
+                    font-size: 3.5rem;
+                    letter-spacing: 2px;
                     text-transform: uppercase;
                     margin: 0 0 10px 0;
-                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+                    text-shadow: 0 0 15px rgba(255, 0, 255, 0.5); /* Magenta glow */
                 }
-                .pezzz-glitch::before, .pezzz-glitch::after {
+                .jayys-glitch::before, .jayys-glitch::after {
                     content: attr(data-text);
                     position: absolute;
                     top: 0;
@@ -94,79 +90,80 @@
                     height: 100%;
                     background: transparent; 
                 }
-                .pezzz-glitch::before {
-                    left: 3px;
-                    text-shadow: -2px 0 #00ffff; /* Cyan tear */
-                    animation: pezzz-glitch-anim-1 2s infinite linear alternate-reverse;
+                .jayys-glitch::before {
+                    left: 4px;
+                    text-shadow: -3px 0 #00ffff; /* Hard cyan tear */
+                    animation: jayys-glitch-anim-1 1.5s infinite linear alternate-reverse;
                 }
-                .pezzz-glitch::after {
-                    left: -3px;
-                    text-shadow: -2px 0 #ff00ff; /* Magenta tear */
-                    animation: pezzz-glitch-anim-2 2.5s infinite linear alternate-reverse;
+                .jayys-glitch::after {
+                    left: -4px;
+                    text-shadow: -3px 0 #ff00ff; /* Hard magenta tear */
+                    animation: jayys-glitch-anim-2 2s infinite linear alternate-reverse;
                 }
                 
-                /* Borderless Ghost Container - Now with Glass Rainbow */
-                .pezzz-promo-container {
+                /* Borderless Ghost Container - Dark Cyber Aesthetic */
+                .jayys-promo-container {
                     position: relative;
-                    /* Smooth translucent rainbow gradient */
-                    background: linear-gradient(124deg, rgba(255,0,0,0.1), rgba(255,127,0,0.1), rgba(255,255,0,0.1), rgba(0,255,0,0.1), rgba(0,0,255,0.1), rgba(75,0,130,0.1), rgba(148,0,211,0.1));
-                    background-size: 400% 400%;
-                    animation: rainbow-bg 12s ease infinite;
+                    /* Dark, saturated blue/magenta gradient */
+                    background: linear-gradient(124deg, rgba(10, 0, 40, 0.2), rgba(60, 0, 60, 0.2), rgba(0, 30, 60, 0.2));
+                    background-size: 200% 200%;
+                    animation: cyber-bg 8s ease infinite;
                     border: none;
                     border-radius: 8px;
                     padding: 45px 30px 55px;
                     margin: 50px auto;
                     max-width: 800px;
                     text-align: center;
-                    backdrop-filter: blur(10px);
+                    backdrop-filter: blur(12px);
                     transition: transform 0.2s ease, background 0.3s ease;
                 }
                 
-                /* Fractured Glitch Borders - Now cycle through RGB! */
-                .pezzz-promo-container::before, .pezzz-promo-container::after {
+                /* Fractured Glitch Borders */
+                .jayys-promo-container::before, .jayys-promo-container::after {
                     content: "";
                     position: absolute;
                     top: -1px; left: -1px; right: -1px; bottom: -1px;
-                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
                     border-radius: 8px;
                     pointer-events: none;
                     z-index: 10;
                 }
-                .pezzz-promo-container::before {
-                    animation: pezzz-glitch-anim-1 2s infinite linear alternate-reverse, rainbow-border 4s linear infinite;
+                .jayys-promo-container::before {
+                    animation: jayys-glitch-anim-1 2s infinite linear alternate-reverse, cyber-border 3s linear infinite;
                 }
-                .pezzz-promo-container::after {
-                    animation: pezzz-glitch-anim-2 2.5s infinite linear alternate-reverse, rainbow-border 6s linear infinite reverse;
+                .jayys-promo-container::after {
+                    animation: jayys-glitch-anim-2 2.5s infinite linear alternate-reverse, cyber-border 4s linear infinite reverse;
                 }
 
-                .pezzz-promo-container:hover {
-                    animation: container-jitter 0.15s infinite, rainbow-bg 5s ease infinite; /* Rainbow spins faster on hover */
-                    background-image: linear-gradient(124deg, rgba(255,0,0,0.2), rgba(255,127,0,0.2), rgba(255,255,0,0.2), rgba(0,255,0,0.2), rgba(0,0,255,0.2), rgba(75,0,130,0.2), rgba(148,0,211,0.2));
+                .jayys-promo-container:hover {
+                    animation: container-jitter 0.1s infinite, cyber-bg 3s ease infinite; 
+                    background-image: linear-gradient(124deg, rgba(20, 0, 60, 0.4), rgba(100, 0, 100, 0.4), rgba(0, 50, 100, 0.4));
                 }
                 
                 @keyframes container-jitter {
-                    0% { transform: translate(0.5px, 0.5px) skewX(0deg); }
-                    20% { transform: translate(-1px, -0.5px) skewX(-0.5deg); }
-                    40% { transform: translate(-0.5px, 1px) skewX(0.5deg); }
-                    60% { transform: translate(1px, 0px) skewX(0deg); }
-                    80% { transform: translate(-0.5px, -1px) skewX(0.5deg); }
-                    100% { transform: translate(0.5px, 0.5px) skewX(-0.5deg); }
+                    0% { transform: translate(1px, 1px) skewX(0deg); }
+                    20% { transform: translate(-2px, -1px) skewX(-1deg); }
+                    40% { transform: translate(-1px, 2px) skewX(1deg); }
+                    60% { transform: translate(2px, 0px) skewX(0deg); }
+                    80% { transform: translate(-1px, -2px) skewX(1deg); }
+                    100% { transform: translate(1px, 1px) skewX(-1deg); }
                 }
 
-                .pezzz-cover {
+                .jayys-cover {
                     width: 100%;
                     max-width: 480px;
                     height: auto;
                     border-radius: 4px;
-                    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-                    filter: contrast(110%); 
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+                    filter: contrast(115%) saturate(110%); 
                     transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
                 }
                 
-                .pezzz-promo-container:hover .pezzz-cover {
-                    filter: contrast(140%) saturate(120%); 
-                    transform: scale(1.03);
-                    box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(255, 0, 255, 0.2); /* Subtle magenta glow */
+                .jayys-promo-container:hover .jayys-cover {
+                    filter: contrast(130%) saturate(130%); 
+                    transform: scale(1.04);
+                    /* Cyan to Magenta split shadow on hover */
+                    box-shadow: -15px 15px 30px rgba(0, 255, 255, 0.2), 15px -15px 30px rgba(255, 0, 255, 0.2), 0 15px 40px rgba(0,0,0,0.9); 
                 }
                 
                 .glitch-subtitle {
@@ -179,21 +176,21 @@
                 }
             </style>
 
-            <div class="pezzz-promo-container">
+            <div class="jayys-promo-container">
                 <p style="font-family: monospace; letter-spacing: 4px; font-size: 11px; color: #fff; margin-bottom: 15px; text-transform: uppercase;">
                     OUT NOW
                 </p>
                 
-                <h2 class="pezzz-glitch" data-text="MY ALBUM">
-                    'MY ALBUM'
+                <h2 class="jayys-glitch" data-text="EVERLASTING DREAM">
+                    'EVERLASTING DREAM'
                 </h2>
                 
                 <p class="glitch-subtitle">
-                    A project by PEZZZ!
+                    A new EP by jayys
                 </p>
                 
-                <a href=https://too.fm/myalbum style="display: block; margin: 0 auto; text-decoration: none;">
-                    <img class="pezzz-cover" src="/assets/album-art/my album.jpeg" alt="PEZZZ! - my album">
+                <a href="/releases/everlastingdream" style="display: block; margin: 0 auto; text-decoration: none;">
+                    <img class="jayys-cover" src="/assets/album-art/jayysep.png" alt="jayys - everlasting dream">
                 </a>
             </div>
             

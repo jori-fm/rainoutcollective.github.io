@@ -720,6 +720,18 @@
     "Spotify":"https://open.spotify.com/album/4q1gcFcuFReFKixApa5Vfw",
     "Apple Music":"https://music.apple.com/us/album/my-album/6798099440",
     "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_m_Vn4pNjDoIbbhQzQ5UwrZXWidINl_nK8"
+  },
+  {
+    "Catalog#":"RAIN-011",
+    "Artist":"jayys",
+    "Title":"everlasting dream",
+    "Format":"Album/EP",
+    "Release Date":"2026-09-17",
+    "detailsPage": "/releases/everlastingdream",
+    "Cover JPG":"assets\/album-art\/jayysep.png",
+    "Spotify":"https://open.spotify.com/album/1YjDboycP1mSRxOzqtQI7H",
+    "Apple Music":"https://music.apple.com/us/album/everlasting-dream/6810025764",
+    "Youtube":"https://www.youtube.com/playlist?list=OLAK5uy_nQTDEebzG4ihEv1uXH20yFbrPDf0uUjMY"
   }
 
   
