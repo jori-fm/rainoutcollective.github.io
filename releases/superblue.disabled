@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta property="og:title" content="SuperBlue by V0CALYST - RAINOUT">
+        <meta property="og:description" content="SuperBlue is the second EP and third large release by V0CALYST under RAINOUT. 
+It is the first project that isn't executively produced by shinrei but by fellow ">
+        <meta property="og:image" content="https://rainoutcollective.com/https://cdn.discordapp.com/attachments/1430973086638936115/1552389766434259144/SuperBlue.png?ex=6ab56f22&is=6ab41da2&hm=29a884b1ba334d3f813954aa8573541e4b8e88112c54cd123fa2b434dd87a54c&">
+        <meta property="og:url" content="https://rainoutcollective.com/releases/superblue">
+        <meta property="og:type" content="music.album">
+    
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="SuperBlue by V0CALYST - RAINOUT">
+        <meta name="twitter:description" content="SuperBlue is the second EP and third large release by V0CALYST under RAINOUT. 
+It is the first project that isn't executively produced by shinrei but by fellow ">
+        <meta name="twitter:image" content="https://rainoutcollective.com/https://cdn.discordapp.com/attachments/1430973086638936115/1552389766434259144/SuperBlue.png?ex=6ab56f22&is=6ab41da2&hm=29a884b1ba334d3f813954aa8573541e4b8e88112c54cd123fa2b434dd87a54c&">
+    
+        <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/png" href="../assets/favicon.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SuperBlue by V0CALYST - RAINOUT</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    </head>
+<body>
+    <div id="global-nav"></div>
+
+    <div class="container">
+        <main class="album-page">
+            <a href="/releases" class="back-button">← Back to All Releases</a>
+
+            <div class="album-layout">
+                <div class="album-sidebar">
+                    <img src="https://cdn.discordapp.com/attachments/1430973086638936115/1552389766434259144/SuperBlue.png?ex=6ab56f22&is=6ab41da2&hm=29a884b1ba334d3f813954aa8573541e4b8e88112c54cd123fa2b434dd87a54c&" alt="SuperBlue Cover" class="album-cover-large">
+                    
+                    <div class="album-links">
+                        <a href="#" target="_blank" class="listen-btn spotify">
+    <span class="iconify" data-icon="mdi:spotify"></span> Spotify
+</a>
+<a href="#" target="_blank" class="listen-btn apple">
+    <span class="iconify" data-icon="simple-icons:applemusic"></span> Apple Music
+</a>
+<a href="#" target="_blank" class="listen-btn bandcamp">
+    <span class="iconify" data-icon="mdi:bandcamp"></span> Bandcamp
+</a>
+<a href="#" target="_blank" class="listen-btn soundcloud">
+    <span class="iconify" data-icon="mdi:soundcloud"></span> SoundCloud
+</a>
+<a href="#" target="_blank" class="listen-btn youtube">
+    <span class="iconify" data-icon="mdi:youtube"></span> YouTube
+</a>
+
+                    </div>
+                </div>
+
+                <div class="album-content">
+                    <h1 class="album-title">SuperBlue</h1>
+                    <h2 class="album-artist">
+                        <a href="/artists/v0calyst">V0CALYST</a>
+                    </h2>
+                    <div class="album-meta">EP • Released September 26, 2026 • 12 Min</div>
+
+                    <div class="album-description">
+                        <h3>About The Project</h3>
+                        <p><em><strong>SuperBlue</strong></em> is the second EP and third large release by <strong>V0CALYST</strong> under RAINOUT. </p>
+<p>It is the first project that isn&#39;t executively produced by shinrei but by fellow SAKRAMENTO member <strong>andiekyte</strong>.</p>
+
+                    </div>
+
+                    <div class="album-tracklist">
+                        <h3>Tracklist</h3>
+                        <ol>
+                            <li>Amber eyes</li>
+<li>Twin Stars</li>
+<li>Three Heavens</li>
+<li>OG Kush (ft. Kaye Arcy)</li>
+<li>staying Close</li>
+<li>Too close for comfort (ft. jayys)</li>
+                        </ol>
+                    </div>
+
+                    <div class="album-credits">
+                        <h3>Credits</h3>
+                        <ul class="credits-list">
+                            <li><strong>Executive producer:</strong> andiekyte</li>
+<li><strong>Producers:</strong> andiekyte, surprise, Kaye Arcy, cigstench</li>
+<li><strong>Features:</strong> Kaye Arcy, jayys</li>
+<li><strong>Visuals:</strong> andiekyte, Jori</li>
+<li><strong>mixing & mastering:</strong> andiekyte, lunamaryllis</li>
+
+                        </ul>
+                    </div>
+                    
+                    <div class="album-embed" style="margin-top: 40px;">
+                        <h3>Listen Now</h3>
+                        <iframe style="border-radius:12px" src="Insert here" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div id="global-footer"></div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

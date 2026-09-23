@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.rewriterules": [
+      {
+        "regex": "^/(?!.*\\.)(.*)$",
+        "action": "rewrite",
+        "value": "/$1.html"
+      }
+    ]
+  }
+  
