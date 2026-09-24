@@ -1,426 +1,1682 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="RAINOUT — an independent music collective & label dedicated to underground music diversity from young artists."
+    >
+
     <meta property="og:title" content="RAINOUT">
-    <meta property="og:description" content="An independent music collective & label dedicated to embracing underground music diversity from young artists.">
+    <meta
+        property="og:description"
+        content="An independent music collective & label dedicated to embracing underground music diversity from young artists."
+    >
     <meta property="og:image" content="https://rainoutcollective.com/assets/rainoutbanner.png">
     <meta property="og:url" content="https://rainoutcollective.com">
     <meta property="og:type" content="website">
-    
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RAINOUT">
-    <meta name="twitter:description" content="An independent music collective & label dedicated to embracing underground music diversity from young artists.">
+    <meta
+        name="twitter:description"
+        content="An independent music collective & label dedicated to underground music diversity from young artists."
+    >
     <meta name="twitter:image" content="https://rainoutcollective.com/assets/rainoutbanner.png">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/font/simple-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/font/simple-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
     <title>RAINOUT</title>
+
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+    <script
+        src="https://code.iconify.design/3/3.1.1/iconify.min.js"
+        defer
+    ></script>
 
     <style>
-        /* --- RESTORED HOMEPAGE STYLING & FIXES --- */
 
-        /* Make the Typography Logo Much Bigger */
-        .hero-banner-section {
-            text-align: center;
-            padding: 50px 20px 20px 20px;
+        /* =========================================================
+           RAINOUT HOMEPAGE
+           ========================================================= */
+
+        :root {
+            --home-bg: #050505;
+            --home-panel: rgba(255,255,255,0.035);
+            --home-panel-hover: rgba(255,255,255,0.065);
+            --home-border: rgba(255,255,255,0.10);
+            --home-border-soft: rgba(255,255,255,0.06);
+            --home-text: #ffffff;
+            --home-muted: #8b8b8b;
+            --home-dim: #555;
+            --home-max: 1180px;
         }
-        .logo {
-            max-width: 650px; /* Scaled up significantly */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.home {
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(255,255,255,0.08),
+                    transparent 38%
+                ),
+                #050505;
+        }
+
+        body.home main {
+            padding: 0;
+            text-align: left;
+        }
+
+        body.home main > * {
+            margin-bottom: 0;
+        }
+
+        /* =========================================================
+           STATUS BAR
+           ========================================================= */
+
+        .home-status {
             width: 100%;
+            border-top: 1px solid var(--home-border-soft);
+            border-bottom: 1px solid var(--home-border-soft);
+            background: rgba(255,255,255,0.025);
+            overflow: hidden;
+        }
+
+        .home-status-inner {
+            max-width: var(--home-max);
+            margin: 0 auto;
+            padding: 9px 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            color: var(--home-muted);
+            font-family: "Courier New", monospace;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .home-hero {
+            max-width: var(--home-max);
+            margin: 0 auto;
+            padding: 90px 22px 75px;
+            text-align: center;
+        }
+
+        .home-hero-logo {
+            width: min(760px, 100%);
             height: auto;
-            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
-            transition: filter 0.3s ease;
+            display: block;
+            margin: 0 auto;
+
+            filter:
+                grayscale(100%)
+                drop-shadow(0 0 24px rgba(255,255,255,0.12));
+
+            transition:
+                transform 0.4s ease,
+                filter 0.4s ease;
         }
-        .logo:hover {
-            filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.4));
+
+        .home-hero-logo:hover {
+            transform: scale(1.015);
+            filter:
+                grayscale(100%)
+                drop-shadow(0 0 35px rgba(255,255,255,0.24));
         }
-        .tagline {
-            color: var(--text-secondary, #888);
+
+        .home-hero-tagline {
+            margin: 24px 0 0;
+
+            color: var(--home-muted);
+            font-family: "Courier New", monospace;
+            font-size: 0.85rem;
             letter-spacing: 6px;
             text-transform: uppercase;
-            font-size: 1rem;
-            margin-top: 15px;
-            margin-bottom: 50px;
-            font-family: 'Courier New', monospace;
         }
 
-        /* About Us Panel */
-        .about-panel {
-            max-width: 750px;
-            margin: 0 auto 60px auto;
-            padding: 30px 40px;
-            background: var(--card-bg, #111);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        .about-panel h2 {
-            font-family: 'SA Cinta', sans-serif; /* Restored SA Cinta */
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-        .about-panel p {
-            color: #ccc;
-            font-family: sans-serif;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin: 0;
+        .home-hero-meta {
+            margin-top: 32px;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+
+            color: var(--home-dim);
+            font-family: "Courier New", monospace;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* Featured Release Hero Container */
-        @keyframes cyber-bg {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .featured-release-hero {
-            position: relative;
-            background: linear-gradient(124deg, rgba(10, 0, 40, 0.3), rgba(50, 0, 50, 0.3), rgba(0, 20, 50, 0.3));
-            background-size: 200% 200%;
-            animation: cyber-bg 10s ease infinite;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 45px;
-            margin: 0 auto 70px auto;
-            max-width: 950px;
+        /* =========================================================
+           QUICK NAV
+           ========================================================= */
+
+        .home-quick-nav {
+            max-width: var(--home-max);
+            margin: 0 auto;
+            padding: 0 22px 55px;
+
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .home-quick-nav a {
+            min-height: 74px;
+
+            display: flex;
             align-items: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-        @media (max-width: 768px) {
-            .featured-release-hero { grid-template-columns: 1fr; padding: 25px; }
-        }
-        .featured-badge {
-            display: inline-block;
-            font-size: 10px;
-            letter-spacing: 3px;
-            color: #000;
-            background: #00ffff;
-            padding: 4px 10px;
-            border-radius: 3px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-family: 'Courier New', monospace;
-        }
-        .featured-title {
-            font-family: 'SA Cinta', sans-serif; /* Restored SA Cinta */
-            font-size: 3rem;
-            letter-spacing: 2px;
-            margin: 0 0 10px 0;
-            line-height: 1.1;
-            color: #fff;
-            text-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
-        }
-        .featured-artist {
-            font-family: 'SA Cinta', sans-serif; /* Restored SA Cinta */
+            justify-content: center;
+
+            border: 1px solid var(--home-border-soft);
+            background: var(--home-panel);
+
             color: #aaa;
-            font-size: 1.4rem;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-        }
-        .featured-cover {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .featured-cover:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-        }
-        .listen-now-btn {
-            display: inline-block;
-            background: #fff;
-            color: #000;
-            padding: 12px 24px;
-            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            font-family: 'Courier New', monospace;
-            transition: background 0.2s, transform 0.2s;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
         }
-        .listen-now-btn:hover {
-            background: #00ffff;
+
+        .home-quick-nav a:hover {
+            background: var(--home-panel-hover);
+            border-color: var(--home-border);
+            color: #fff;
             transform: translateY(-2px);
         }
 
-        /* Section Wrappers & Divider Fix */
+        /* =========================================================
+           COMMON SECTION
+           ========================================================= */
+
         .home-section {
-            max-width: 1000px;
-            margin: 0 auto 70px auto;
-            padding: 0 20px;
+            max-width: var(--home-max);
+            margin: 0 auto;
+            padding: 0 22px 95px;
         }
-        .home-section-title {
-            font-family: 'SA Cinta', sans-serif; /* Restored SA Cinta */
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            color: #fff;
-            /* FIXED: Ensures proper centering and vertical spacing around the border */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 20px;
-            margin-bottom: 35px;
+
+        .home-section-heading {
             display: flex;
+            align-items: flex-end;
             justify-content: space-between;
-            align-items: flex-end; /* Aligns text and link perfectly on the baseline */
+            gap: 20px;
+
+            padding-bottom: 16px;
+            margin-bottom: 25px;
+
+            border-bottom: 1px solid var(--home-border-soft);
         }
-        .home-section-title a {
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            color: var(--text-secondary, #888);
+
+        .home-section-heading h2 {
+            margin: 0;
+            padding: 0;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: 1.55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .home-section-heading h2::after {
+            display: none;
+        }
+
+        .home-section-heading a {
+            flex-shrink: 0;
+
+            color: var(--home-muted);
             text-decoration: none;
-            transition: color 0.2s;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .home-section-title a:hover {
+
+        .home-section-heading a:hover {
             color: #fff;
         }
 
-        /* Latest Editorial Widget Card */
-        .home-article-preview {
-            background: var(--card-bg, #111);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+        /* =========================================================
+           ABOUT / INTRO
+           ========================================================= */
+
+        .home-intro {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 22px 90px;
+
+            text-align: center;
+        }
+
+        .home-intro-label {
+            margin-bottom: 14px;
+
+            color: var(--home-dim);
+            font-family: "Courier New", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .home-intro h1 {
+            margin: 0 0 18px;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: normal;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .home-intro h1::after {
+            display: none;
+        }
+
+        .home-intro p {
+            max-width: 720px;
+            margin: 0 auto;
+
+            color: #999;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        /* =========================================================
+           FEATURED RELEASE
+           ========================================================= */
+
+        .featured-release {
+            position: relative;
+
+            max-width: var(--home-max);
+            margin: 0 auto;
+            padding: 0 22px 100px;
+        }
+
+        .featured-release-inner {
+            position: relative;
             overflow: hidden;
+
             display: grid;
-            grid-template-columns: 380px 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, 440px);
+            gap: 55px;
+            align-items: center;
+
+            padding: 55px;
+
+            border: 1px solid var(--home-border);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.015)
+                );
+        }
+
+        .featured-release-inner::before {
+            content: "RAINOUT // FEATURED";
+
+            position: absolute;
+            top: 18px;
+            left: 22px;
+
+            color: #555;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+        }
+
+        .featured-release-copy {
+            padding-top: 15px;
+        }
+
+        .featured-release-label {
+            display: inline-block;
+            margin-bottom: 18px;
+
+            color: #777;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .featured-release-title {
+            margin: 0;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: clamp(1.4rem, 4vw, 3.5rem);
+            font-weight: normal;
+            line-height: 0.95;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .featured-release-artist {
+            margin: 18px 0 24px;
+
+            color: #999;
+
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .featured-release-description {
+            max-width: 600px;
+
+            margin: 0 0 30px;
+
+            color: #999;
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .featured-release-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 13px 18px;
+
+            background: #fff;
+            color: #000;
+
             text-decoration: none;
-            transition: transform 0.2s, border-color 0.2s;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.72rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
         }
-        @media (max-width: 768px) {
-            .home-article-preview { grid-template-columns: 1fr; }
+
+        .featured-release-button:hover {
+            background: #ddd;
+            transform: translateY(-2px);
         }
-        .home-article-preview:hover {
-            transform: translateY(-3px);
-            border-color: rgba(0, 255, 255, 0.3);
+
+        .featured-release-art {
+            position: relative;
         }
-        .home-article-img {
+
+        .featured-release-art img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+
+            border: 1px solid var(--home-border);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.65);
+
+            transition: transform 0.4s ease;
+        }
+
+        .featured-release-art:hover img {
+            transform: scale(1.02);
+        }
+
+        .featured-release-art::after {
+            content: "";
+
+            position: absolute;
+            inset: 12px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            pointer-events: none;
+        }
+
+        /* =========================================================
+           RELEASE GRID
+           ========================================================= */
+
+        .home-release-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .home-release-grid .release {
+            margin: 0;
+            padding: 0 0 20px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--home-border-soft);
+            background: var(--home-panel);
+
+            border-radius: 0;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .home-release-grid .release:hover {
+            transform: translateY(-4px);
+            background: var(--home-panel-hover);
+            border-color: var(--home-border);
+        }
+
+        .home-release-grid .release img {
+            display: block;
+
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+
+            margin: 0 0 18px;
+            border-radius: 0;
+
+            box-shadow: none;
+        }
+
+        .home-release-grid .release .info {
+            padding: 0 18px;
+        }
+
+        .home-release-grid .release .title {
+            margin-bottom: 5px;
+
+            color: #fff;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .home-release-grid .release .artist {
+            margin-bottom: 7px;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.78rem;
+        }
+
+        .home-release-grid .release .catalog {
+            font-family: "Courier New", monospace;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+        }
+
+        .home-release-grid .format-icon {
+            top: 12px;
+            left: auto;
+            right: 12px;
+
+            transform: none;
+
+            width: 28px;
+            height: 28px;
+
+            background: rgba(0,0,0,0.75);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .home-release-grid .release:hover .format-icon {
+            transform: none;
+        }
+
+        /* =========================================================
+           ARTISTS
+           ========================================================= */
+
+        .home-artist-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .home-artist-card {
+            position: relative;
+            overflow: hidden;
+
+            min-height: 210px;
+
+            display: flex;
+            align-items: flex-end;
+
+            border: 1px solid var(--home-border-soft);
+
+            background: #111;
+
+            text-decoration: none;
+        }
+
+        .home-artist-card img {
+            position: absolute;
+            inset: 0;
+
             width: 100%;
             height: 100%;
-            min-height: 250px;
             object-fit: cover;
-            filter: grayscale(40%);
-            transition: filter 0.3s;
+
+            opacity: 0.55;
+
+            filter: grayscale(100%);
+
+            transition:
+                transform 0.4s ease,
+                opacity 0.4s ease,
+                filter 0.4s ease;
         }
-        .home-article-preview:hover .home-article-img {
+
+        .home-artist-card:hover img {
+            transform: scale(1.05);
+            opacity: 0.75;
             filter: grayscale(0%);
         }
-        .home-article-body {
-            padding: 35px;
+
+        .home-artist-card::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    transparent 30%,
+                    rgba(0,0,0,0.95) 100%
+                );
+        }
+
+        .home-artist-card-info {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            padding: 18px;
+        }
+
+        .home-artist-card-name {
+            color: #fff;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .home-artist-card-label {
+            margin-top: 4px;
+
+            color: #888;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.62rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           TIMES
+           ========================================================= */
+
+        .home-times-card {
+            display: grid;
+            grid-template-columns: 42% 58%;
+
+            min-height: 330px;
+
+            border: 1px solid var(--home-border-soft);
+            background: var(--home-panel);
+
+            text-decoration: none;
+
+            transition:
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .home-times-card:hover {
+            border-color: var(--home-border);
+            transform: translateY(-3px);
+        }
+
+        .home-times-image {
+            width: 100%;
+            height: 100%;
+            min-height: 330px;
+            object-fit: cover;
+
+            filter: grayscale(55%);
+
+            transition: filter 0.3s ease;
+        }
+
+        .home-times-card:hover .home-times-image {
+            filter: grayscale(0%);
+        }
+
+        .home-times-copy {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            padding: 42px;
         }
-        .home-article-tag {
-            font-family: 'Courier New', monospace;
-            font-size: 10px;
-            letter-spacing: 3px;
-            color: #00ffff;
+
+        .home-times-label {
+            margin-bottom: 13px;
+
+            color: #777;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 12px;
         }
-        .home-article-body h3 {
-            font-family: 'SA Cinta', sans-serif; /* Restored SA Cinta */
+
+        .home-times-copy h3 {
+            margin: 0 0 12px;
+
             color: #fff;
-            font-size: 1.8rem;
-            margin: 0 0 12px 0;
-            line-height: 1.2;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            line-height: 1.1;
         }
-        .home-article-meta {
-            color: var(--text-secondary, #888);
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
+
+        .home-times-meta {
+            margin-bottom: 18px;
+
+            color: #666;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.68rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .home-article-body p {
-            color: #ccc;
-            font-size: 1rem;
+
+        .home-times-copy p {
             margin: 0;
-            line-height: 1.6;
-            font-family: sans-serif;
+
+            color: #999;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+
             display: -webkit-box;
-            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
             overflow: hidden;
         }
 
-        /* Discord Community Section */
-        .discord-widget-section {
-            background: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(13,13,13,0.9) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 60px 20px;
-            text-align: center;
-            margin-top: 80px;
-        }
-        .discord-widget-section h2 {
-            font-family: 'SA Cinta', sans-serif; /* Restored SA Cinta */
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
+        .home-times-arrow {
+            margin-top: 25px;
+
             color: #fff;
-        }
-        .discord-join-link {
-            display: inline-block;
-            background: rgba(88, 101, 242, 0.2);
-            color: #5865F2;
-            border: 1px solid rgba(88, 101, 242, 0.4);
-            padding: 12px 28px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+        }
+
+        /* =========================================================
+           ARCHIVE / IDENTITY
+           ========================================================= */
+
+        .home-archive {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .home-archive-card {
+            min-height: 230px;
+
+            padding: 30px;
+
+            border: 1px solid var(--home-border-soft);
+            background: var(--home-panel);
+        }
+
+        .home-archive-number {
+            display: block;
+
             margin-bottom: 30px;
-            transition: background 0.2s, color 0.2s;
+
+            color: #444;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
         }
-        .discord-join-link:hover {
-            background: #5865F2;
+
+        .home-archive-card h3 {
+            margin: 0 0 12px;
+
             color: #fff;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .discord-widget-wrap {
+
+        .home-archive-card p {
+            max-width: 500px;
+
+            margin: 0;
+
+            color: #777;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        /* =========================================================
+           DISCORD
+           ========================================================= */
+
+        .home-community {
+            border-top: 1px solid var(--home-border-soft);
+            border-bottom: 1px solid var(--home-border-soft);
+
+            padding: 85px 22px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,0.045),
+                    transparent 55%
+                );
+        }
+
+        .home-community-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .home-community-label {
+            margin-bottom: 12px;
+
+            color: #555;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.68rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .home-community h2 {
+            margin: 0 0 15px;
+
+            font-family: "SA Cinta", sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+        }
+
+        .home-community h2::after {
+            display: none;
+        }
+
+        .home-community p {
+            max-width: 600px;
+            margin: 0 auto 28px;
+
+            color: #888;
+
+            font-family: Arial, sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        .home-community-button {
+            display: inline-flex;
+
+            padding: 13px 20px;
+
+            border: 1px solid var(--home-border);
+
+            color: #fff;
+            background: transparent;
+
+            text-decoration: none;
+
+            font-family: "Courier New", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .home-community-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .home-discord-widget {
             display: flex;
             justify-content: center;
+
+            margin-top: 35px;
         }
+
+        .home-discord-widget iframe {
+            max-width: 100%;
+
+            border: 1px solid var(--home-border-soft);
+        }
+
+        /* =========================================================
+           FOOTER SPACING
+           ========================================================= */
+
+        .home-footer-space {
+            padding-top: 10px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .featured-release-inner {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding: 45px 30px 30px;
+            }
+
+            .featured-release-art {
+                max-width: 500px;
+                width: 100%;
+                margin: 0 auto;
+                order: -1;
+            }
+
+            .home-release-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home-artist-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home-times-card {
+                grid-template-columns: 1fr;
+            }
+
+            .home-times-image {
+                min-height: 240px;
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .home-hero {
+                padding-top: 60px;
+                padding-bottom: 55px;
+            }
+
+            .home-hero-tagline {
+                font-size: 0.68rem;
+                letter-spacing: 4px;
+            }
+
+            .home-hero-meta {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .home-quick-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home-section,
+            .featured-release {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .home-section {
+                padding-bottom: 65px;
+            }
+
+            .home-section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .featured-release-inner {
+                padding: 40px 20px 20px;
+            }
+
+            .featured-release-title {
+                font-size: 2.5rem;
+            }
+
+            .home-release-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .home-release-grid .release .info {
+                padding: 0 12px;
+            }
+
+            .home-release-grid .release .title {
+                font-size: 0.9rem;
+            }
+
+            .home-release-grid .release .artist {
+                font-size: 0.68rem;
+            }
+
+            .home-artist-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .home-artist-card {
+                min-height: 175px;
+            }
+
+            .home-times-copy {
+                padding: 25px;
+            }
+
+            .home-archive {
+                grid-template-columns: 1fr;
+            }
+
+            .home-community {
+                padding: 65px 15px;
+            }
+
+            .home-discord-widget iframe {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .home-quick-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .home-release-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-artist-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .featured-artists-loading,
+.home-data-error,
+.home-data-empty {
+    grid-column: 1 / -1;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #666;
+
+    text-align: center;
+
+    font-family: "Courier New", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+        /* =========================================================
+           ACCESSIBILITY
+           ========================================================= */
+
+        .home a:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
     </style>
 </head>
+
 <body class="home">
 
+    <!-- GLOBAL NAV -->
     <div id="global-nav"></div>
-        
+
+
     <main>
-        <!-- Hero Header -->
-        <div class="hero-banner-section">
-            <a href="/">
-                <img src="assets/banner.png" alt="RAINOUT typography" class="logo" />
+
+        <!-- =====================================================
+             STATUS
+             ====================================================== -->
+
+        <div class="home-status">
+            <div class="home-status-inner">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>RAINOUT // INDEPENDENT MUSIC COLLECTIVE & LABEL</span>
+            </div>
+        </div>
+
+
+        <!-- =====================================================
+             HERO
+             ====================================================== -->
+
+        <header class="home-hero">
+
+            <a href="/" aria-label="RAINOUT home">
+                <img
+                    src="assets/banner.png"
+                    alt="RAINOUT"
+                    class="home-hero-logo"
+                >
             </a>
-            <p class="tagline">Believe the kids.</p>
-        </div>
-        
-        <!-- About Us Box -->
-        <div class="about-panel">
-            <h2>ABOUT US</h2>
-            <p>RAINOUT is an independent music collective & label dedicated to embracing underground music diversity from young artists. Founded in December 2024.</p>
-        </div>
 
-        <!-- Featured Release Hero -->
-        <div class="featured-release-hero">
-            <div>
-                <span class="featured-badge">Featured Release</span>
-                <h2 class="featured-title">Everlasting Dream</h2>
-                <p class="featured-artist">by jayys</p>
-                <p style="color: #ccc; font-family: sans-serif; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">
-                    A chaotic yet smooth ambient EP pushing boundaries with distorted textures, high-energy tracks, and heavy collaborative energy from the RAINOUT roster.
-                </p>
-                <a href="/releases/everlastingdream" class="listen-now-btn">Explore Release</a>
+            <p class="home-hero-tagline">
+                Believe the kids.
+            </p>
+
+            <div class="home-hero-meta">
+                <span>EST. DECEMBER 2024</span>
+                <span>//</span>
+                <span>UNDERGROUND DIVERSITY</span>
             </div>
-            <div>
-                <a href="/releases/everlastingdream">
-                    <img class="featured-cover" src="assets/album-art/jayysep.png" alt="jayys - everlasting dream">
+
+        </header>
+
+
+        <!-- =====================================================
+             INTRO
+             ====================================================== -->
+
+        <section class="home-intro">
+
+            <h1>
+                Make noise. Make something.
+            </h1>
+
+            <p>
+                RAINOUT is an independent music collective and label
+                dedicated to embracing underground music diversity from
+                young artists. We release music, document the people
+                behind it, and build a place for artists to exist on
+                their own terms.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURED RELEASE
+             ====================================================== -->
+
+        <section class="featured-release" aria-labelledby="featured-heading">
+
+            <div class="featured-release-inner">
+
+                <div class="featured-release-copy">
+
+                    <span class="featured-release-label">
+                        Latest featured release
+                    </span>
+
+                    <h2
+                        id="featured-heading"
+                        class="featured-release-title"
+                    >
+                        Everlasting Dream
+                    </h2>
+
+                    <p class="featured-release-artist">
+                        jayys
+                    </p>
+
+                    <p class="featured-release-description">
+                        A chaotic yet smooth ambient EP pushing boundaries
+                        with distorted textures, high-energy tracks, and
+                        heavy collaborative energy from the RAINOUT roster.
+                    </p>
+
+                    <a
+                        href="/releases/everlastingdream"
+                        class="featured-release-button"
+                    >
+                        Explore release
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+
+                <a
+                    href="/releases/everlastingdream"
+                    class="featured-release-art"
+                    aria-label="View Everlasting Dream by jayys"
+                >
+                    <img
+                        src="assets/album-art/jayysep.png"
+                        alt="jayys — everlasting dream album cover"
+                    >
                 </a>
+
             </div>
-        </div>
-        
-        <!-- Latest RAINOUT Times Article Section -->
-        <section class="home-section">
-            <div class="home-section-title">
-                <span>The RAINOUT Times</span>
-                <a href="/articles">View All Articles →</a>
-            </div>
-            <div id="latest-article-container">
-                <!-- Dynamically injected via script below -->
-            </div>
+
         </section>
 
-        <!-- Latest Releases Grid Section -->
-        <section class="home-section">
-            <div class="home-section-title">
-                <span>Recent Releases</span>
-                <a href="/releases">View All Releases →</a>
-            </div>
-            <div id="release-grid" class="release-grid">
-                <!-- Dynamically populated by fetchReleasesHome.js -->
-            </div>
-        </section>
-            
-        <!-- Featured Artists Section -->
-        <section class="home-section" id="featured-artists-section">
-            <div class="home-section-title">
-                <span>Featured Artists</span>
-                <a href="/about#artists">View All Artists →</a>
+
+        <!-- =====================================================
+             RECENT RELEASES
+             ====================================================== -->
+
+        <section
+            class="home-section"
+            aria-labelledby="recent-releases-heading"
+        >
+
+            <div class="home-section-heading">
+
+                <h2 id="recent-releases-heading">
+                    Recent Releases
+                </h2>
+
+                <a href="/releases">
+                    View archive →
+                </a>
+
             </div>
 
             <div
-                id="featured-artists-grid"
-                class="home-artist-grid"
+                id="release-grid"
+                class="home-release-grid release-grid"
             >
-                <div class="featured-artists-loading">
-                    Loading featured artists...
+                <div class="loading-state">
+                    <span>Loading releases...</span>
                 </div>
             </div>
+
         </section>
 
-        <!-- Community Discord Section -->
-        <section class="discord-widget-section">
-            <h2>JOIN THE COMMUNITY SERVER</h2>
-            <div>
-                <a href="https://discord.gg/YgycSvbfCS" class="discord-join-link" target="_blank" rel="noopener">
-                    Join Discord Server
+
+        <!-- =====================================================
+             ARTISTS
+             ====================================================== -->
+
+             <section
+             class="home-section"
+             aria-labelledby="artists-heading"
+         >
+         
+             <div class="home-section-heading">
+         
+                 <h2 id="artists-heading">
+                     The Roster
+                 </h2>
+         
+                 <a href="/artists">
+                     View all artists →
+                 </a>
+         
+             </div>
+         
+             <div
+                 id="featured-artists-grid"
+                 class="home-artist-grid"
+             >
+         
+                 <div class="featured-artists-loading">
+                     Loading featured artists...
+                 </div>
+         
+             </div>
+         
+         </section>
+
+
+        <!-- =====================================================
+             RAINOUT TIMES
+             ====================================================== -->
+
+        <section
+            class="home-section"
+            aria-labelledby="times-heading"
+        >
+
+            <div class="home-section-heading">
+
+                <h2 id="times-heading">
+                    The RAINOUT Times
+                </h2>
+
+                <a href="/articles">
+                    Read everything →
                 </a>
+
             </div>
-            <div class="discord-widget-wrap">
-                <iframe src="https://discord.com/widget?id=1430955951682228287&theme=dark" width="350" height="450" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" style="border-radius: 8px;"></iframe>
+
+
+            <div id="latest-article-container">
+
+                <div class="loading-state">
+                    <span>Loading latest article...</span>
+                </div>
+
             </div>
+
         </section>
+
+
+        <!-- =====================================================
+             ARCHIVE / IDENTITY
+             ====================================================== -->
+
+        <section
+            class="home-section"
+            aria-labelledby="archive-heading"
+        >
+
+            <div class="home-section-heading">
+
+                <h2 id="archive-heading">
+                    The Archive
+                </h2>
+
+            </div>
+
+
+            <div class="home-archive">
+
+                <div class="home-archive-card">
+
+                    <span class="home-archive-number">
+                        001 // MUSIC
+                    </span>
+
+                    <h3>
+                        Releases
+                    </h3>
+
+                    <p>
+                        Singles, EPs, albums and collaborative projects
+                        released through RAINOUT. The catalog keeps track
+                        of where we've been and what comes next.
+                    </p>
+
+                </div>
+
+
+                <div class="home-archive-card">
+
+                    <span class="home-archive-number">
+                        002 // PEOPLE
+                    </span>
+
+                    <h3>
+                        Artists
+                    </h3>
+
+                    <p>
+                        The people making the noise. Explore the artists,
+                        their releases, their work and everything else
+                        connected to the RAINOUT roster.
+                    </p>
+
+                </div>
+
+
+                <div class="home-archive-card">
+
+                    <span class="home-archive-number">
+                        003 // STORIES
+                    </span>
+
+                    <h3>
+                        Interviews
+                    </h3>
+
+                    <p>
+                        Conversations with the artists behind the music,
+                        documenting their ideas, influences and whatever
+                        they feel like talking about.
+                    </p>
+
+                </div>
+
+
+                <div class="home-archive-card">
+
+                    <span class="home-archive-number">
+                        004 // NEWS
+                    </span>
+
+                    <h3>
+                        The RAINOUT Times
+                    </h3>
+
+                    <p>
+                        Announcements, editorials, and interviews all posted here. Check out our articles.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             COMMUNITY
+             ====================================================== -->
+
+        <section class="home-community">
+
+            <div class="home-community-inner">
+
+                <div class="home-community-label">
+                    RAINOUT COMMUNITY
+                </div>
+
+                <h2>
+                    Don't just listen.
+                    <br>
+                    Be here.
+                </h2>
+
+                <p>
+                    Join the RAINOUT Discord to talk music, meet artists,
+                    follow releases and actually be part of the community
+                    surrounding the collective.
+                </p>
+
+                <a
+                    href="https://discord.gg/YgycSvbfCS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="home-community-button"
+                >
+                    Enter the Discord →
+                </a>
+
+
+                <div class="home-discord-widget">
+
+                    <iframe
+                        src="https://discord.com/widget?id=1430955951682228287&theme=dark"
+                        width="350"
+                        height="450"
+                        title="RAINOUT Discord community"
+                        allowtransparency="true"
+                        frameborder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                    ></iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="home-footer-space"></div>
 
         <div id="global-footer"></div>
-    </main>
-    
-    <!-- Scripts -->
-    <script src="/script.js" defer></script>
-    <script src="js/fetchReleasesHome.js" defer></script>
-    <script src="js/fetchFeaturedArtistsHome.js" defer></script>
 
-    <!-- Script to Fetch and Render the Latest Article -->
+    </main>
+
+
+    <!-- =========================================================
+         GLOBAL SCRIPTS
+         ========================================================== -->
+
+    <script src="/script.js" defer></script>
+
+    <script src="js/fetchReleasesHome.js" defer></script>
+
+
+    <!-- =========================================================
+         LATEST ARTICLE
+         ========================================================== -->
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('/articles.json')
-                .then(res => res.json())
-                .then(articles => {
-                    articles.sort((a, b) => new Date(b.date) - new Date(a.date));
-                    if(articles.length > 0) {
-                        const latest = articles[0];
-                        document.getElementById('latest-article-container').innerHTML = `
-                            <a href="${latest.url}" class="home-article-preview">
-                                <img src="${latest.heroImg}" alt="${latest.title}" class="home-article-img">
-                                <div class="home-article-body">
-                                    <span class="home-article-tag">Editorial • Feature</span>
-                                    <h3>${latest.title}</h3>
-                                    <div class="home-article-meta">By ${latest.author} • ${latest.displayDate}</div>
-                                    <p>${latest.description}</p>
-                                </div>
-                            </a>
-                        `;
-                    }
-                })
-                .catch(err => console.error('Error fetching latest article:', err));
+
+        document.addEventListener("DOMContentLoaded", async () => {
+
+            const container =
+                document.getElementById("latest-article-container");
+
+            if (!container) return;
+
+            try {
+
+                const response =
+                    await fetch("/articles.json", {
+                        cache: "no-store"
+                    });
+
+                if (!response.ok) {
+                    throw new Error(
+                        `HTTP ${response.status}`
+                    );
+                }
+
+                const articles = await response.json();
+
+                if (!Array.isArray(articles) || !articles.length) {
+
+                    container.innerHTML = `
+                        <p style="
+                            color:#666;
+                            font-family:'Courier New',monospace;
+                            font-size:.8rem;
+                        ">
+                            No articles published yet.
+                        </p>
+                    `;
+
+                    return;
+                }
+
+
+                articles.sort((a, b) => {
+                    return new Date(b.date) - new Date(a.date);
+                });
+
+
+                const latest = articles[0];
+
+
+                const link =
+                    document.createElement("a");
+
+                link.href = latest.url || "/articles";
+
+                link.className = "home-times-card";
+
+
+                const image =
+                    document.createElement("img");
+
+                image.className = "home-times-image";
+
+                image.src =
+                    latest.heroImg || "assets/rainoutbanner.png";
+
+                image.alt =
+                    latest.title || "RAINOUT Times article";
+
+                image.loading = "lazy";
+
+
+                const copy =
+                    document.createElement("div");
+
+                copy.className = "home-times-copy";
+
+
+                const label =
+                    document.createElement("div");
+
+                label.className = "home-times-label";
+
+                label.textContent =
+                    "Latest // RAINOUT Times";
+
+
+                const title =
+                    document.createElement("h3");
+
+                title.textContent =
+                    latest.title || "Untitled article";
+
+
+                const meta =
+                    document.createElement("div");
+
+                meta.className = "home-times-meta";
+
+                const author =
+                    latest.author
+                    ? `By ${latest.author}`
+                    : "RAINOUT";
+
+                const date =
+                    latest.displayDate ||
+                    latest.date ||
+                    "";
+
+                meta.textContent =
+                    `${author} ${date ? "• " + date : ""}`;
+
+
+                const description =
+                    document.createElement("p");
+
+                description.textContent =
+                    latest.description ||
+                    "Read the latest from the RAINOUT Times.";
+
+
+                const arrow =
+                    document.createElement("div");
+
+                arrow.className =
+                    "home-times-arrow";
+
+                arrow.textContent =
+                    "Read article →";
+
+
+                copy.appendChild(label);
+                copy.appendChild(title);
+                copy.appendChild(meta);
+                copy.appendChild(description);
+                copy.appendChild(arrow);
+
+                link.appendChild(image);
+                link.appendChild(copy);
+
+                container.replaceChildren(link);
+
+            } catch (error) {
+
+                console.error(
+                    "Error loading latest RAINOUT Times article:",
+                    error
+                );
+
+                container.innerHTML = `
+                    <div style="
+                        border:1px solid rgba(255,255,255,.06);
+                        padding:25px;
+                        color:#666;
+                        font-family:'Courier New',monospace;
+                        font-size:.75rem;
+                    ">
+                        RAINOUT Times is currently unavailable.
+                    </div>
+                `;
+            }
+
         });
+
     </script>
+    <script src="js/fetchFeaturedArtistsHome.js" defer></script>
 </body>
 </html>

@@ -1,74 +1,107 @@
 [
   {
-    "name": "shinrei",
-    "pfp": "/assets/artists/shinrei.jpg"
+      "name": "shinrei",
+      "pfp": "/assets/artists/shinrei.jpg",
+      "page": "/artists/shinrei",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "angelfriend",
-    "pfp": "/assets/artists/angelfriend.jpg"
+      "name": "angelfriend",
+      "pfp": "/assets/artists/angelfriend.jpg",
+      "page": "/artists/angelfriend",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "suuni",
-    "pfp": "/assets/artists/suuni.jpg"
+      "name": "suuni",
+      "pfp": "/assets/artists/suuni.jpg",
+      "page": "/artists/suuni",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "V0CALYST",
-    "pfp": "/assets/artists/v0calyst.jpg"
+      "name": "V0CALYST",
+      "pfp": "/assets/artists/v0calyst.jpg",
+      "page": "/artists/V0CALYST",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "lunamaryllis",
-    "pfp": "/assets/artists/lunamaryllis.jpg"
+      "name": "lunamaryllis",
+      "pfp": "/assets/artists/lunamaryllis.jpg",
+      "page": "/artists/lunamaryllis",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "seraphim",
-    "pfp": "/assets/artists/seraphim.jpg"
+      "name": "seraphim",
+      "pfp": "/assets/artists/seraphim.jpg",
+      "page": "/artists/seraphim",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "hellayercs",
-    "pfp": "/assets/artists/hellayercs.jpg"
+      "name": "hellayercs",
+      "pfp": "/assets/artists/hellayercs.jpg",
+      "page": "/artists/hellayercs",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "krewlty",
-    "pfp": "/assets/artists/krewlty.jpg"
+      "name": "krewlty",
+      "pfp": "/assets/artists/krewlty.jpg",
+      "page": "/artists/krewlty",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "Claire Eterna",
-    "pfp": "/assets/artists/timeflower.jpg"
+      "name": "Claire Eterna",
+      "pfp": "/assets/artists/timeflower.jpg",
+      "page": "/artists/claire-eterna",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "sollaceee!",
-    "pfp": "/assets/artists/sollaceee.jpg"
+      "name": "sollaceee!",
+      "pfp": "/assets/artists/sollaceee.jpg",
+      "page": "/artists/sollaceee",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "melles",
-    "pfp": "/assets/artists/melles.jpg"
+      "name": "melles",
+      "pfp": "/assets/artists/melles.jpg",
+      "page": "/artists/melles",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "PEZZZ!",
-    "pfp": "/assets/artists/pezzz.jpg"
+      "name": "PEZZZ!",
+      "pfp": "/assets/artists/pezzz.jpg",
+      "page": "/artists/PEZZZ",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "jacob cooper",
-    "pfp": "/assets/artists/jacob.jpg"
+      "name": "jacob cooper",
+      "pfp": "/assets/artists/jacob.jpg",
+      "page": "/artists/jacob-cooper",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "jayys",
-    "pfp": "/assets/artists/jayys.png"
+      "name": "jayys",
+      "pfp": "/assets/artists/jayys.png",
+      "page": "/artists/jayys",
+      "bio": "",
+      "showReleases": false
   },
   {
-    "name": "Ramona Heart",
-    "pfp": "/assets/artists/ramonaheart.jpg"
-  },
-  {
-    "name": "avalon",
-    "pfp": "/assets/artists/avalon.jpg"
-  },
-  {
-    "name": "cindy yearns",
-    "pfp": "/assets/artists/cindyyearns.jpg"
-  },
-  {
-    "name": "Castle Belmont",
-    "pfp": "/assets/artists/castlebelmont.jpg"
+      "name": "Ramona Heart",
+      "pfp": "/assets/artists/ramonaheart.jpg",
+      "page": "/artists/ramona-heart",
+      "bio": "",
+      "showReleases": false
   }
 ]

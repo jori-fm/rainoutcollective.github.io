@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="The history of RAINOUT.">
+    <meta property="og:title" content="RAINOUT — Timeline">
+    <meta property="og:description" content="The history of RAINOUT.">
+    <meta property="og:image" content="https://rainoutcollective.com/assets/rainoutbanner.png">
+    <meta property="og:url" content="https://rainoutcollective.com/timeline">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/favicon.png" type="image/png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/font/simple-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="/style.css">
+
+    <title>RAINOUT — Timeline</title>
+</head>
+
+<body class="timeline-body">
+
+    <div id="global-nav"></div>
+
+    <main class="timeline-page">
+
+        <!-- LEGEND -->
+        <aside class="timeline-legend" aria-label="Timeline event categories">
+
+            <div class="timeline-legend-title">
+                LEGEND
+            </div>
+
+            <div class="timeline-legend-items">
+
+                <span class="timeline-legend-item">
+                    <span class="timeline-symbol timeline-release"></span>
+                    Release
+                </span>
+
+                <span class="timeline-legend-item">
+                    <span class="timeline-symbol timeline-announcement"></span>
+                    Big Announcement
+                </span>
+
+                <span class="timeline-legend-item">
+                    <span class="timeline-symbol timeline-milestone"></span>
+                    Milestone
+                </span>
+
+                <span class="timeline-legend-item">
+                    <span class="timeline-symbol timeline-join"></span>
+                    Member Joins
+                </span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTROLS -->
+        <div class="timeline-controls">
+
+            <button
+                type="button"
+                class="timeline-control"
+                id="timeline-prev"
+                aria-label="Scroll timeline left"
+            >
+                ←
+            </button>
+
+            <div class="timeline-scroll-hint">
+                SCROLL HORIZONTALLY
+            </div>
+
+            <button
+                type="button"
+                class="timeline-control"
+                id="timeline-next"
+                aria-label="Scroll timeline right"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <!-- TIMELINE -->
+        <section
+            class="timeline-viewport"
+            id="timeline-viewport"
+            aria-label="RAINOUT timeline"
+        >
+
+            <div class="timeline-track" id="timeline-track">
+
+                <div class="timeline-loading">
+                    Loading timeline...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/script.js" defer></script>
+    <script src="/js/fetchTimeline.js" defer></script>
+
+</body>
+</html>
