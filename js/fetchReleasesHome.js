@@ -164,6 +164,9 @@
         return;
       }
 
+      // Remove the loading placeholder before rendering the cards.
+      grid.replaceChildren();
+
       latest.forEach(r => grid.appendChild(createCard(r)));
       
     } catch (e) {
