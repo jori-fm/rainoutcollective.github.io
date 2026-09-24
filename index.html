@@ -359,6 +359,23 @@
             </div>
         </section>
             
+        <!-- Featured Artists Section -->
+        <section class="home-section" id="featured-artists-section">
+            <div class="home-section-title">
+                <span>Featured Artists</span>
+                <a href="/about#artists">View All Artists →</a>
+            </div>
+
+            <div
+                id="featured-artists-grid"
+                class="home-artist-grid"
+            >
+                <div class="featured-artists-loading">
+                    Loading featured artists...
+                </div>
+            </div>
+        </section>
+
         <!-- Community Discord Section -->
         <section class="discord-widget-section">
             <h2>JOIN THE COMMUNITY SERVER</h2>
@@ -377,7 +394,8 @@
     
     <!-- Scripts -->
     <script src="/script.js" defer></script>
-    <script src="js/fetchReleasesHome.js"></script>
+    <script src="js/fetchReleasesHome.js" defer></script>
+    <script src="js/fetchFeaturedArtistsHome.js" defer></script>
 
     <!-- Script to Fetch and Render the Latest Article -->
     <script>
