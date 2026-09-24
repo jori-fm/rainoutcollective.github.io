@@ -58,5 +58,17 @@
   {
     "name": "Ramona Heart",
     "pfp": "/assets/artists/ramonaheart.jpg"
+  },
+  {
+    "name": "avalon",
+    "pfp": "/assets/artists/avalon.jpg"
+  },
+  {
+    "name": "cindy yearns",
+    "pfp": "/assets/artists/cindyyearns.jpg"
+  },
+  {
+    "name": "Castle Belmont",
+    "pfp": "/assets/artists/castlebelmont.jpg"
   }
 ]
