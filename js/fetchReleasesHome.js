@@ -155,7 +155,7 @@
       const albumsOnly = data.filter(r => !isSingle(r));
       
       // Take top 4 Albums/EPs for homepage
-      const latest = albumsOnly.slice(0, 6);
+      const latest = albumsOnly.slice(0, 3);
       
       grid.classList.remove('loading');
       
