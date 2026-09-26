@@ -2,50 +2,50 @@
     {
         "date": "2024-12-30",
         "type": "milestone",
-        "image": "https://cdn.discordapp.com/attachments/1092862976299642951/1552747345920266330/image.png?ex=6ab6bc27&is=6ab56aa7&hm=0c09665b9c7042d692b227b4a6f5990e9d8b85b19307107c2cfbe84bc3124f78&",
+        "image": "../assets/timeline/timeline2.png",
         "description": "RAINOUT is established as a small collective of 4 members: Jori, angelfriend, V0CALYST, and suuni. Suuni officially named the collective 'RAINOUT collective.'",
         "link": ""
     },
     {
         "date": "2025-01-09",
         "type": "milestone",
-        "image": "https://media.discordapp.net/attachments/1323498317216223254/1326828447066095660/IMG_4348.png?ex=6ab62f49&is=6ab4ddc9&hm=7d00869ca385ca1a06f6a921ff4c4fef86c7e291e2779791bd42a68dab7cf967&=&format=webp&quality=lossless",
+        "image": "../assets/timeline/timeline1.png",
         "description": "Suuni creates the first RAINOUT logo.",
         "link": ""
     },
     {
         "date": "2025-03-01",
         "type": "announcement",
-        "image": "https://media.discordapp.net/attachments/1092862976299642951/1552753566727278652/image.png?ex=6ab6c1f3&is=6ab57073&hm=0cb64ec924f93eeb3cafc9ccad2d8ce5a5302ba3dec925aac067cf39b3f7765d&=&format=webp&quality=lossless",
+        "image": "../assets/timeline/timeline3.png",
         "description": "angelfriend releases the first trailer for her debut EP 'A witness, A watcher'",
         "link": ""
     },
     {
         "date": "2025-04-06",
         "type": "milestone",
-        "image": "https://cdn.discordapp.com/attachments/1092862976299642951/1552755389345566760/image.png?ex=6ab6c3a5&is=6ab57225&hm=1a9d4aa2af3b5b5b07caf1a172ca24f64ab58b14ac7b5765134ca063746939a7&",
+        "image": "../assets/timeline/timeline4.png",
         "description": "Suuni adopts the 'believe the kids' slogan for RAINOUT.",
         "link": ""
     },
     {
         "date": "2025-05-04",
         "type": "release",
-        "image": "https://cdn.discordapp.com/attachments/1092862976299642951/1552756403100319754/image.png?ex=6ab6c497&is=6ab57317&hm=1674f6f33f0a053c720bacca11013c879f1e902569fc482c2bed031ffe7e0165&",
+        "image": "../assets/timeline/timeline5.png",
         "description": "Suuni releases his debut experimental EP 'NORMALIZE HITTING HOES YOU DON'T LIKE'",
         "link": ""
     },
     {
         "date": "2025-05-23",
         "type": "release",
-        "image": "https://cdn.discordapp.com/attachments/1092862976299642951/1552756937156984884/image.png?ex=6ab6c516&is=6ab57396&hm=c6e57be502e45d04d6d80b16d578a5a04768f8f2a3b09a35619890852761669d&",
+        "image": "https://rainoutcollective.com/assets/album-art/rain-008.jpg",
         "description": "Angelfriend releases her debut EP 'A witness, A watcher'",
         "link": ""
     },
     {
         "date": "2025-07-21",
         "type": "join",
-        "image": "https://cdn.discordapp.com/attachments/1092862976299642951/1552757705855213628/image.png?ex=6ab6c5cd&is=6ab5744d&hm=c3fae44b10ccbec8d2e617207f9b343f64f5cfa0a0ba743c4313f6ba99dc6d21&",
-        "description": "Lunamaryllis officially joins RAINOUT as Jori finally started looking for new members.",
+        "image": "../assets/timeline/timeline6.png",
+        "description": "Lunamaryllis, Shinrei, and Seraphim all join RAINOUT as Jori looks for new members.",
         "link": ""
     },
     {
@@ -53,6 +53,13 @@
         "type": "release",
         "image": "https://rainoutcollective.com/assets/album-art/rain-011.jpg",
         "description": "V0CALYST drops the first major RAINOUT single involving production from lunamaryllis and shinrei, 'believe the kids'",
+        "link": ""
+    },
+    {
+        "date": "2025-07-25",
+        "type": "milestone",
+        "image": "../assets/timeline/timeline7.png",
+        "description": "Shinrei designs the RAINOUT logo and typography that has consistently been used today.",
         "link": ""
     }
 ]

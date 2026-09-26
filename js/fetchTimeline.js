@@ -443,12 +443,6 @@
 
     /*
      * EVENT MARKER
-     *
-     * Important:
-     * - Uses timeline-${type} instead of generic
-     *   classes like .release.
-     * - Explicitly places the marker at 50%.
-     * - The CSS turns each type into its own shape.
      */
 
     const createMarker = (
@@ -566,7 +560,7 @@
 
         }
 
-
+        // Establish the ruler limits for the entire timeline
         const start =
             startOfMonth(
                 events[0].date
@@ -666,9 +660,6 @@
 
         /*
          * Event lanes
-         *
-         * Three above the line and
-         * three below the line.
          */
 
         const upperLanes =
@@ -692,13 +683,12 @@
         events.forEach(
             (event, index) => {
 
+                // FIX: Map the event onto the exact same timeline ruler used by the month ticks
                 const ratio =
                     getPositionRatio(
                         event.date,
-                        events[0].date,
-                        events[
-                            events.length - 1
-                        ].date
+                        start, 
+                        end    
                     );
 
 
@@ -709,11 +699,6 @@
                         ratio
                     );
 
-
-                /*
-                 * Alternate which side gets used
-                 * first, then use the available lane.
-                 */
 
                 const preferUpper =
                     index % 2 === 0;
@@ -747,11 +732,6 @@
 
                 }
 
-
-                /*
-                 * Keep the vertical stacking
-                 * controlled.
-                 */
 
                 const laneOffset =
                     58 +
@@ -788,23 +768,12 @@
 
                 }
 
-
-                /*
-                 * Marker is ALWAYS attached
-                 * to the center timeline.
-                 */
-
                 const marker =
                     createMarker(
                         event.type,
                         position
                     );
 
-
-                /*
-                 * Stem connects the marker
-                 * to the event card.
-                 */
 
                 const stem =
                     createStem(
@@ -820,12 +789,6 @@
 
             }
         );
-
-
-        /*
-         * Start all visible elements with
-         * intersection-based animation.
-         */
 
         setupObserver();
 
