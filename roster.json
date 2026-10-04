@@ -1,0 +1,191 @@
+[
+    {
+        "name": "jori",
+        "pfp": "/assets/artists/jori.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Management", "Media"]
+    },
+    {
+        "name": "shinrei",
+        "pfp": "/assets/artists/shinrei.jpg",
+        "page": "/artists/shinrei",
+        "bio": "",
+        "roles": ["Management", "Engineering"]
+    },
+    {
+        "name": "angelfriend",
+        "pfp": "/assets/artists/angelfriend.jpg",
+        "page": "/artists/angelfriend",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "suuni",
+        "pfp": "/assets/artists/suuni.jpg",
+        "page": "/artists/suuni",
+        "bio": "",
+        "roles": ["Management", "Main Artist"]
+    },
+    {
+        "name": "V0CALYST",
+        "pfp": "/assets/artists/v0calyst.jpg",
+        "page": "/artists/V0CALYST",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "lunamaryllis",
+        "pfp": "/assets/artists/lunamaryllis.jpg",
+        "page": "/artists/lunamaryllis",
+        "bio": "",
+        "roles": ["Main Artist", "Engineering"]
+    },
+    {
+        "name": "seraphim",
+        "pfp": "/assets/artists/seraphim.jpg",
+        "page": "/artists/seraphim",
+        "bio": "",
+        "roles": ["Engineering"]
+    },
+    {
+        "name": "hellayercs",
+        "pfp": "/assets/artists/hellayercs.jpg",
+        "page": "/artists/hellayercs",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "krewlty",
+        "pfp": "/assets/artists/krewlty.jpg",
+        "page": "/artists/krewlty",
+        "bio": "",
+        "roles": ["Main Artist", "Engineering"]
+    },
+    {
+        "name": "Claire Eterna",
+        "pfp": "/assets/artists/timeflower.jpg",
+        "page": "/artists/claire-eterna",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "hymself",
+        "pfp": "/assets/artists/hymself.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering"]
+    },
+    {
+        "name": "caprah",
+        "pfp": "/assets/artists/caprah.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Media"]
+    },
+    {
+        "name": "sollaceee!",
+        "pfp": "/assets/artists/sollaceee.jpg",
+        "page": "/artists/sollaceee",
+        "bio": "",
+        "roles": ["Main Artist", "Engineering"]
+    },
+    {
+        "name": "melles",
+        "pfp": "/assets/artists/melles.jpg",
+        "page": "/artists/melles",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "mimisgoingmimis",
+        "pfp": "/assets/artists/mimis.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Media"]
+    },
+    {
+        "name": "andiekyte",
+        "pfp": "/assets/artists/andiekyte.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering", "Media"]
+    },
+    {
+        "name": "eventgardian",
+        "pfp": "/assets/artists/eventgardian.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering"]
+    },
+    {
+        "name": "cigstench",
+        "pfp": "/assets/artists/blank.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering", "Media"]
+    },
+    {
+        "name": "PEZZZ!",
+        "pfp": "/assets/artists/pezzz.jpg",
+        "page": "/artists/PEZZZ",
+        "bio": "",
+        "roles": ["Main Artist", "Engineering"]
+    },
+    {
+        "name": "bunnydryl",
+        "pfp": "/assets/artists/bunnydryl.jpg",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering"]
+    },
+    {
+        "name": "jacob cooper",
+        "pfp": "/assets/artists/jacob.jpg",
+        "page": "/artists/jacob-cooper",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "suky",
+        "pfp": "/assets/artists/suky.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Media"]
+    },
+    {
+        "name": "jayys",
+        "pfp": "/assets/artists/jayys.png",
+        "page": "/artists/jayys",
+        "bio": "",
+        "roles": ["Main Artist"]
+    },
+    {
+        "name": "brokebestfriends",
+        "pfp": "/assets/artists/brokebestfriends.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering"]
+    },
+    {
+        "name": "Ramona Heart",
+        "pfp": "/assets/artists/ramonaheart.jpg",
+        "page": "/artists/ramona-heart",
+        "bio": "",
+        "roles": ["Main Artist", "Engineering"]
+    },
+    {
+        "name": "aprilflowers",
+        "pfp": "/assets/artists/aprilflowers.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Media"]
+    },
+    {
+        "name": "0gen",
+        "pfp": "/assets/artists/0gen.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Main Artist", "Engineering"]
+    }
+  ]

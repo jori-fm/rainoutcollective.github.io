@@ -1,6 +1,6 @@
 /* Dynamically builds the homepage Featured Artists gallery. */
 (() => {
-    const ARTISTS_URL = "/artists.json";
+    const ARTISTS_URL = "/roster.json";
     const RELEASES_URL = "/releases.json";
     const GRID_ID = "featured-artists-grid";
 
@@ -165,7 +165,7 @@
             ]);
 
             if (!artistsResponse.ok) {
-                throw new Error("Unable to load artists.json");
+                throw new Error("Unable to load roster.json");
             }
 
             if (!releasesResponse.ok) {

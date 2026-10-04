@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta property="og:title" content="RAINOUT - The Roster">
+          <meta property="og:description" content="Meet the artists, engineers, and minds behind RAINOUT.">
+          <meta property="og:image" content="https://rainoutcollective.com/assets/rainoutbanner.png">
+          <meta property="og:url" content="https://rainoutcollective.com">
+          <meta property="og:type" content="website">
+          
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="RAINOUT - The Roster">
+          <meta name="twitter:description" content="Meet the artists, engineers, and minds behind RAINOUT.">
+          <meta name="twitter:image" content="https://rainoutcollective.com/assets/rainoutbanner.png">
+          <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+          <link rel="icon" type="image/png" href="assets/favicon.png">
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>The Roster - RAINOUT</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <link rel="stylesheet" href="style.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+      </head>
+      <script
+        src="https://code.iconify.design/3/3.1.1/iconify.min.js"
+        defer
+    ></script>
+    <body>
+
+        <div id="global-nav"></div>
+    
+        <main class="container">
+            <header class="times-header">
+                <h1 class="times-title">THE ROSTER</h1>
+                <p class="times-subtitle">The collective shaping RAINOUT.</p>
+            </header>
+    
+            <!-- The Grid where JS will inject the roster -->
+            <div class="artist-grid" id="roster-grid-container">
+                <div style="text-align: center; width: 100%; color: #888;">Loading roster...</div>
+            </div>
+        </main>
+    
+        <!-- The Popup Modal for Releases -->
+        <div id="releases-modal" class="modal-overlay">
+            <div class="modal-content">
+                <button id="close-modal" class="modal-close" aria-label="Close modal">&times;</button>
+                <h2 id="modal-artist-name">Artist Releases</h2>
+                <div id="modal-releases-list" class="modal-releases">
+                    <!-- Releases will load here -->
+                </div>
+            </div>
+        </div>
+    
+        <div id="global-footer"></div>
+        
+        <script src="/script.js"></script>
+        <script src="/js/fetchRoster.js"></script>
+    
+    </body>
+    </html>
