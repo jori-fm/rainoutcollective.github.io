@@ -52,5 +52,14 @@
       "url": "/articles/rainout-timeline",
       "heroImg": "../articles/assets/timeline.png",
       "description": "The RAINOUT Timeline is officially in development so newcomers can learn about the history of the collective. "
+    },
+    {
+      "title": "'ZOMᗺIƎᗺOY' Deluxe Confirmed for This Month",
+      "author": "Jori",
+      "date": "2026-10-05",
+      "displayDate": "10/5/2026",
+      "url": "/articles/zb-deluxe",
+      "heroImg": "../articles/assets/zbdeluxe.png",
+      "description": "The deluxe for V0CALYST's debut album 'ZOMᗺIƎᗺOY' is officially confirmed to release this month."
     }
   ]

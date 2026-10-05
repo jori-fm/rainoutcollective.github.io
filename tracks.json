@@ -419,6 +419,23 @@
         { "title": "PEZZZ! - drafting texts", "file": "/assets/music/appleLove/drafting texts.mp3" }
 
       ]
+    },
+    {
+      "catalog": "RAIN-008",
+      "artist": "V0CALYST",
+      "title": "7 deadly sins",
+      "release_date": "2026-04-03",
+      "cover": "/assets/album-art/7deadlysins.png",
+      "tracks": [
+        { "title": "pride (ft. suuni)", "file": "/assets/music/7 deadly sins/pride.mp3" },
+        { "title": "greed (ft. hellayercs)", "file": "/assets/music/7 deadly sins/greed.mp3" },
+        { "title": "lust (ft. lunamaryllis)", "file": "/assets/music/7 deadly sins/lust.mp3" },
+        { "title": "envy", "file": "/assets/music/7 deadly sins/envy.mp3" },
+        { "title": "sloth", "file": "/assets/music/7 deadly sins/sloth.mp3" },
+        { "title": "gluttony (ft. sollaceee! & jayys)", "file": "/assets/music/7 deadly sins/gluttony.mp3" },
+        { "title": "wrath (ft. suuni & avalon)", "file": "/assets/music/7 deadly sins/wrath.mp3" }
+
+      ]
     }
 
 
