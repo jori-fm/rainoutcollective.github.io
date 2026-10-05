@@ -177,7 +177,7 @@
     {
         "name": "aprilflowers",
         "pfp": "/assets/artists/aprilflowers.png",
-        "page": "",
+        "page": "/artists/aprilflowers",
         "bio": "",
         "roles": ["Media"]
     },

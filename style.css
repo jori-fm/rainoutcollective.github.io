@@ -2103,46 +2103,35 @@ body.player-page.has-nowbar {
    ARTIST BACKGROUND
    ========================================================= */
 
-body.artist-bg-enabled {
-    position: relative;
+/* =========================================================
+   ARTIST BACKGROUND
+   ========================================================= */
 
+   body.artist-bg-enabled {
+    position: relative;
     background-attachment: fixed;
 }
 
-body.artist-bg-enabled::before {
+/* Changed from ::before to ::after to avoid CRT effect collision */
+body.artist-bg-enabled::after {
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     z-index: -1;
-
     background-image: var(--artist-bg-image);
-
     background-size: cover;
-
     background-position: center;
-
-    filter:
-        blur(15px)
-        brightness(0.3);
-
+    /* I recommend 0.5 or 0.6 brightness so the white text is still readable! */
+    filter: blur(15px) brightness(0.3); 
     transform: scale(1.05);
-
     pointer-events: none;
 }
 
 body.artist-bg-enabled .container {
     position: relative;
-
     z-index: 1;
-
     margin-top: 20px;
-
-    background:
-        rgba(0, 0, 0, 0.45);
-
+    background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(10px);
 }
 
