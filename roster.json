@@ -147,25 +147,11 @@
         "roles": ["Main Artist"]
     },
     {
-        "name": "suky",
-        "pfp": "/assets/artists/suky.png",
-        "page": "",
-        "bio": "",
-        "roles": ["Media"]
-    },
-    {
         "name": "jayys",
         "pfp": "/assets/artists/jayys.png",
         "page": "/artists/jayys",
         "bio": "",
         "roles": ["Main Artist"]
-    },
-    {
-        "name": "brokebestfriends",
-        "pfp": "/assets/artists/brokebestfriends.png",
-        "page": "",
-        "bio": "",
-        "roles": ["Engineering"]
     },
     {
         "name": "Ramona Heart",
@@ -187,5 +173,12 @@
         "page": "",
         "bio": "",
         "roles": ["Main Artist", "Engineering"]
+    },
+    {
+        "name": "crushresistance",
+        "pfp": "/assets/artists/crushresistance.png",
+        "page": "",
+        "bio": "",
+        "roles": ["Engineering"]
     }
   ]
