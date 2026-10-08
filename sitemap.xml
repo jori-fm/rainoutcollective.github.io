@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core Nav Pages -->
+  <url>
+    <loc>https://rainoutcollective.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rainoutcollective.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rainoutcollective.com/roster</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rainoutcollective.com/releases</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rainoutcollective.com/timeline</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rainoutcollective.com/articles</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rainoutcollective.com/player</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Artist Profiles -->
+  <url><loc>https://rainoutcollective.com/artists/angelfriend</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/aprilflowers</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/claire-eterna</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/hellayercs</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/jacob-cooper</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/jayys</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/krewlty</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/lunamaryllis</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/melles</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/pezzz</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/ramona-heart</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/seraphim</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/shinrei</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/sollaceee</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/suuni</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rainoutcollective.com/artists/v0calyst</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Release Pages -->
+  <url><loc>https://rainoutcollective.com/releases/7deadlysins</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/applelove</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/everlastingdream</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/isayallpeopledie</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/krewlmusik</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/letshavesomefun</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/myalbum</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/superblue</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/xlife</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/releases/zombieboy</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Interviews -->
+  <url><loc>https://rainoutcollective.com/interviews/avalon</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/interviews/lunamaryllis</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/interviews/sollaceee</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/interviews/suuni</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/interviews/v0calyst</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Articles -->
+  <url><loc>https://rainoutcollective.com/articles/rainout-timeline</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/articles/v0calyst-superblue</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rainoutcollective.com/articles/zb-deluxe</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+</urlset>
